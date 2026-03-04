@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Contact Us — BlueSky General Services</title>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+ <style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: #1e293b; background: #fff; overflow-x: hidden; -webkit-font-smoothing: antialiased; line-height: 1.6; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+  /* === COLORS === */
+  :root {
+   --blue: #1B4FD8;
+   --blue-dark: #1540b0;
+   --blue-light: #eff4ff;
+   --navy: #0f172a;
+   --slate-50: #f8fafc;
+   --slate-100: #f1f5f9;
+   --slate-200: #e2e8f0;
+   --slate-300: #cbd5e1;
+   --slate-400: #94a3b8;
+   --slate-500: #64748b;
+   --slate-600: #475569;
+   --slate-700: #334155;
+   --slate-800: #1e293b;
+   --white: #ffffff;
+  }
+
+  /* === NAV === */
+  .topbar { background: var(--navy); padding: 0; font-size: 0.75rem; color: var(--slate-400); }
+  .topbar-inner { display: flex; justify-content: space-between; align-items: center; height: 36px; }
+  .topbar a { color: var(--slate-400); margin-left: 20px; transition: color 0.15s; }
+  .topbar a:hover { color: #fff; }
+
+  .navbar { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid var(--slate-200); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; color: var(--navy); white-space: nowrap; }
+  .nav-logo svg { flex-shrink: 0; }
+  .nav-menu { display: flex; align-items: center; gap: 0; height: 100%; }
+  .nav-item { position: relative; height: 100%; display: flex; align-items: center; }
+  .nav-item > a {
+   display: flex; align-items: center; gap: 4px; height: 100%;
+   padding: 0 18px; font-size: 0.85rem; font-weight: 500; color: var(--slate-600);
+   border-bottom: 2px solid transparent; transition: all 0.15s;
+  }
+  .nav-item > a:hover, .nav-item > a.active { color: var(--blue); border-bottom-color: var(--blue); }
+  .nav-item > a svg { width: 12px; height: 12px; }
+
+  /* Mega menu */
+  .mega { display: none; position: absolute; top: 100%; left: -60px; background: #fff; border: 1px solid var(--slate-200); border-top: 2px solid var(--blue); box-shadow: 0 12px 40px rgba(0,0,0,0.08); padding: 32px 36px; min-width: 520px; z-index: 200; }
+  .nav-item:hover .mega { display: block; }
+  .mega-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .mega-link { display: block; padding: 10px 14px; border-radius: 6px; transition: background 0.15s; }
+  .mega-link:hover { background: var(--slate-50); }
+  .mega-link strong { display: block; font-size: 0.88rem; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+  .mega-link span { font-size: 0.78rem; color: var(--slate-500); }
+
+  .nav-cta { padding: 9px 22px; background: var(--blue); color: #fff; font-size: 0.82rem; font-weight: 600; border-radius: 6px; transition: background 0.2s; white-space: nowrap; }
+  .nav-cta:hover { background: var(--blue-dark); }
+  .nav-ham { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+  .mob-menu { display: none; position: fixed; top: 108px; left: 0; right: 0; bottom: 0; background: #fff; z-index: 99; overflow-y: auto; padding: 24px; }
+  .mob-menu.open { display: block; }
+  .mob-menu a { display: block; padding: 14px 0; font-size: 0.95rem; font-weight: 500; color: var(--slate-700); border-bottom: 1px solid var(--slate-100); }
+  .mob-menu .nav-cta { display: block; text-align: center; margin-top: 16px; padding: 14px; }
+
+  /* === PAGE HERO === */
+  .page-hero {
+   background: var(--navy);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   min-height: 260px;
+   padding: 64px 32px;
+  }
+  .page-hero h1 {
+   font-size: 2.2rem;
+   font-weight: 800;
+   color: #fff;
+   letter-spacing: -0.5px;
+   margin-bottom: 12px;
+  }
+  .page-hero p {
+   font-size: 1.05rem;
+   color: var(--slate-400);
+   max-width: 520px;
+   margin: 0 auto;
+   line-height: 1.7;
+  }
+
+  /* === CONTACT LAYOUT === */
+  .contact-section { padding: 80px 0; }
+  .contact-layout {
+   display: grid;
+   grid-template-columns: 360px 1fr;
+   gap: 64px;
+   align-items: start;
+  }
+
+  /* Left column — Info */
+  .contact-info h2 {
+   font-size: 1.5rem;
+   font-weight: 800;
+   color: var(--navy);
+   letter-spacing: -0.3px;
+   margin-bottom: 16px;
+  }
+  .contact-info > p {
+   font-size: 0.9rem;
+   color: var(--slate-500);
+   line-height: 1.8;
+   margin-bottom: 36px;
+  }
+  .contact-details {
+   list-style: none;
+   margin-bottom: 40px;
+  }
+  .contact-details li {
+   display: flex;
+   align-items: flex-start;
+   gap: 14px;
+   padding: 14px 0;
+   border-bottom: 1px solid var(--slate-100);
+  }
+  .contact-details li:first-child { padding-top: 0; }
+  .contact-details li:last-child { border-bottom: none; }
+  .contact-details .detail-icon {
+   flex-shrink: 0;
+   width: 40px;
+   height: 40px;
+   background: var(--blue-light);
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  }
+  .contact-details .detail-icon svg {
+   width: 18px;
+   height: 18px;
+   color: var(--blue);
+  }
+  .contact-details .detail-text { padding-top: 2px; }
+  .contact-details .detail-label {
+   display: block;
+   font-size: 0.72rem;
+   font-weight: 700;
+   color: var(--slate-400);
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   margin-bottom: 3px;
+  }
+  .contact-details .detail-value {
+   font-size: 0.9rem;
+   font-weight: 500;
+   color: var(--navy);
+  }
+  .contact-details .detail-value a {
+   color: var(--navy);
+   transition: color 0.15s;
+  }
+  .contact-details .detail-value a:hover {
+   color: var(--blue);
+  }
+
+  .service-areas h3 {
+   font-size: 0.72rem;
+   font-weight: 700;
+   color: var(--slate-400);
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+   margin-bottom: 16px;
+  }
+  .areas-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 8px;
+  }
+  .areas-grid span {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   font-size: 0.85rem;
+   font-weight: 500;
+   color: var(--slate-700);
+   padding: 8px 12px;
+   background: var(--slate-50);
+   border-radius: 6px;
+  }
+  .areas-grid span::before {
+   content: '';
+   width: 6px;
+   height: 6px;
+   border-radius: 50%;
+   background: var(--blue);
+   flex-shrink: 0;
+  }
+
+  /* Right column — Form */
+  .contact-form-wrap {
+   background: var(--slate-50);
+   border-radius: 12px;
+   padding: 40px;
+   border: 1px solid var(--slate-200);
+  }
+  .contact-form-wrap h3 {
+   font-size: 1.15rem;
+   font-weight: 700;
+   color: var(--navy);
+   margin-bottom: 6px;
+  }
+  .contact-form-wrap > p {
+   font-size: 0.82rem;
+   color: var(--slate-500);
+   margin-bottom: 28px;
+  }
+  .form-row {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 16px;
+  }
+  .form-group {
+   margin-bottom: 18px;
+  }
+  .form-group.full {
+   grid-column: 1 / -1;
+  }
+  .form-group label {
+   display: block;
+   font-size: 0.78rem;
+   font-weight: 600;
+   color: var(--slate-700);
+   margin-bottom: 6px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+   width: 100%;
+   padding: 11px 14px;
+   font-family: 'Inter', sans-serif;
+   font-size: 0.88rem;
+   color: var(--slate-800);
+   background: #fff;
+   border: 1px solid var(--slate-200);
+   border-radius: 6px;
+   transition: border-color 0.15s, box-shadow 0.15s;
+   outline: none;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+   color: var(--slate-400);
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+   border-color: var(--blue);
+   box-shadow: 0 0 0 3px rgba(27, 79, 216, 0.08);
+  }
+  .form-group select {
+   appearance: none;
+   background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%2394a3b8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+   background-repeat: no-repeat;
+   background-position: right 14px center;
+   padding-right: 36px;
+   cursor: pointer;
+  }
+  .form-group textarea {
+   resize: vertical;
+   min-height: 120px;
+  }
+  .form-submit {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   padding: 13px 32px;
+   background: var(--blue);
+   color: #fff;
+   font-family: 'Inter', sans-serif;
+   font-size: 0.88rem;
+   font-weight: 600;
+   border: none;
+   border-radius: 6px;
+   cursor: pointer;
+   transition: background 0.2s, transform 0.15s;
+  }
+  .form-submit:hover {
+   background: var(--blue-dark);
+   transform: translateY(-1px);
+  }
+  .form-submit svg {
+   width: 16px;
+   height: 16px;
+  }
+
+  /* Confirmation */
+  .form-confirmation {
+   display: none;
+   text-align: center;
+   padding: 48px 24px;
+  }
+  .form-confirmation.show {
+   display: block;
+  }
+  .form-confirmation .check-circle {
+   width: 56px;
+   height: 56px;
+   border-radius: 50%;
+   background: #ecfdf5;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 0 auto 20px;
+  }
+  .form-confirmation .check-circle svg {
+   width: 28px;
+   height: 28px;
+   color: #059669;
+  }
+  .form-confirmation h3 {
+   font-size: 1.2rem;
+   font-weight: 700;
+   color: var(--navy);
+   margin-bottom: 8px;
+  }
+  .form-confirmation p {
+   font-size: 0.9rem;
+   color: var(--slate-500);
+   line-height: 1.7;
+  }
+
+  /* === MAP PLACEHOLDER === */
+  .map-placeholder {
+   background: var(--slate-100);
+   height: 300px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   gap: 12px;
+  }
+  .map-placeholder svg {
+   width: 40px;
+   height: 40px;
+   color: var(--slate-400);
+  }
+  .map-placeholder span {
+   font-size: 0.95rem;
+   font-weight: 600;
+   color: var(--slate-500);
+  }
+  .map-placeholder small {
+   font-size: 0.78rem;
+   color: var(--slate-400);
+  }
+
+  /* === FOOTER === */
+  .footer { background: var(--navy); color: var(--slate-400); padding: 64px 0 0; }
+  .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .footer-about .f-logo { font-weight: 700; font-size: 0.95rem; color: #fff; display: flex; align-items: center; gap: 9px; margin-bottom: 14px; }
+  .footer-about .f-logo svg { flex-shrink: 0; }
+  .footer-about p { font-size: 0.82rem; line-height: 1.75; max-width: 280px; }
+  .f-col h4 { font-size: 0.7rem; font-weight: 700; color: var(--slate-300); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 18px; }
+  .f-col a { display: block; font-size: 0.82rem; margin-bottom: 9px; transition: color 0.15s; }
+  .f-col a:hover { color: #fff; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; font-size: 0.75rem; flex-wrap: wrap; gap: 8px; }
+
+  /* === REVEAL === */
+  .rv { opacity: 0; transform: translateY(20px); transition: opacity 0.5s, transform 0.5s; }
+  .rv.v { opacity: 1; transform: none; }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 1024px) {
+   .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+   }
+   .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+   .topbar { display: none; }
+   .navbar { top: 0; }
+   .nav-menu, .nav-cta { display: none; }
+   .nav-ham { display: block; }
+   .mob-menu { top: 72px; }
+   .page-hero { min-height: 200px; padding: 48px 24px; }
+   .page-hero h1 { font-size: 1.6rem; }
+   .page-hero p { font-size: 0.92rem; }
+   .contact-section { padding: 48px 0; }
+   .contact-layout { gap: 40px; }
+   .contact-form-wrap { padding: 28px 20px; }
+   .form-row { grid-template-columns: 1fr; }
+   .areas-grid { grid-template-columns: 1fr 1fr; }
+   .map-placeholder { height: 220px; }
+   .footer-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+   .areas-grid { grid-template-columns: 1fr; }
+  }
+ </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+ <div class="container topbar-inner">
+  <span>Trusted by 500+ Commercial Clients</span>
+  <div>
+   <a href="tel:+17815583458">(781) 558-3458</a>
+   <a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a>
+  </div>
+ </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+ <div class="container nav-inner">
+  <a href="index.html" class="nav-logo">
+   <img src="https://blueskygeneralserv.com/wp-content/uploads/2021/07/cropped-bluesky.png" alt="BlueSky General Services" style="height:60px;width:auto">
+  </a>
+  <div class="nav-menu">
+   <div class="nav-item"><a href="index.html">Home</a></div>
+   <div class="nav-item"><a href="about.html">About</a></div>
+   <div class="nav-item">
+    <a href="services.html">Services <svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+    <div class="mega">
+     <div class="mega-grid">
+      <a href="services.html#janitorial" class="mega-link"><strong>Janitorial Services</strong><span>Daily &amp; scheduled commercial cleaning</span></a>
+      <a href="services.html#pressure" class="mega-link"><strong>Pressure Washing</strong><span>Exterior facade &amp; hardscape cleaning</span></a>
+      <a href="services.html#windows" class="mega-link"><strong>Window Cleaning</strong><span>Interior &amp; exterior glass care</span></a>
+      <a href="services.html#carpet" class="mega-link"><strong>Carpet Cleaning</strong><span>Deep extraction &amp; stain removal</span></a>
+      <a href="services.html#floors" class="mega-link"><strong>Floor Stripping &amp; Waxing</strong><span>Hard floor restoration &amp; maintenance</span></a>
+      <a href="services.html#postconstruction" class="mega-link"><strong>Post-Construction</strong><span>Build-out &amp; renovation cleanup</span></a>
+     </div>
+    </div>
+   </div>
+   <div class="nav-item"><a href="contact.html" class="active">Contact</a></div>
+  </div>
+  <a href="contact.html" class="nav-cta">Request a Quote</a>
+  <button class="nav-ham" id="ham" aria-label="Menu">
+   <svg width="24" height="18" viewBox="0 0 24 18" fill="none"><path d="M1 1h22M1 9h22M1 17h22" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+ </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mob">
+ <a href="index.html">Home</a>
+ <a href="about.html">About</a>
+ <a href="services.html">Services</a>
+ <a href="services.html#janitorial" style="padding-left:16px;color:#94a3b8;font-size:0.88rem;">— Janitorial</a>
+ <a href="services.html#pressure" style="padding-left:16px;color:#94a3b8;font-size:0.88rem;">— Pressure Washing</a>
+ <a href="services.html#windows" style="padding-left:16px;color:#94a3b8;font-size:0.88rem;">— Window Cleaning</a>
+ <a href="services.html#carpet" style="padding-left:16px;color:#94a3b8;font-size:0.88rem;">— Carpet Cleaning</a>
+ <a href="services.html#floors" style="padding-left:16px;color:#94a3b8;font-size:0.88rem;">— Floor Care</a>
+ <a href="services.html#postconstruction" style="padding-left:16px;color:#94a3b8;font-size:0.88rem;">— Post-Construction</a>
+ <a href="contact.html">Contact</a>
+ <a href="contact.html" class="nav-cta">Request a Quote</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+ <div>
+  <h1>Contact Us</h1>
+  <p>We're here to help with your facility needs.</p>
+ </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+ <div class="container">
+  <div class="contact-layout">
+
+   <!-- LEFT COLUMN — Info -->
+   <div class="contact-info rv">
+    <h2>Get in touch</h2>
+    <p>Whether you need a quote, have questions about our services, or want to discuss a long-term facility maintenance program, our team is ready to help. We respond within one business day.</p>
+
+    <ul class="contact-details">
+     <li>
+      <div class="detail-icon">
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
+      </div>
+      <div class="detail-text">
+       <span class="detail-label">Email</span>
+       <span class="detail-value"><a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a></span>
+      </div>
+     </li>
+     <li>
+      <div class="detail-icon">
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      </div>
+      <div class="detail-text">
+       <span class="detail-label">Phone</span>
+       <span class="detail-value"><a href="tel:+17815583458">(781) 558-3458</a></span>
+      </div>
+     </li>
+     <li>
+      <div class="detail-icon">
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="detail-text">
+       <span class="detail-label">Headquarters</span>
+       <span class="detail-value">Available Upon Request</span>
+      </div>
+     </li>
+     <li>
+      <div class="detail-icon">
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+      </div>
+      <div class="detail-text">
+       <span class="detail-label">Instagram</span>
+       <span class="detail-value"><a href="https://instagram.com/bluesky_clean_service" target="_blank">@bluesky_clean_service</a></span>
+      </div>
+     </li>
+    </ul>
+
+    <div class="service-areas">
+     <h3>Our Services</h3>
+     <div class="areas-grid">
+      <span>Janitorial</span>
+      <span>Pressure Washing</span>
+      <span>Window Cleaning</span>
+      <span>Floor Care</span>
+     </div>
+    </div>
+   </div>
+
+   <!-- RIGHT COLUMN — Form -->
+   <div class="contact-form-wrap rv">
+    <h3>Request a quote or ask a question</h3>
+    <p>Fill out the form below and a member of our team will be in touch within one business day.</p>
+
+    <form id="contactForm" onsubmit="handleSubmit(event)">
+     <div class="form-row">
+      <div class="form-group">
+       <label for="name">Name</label>
+       <input type="text" id="name" name="name" placeholder="Your full name" required>
+      </div>
+      <div class="form-group">
+       <label for="email">Email</label>
+       <input type="email" id="email" name="email" placeholder="you@company.com" required>
+      </div>
+     </div>
+     <div class="form-row">
+      <div class="form-group">
+       <label for="phone">Phone</label>
+       <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000">
+      </div>
+      <div class="form-group">
+       <label for="company">Company Name</label>
+       <input type="text" id="company" name="company" placeholder="Your company">
+      </div>
+     </div>
+     <div class="form-row">
+      <div class="form-group">
+       <label for="service">Service</label>
+       <select id="service" name="service" required>
+        <option value="" disabled selected>Select a service</option>
+        <option value="janitorial">Janitorial Services</option>
+        <option value="pressure-washing">Pressure Washing</option>
+        <option value="window-cleaning">Window Cleaning</option>
+        <option value="carpet-cleaning">Carpet Cleaning</option>
+        <option value="floor-stripping">Floor Stripping &amp; Waxing</option>
+        <option value="post-construction">Post-Construction Cleanup</option>
+        <option value="general">General Inquiry</option>
+       </select>
+      </div>
+      <div class="form-group">
+       <label for="facility-size">Facility Size</label>
+       <select id="facility-size" name="facility-size">
+        <option value="" disabled selected>Select facility size</option>
+        <option value="under-5000">Under 5,000 sq ft</option>
+        <option value="5000-25000">5,000 - 25,000 sq ft</option>
+        <option value="25000-100000">25,000 - 100,000 sq ft</option>
+        <option value="100000-plus">100,000+ sq ft</option>
+       </select>
+      </div>
+     </div>
+     <div class="form-group full">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Tell us about your facility, current challenges, or what you're looking for." rows="5"></textarea>
+     </div>
+     <button type="submit" class="form-submit">
+      Send message
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+     </button>
+    </form>
+
+    <div class="form-confirmation" id="formConfirmation">
+     <div class="check-circle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+     </div>
+     <h3>Message sent</h3>
+     <p>Thank you for reaching out. A member of our team will respond within one business day. If your request is urgent, please call us directly at (781) 558-3458.</p>
+    </div>
+   </div>
+
+  </div>
+ </div>
+</section>
+
+<!-- MAP PLACEHOLDER -->
+<div class="map-placeholder rv">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+ <span>Trusted by 500+ Commercial Clients</span>
+ <small>Serving 500+ commercial facilities</small>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+ <div class="container">
+  <div class="footer-grid">
+   <div class="footer-about">
+    <div class="f-logo">
+     <img src="https://blueskygeneralserv.com/wp-content/uploads/2021/07/cropped-bluesky.png" alt="BlueSky General Services" style="height:44px;width:auto">
+    </div>
+    <p>Commercial cleaning and facility maintenance built on accountability, measurable quality, and sustainable practices. Trusted by 500+ Commercial Clients.</p>
+   </div>
+   <div class="f-col">
+    <h4>Services</h4>
+    <a href="services.html#janitorial">Janitorial</a>
+    <a href="services.html#pressure">Pressure Washing</a>
+    <a href="services.html#windows">Window Cleaning</a>
+    <a href="services.html#carpet">Carpet Cleaning</a>
+    <a href="services.html#floors">Floor Care</a>
+    <a href="services.html#postconstruction">Post-Construction</a>
+   </div>
+   <div class="f-col">
+    <h4>Company</h4>
+    <a href="about.html">About Us</a>
+    <a href="about.html#approach">Our Approach</a>
+    <a href="about.html#sustainability">Sustainability</a>
+    <a href="contact.html">Contact</a>
+   </div>
+   <div class="f-col">
+    <h4>Our Services</h4>
+    <a href="services.html#janitorial">Janitorial</a>
+    <a href="services.html#pressure">Pressure Washing</a>
+    <a href="services.html#windows">Window Cleaning</a>
+    <a href="services.html#carpet">Carpet &amp; Floors</a>
+   </div>
+   <div class="f-col">
+    <h4>Contact</h4>
+    <a href="tel:+17815583458">(781) 558-3458</a>
+    <a href="mailto:contact@blueskygeneralserv.com">Email Us</a>
+    <a href="https://instagram.com/bluesky_clean_service" target="_blank">Instagram</a>
+   </div>
+  </div>
+  <div class="footer-bottom">
+   <span>&copy; 2025 BlueSky General Services. All rights reserved.</span>
+   <span>Licensed &amp; Insured · Eco-Certified</span>
+  </div>
+ </div>
+</footer>
+
+<script>
+/* Mobile menu */
+document.getElementById('ham').addEventListener('click', function() {
+ document.getElementById('mob').classList.toggle('open');
+});
+
+/* Form submission */
+function handleSubmit(e) {
+ e.preventDefault();
+ var form = document.getElementById('contactForm');
+ var confirmation = document.getElementById('formConfirmation');
+ form.style.display = 'none';
+ document.querySelector('.contact-form-wrap h3').style.display = 'none';
+ document.querySelector('.contact-form-wrap > p').style.display = 'none';
+ confirmation.classList.add('show');
+}
+
+/* Scroll reveal */
+var obs = new IntersectionObserver(function(entries) {
+ entries.forEach(function(entry) {
+  if (entry.isIntersecting) {
+   entry.target.classList.add('v');
+  }
+ });
+}, { threshold: 0.1 });
+document.querySelectorAll('.rv').forEach(function(el) {
+ obs.observe(el);
+});
+</script>
+</body>
+</html>

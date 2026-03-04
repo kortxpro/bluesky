@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About &mdash; BlueSky General Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+ --black: #1c1917;
+ --charcoal: #292524;
+ --stone-400: #a8a29e;
+ --stone-300: #d6d3d1;
+ --stone-200: #e7e5e4;
+ --stone-100: #f5f5f4;
+ --stone-50: #fafaf9;
+ --white: #ffffff;
+ --accent: #166534;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+ font-family: 'DM Sans', sans-serif;
+ color: var(--black);
+ background: var(--white);
+ font-size: 16px;
+ line-height: 1.7;
+ font-weight: 300;
+ -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+ font-family: 'Playfair Display', serif;
+ font-weight: 400;
+ line-height: 1.15;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* ── Topbar ── */
+.topbar {
+ display: flex;
+ justify-content: flex-end;
+ align-items: center;
+ gap: 2rem;
+ padding: 0.65rem 4vw;
+ font-size: 0.75rem;
+ letter-spacing: 0.04em;
+ color: var(--stone-400);
+ border-bottom: 1px solid var(--stone-200);
+}
+.topbar a { color: var(--stone-400); transition: color 0.3s; }
+.topbar a:hover { color: var(--black); }
+
+/* ── Navbar ── */
+.navbar {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 1.4rem 4vw;
+ border-bottom: 1px solid var(--stone-200);
+ position: sticky;
+ top: 0;
+ background: rgba(255,255,255,0.97);
+ backdrop-filter: blur(8px);
+ z-index: 100;
+}
+.navbar-logo {
+ display: flex;
+ align-items: center;
+ gap: 0.75rem;
+ font-family: 'Playfair Display', serif;
+ font-size: 1.05rem;
+ font-weight: 500;
+ letter-spacing: -0.01em;
+}
+.navbar-logo svg { flex-shrink: 0; }
+.navbar-links {
+ display: flex;
+ align-items: center;
+ gap: 2.5rem;
+ list-style: none;
+ font-size: 0.85rem;
+ letter-spacing: 0.03em;
+}
+.navbar-links a {
+ color: var(--stone-400);
+ transition: color 0.3s;
+}
+.navbar-links a:hover,
+.navbar-links a.active { color: var(--black); }
+.navbar-links .btn-contact {
+ background: var(--accent);
+ color: var(--white);
+ padding: 0.55rem 1.4rem;
+ border-radius: 3px;
+ font-weight: 500;
+ letter-spacing: 0.03em;
+ transition: background 0.3s;
+}
+.navbar-links .btn-contact:hover { background: #14532d; color: var(--white); }
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+ position: absolute;
+ top: calc(100% + 1rem);
+ left: -1rem;
+ background: var(--white);
+ border: 1px solid var(--stone-200);
+ padding: 1.25rem 1.5rem;
+ display: none;
+ min-width: 220px;
+ z-index: 200;
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu a {
+ display: block;
+ padding: 0.35rem 0;
+ font-size: 0.82rem;
+ color: var(--stone-400);
+}
+.nav-dropdown-menu a:hover { color: var(--black); }
+
+.hamburger {
+ display: none;
+ flex-direction: column;
+ gap: 5px;
+ cursor: pointer;
+ background: none;
+ border: none;
+ padding: 4px;
+}
+.hamburger span {
+ display: block;
+ width: 22px;
+ height: 1.5px;
+ background: var(--black);
+ transition: 0.3s;
+}
+.mobile-menu {
+ display: none;
+ flex-direction: column;
+ padding: 1.5rem 4vw 2rem;
+ border-bottom: 1px solid var(--stone-200);
+ background: var(--white);
+}
+.mobile-menu a {
+ padding: 0.6rem 0;
+ font-size: 0.9rem;
+ color: var(--stone-400);
+ border-bottom: 1px solid var(--stone-100);
+ transition: color 0.3s;
+}
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover,
+.mobile-menu a.active { color: var(--black); }
+.mobile-menu.open { display: flex; }
+
+/* ── Hero Image ── */
+.hero-full {
+ position: relative;
+ height: 55vh;
+ min-height: 360px;
+ overflow: hidden;
+}
+.hero-full img {
+ position: absolute;
+ inset: 0;
+}
+.hero-full-overlay {
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ padding: 2.5rem 4vw;
+ background: linear-gradient(transparent, rgba(28,25,23,0.7));
+}
+.hero-full-overlay h1 {
+ font-size: 0.8rem;
+ font-family: 'DM Sans', sans-serif;
+ font-weight: 400;
+ letter-spacing: 0.2em;
+ text-transform: uppercase;
+ color: var(--white);
+}
+
+/* ── Opening Statement ── */
+.opening-statement {
+ padding: 7rem 4vw 6rem;
+ max-width: 900px;
+}
+.opening-statement p {
+ font-family: 'Playfair Display', serif;
+ font-size: clamp(1.6rem, 3vw, 2.4rem);
+ line-height: 1.45;
+ color: var(--charcoal);
+}
+
+/* ── Story Two-Column ── */
+.story-section {
+ display: grid;
+ grid-template-columns: 1.2fr 0.8fr;
+ gap: 4rem;
+ padding: 0 4vw 7rem;
+ border-bottom: 1px solid var(--stone-200);
+}
+.story-text p {
+ font-size: 0.92rem;
+ color: var(--stone-400);
+ margin-bottom: 1.5rem;
+ line-height: 1.85;
+}
+.story-image {
+ height: 520px;
+ overflow: hidden;
+}
+
+/* ── Approach ── */
+.approach-section {
+ padding: 7rem 4vw;
+ border-bottom: 1px solid var(--stone-200);
+}
+.approach-section h2 {
+ font-size: clamp(1.8rem, 3vw, 2.4rem);
+ margin-bottom: 4rem;
+}
+.approach-items {
+ max-width: 700px;
+}
+.approach-item {
+ display: grid;
+ grid-template-columns: 60px 1fr;
+ gap: 1.5rem;
+ padding: 2.5rem 0;
+ border-top: 1px solid var(--stone-200);
+}
+.approach-item .num {
+ font-family: 'Playfair Display', serif;
+ font-size: 2.2rem;
+ color: var(--stone-300);
+ line-height: 1;
+}
+.approach-item h3 {
+ font-size: 1.1rem;
+ margin-bottom: 0.6rem;
+}
+.approach-item p {
+ font-size: 0.88rem;
+ color: var(--stone-400);
+ line-height: 1.75;
+}
+
+/* ── Sustainability ── */
+.sustainability-section {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 0;
+ border-bottom: 1px solid var(--stone-200);
+}
+.sustainability-image {
+ height: 480px;
+ overflow: hidden;
+}
+.sustainability-text {
+ padding: 5rem 4vw;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+.sustainability-text .label {
+ font-size: 0.7rem;
+ letter-spacing: 0.15em;
+ text-transform: uppercase;
+ color: var(--stone-400);
+ margin-bottom: 2rem;
+}
+.sustainability-text h2 {
+ font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+ margin-bottom: 1.5rem;
+}
+.sustainability-text p {
+ font-size: 0.9rem;
+ color: var(--stone-400);
+ line-height: 1.85;
+ max-width: 440px;
+}
+
+/* ── CEO ── */
+.ceo-section {
+ padding: 7rem 4vw;
+ max-width: 700px;
+ border-bottom: 1px solid var(--stone-200);
+}
+.ceo-section .quote {
+ font-family: 'Playfair Display', serif;
+ font-size: clamp(1.2rem, 2vw, 1.5rem);
+ font-style: italic;
+ line-height: 1.55;
+ margin-bottom: 2.5rem;
+ color: var(--charcoal);
+}
+.ceo-section .attribution {
+ font-size: 0.85rem;
+ color: var(--stone-400);
+}
+.ceo-section .attribution strong {
+ color: var(--black);
+ font-weight: 500;
+ display: block;
+ margin-bottom: 0.15rem;
+}
+
+/* ── Minimal CTA ── */
+.minimal-cta {
+ padding: 7rem 4vw;
+ text-align: center;
+}
+.minimal-cta p {
+ font-family: 'Playfair Display', serif;
+ font-size: clamp(1.4rem, 2vw, 1.8rem);
+ font-style: italic;
+ margin-bottom: 2rem;
+}
+.minimal-cta .contact-info {
+ font-size: 0.9rem;
+ color: var(--stone-400);
+ line-height: 2;
+}
+.minimal-cta .contact-info a {
+ color: var(--stone-400);
+ transition: color 0.3s;
+ border-bottom: 1px solid transparent;
+}
+.minimal-cta .contact-info a:hover {
+ color: var(--black);
+ border-bottom-color: var(--stone-300);
+}
+
+/* ── Footer ── */
+.footer {
+ border-top: 1px solid var(--stone-200);
+ padding: 4rem 4vw 3rem;
+}
+.footer-inner {
+ display: grid;
+ grid-template-columns: 2fr 1fr 1fr 1fr;
+ gap: 4rem;
+ max-width: 1100px;
+}
+.footer-brand { display: flex; flex-direction: column; gap: 1rem; }
+.footer-brand .name {
+ font-family: 'Playfair Display', serif;
+ font-size: 1rem;
+}
+.footer-brand p {
+ font-size: 0.8rem;
+ color: var(--stone-400);
+ max-width: 280px;
+ line-height: 1.7;
+}
+.footer-col h4 {
+ font-family: 'DM Sans', sans-serif;
+ font-size: 0.7rem;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ color: var(--stone-400);
+ font-weight: 400;
+ margin-bottom: 1.2rem;
+}
+.footer-col a {
+ display: block;
+ font-size: 0.85rem;
+ color: var(--stone-400);
+ padding: 0.25rem 0;
+ transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--black); }
+.footer-bottom {
+ margin-top: 3rem;
+ padding-top: 1.5rem;
+ border-top: 1px solid var(--stone-100);
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ font-size: 0.72rem;
+ color: var(--stone-400);
+ letter-spacing: 0.02em;
+}
+
+/* ── Scroll Reveal ── */
+.reveal { opacity: 0; transition: opacity 0.8s ease; }
+.reveal.visible { opacity: 1; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+ .navbar-links { display: none; }
+ .hamburger { display: flex; }
+ .story-section { grid-template-columns: 1fr; gap: 2rem; }
+ .story-image { height: 300px; }
+ .sustainability-section { grid-template-columns: 1fr; }
+ .sustainability-image { height: 280px; }
+ .sustainability-text { padding: 3rem 6vw; }
+ .approach-item { grid-template-columns: 45px 1fr; gap: 1rem; }
+ .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+ .footer-bottom { flex-direction: column; gap: 0.5rem; }
+}
+
+@media (max-width: 600px) {
+ .topbar { display: none; }
+ .hero-full { height: 40vh; min-height: 260px; }
+ .opening-statement { padding: 4rem 6vw 3rem; }
+ .opening-statement p { font-size: 1.4rem; }
+ .approach-section { padding: 4rem 6vw; }
+ .ceo-section { padding: 4rem 6vw; }
+}
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+ <a href="tel:7815583458">(781) 558-3458</a>
+ <a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+ <a href="index.html" class="navbar-logo">
+  <img src="https://blueskygeneralserv.com/wp-content/uploads/2021/07/cropped-bluesky.png" alt="BlueSky General Services" style="height:60px;width:auto">
+ </a>
+ <ul class="navbar-links">
+  <li><a href="about.html" class="active">About</a></li>
+  <li class="nav-dropdown">
+   <a href="services.html">Services</a>
+   <div class="nav-dropdown-menu">
+    <a href="services.html#janitorial">Janitorial Services</a>
+    <a href="services.html#pressure">Pressure Washing</a>
+    <a href="services.html#windows">Window Cleaning</a>
+    <a href="services.html#carpet">Carpet Cleaning</a>
+    <a href="services.html#floors">Floor Maintenance</a>
+    <a href="services.html#postconstruction">Post-Construction</a>
+   </div>
+  </li>
+  <li><a href="contact.html" class="btn-contact">Contact Us</a></li>
+ </ul>
+ <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
+  <span></span><span></span><span></span>
+ </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+ <a href="index.html">Home</a>
+ <a href="about.html" class="active">About</a>
+ <a href="services.html">Services</a>
+ <a href="contact.html">Contact</a>
+</div>
+
+<!-- Hero -->
+<section class="hero-full">
+ <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1600&q=80" alt="BlueSky General Services">
+ <div class="hero-full-overlay">
+  <h1>About</h1>
+ </div>
+</section>
+
+<!-- Opening Statement -->
+<section class="opening-statement reveal">
+ <p>Built on a simple belief: commercial cleaning companies could do better.</p>
+</section>
+
+<!-- Story -->
+<section class="story-section reveal">
+ <div class="story-text">
+  <p>BlueSky General Services was founded with a straightforward idea: commercial cleaning should be consistent, measurable, and honest. No inflated promises. No corners cut. Just reliable work, documented and delivered on schedule.</p>
+  <p>What began as a small operation serving office buildings has grown into a company serving over 500 commercial accounts. Along the way, we added pressure washing, window cleaning, carpet care, floor maintenance, and post-construction cleanup to our services.</p>
+  <p>Our growth came from repeat clients and referrals, not from marketing campaigns. We built our reputation one facility at a time, and we continue to operate that way. Every job gets a quality inspection. Every client gets a direct point of contact. That has not changed since the beginning.</p>
+ </div>
+ <div class="story-image">
+  <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=900&q=80" alt="Professional cleaning in action">
+ </div>
+</section>
+
+<!-- Approach -->
+<section class="approach-section reveal" id="approach">
+ <h2>How we work.</h2>
+ <div class="approach-items">
+  <div class="approach-item">
+   <div class="num">01</div>
+   <div>
+    <h3>Assessment first</h3>
+    <p>We walk your facility before quoting. Every space is different, and we build service plans around what you actually need, not a generic package.</p>
+   </div>
+  </div>
+  <div class="approach-item">
+   <div class="num">02</div>
+   <div>
+    <h3>Assigned teams</h3>
+    <p>You get a dedicated crew who knows your building. Consistency matters. The same people, the same standards, every visit.</p>
+   </div>
+  </div>
+  <div class="approach-item">
+   <div class="num">03</div>
+   <div>
+    <h3>Quality inspections</h3>
+    <p>Every job is inspected and documented. If something is missed, we fix it before you have to ask. Our reporting system keeps both sides accountable.</p>
+   </div>
+  </div>
+  <div class="approach-item">
+   <div class="num">04</div>
+   <div>
+    <h3>Direct communication</h3>
+    <p>No call centers. No ticket systems. You reach the person responsible for your account. Problems get solved in hours, not days.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- Sustainability -->
+<section class="sustainability-section reveal" id="sustainability">
+ <div class="sustainability-image">
+  <img src="https://images.unsplash.com/photo-1585417238790-f6d290d6490c?w=900&q=80" alt="Eco-friendly cleaning products">
+ </div>
+ <div class="sustainability-text">
+  <div class="label">Sustainability</div>
+  <h2>Cleaner buildings, lighter footprint.</h2>
+  <p>We use EPA-certified cleaning products, microfiber systems that reduce water and chemical waste, and HEPA-filtered equipment across all our operations. Our teams are trained in green cleaning protocols, and we actively track our chemical and water usage to reduce environmental impact year over year. It is not a marketing line. It is how we operate.</p>
+ </div>
+</section>
+
+<!-- CEO -->
+<section class="ceo-section reveal">
+ <p class="quote">"We do not sell promises. We show up, do the work, and report the results. Everything else is just noise."</p>
+ <div class="attribution">
+  <strong>BlueSky Leadership</strong>
+  Founder &amp; CEO, BlueSky General Services
+ </div>
+</section>
+
+<!-- Minimal CTA -->
+<section class="minimal-cta reveal">
+ <p>Let's work together.</p>
+ <div class="contact-info">
+  <a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a><br>
+  <a href="tel:7815583458">(781) 558-3458</a>
+ </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+ <div class="footer-inner">
+  <div class="footer-brand">
+   <div class="name"><img src="https://blueskygeneralserv.com/wp-content/uploads/2021/07/cropped-bluesky.png" alt="BlueSky General Services" style="height:44px;width:auto"></div>
+   <p>Commercial cleaning and facility maintenance built on accountability and measurable quality.</p>
+  </div>
+  <div class="footer-col">
+   <h4>Company</h4>
+   <a href="about.html">About Us</a>
+   <a href="services.html">Services</a>
+   <a href="contact.html">Contact Us</a>
+   <a href="contact.html">Request a Quote</a>
+  </div>
+  <div class="footer-col">
+   <h4>Our Services</h4>
+   <a href="services.html#janitorial">Janitorial Services</a>
+   <a href="services.html#pressure">Pressure Washing</a>
+   <a href="services.html#windows">Window Cleaning</a>
+   <a href="services.html#carpet">Carpet Cleaning</a>
+   <a href="services.html#floors">Floor Maintenance</a>
+   <a href="services.html#postconstruction">Post-Construction</a>
+  </div>
+  <div class="footer-col">
+   <h4>Connect</h4>
+   <a href="mailto:contact@blueskygeneralserv.com">Email Us</a>
+   <a href="tel:7815583458">(781) 558-3458</a>
+   <a href="https://instagram.com/bluesky_clean_service" target="_blank" rel="noopener">Instagram</a>
+  </div>
+ </div>
+ <div class="footer-bottom">
+  <span>&copy; 2026 BlueSky General Services. All rights reserved.</span>
+  <span>Trusted by 500+ Commercial Clients</span>
+ </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+ var els = document.querySelectorAll('.reveal');
+ var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+   if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+  });
+ }, { threshold: 0.15 });
+ els.forEach(function(el) { observer.observe(el); });
+});
+</script>
+
+</body>
+</html>

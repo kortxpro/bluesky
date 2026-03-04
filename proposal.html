@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlueSky General Services — Propostas de Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+ font-family: 'Inter', sans-serif;
+ background: #0a0a0a;
+ color: #e5e5e5;
+ line-height: 1.6;
+ -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ── Header ── */
+.header {
+ padding: 3rem 2rem 2rem;
+ text-align: center;
+ border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.header img {
+ height: 50px;
+ width: auto;
+ margin: 0 auto 1rem;
+ display: block;
+}
+
+.header .prepared {
+ font-size: 0.72rem;
+ letter-spacing: 0.15em;
+ text-transform: uppercase;
+ color: #525252;
+ margin-bottom: 0.5rem;
+}
+
+/* ── Hero ── */
+.hero {
+ padding: 6rem 2rem 5rem;
+ text-align: center;
+ max-width: 720px;
+ margin: 0 auto;
+}
+
+.hero h1 {
+ font-size: clamp(2rem, 4vw, 3rem);
+ font-weight: 700;
+ color: #ffffff;
+ line-height: 1.15;
+ margin-bottom: 1.2rem;
+ letter-spacing: -0.03em;
+}
+
+.hero p {
+ font-size: 1.05rem;
+ color: #737373;
+ max-width: 520px;
+ margin: 0 auto;
+ line-height: 1.7;
+}
+
+/* ── Templates Grid ── */
+.templates {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 2rem 8rem;
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 2rem;
+}
+
+.template-card {
+ background: #141414;
+ border: 1px solid rgba(255,255,255,0.06);
+ border-radius: 12px;
+ overflow: hidden;
+ transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.template-card:hover {
+ transform: translateY(-6px);
+ border-color: rgba(255,255,255,0.12);
+}
+
+/* Preview iframe wrapper */
+.preview-wrap {
+ position: relative;
+ width: 100%;
+ aspect-ratio: 16 / 10;
+ overflow: hidden;
+ background: #1a1a1a;
+ border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.preview-wrap iframe {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 400%;
+ height: 400%;
+ transform: scale(0.25);
+ transform-origin: top left;
+ border: none;
+ pointer-events: none;
+}
+
+/* Card content */
+.card-body {
+ padding: 1.8rem 1.6rem 2rem;
+}
+
+.card-badge {
+ display: inline-block;
+ font-size: 0.65rem;
+ font-weight: 600;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ padding: 0.3rem 0.7rem;
+ border-radius: 4px;
+ margin-bottom: 1rem;
+}
+
+.card-badge.a { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.card-badge.b { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.card-badge.c { background: rgba(22,101,52,0.15); color: #4ade80; }
+
+.card-body h2 {
+ font-size: 1.25rem;
+ font-weight: 600;
+ color: #ffffff;
+ margin-bottom: 0.6rem;
+ letter-spacing: -0.01em;
+}
+
+.card-body p {
+ font-size: 0.88rem;
+ color: #737373;
+ line-height: 1.65;
+ margin-bottom: 1.5rem;
+}
+
+.card-tags {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 0.5rem;
+ margin-bottom: 1.8rem;
+}
+
+.card-tags span {
+ font-size: 0.7rem;
+ color: #525252;
+ border: 1px solid rgba(255,255,255,0.08);
+ padding: 0.25rem 0.6rem;
+ border-radius: 20px;
+ letter-spacing: 0.02em;
+}
+
+.btn-view {
+ display: block;
+ text-align: center;
+ padding: 0.85rem 1.5rem;
+ font-size: 0.85rem;
+ font-weight: 600;
+ letter-spacing: 0.02em;
+ border-radius: 8px;
+ transition: all 0.3s ease;
+}
+
+.btn-view.a { background: #1B4FD8; color: #fff; }
+.btn-view.a:hover { background: #1540b0; }
+
+.btn-view.b { background: #38bdf8; color: #0c1929; }
+.btn-view.b:hover { background: #0ea5e9; }
+
+.btn-view.c { background: #166534; color: #fff; }
+.btn-view.c:hover { background: #14532d; }
+
+/* ── Footer ── */
+.proposal-footer {
+ text-align: center;
+ padding: 3rem 2rem 4rem;
+ border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.proposal-footer p {
+ font-size: 0.78rem;
+ color: #404040;
+}
+
+.proposal-footer a {
+ color: #525252;
+ transition: color 0.3s;
+}
+
+.proposal-footer a:hover { color: #e5e5e5; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+ .templates {
+  grid-template-columns: 1fr;
+  max-width: 500px;
+ }
+ .hero { padding: 4rem 2rem 3rem; }
+}
+
+@media (max-width: 600px) {
+ .hero h1 { font-size: 1.8rem; }
+ .hero p { font-size: 0.95rem; }
+ .templates { padding: 0 1.2rem 5rem; }
+ .card-body { padding: 1.4rem 1.2rem 1.6rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+ <img src="https://blueskygeneralserv.com/wp-content/uploads/2021/07/cropped-bluesky.png" alt="BlueSky General Services">
+ <div class="prepared">Proposta de Design &mdash; Mar&ccedil;o 2026</div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+ <h1>Tr&ecirc;s dire&ccedil;&otilde;es.<br>Uma decis&atilde;o.</h1>
+ <p>Preparamos tr&ecirc;s conceitos de design para o site da BlueSky. Todos s&atilde;o responsivos e est&atilde;o prontos para navega&ccedil;&atilde;o. Clique para explorar.</p>
+</section>
+
+<!-- Templates -->
+<section class="templates">
+
+ <!-- Template A -->
+ <div class="template-card">
+  <div class="preview-wrap">
+   <iframe src="template-a/index.html" loading="lazy" title="Template A Preview"></iframe>
+  </div>
+  <div class="card-body">
+   <span class="card-badge a">Op&ccedil;&atilde;o A</span>
+   <h2>Limpo &amp; Corporativo</h2>
+   <p>Layout profissional com paleta azul, navega&ccedil;&atilde;o estruturada com menus dropdown e design focado em credibilidade com n&uacute;meros e resultados.</p>
+   <div class="card-tags">
+    <span>Fonte Inter</span>
+    <span>Paleta Azul</span>
+    <span>Tema Claro</span>
+    <span>Foco em Dados</span>
+   </div>
+   <a href="template-a/index.html" class="btn-view a" target="_blank">Ver Template A &rarr;</a>
+  </div>
+ </div>
+
+ <!-- Template B -->
+ <div class="template-card">
+  <div class="preview-wrap">
+   <iframe src="template-b/index.html" loading="lazy" title="Template B Preview"></iframe>
+  </div>
+  <div class="card-body">
+   <span class="card-badge b">Op&ccedil;&atilde;o B</span>
+   <h2>Moderno &amp; Impactante</h2>
+   <p>Design com tema escuro, acentos em azul c&eacute;u, intera&ccedil;&otilde;es animadas, mega-menu e presen&ccedil;a visual forte que chama aten&ccedil;&atilde;o imediata.</p>
+   <div class="card-tags">
+    <span>Fonte Montserrat</span>
+    <span>Tema Escuro</span>
+    <span>Acentos Azul</span>
+    <span>Anima&ccedil;&otilde;es</span>
+   </div>
+   <a href="template-b/index.html" class="btn-view b" target="_blank">Ver Template B &rarr;</a>
+  </div>
+ </div>
+
+ <!-- Template C -->
+ <div class="template-card">
+  <div class="preview-wrap">
+   <iframe src="template-c/index.html" loading="lazy" title="Template C Preview"></iframe>
+  </div>
+  <div class="card-body">
+   <span class="card-badge c">Op&ccedil;&atilde;o C</span>
+   <h2>Premium &amp; Sofisticado</h2>
+   <p>Layout elegante estilo editorial com tipografia serifada, paleta de tons neutros e uma est&eacute;tica refinada que transmite solidez e confian&ccedil;a.</p>
+   <div class="card-tags">
+    <span>Playfair Display</span>
+    <span>Tons Neutros</span>
+    <span>Tema Claro</span>
+    <span>Estilo Editorial</span>
+   </div>
+   <a href="template-c/index.html" class="btn-view c" target="_blank">Ver Template C &rarr;</a>
+  </div>
+ </div>
+
+</section>
+
+<!-- Footer -->
+<footer class="proposal-footer">
+ <p>Preparado para BlueSky General Services &mdash; <a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a> &mdash; <a href="tel:7815583458">(781) 558-3458</a></p>
+</footer>
+
+</body>
+</html>
