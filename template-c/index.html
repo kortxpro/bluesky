@@ -266,6 +266,87 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .text-link:hover { gap: 0.75rem; }
 .about-preview-image { height: 500px; overflow: hidden; }
 
+/* ── Featured Project ── */
+.featured-project {
+ padding: 7rem 4vw;
+ border-top: 1px solid var(--stone-200);
+}
+.featured-project .label {
+ font-size: 0.7rem;
+ letter-spacing: 0.15em;
+ text-transform: uppercase;
+ color: var(--stone-400);
+ margin-bottom: 2rem;
+}
+.featured-project h2 {
+ font-size: clamp(1.8rem, 3vw, 2.6rem);
+ font-style: italic;
+ margin-bottom: 0.5rem;
+}
+.featured-project .project-subtitle {
+ font-size: 0.9rem;
+ color: var(--stone-400);
+ margin-bottom: 3rem;
+}
+.project-hero-img {
+ width: 100%;
+ height: 480px;
+ overflow: hidden;
+ margin-bottom: 3rem;
+}
+.project-hero-img img {
+ object-position: center 25%;
+}
+.project-stats {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 2rem;
+ margin-bottom: 3rem;
+ padding: 2.5rem 0;
+ border-top: 1px solid var(--stone-200);
+ border-bottom: 1px solid var(--stone-200);
+}
+.project-stats .stat { text-align: center; }
+.project-stats .stat-number {
+ display: block;
+ font-family: 'Playfair Display', serif;
+ font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+ color: var(--black);
+ margin-bottom: 0.3rem;
+}
+.project-stats .stat-label {
+ font-size: 0.75rem;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ color: var(--stone-400);
+}
+.project-gallery {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 0.5rem;
+ margin-bottom: 3rem;
+}
+.project-gallery img {
+ height: 280px;
+ object-fit: cover;
+}
+.project-description {
+ max-width: 700px;
+ margin-bottom: 2rem;
+}
+.project-description p {
+ font-size: 0.92rem;
+ color: var(--stone-400);
+ line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+ .project-gallery { grid-template-columns: 1fr; }
+ .project-gallery img { height: 220px; }
+ .project-hero-img { height: 300px; }
+ .project-stats { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
 /* ── Service List ── */
 .service-list-section {
  padding: 6rem 4vw;
@@ -478,7 +559,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   <a href="services.html" class="hero-link">Learn more <span>&rarr;</span></a>
  </div>
  <div class="hero-image">
-  <img src="https://images.unsplash.com/photo-1761641428582-b85a085340d1?w=1000&q=80" alt="Modern commercial facility">
+  <img src="assets/img/milton-team-lobby.jpg" alt="BlueSky General Services team deployed for Hurricane Milton disaster recovery" style="object-position:center 30%">
  </div>
 </section>
 
@@ -498,6 +579,45 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
  <div class="about-preview-image">
   <img src="https://images.unsplash.com/photo-1636125660520-bbdf66295224?w=900&q=80" alt="Professionally maintained commercial facility">
  </div>
+</section>
+
+<!-- Featured Project -->
+<section class="featured-project reveal">
+ <div class="label">Featured Project</div>
+ <h2>Hurricane Milton Recovery</h2>
+ <p class="project-subtitle">Commercial High-Rise &mdash; Emergency Response</p>
+
+ <div class="project-hero-img">
+  <img src="assets/img/milton-exterior-crane.jpg" alt="Commercial high-rise damaged by Hurricane Milton with collapsed crane" loading="lazy">
+ </div>
+
+ <div class="project-stats">
+  <div class="stat">
+   <span class="stat-number">30+</span>
+   <span class="stat-label">Team Members Deployed</span>
+  </div>
+  <div class="stat">
+   <span class="stat-number">24/7</span>
+   <span class="stat-label">Emergency Response</span>
+  </div>
+  <div class="stat">
+   <span class="stat-number">Full</span>
+   <span class="stat-label">Building Restoration</span>
+  </div>
+ </div>
+
+ <div class="project-gallery">
+  <img src="assets/img/milton-lobby-caution.jpg" alt="Building lobby during restoration with caution tape" loading="lazy">
+  <img src="assets/img/milton-dehumidifiers.jpg" alt="Industrial dehumidifiers deployed across building corridors" loading="lazy">
+  <img src="assets/img/milton-debris-removal.jpg" alt="BlueSky crew removing debris from commercial building exterior" loading="lazy">
+  <img src="assets/img/milton-tv-interview-group.jpg" alt="BlueSky General Services featured in local news coverage" loading="lazy">
+ </div>
+
+ <div class="project-description">
+  <p>When Hurricane Milton struck a commercial high-rise, BlueSky General Services deployed a 30-person crew within hours. The team worked around the clock removing debris, extracting water, deploying industrial dehumidifiers across every floor, and restoring the building's premium lobby and common areas to full operation.</p>
+ </div>
+
+ <a href="contact.html" class="text-link">Discuss your project <span>&rarr;</span></a>
 </section>
 
 <!-- Service List -->
@@ -555,7 +675,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
     <span class="arrow">&rarr;</span>
    </a>
    <div class="hover-img">
-    <img src="https://images.unsplash.com/photo-1640631005057-de521cfcd36e?w=900&q=80" alt="Post-Construction">
+    <img src="assets/img/milton-lobby-restoration.jpg" alt="BlueSky team restoring commercial lobby after Hurricane Milton" loading="lazy">
    </div>
   </li>
  </ul>
