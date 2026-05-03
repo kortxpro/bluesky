@@ -51,7 +51,6 @@
 
     // ===== HERO HOMEPAGE =====
     'BlueSky General Services': 'BlueSky General Services',
-    'cleaning,': 'limpeza,',
     'executed at enterprise standard.': 'executada em padrão enterprise.',
     'A facility services partner for buildings that cannot fail: Class A offices, medical facilities, post-construction turnover, disaster recovery. Licensed, insured, bonded. Measured every shift.':
       'Um parceiro de serviços prediais para edifícios que não podem falhar: escritórios Classe A, instalações médicas, entrega pós-obra, recuperação de desastres. Licenciado, segurado, com fiança. Medido a cada turno.',

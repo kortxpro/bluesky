@@ -930,7 +930,7 @@ footer {
  <div class="hero-overlay"></div>
  <div class="hero-content">
   <span class="hero-label">BlueSky General Services</span>
-  <h1><span id="rotateHost" class="rotate-host"><span id="rotateWord" class="rotate-word">Commercial</span></span> cleaning,<br>executed at enterprise standard.</h1>
+  <h1><span id="heroPrefix"></span><span id="rotateHost" class="rotate-host"><span id="rotateWord" class="rotate-word">Commercial</span></span><span id="heroSuffix"> cleaning,</span><br><span id="heroTail">executed at enterprise standard.</span></h1>
   <p class="hero-sub">A facility services partner for buildings that cannot fail: Class A offices, medical facilities, post-construction turnover, disaster recovery. Licensed, insured, bonded. Measured every shift.</p>
   <div class="hero-actions">
    <a href="contact.html" class="btn btn-primary">Request a Proposal <span class="arrow">→</span></a>
@@ -1262,19 +1262,35 @@ closeBtn.addEventListener('click', closeDrawer);
 backdrop.addEventListener('click', closeDrawer);
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
-// Hero headline — slide-up word rotator with animated width
-const rotateWords = ['Commercial', 'Residential', 'Medical', 'Retail', 'Industrial'];
+// Hero headline — slide-up word rotator with animated width + bilingual reorder
+const rotateWordsByLang = {
+ en: ['Commercial', 'Residential', 'Medical', 'Retail', 'Industrial'],
+ pt: ['Comercial', 'Residencial', 'Médica', 'Varejista', 'Industrial']
+};
+const heroParts = {
+ en: { prefix: '', suffix: ' cleaning,' },
+ pt: { prefix: 'Limpeza ', suffix: ',' }
+};
 const rotateEl = document.getElementById('rotateWord');
 const rotateHost = document.getElementById('rotateHost');
+const heroPrefix = document.getElementById('heroPrefix');
+const heroSuffix = document.getElementById('heroSuffix');
 let rotateIdx = 0;
+const getLang = () => (window.bskI18n ? window.bskI18n.getLang() : 'en');
+const wordsFor = (lang) => rotateWordsByLang[lang] || rotateWordsByLang.en;
+function applyHeroLang(lang) {
+ if (heroPrefix) heroPrefix.textContent = heroParts[lang].prefix;
+ if (heroSuffix) heroSuffix.textContent = heroParts[lang].suffix;
+}
+applyHeroLang(getLang());
 if (rotateEl && rotateHost) {
- const localize = (w) => (window.bskI18n ? window.bskI18n.translate(w) : w);
  function measureWidths() {
+  const lang = getLang();
   const orig = rotateEl.textContent;
   const origHostW = rotateHost.style.width;
   rotateHost.style.width = 'auto';
-  const ws = rotateWords.map(w => {
-   rotateEl.textContent = localize(w);
+  const ws = wordsFor(lang).map(w => {
+   rotateEl.textContent = w;
    return Math.ceil(rotateEl.getBoundingClientRect().width);
   });
   rotateEl.textContent = orig;
@@ -1282,23 +1298,26 @@ if (rotateEl && rotateHost) {
   return ws;
  }
  let widths = measureWidths();
+ rotateEl.textContent = wordsFor(getLang())[rotateIdx];
  rotateHost.style.width = widths[rotateIdx] + 'px';
  window.addEventListener('resize', () => {
   widths = measureWidths();
   rotateHost.style.width = widths[rotateIdx] + 'px';
  });
- document.addEventListener('bsk:lang-changed', () => {
+ document.addEventListener('bsk:lang-changed', (e) => {
+  applyHeroLang(e.detail.lang);
   widths = measureWidths();
-  rotateEl.textContent = localize(rotateWords[rotateIdx]);
+  rotateEl.textContent = wordsFor(e.detail.lang)[rotateIdx];
   rotateHost.style.width = widths[rotateIdx] + 'px';
  });
  setInterval(() => {
   rotateEl.classList.add('out');
   setTimeout(() => {
+   const lang = getLang();
    rotateEl.classList.add('pre');
    rotateEl.classList.remove('out');
-   rotateIdx = (rotateIdx + 1) % rotateWords.length;
-   rotateEl.textContent = localize(rotateWords[rotateIdx]);
+   rotateIdx = (rotateIdx + 1) % wordsFor(lang).length;
+   rotateEl.textContent = wordsFor(lang)[rotateIdx];
    rotateHost.style.width = widths[rotateIdx] + 'px';
    requestAnimationFrame(() => { rotateEl.classList.remove('pre'); });
   }, 420);
