@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo 3 — Preview no template-d (v2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root { --black:#1c1917; --stone-100:#f5f5f4; --stone-200:#e7e5e4; --stone-400:#a8a29e; --stone-500:#78716c; --white:#fff; --accent:#1e3a8a; --accent-soft:#dbeafe; }
+body { font-family:'DM Sans',sans-serif; background:var(--stone-200); color:var(--black); padding-bottom:5rem; }
+img { display:block; max-width:100%; }
+
+.page-hd { padding:2.5rem 4vw 2rem; background:var(--white); border-bottom:1px solid var(--stone-200); }
+.page-hd h1 { font-family:'Playfair Display',serif; font-style:italic; font-size:1.8rem; margin-bottom:0.5rem; }
+.page-hd p { color:var(--stone-500); max-width:62ch; font-size:0.92rem; line-height:1.5; }
+.page-hd .note { margin-top:1rem; font-size:0.78rem; color:var(--stone-500); background:#fff8dc; padding:0.7rem 1rem; border-left:3px solid #cc9900; }
+
+.section { margin:2.5rem 0 0; background:var(--white); padding:1.5rem 4vw 2.5rem; }
+.section h2 { font-family:'DM Sans',sans-serif; font-size:0.78rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:0.4rem; }
+.section .desc { color:var(--stone-500); font-size:0.85rem; margin-bottom:1.4rem; max-width:62ch; line-height:1.55; }
+
+/* Reference */
+.logo-original { background:#0c1a3a; padding:2rem; display:flex; justify-content:center; max-width:380px; margin:0 auto; }
+.logo-original img { max-width:280px; }
+
+/* Navbar mockups */
+.nav-mock { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; border-bottom:1px solid var(--stone-200); background:var(--white); margin-top:0.6rem; min-height:78px; }
+.nav-mock-dark { background:var(--black); border-color:rgba(255,255,255,0.1); }
+.nav-mock .logo-text { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:500; display:inline-flex; align-items:baseline; gap:0.45rem; }
+.nav-mock .logo-text em { font-style:italic; color:var(--accent); }
+.nav-mock .logo-text .tag { font-family:'DM Sans',sans-serif; font-size:0.68rem; color:var(--stone-500); letter-spacing:0.12em; text-transform:uppercase; font-weight:400; }
+.nav-mock-dark .logo-text { color:var(--white); }
+.nav-mock-dark .logo-text em { color:var(--accent-soft); }
+.nav-mock .links { display:flex; gap:1.6rem; font-size:0.82rem; color:var(--stone-500); align-items:center; }
+.nav-mock-dark .links { color:var(--stone-400); }
+.nav-mock .cta { background:var(--accent); color:var(--white); padding:0.55rem 1.2rem; font-size:0.78rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:500; }
+
+/* OPTION A — logo as branded badge/card with native navy */
+.logo-badge { display:inline-flex; align-items:center; height:60px; }
+.logo-badge img { height:60px; width:auto; }
+
+/* OPTION B — mix-blend-mode lighten over BLACK background extracts only gold/white */
+.logo-blend-light-host { display:inline-flex; align-items:center; height:54px; background:#000; padding:0; }
+.logo-blend-light-host img { height:54px; width:auto; mix-blend-mode:lighten; }
+
+/* OPTION C — recreate logo from scratch with white wordmark only */
+.logo-recreated { display:inline-flex; align-items:baseline; gap:0.5rem; font-family:'DM Sans',sans-serif; }
+.logo-recreated .word { font-size:1.5rem; font-weight:600; letter-spacing:0.25em; color:var(--black); }
+.logo-recreated .tag { font-size:0.68rem; letter-spacing:0.18em; color:var(--stone-500); text-transform:uppercase; font-weight:400; }
+.logo-recreated.light .word { color:var(--white); }
+.logo-recreated.light .tag { color:var(--stone-400); }
+
+/* Hero mockup */
+.hero-mock { position:relative; min-height:50vh; background:var(--black); color:var(--white); padding:3rem; display:flex; flex-direction:column; justify-content:space-between; }
+.hero-mock-top { display:flex; justify-content:space-between; align-items:center; }
+.hero-mock-content { max-width:30ch; }
+.hero-mock-content .label { font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:1rem; display:inline-flex; align-items:center; gap:0.5rem; }
+.hero-mock-content .label::before { content:""; width:24px; height:1px; background:rgba(255,255,255,0.5); }
+.hero-mock-content h1 { font-family:'Playfair Display',serif; font-style:italic; font-size:2.6rem; line-height:1.05; }
+
+/* Footer mockup */
+.footer-mock { background:var(--black); color:var(--stone-400); padding:3rem; }
+.footer-mock-row { display:flex; justify-content:space-between; align-items:center; }
+.footer-mock-row .links { display:flex; gap:1.8rem; font-size:0.82rem; }
+
+.verdict { background:#f5f5f4; padding:2rem; margin:2.5rem 4vw 0; border-left:3px solid var(--accent); }
+.verdict h3 { font-family:'Playfair Display',serif; font-style:italic; font-size:1.3rem; margin-bottom:0.6rem; }
+.verdict p { font-size:0.92rem; color:var(--stone-500); line-height:1.6; margin-bottom:0.5rem; }
+.verdict ul { margin-top:0.5rem; padding-left:1.2rem; font-size:0.88rem; color:var(--stone-500); }
+.verdict ul li { margin-bottom:0.3rem; }
+</style>
+</head>
+<body>
+
+<header class="page-hd">
+ <h1>Logo 3 no template-d — preview v2</h1>
+ <p>Tentativa anterior virou um "quadrado preto" porque o JPEG tem fundo navy sólido e o filtro <code>brightness(0)</code> escureceu tudo junto. Agora vou por 3 caminhos diferentes pra você comparar — sem precisar de PNG transparente.</p>
+ <div class="note"><strong>Limitação técnica:</strong> o arquivo entregue é JPEG (.jpeg), que não suporta transparência. Pra ter a logo "limpa" sobre qualquer fundo, o designer precisaria entregar PNG ou SVG com fundo transparente. As 3 alternativas abaixo são contornos.</div>
+</header>
+
+<!-- 1. ORIGINAL REFERENCE -->
+<section class="section">
+ <h2>1 · Logo 3 original (referência)</h2>
+ <p class="desc">Como o esboço veio.</p>
+ <div class="logo-original">
+  <img src="../Sugestos de logo 2026/3.jpeg" alt="Logo 3 original">
+ </div>
+</section>
+
+<!-- 2. CURRENT STATUS QUO -->
+<section class="section">
+ <h2>2 · Status quo — texto puro (atual no template-d)</h2>
+ <p class="desc">Solução tipográfica usada hoje no site.</p>
+ <div class="nav-mock">
+  <span class="logo-text">Blue<em>Sky</em> <span class="tag">General Services</span></span>
+  <div class="links"><span>Home</span><span>Services</span><span>Industries</span><span>About</span><span class="cta">Request a Proposal</span></div>
+ </div>
+</section>
+
+<!-- OPTION A: Branded badge card (native navy) -->
+<section class="section">
+ <h2>3 · Opção A — logo como "selo de marca" no navbar branco</h2>
+ <p class="desc">Mantém o JPEG inteiro como uma <strong>marca em badge</strong>: fica como uma "etiqueta" no canto, com o navy + dourado nativo. Funciona como o jeito que o CBRE/JLL às vezes mostram a marca. Conflita visualmente com a paleta mono+verde, mas é honesto sobre o que a logo é.</p>
+ <div class="nav-mock">
+  <span class="logo-badge"><img src="../Sugestos de logo 2026/3.jpeg" alt="Logo BlueSky"></span>
+  <div class="links"><span>Home</span><span>Services</span><span>Industries</span><span>About</span><span class="cta">Request a Proposal</span></div>
+ </div>
+</section>
+
+<!-- OPTION B: mix-blend-mode lighten on dark navbar -->
+<section class="section">
+ <h2>4 · Opção B — <code>mix-blend-mode: lighten</code> sobre fundo preto (extrai dourado+branco)</h2>
+ <p class="desc">Truque CSS: o navy do logo se mistura com o fundo preto do navbar e <strong>desaparece</strong>, restando só o dourado das linhas e o branco da tipografia. Funciona razoavelmente em fundos PRETOS (topbar/footer/hero). Não funciona em fundo branco — daí a opção C abaixo.</p>
+ <div class="nav-mock nav-mock-dark">
+  <span class="logo-blend-light-host"><img src="../Sugestos de logo 2026/3.jpeg" alt="Logo BlueSky extracted"></span>
+  <div class="links"><span>Home</span><span>Services</span><span>Industries</span><span>About</span><span class="cta">Request a Proposal</span></div>
+ </div>
+</section>
+
+<!-- OPTION C: Recreate just the wordmark in CSS -->
+<section class="section">
+ <h2>5 · Opção C — recriar o wordmark do Logo 3 em CSS puro (sem o símbolo)</h2>
+ <p class="desc">Reproduzo só a parte tipográfica do Logo 3 ("BLUESKY GENERAL SERVICE" em sans clean spaced) em texto HTML/CSS. <strong>Funciona em qualquer fundo</strong>, escala perfeita, sem JPEG. Perde o símbolo (skyline + estrelas), mas mantém o spirit do design.</p>
+ <p class="desc"><strong>Versão escura (navbar branco):</strong></p>
+ <div class="nav-mock">
+  <span class="logo-recreated">
+   <span class="word">BLUESKY</span>
+   <span class="tag">General Services</span>
+  </span>
+  <div class="links"><span>Home</span><span>Services</span><span>Industries</span><span>About</span><span class="cta">Request a Proposal</span></div>
+ </div>
+ <p class="desc" style="margin-top:1.4rem;"><strong>Versão clara (navbar escuro):</strong></p>
+ <div class="nav-mock nav-mock-dark">
+  <span class="logo-recreated light">
+   <span class="word">BLUESKY</span>
+   <span class="tag">General Services</span>
+  </span>
+  <div class="links"><span>Home</span><span>Services</span><span>Industries</span><span>About</span><span class="cta">Request a Proposal</span></div>
+ </div>
+</section>
+
+<!-- HERO MOCKUP with Option B -->
+<section class="section">
+ <h2>6 · Opção B aplicada no hero da home (escuro)</h2>
+ <p class="desc">Como ficaria o logo extraído (mix-blend-mode) sobre o hero.</p>
+ <div class="hero-mock">
+  <div class="hero-mock-top">
+   <span class="logo-blend-light-host" style="height:48px;"><img src="../Sugestos de logo 2026/3.jpeg" alt="Logo BlueSky" style="height:48px;"></span>
+   <span style="font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;opacity:0.7;">Request a Proposal</span>
+  </div>
+  <div class="hero-mock-content">
+   <span class="label">BlueSky General Services</span>
+   <h1>Commercial cleaning, executed at enterprise standard.</h1>
+  </div>
+ </div>
+</section>
+
+<!-- FOOTER MOCKUP with Option B -->
+<section class="section">
+ <h2>7 · Opção B aplicada no footer</h2>
+ <div class="footer-mock">
+  <div class="footer-mock-row">
+   <span class="logo-blend-light-host" style="height:54px;"><img src="../Sugestos de logo 2026/3.jpeg" alt="Logo BlueSky" style="height:54px;"></span>
+   <div class="links"><span>About</span><span>Services</span><span>Industries</span><span>Contact</span></div>
+  </div>
+  <p style="margin-top:2rem;font-size:0.78rem;color:var(--stone-500);">© 2026 BlueSky General Services · Licensed · Insured · Bonded</p>
+ </div>
+</section>
+
+<div class="verdict">
+ <h3>Veredito honesto</h3>
+ <p>Esse JPEG do esboço é difícil de "limpar" via CSS sem PNG/SVG transparente. As 3 opções acima cada uma tem trade-off:</p>
+ <ul>
+  <li><strong>Opção A (badge):</strong> mostra a logo "como é", mas conflita com a paleta mono+verde do site.</li>
+  <li><strong>Opção B (blend mode):</strong> funciona razoavelmente em fundos PRETOS (topbar, hero, footer). Em navbar branco não rola.</li>
+  <li><strong>Opção C (recriar em CSS):</strong> mais clean e versátil, funciona em qualquer fundo. Perde o símbolo.</li>
+ </ul>
+ <p style="margin-top:1rem;"><strong>Recomendação:</strong> Pra o esboço/MVP, usar <strong>Opção C</strong> (wordmark em CSS puro) no navbar branco e na maior parte do site, e a <strong>Opção B</strong> (blend mode) no hero/footer escuro como "extra visual". Pra produção real, pedir pro designer entregar SVG transparente do logo final.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industries | BlueSky General Services</title>
+<meta name="description" content="Facility services tuned to industry context, corporate offices, medical, retail, education, construction, and property management. One operational standard across every environment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --black:#1c1917; --charcoal:#292524; --stone-500:#78716c; --stone-400:#a8a29e; --stone-300:#d6d3d1; --stone-200:#e7e5e4; --stone-100:#f5f5f4; --stone-50:#fafaf9; --white:#fff; --accent:#1e3a8a; --accent-hover:#1e40af; --accent-soft:#dbeafe; }
+html { scroll-behavior: smooth; }
+body { font-family:'DM Sans',sans-serif; color:var(--black); background:var(--white); font-size:16px; line-height:1.7; font-weight:300; -webkit-font-smoothing:antialiased; }
+h1,h2,h3,h4 { font-family:'Playfair Display',serif; font-weight:400; line-height:1.15; letter-spacing:-0.01em; }
+a { color:inherit; text-decoration:none; }
+img { display:block; max-width:100%; height:auto; object-fit:cover; }
+.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-400); font-weight:400; }
+.btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.9rem 1.8rem; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:500; border:1px solid transparent; border-radius:2px; cursor:pointer; transition:all 0.3s ease; font-family:inherit; }
+.btn-primary { background:var(--accent); color:var(--white); }
+.btn-primary:hover { background:var(--accent-hover); transform:translateY(-1px); }
+.btn-outline { background:transparent; color:var(--white); border-color:rgba(255,255,255,0.45); }
+.btn-outline:hover { background:rgba(255,255,255,0.08); border-color:var(--white); }
+.btn .arrow { transition:transform 0.3s ease; }
+.btn:hover .arrow { transform:translateX(4px); }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.9s ease, transform 0.9s ease; }
+.reveal.in { opacity:1; transform:translateY(0); }
+.reveal[data-delay="1"] { transition-delay:0.1s; } .reveal[data-delay="2"] { transition-delay:0.2s; }
+
+.topbar { display:flex; justify-content:space-between; align-items:center; gap:2rem; padding:0.55rem 4vw; font-size:0.72rem; letter-spacing:0.06em; background:var(--black); color:var(--stone-300); }
+.topbar-left, .topbar-right { display:flex; gap:1.5rem; align-items:center; }
+.topbar a { color:var(--stone-300); transition:color 0.3s; }
+.topbar a:hover { color:var(--white); }
+.topbar-sep { color:var(--stone-500); }
+
+.navbar { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 4vw; border-bottom:1px solid var(--stone-200); position:sticky; top:0; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); z-index:100; }
+.navbar-logo { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:500; letter-spacing:0.02em; display:inline-flex; align-items:baseline; gap:0.45rem; }
+.navbar-logo em { font-style:italic; color:var(--accent); }
+.navbar-logo .tag { font-family:'DM Sans',sans-serif; font-size:0.68rem; color:var(--stone-500); letter-spacing:0.12em; text-transform:uppercase; font-weight:400; }
+.navbar-links { display:flex; align-items:center; gap:2.2rem; list-style:none; font-size:0.82rem; letter-spacing:0.05em; }
+.navbar-links > li { position:relative; }
+.navbar-links a { color:var(--stone-500); transition:color 0.3s; padding:0.4rem 0; display:inline-flex; align-items:center; gap:0.3rem; }
+.navbar-links a:hover, .navbar-links a.active { color:var(--black); }
+.navbar-links .caret { font-size:0.65rem; opacity:0.6; }
+.btn-nav { background:var(--accent); color:var(--white) !important; padding:0.65rem 1.3rem !important; border-radius:2px; font-weight:500; transition:background 0.3s; }
+.btn-nav:hover { background:var(--accent-hover); }
+.megamenu { position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(-8px); margin-top:1.2rem; background:var(--white); border:1px solid var(--stone-200); box-shadow:0 20px 50px rgba(0,0,0,0.08); padding:2.2rem 2.5rem; min-width:520px; display:grid; grid-template-columns:repeat(2,1fr); gap:1.2rem 2.5rem; opacity:0; pointer-events:none; transition:opacity 0.25s, transform 0.25s; z-index:101; }
+.navbar-links > li:hover .megamenu, .navbar-links > li:focus-within .megamenu { opacity:1; pointer-events:auto; transform:translateX(-50%) translateY(0); }
+.megamenu-item { display:block; padding:0.4rem 0; }
+.megamenu-item strong { display:block; font-family:'Playfair Display',serif; font-size:1rem; font-weight:500; font-style:italic; color:var(--black); margin-bottom:0.15rem; }
+.megamenu-item span { font-size:0.78rem; color:var(--stone-500); letter-spacing:0; text-transform:none; }
+.megamenu-item:hover strong { color:var(--accent); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:0.5rem; }
+.hamburger span { width:22px; height:1.5px; background:var(--black); }
+
+.page-hero { background:var(--stone-50); padding:6rem 4vw 5rem; border-bottom:1px solid var(--stone-200); }
+.page-hero-inner { max-width:820px; }
+.page-hero h1 { font-size:clamp(2.4rem, 4.5vw, 3.8rem); font-style:italic; font-weight:400; margin:1rem 0 1.5rem; line-height:1.1; }
+.page-hero p { color:var(--stone-500); font-size:1.1rem; line-height:1.7; max-width:62ch; }
+.breadcrumb { font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone-400); margin-bottom:0.5rem; }
+.breadcrumb a { color:var(--stone-400); }
+.breadcrumb a:hover { color:var(--black); }
+.breadcrumb-sep { margin:0 0.5rem; }
+
+/* Index sidebar layout */
+.industries-layout { display:grid; grid-template-columns:240px 1fr; gap:5rem; padding:6rem 4vw 4rem; max-width:1500px; margin:0 auto; }
+.industries-nav { position:sticky; top:90px; align-self:start; border-top:1px solid var(--stone-200); }
+.industries-nav a { display:block; padding:0.9rem 0; border-bottom:1px solid var(--stone-200); font-size:0.85rem; letter-spacing:0.05em; color:var(--stone-500); transition:color 0.3s, padding-left 0.3s; }
+.industries-nav a:hover, .industries-nav a.active { color:var(--black); padding-left:0.5rem; }
+.industries-nav a::before { content:"›"; margin-right:0.5rem; color:var(--accent); opacity:0; transition:opacity 0.3s; }
+.industries-nav a:hover::before, .industries-nav a.active::before { opacity:1; }
+
+.industry-section { padding:3rem 0 5rem; border-bottom:1px solid var(--stone-200); scroll-margin-top:80px; }
+.industry-section:last-child { border-bottom:none; }
+.industry-section .sec-label { font-family:'Playfair Display',serif; font-size:0.95rem; font-style:italic; color:var(--accent); letter-spacing:0.08em; }
+.industry-section h2 { font-size:clamp(1.9rem, 3vw, 2.6rem); font-style:italic; font-weight:400; margin:0.7rem 0 1.3rem; line-height:1.15; max-width:22ch; }
+.industry-section > p.lead { color:var(--stone-500); font-size:1.02rem; line-height:1.75; max-width:62ch; margin-bottom:2rem; }
+.industry-image { aspect-ratio:16/7; overflow:hidden; margin:2rem 0; background:var(--stone-200); }
+.industry-image img { width:100%; height:100%; object-fit:cover; }
+.sector-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; margin-top:2rem; }
+.sector-block h4 { font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--stone-500); font-family:'DM Sans',sans-serif; font-weight:500; margin-bottom:0.9rem; }
+.sector-block ul { list-style:none; display:flex; flex-direction:column; gap:0.5rem; }
+.sector-block ul li { position:relative; padding-left:1.3rem; font-size:0.9rem; color:var(--charcoal); }
+.sector-block ul li::before { content:""; position:absolute; left:0; top:0.6rem; width:7px; height:7px; border:1.5px solid var(--accent); border-radius:50%; }
+
+.cta-banner { background:var(--black); color:var(--white); text-align:center; padding:7rem 4vw; }
+.cta-banner h2 { font-size:clamp(2rem,4vw,3rem); font-style:italic; font-weight:400; max-width:22ch; margin:0 auto 1.2rem; line-height:1.15; }
+.cta-banner p { color:rgba(255,255,255,0.7); font-size:1rem; max-width:52ch; margin:0 auto 2.5rem; line-height:1.7; }
+.cta-actions { display:inline-flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
+.cta-banner .btn-primary { background:var(--white); color:var(--black); }
+.cta-banner .btn-primary:hover { background:var(--accent); color:var(--white); }
+
+footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem; border-top:1px solid rgba(255,255,255,0.08); }
+.footer-grid { display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr 1fr; gap:3rem; margin-bottom:4rem; }
+.footer-brand strong { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:500; color:var(--white); display:block; margin-bottom:1rem; }
+.footer-brand em { font-style:italic; color:var(--accent-soft); }
+.footer-brand p { font-size:0.88rem; line-height:1.7; max-width:34ch; }
+.footer-col h4 { font-family:'DM Sans',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--white); font-weight:500; margin-bottom:1.2rem; }
+.footer-col ul { list-style:none; display:flex; flex-direction:column; gap:0.6rem; }
+.footer-col a { font-size:0.85rem; color:var(--stone-400); transition:color 0.3s; }
+.footer-col a:hover { color:var(--white); }
+.footer-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.08); font-size:0.78rem; color:var(--stone-500); flex-wrap:wrap; gap:1rem; }
+.footer-badges { display:flex; gap:1.5rem; }
+.footer-badges span { letter-spacing:0.12em; text-transform:uppercase; font-size:0.7rem; }
+
+.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
+.mobile-drawer.open { transform:translateX(0); }
+.mobile-drawer ul { list-style:none; display:flex; flex-direction:column; gap:1.4rem; }
+.mobile-drawer a { font-family:'Playfair Display',serif; font-size:1.3rem; font-style:italic; color:var(--black); }
+.mobile-close { position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; font-size:1.5rem; cursor:pointer; }
+.mobile-backdrop { position:fixed; inset:0; background:rgba(28,25,23,0.5); z-index:199; opacity:0; pointer-events:none; transition:opacity 0.35s; }
+.mobile-backdrop.open { opacity:1; pointer-events:auto; }
+
+@media (max-width:1100px) { .footer-grid { grid-template-columns:1.4fr 1fr 1fr; } }
+@media (max-width:900px) {
+ .navbar-links { display:none; } .hamburger { display:flex; } .topbar-left { display:none; }
+ .industries-layout { grid-template-columns:1fr; gap:2rem; padding:3rem 4vw; }
+ .industries-nav { position:static; }
+ .sector-grid { grid-template-columns:1fr; gap:2rem; }
+ .footer-grid { grid-template-columns:1fr 1fr; }
+ .page-hero { padding:4rem 4vw 3rem; }
+}
+@media (max-width:600px) {
+ .topbar { padding:0.5rem 4vw; font-size:0.68rem; } .topbar-right { gap:0.8rem; }
+ .footer-grid { grid-template-columns:1fr; gap:2.5rem; }
+ .footer-bottom { flex-direction:column; text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+ <div class="topbar-left"><span>Commercial facility services · Licensed · Insured · Bonded</span></div>
+ <div class="topbar-right">
+  <a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a>
+  <span class="topbar-sep">·</span>
+  <a href="tel:+17815583458">(781) 558-3458</a>
+  <span class="topbar-sep">·</span>
+  <a href="https://instagram.com/bluesky_clean_service" target="_blank" rel="noopener">Instagram</a>
+ </div>
+</div>
+
+<nav class="navbar">
+ <a href="index.html" class="navbar-logo">Blue<em>Sky</em><span class="tag">General Services</span></a>
+ <ul class="navbar-links">
+  <li><a href="index.html">Home</a></li>
+  <li>
+   <a href="services.html">Services <span class="caret">▾</span></a>
+   <div class="megamenu">
+    <a href="services/janitorial.html" class="megamenu-item"><strong>Janitorial</strong><span>Recurring commercial cleaning programs</span></a>
+    <a href="services/pressure-washing.html" class="megamenu-item"><strong>Pressure Washing</strong><span>Exterior high-pressure cleaning</span></a>
+    <a href="services/window-cleaning.html" class="megamenu-item"><strong>Window Cleaning</strong><span>Interior &amp; high-rise glass care</span></a>
+    <a href="services/carpet-cleaning.html" class="megamenu-item"><strong>Carpet Cleaning</strong><span>Extraction &amp; restoration</span></a>
+    <a href="services/floor-care.html" class="megamenu-item"><strong>Floor Stripping &amp; Waxing</strong><span>Hard-surface restoration</span></a>
+    <a href="services/post-construction.html" class="megamenu-item"><strong>Post-Construction</strong><span>Disaster recovery &amp; turnover cleanup</span></a>
+    <a href="services/property-decommission.html" class="megamenu-item"><strong>Property Decommission</strong><span>Decommission &amp; fog disinfect</span></a>
+   </div>
+  </li>
+  <li>
+   <a href="industries.html" class="active">Industries <span class="caret">▾</span></a>
+   <div class="megamenu">
+    <a href="industries.html#corporate" class="megamenu-item"><strong>Corporate Offices</strong><span>Class A / Class B environments</span></a>
+    <a href="industries.html#medical" class="megamenu-item"><strong>Medical &amp; Healthcare</strong><span>Clinics, medical offices, labs</span></a>
+    <a href="industries.html#retail" class="megamenu-item"><strong>Retail &amp; Commercial</strong><span>Shopping centers &amp; storefronts</span></a>
+    <a href="industries.html#education" class="megamenu-item"><strong>Education</strong><span>Schools, colleges, training centers</span></a>
+    <a href="industries.html#construction" class="megamenu-item"><strong>Construction</strong><span>Developer &amp; contractor partnerships</span></a>
+    <a href="industries.html#property" class="megamenu-item"><strong>Property Management</strong><span>Multi-tenant &amp; HOA portfolios</span></a>
+   </div>
+  </li>
+  <li><a href="projects.html">Case Studies</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="careers.html">Careers</a></li>
+  <li><a href="contact.html" class="btn-nav">Request a Proposal</a></li>
+ </ul>
+ <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-backdrop" id="mobileBackdrop"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+ <button class="mobile-close" id="mobileClose" aria-label="Close menu">×</button>
+ <ul>
+  <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="industries.html">Industries</a></li><li><a href="projects.html">Case Studies</a></li><li><a href="about.html">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="sustainability.html">Sustainability</a></li><li><a href="contact.html" class="btn-nav">Request a Proposal</a></li>
+ </ul>
+</div>
+
+<header class="page-hero">
+ <div class="page-hero-inner reveal">
+  <div class="breadcrumb"><a href="index.html">Home</a> <span class="breadcrumb-sep">/</span> Industries</div>
+  <span class="label">Who We Serve</span>
+  <h1>Six industries. One standard of care.</h1>
+  <p>Every building type has its own failure modes, compliance demands, and occupancy pressures. Our programs are tuned to the context, with the same measurable discipline across every environment.</p>
+ </div>
+</header>
+
+<div class="industries-layout">
+ <aside class="industries-nav">
+  <a href="#corporate" class="active">Corporate Offices</a>
+  <a href="#medical">Medical &amp; Healthcare</a>
+  <a href="#retail">Retail &amp; Commercial</a>
+  <a href="#education">Education</a>
+  <a href="#construction">Construction</a>
+  <a href="#property">Property Management</a>
+ </aside>
+
+ <main>
+  <section id="corporate" class="industry-section reveal">
+   <span class="sec-label">Industry 01</span>
+   <h2>Corporate Offices</h2>
+   <p class="lead">Class A and Class B environments, lobbies, executive floors, conference rooms, and amenity spaces, cleaned to the standards that occupants, not visitors, notice. Quiet operation. Low-disruption scheduling. Monthly performance reporting.</p>
+   <div class="industry-image"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&amp;q=85" alt="Modern corporate office lobby"></div>
+   <div class="sector-grid">
+    <div class="sector-block">
+     <h4>Typical programs</h4>
+     <ul><li>Nightly janitorial</li><li>Restroom disinfection</li><li>Common-area deep cleans (quarterly)</li><li>Glass and fingerprint management</li><li>Carpet care (quarterly)</li></ul>
+    </div>
+    <div class="sector-block">
+     <h4>What we solve</h4>
+     <ul><li>Inconsistent nightly quality</li><li>Missing or late detail cleans</li><li>Lack of written reporting</li><li>Safety and access compliance</li></ul>
+    </div>
+   </div>
+  </section>
+
+  <section id="medical" class="industry-section reveal">
+   <span class="sec-label">Industry 02</span>
+   <h2>Medical &amp; Healthcare</h2>
+   <p class="lead">Medical offices, outpatient clinics, dental, and veterinary facilities, disinfection protocols matched to practice type, EPA-registered products, and documentation that respects the compliance rigor patient environments demand.</p>
+   <div class="industry-image"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1800&amp;q=85" alt="Modern medical facility interior"></div>
+   <div class="sector-grid">
+    <div class="sector-block">
+     <h4>Typical programs</h4>
+     <ul><li>Clinical-grade disinfection</li><li>Waiting room and exam room turns</li><li>Restroom, break room, and lab cleaning</li><li>Floor care (VCT / LVT / sealed concrete)</li><li>Trash &amp; regulated-waste segregation</li></ul>
+    </div>
+    <div class="sector-block">
+     <h4>What we respect</h4>
+     <ul><li>HIPAA-adjacent discretion</li><li>OSHA bloodborne pathogen standards</li><li>EPA-registered disinfectant dwell times</li><li>After-hours access and key control</li></ul>
+    </div>
+   </div>
+  </section>
+
+  <section id="retail" class="industry-section reveal">
+   <span class="sec-label">Industry 03</span>
+   <h2>Retail &amp; Commercial</h2>
+   <p class="lead">Shopping centers, storefronts, restaurants, and service commerce, scheduled around customer traffic, never through it. Pressure-washing on open-to-public schedules, floor care that respects merchandise, and restrooms maintained to brand standard.</p>
+   <div class="industry-image"><img src="https://images.unsplash.com/photo-1567449303078-57ad995bd323?w=1800&amp;q=85" alt="Shopping center walkway"></div>
+   <div class="sector-grid">
+    <div class="sector-block">
+     <h4>Typical programs</h4>
+     <ul><li>Storefront interior cleaning</li><li>Common area and food court programs</li><li>Exterior pressure washing</li><li>Window cleaning (monthly / quarterly)</li><li>Restroom deep cycles</li></ul>
+    </div>
+    <div class="sector-block">
+     <h4>Operational fit</h4>
+     <ul><li>Overnight / pre-open shifts</li><li>Holiday and peak-season surge crews</li><li>Multi-location consistency</li><li>Consolidated invoicing</li></ul>
+    </div>
+   </div>
+  </section>
+
+  <section id="education" class="industry-section reveal">
+   <span class="sec-label">Industry 04</span>
+   <h2>Education</h2>
+   <p class="lead">Private schools, colleges, and training centers, standards-driven cleaning that protects the environment students and staff share. Green-certified products where the institution requires them, written protocols, and vetted, background-checked teams.</p>
+   <div class="industry-image"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1800&amp;q=85" alt="Empty school hallway"></div>
+   <div class="sector-grid">
+    <div class="sector-block">
+     <h4>Typical programs</h4>
+     <ul><li>Classroom &amp; office nightly cleaning</li><li>Gym, cafeteria, restroom programs</li><li>Summer / holiday deep resets</li><li>Floor refinishing on breaks</li><li>Event post-clean support</li></ul>
+    </div>
+    <div class="sector-block">
+     <h4>What we provide</h4>
+     <ul><li>Background-checked personnel</li><li>Green-seal aligned product options</li><li>Documented sanitation frequencies</li><li>Supervisor walk-through logs</li></ul>
+    </div>
+   </div>
+  </section>
+
+  <section id="construction" class="industry-section reveal">
+   <span class="sec-label">Industry 05</span>
+   <h2>Construction</h2>
+   <p class="lead">General contractors, developers, and construction managers, rough, final, and turnover cleans that get certificates of occupancy signed on time. Equipped for new-build, renovation, and disaster-related rebuild work.</p>
+   <div class="industry-image"><img src="assets/img/milton-exterior-worker.jpg" alt="BlueSky specialist inspecting a commercial building exterior"></div>
+   <div class="sector-grid">
+    <div class="sector-block">
+     <h4>Typical scopes</h4>
+     <ul><li>Rough clean (post-drywall / trades)</li><li>Final clean (pre-turnover)</li><li>Punch-list cleans</li><li>Post-construction glass &amp; sealant</li><li>Rebuild / restoration support</li></ul>
+    </div>
+    <div class="sector-block">
+     <h4>How we operate</h4>
+     <ul><li>Coordinated with project schedule</li><li>PPE and safety orientation</li><li>Debris staging and haul-off</li><li>Certificate-of-occupancy turnover quality</li></ul>
+    </div>
+   </div>
+  </section>
+
+  <section id="property" class="industry-section reveal">
+   <span class="sec-label">Industry 06</span>
+   <h2>Property Management</h2>
+   <p class="lead">Multi-tenant buildings, mixed-use portfolios, and HOAs, one partner, multiple properties, consolidated reporting. Property managers get a single point of contact, standardized service levels, and monthly performance briefs per building.</p>
+   <div class="industry-image"><img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1800&amp;q=85" alt="Multi-tenant commercial building"></div>
+   <div class="sector-grid">
+    <div class="sector-block">
+     <h4>Portfolio services</h4>
+     <ul><li>Common-area and amenity cleaning</li><li>Exterior programs (pressure / windows)</li><li>Unit-turn and make-ready cleaning</li><li>Emergency response &amp; on-call</li><li>Monthly QA inspections</li></ul>
+    </div>
+    <div class="sector-block">
+     <h4>For the portfolio</h4>
+     <ul><li>Single account manager</li><li>Consolidated invoicing</li><li>Standardized service-level agreements</li><li>Multi-property reporting dashboard</li></ul>
+    </div>
+   </div>
+  </section>
+ </main>
+</div>
+
+<section class="cta-banner">
+ <div class="reveal">
+  <h2>Tell us about your portfolio.</h2>
+  <p>One building, one portfolio, or an emergency event, we will respond with a scoped proposal within three business days.</p>
+  <div class="cta-actions">
+   <a href="contact.html" class="btn btn-primary">Request a Proposal <span class="arrow">→</span></a>
+   <a href="services.html" class="btn btn-outline">See All Services</a>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="footer-grid">
+  <div class="footer-brand">
+   <strong>Blue<em>Sky</em></strong>
+   <p>A commercial facility services partner, cleaning, maintenance, and recovery programs delivered under measurable standards across the Southeast United States.</p>
+  </div>
+  <div class="footer-col"><h4>Company</h4><ul>
+   <li><a href="about.html">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="sustainability.html">Sustainability</a></li><li><a href="projects.html">Case Studies</a></li><li><a href="contact.html">Contact</a></li>
+  </ul></div>
+  <div class="footer-col"><h4>Services</h4><ul>
+   <li><a href="services/janitorial.html">Janitorial</a></li><li><a href="services/pressure-washing.html">Pressure Washing</a></li><li><a href="services/window-cleaning.html">Window Cleaning</a></li><li><a href="services/carpet-cleaning.html">Carpet Cleaning</a></li><li><a href="services/floor-care.html">Floor Stripping &amp; Waxing</a></li><li><a href="services/post-construction.html">Post-Construction</a></li><li><a href="services/property-decommission.html">Property Decommission</a></li>
+  </ul></div>
+  <div class="footer-col"><h4>Industries</h4><ul>
+   <li><a href="#corporate">Corporate</a></li><li><a href="#medical">Medical</a></li><li><a href="#retail">Retail</a></li><li><a href="#education">Education</a></li><li><a href="#construction">Construction</a></li><li><a href="#property">Property Mgmt</a></li>
+  </ul></div>
+  <div class="footer-col"><h4>Connect</h4><ul>
+   <li><a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a></li><li><a href="tel:+17815583458">(781) 558-3458</a></li><li><a href="https://instagram.com/bluesky_clean_service" target="_blank" rel="noopener">@bluesky_clean_service</a></li><li><a href="contact.html">Request a Proposal</a></li>
+  </ul></div>
+ </div>
+ <div class="footer-bottom">
+  <span>© 2026 BlueSky General Services. All rights reserved.</span>
+  <div class="footer-badges"><span>Licensed</span><span>Insured</span><span>Bonded</span></div>
+ </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const hamburger = document.getElementById('hamburger');
+const drawer = document.getElementById('mobileDrawer');
+const backdrop = document.getElementById('mobileBackdrop');
+const closeBtn = document.getElementById('mobileClose');
+function openD() { drawer.classList.add('open'); backdrop.classList.add('open'); document.body.style.overflow='hidden'; }
+function closeD() { drawer.classList.remove('open'); backdrop.classList.remove('open'); document.body.style.overflow=''; }
+hamburger.addEventListener('click', openD);
+closeBtn.addEventListener('click', closeD);
+backdrop.addEventListener('click', closeD);
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeD));
+
+// Active state in sidebar nav on scroll
+const sidebarLinks = document.querySelectorAll('.industries-nav a');
+const sections = document.querySelectorAll('.industry-section');
+const nio = new IntersectionObserver((entries) => {
+ entries.forEach(e => {
+  if (e.isIntersecting) {
+   sidebarLinks.forEach(l => l.classList.remove('active'));
+   const link = document.querySelector('.industries-nav a[href="#' + e.target.id + '"]');
+   if (link) link.classList.add('active');
+  }
+ });
+}, { rootMargin: '-40% 0px -55% 0px' });
+sections.forEach(s => nio.observe(s));
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milton Hero — Opção 2 vs 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root { --black:#1c1917; --stone-200:#e7e5e4; --stone-400:#a8a29e; --stone-500:#78716c; --white:#fff; --accent:#166534; --accent-soft:#dcfce7; }
+body { font-family:'DM Sans',sans-serif; background:var(--stone-200); color:var(--black); }
+img { display:block; max-width:100%; height:100%; object-fit:cover; }
+
+.page-hd { padding:2rem 4vw 1.5rem; background:var(--white); border-bottom:1px solid var(--stone-200); }
+.page-hd h1 { font-family:'Playfair Display',serif; font-style:italic; font-size:1.7rem; margin-bottom:0.4rem; }
+.page-hd p { color:var(--stone-500); font-size:0.92rem; max-width:62ch; line-height:1.5; }
+
+.opt-tag { background:var(--white); padding:1rem 4vw; border-bottom:1px solid var(--stone-200); display:flex; align-items:baseline; gap:0.6rem; }
+.opt-tag strong { font-family:'Playfair Display',serif; font-style:italic; color:var(--accent); font-size:1.1rem; }
+.opt-tag span { font-size:0.78rem; color:var(--stone-500); letter-spacing:0.08em; }
+
+/* Common hero base */
+.case-hero { position:relative; min-height:78vh; overflow:hidden; color:var(--white); background:var(--black); display:flex; align-items:flex-end; }
+.case-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(28,25,23,0.2) 0%, rgba(28,25,23,0.9) 100%); z-index:2; }
+.case-hero-content { position:relative; z-index:3; padding:4rem 4vw 4rem; max-width:1200px; width:100%; }
+.case-tag { display:inline-flex; align-items:center; gap:0.75rem; font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent-soft); margin-bottom:1.2rem; }
+.case-tag::before { content:""; width:32px; height:1px; background:var(--accent); }
+.case-hero h1 { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(2.2rem,4.8vw,4rem); line-height:1.04; max-width:18ch; margin-bottom:1.2rem; font-weight:400; }
+.case-hero .lead { color:rgba(255,255,255,0.85); font-size:1.05rem; max-width:58ch; line-height:1.6; }
+
+/* OPTION 2 — CARROSSEL */
+.opt2-media { position:absolute; inset:0; z-index:1; }
+.opt2-slide { position:absolute; inset:0; opacity:0; transition:opacity 1.2s ease; }
+.opt2-slide.active { opacity:1; }
+.opt2-dots { position:absolute; bottom:1.5rem; right:2rem; z-index:5; display:flex; gap:0.5rem; }
+.opt2-dot { width:30px; height:2px; background:rgba(255,255,255,0.35); transition:background 0.3s; }
+.opt2-dot.active { background:var(--white); }
+
+/* OPTION 3 — SPLIT */
+.opt3 { display:grid; grid-template-columns:1fr 1fr; min-height:78vh; background:var(--black); color:var(--white); }
+.opt3-side { position:relative; overflow:hidden; }
+.opt3-side img { width:100%; height:100%; object-fit:cover; }
+.opt3-side::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(28,25,23,0.15) 0%, rgba(28,25,23,0.55) 100%); z-index:2; }
+.opt3-label { position:absolute; bottom:1.5rem; left:1.5rem; z-index:3; font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.85); padding:0.5rem 0.9rem; background:rgba(28,25,23,0.6); backdrop-filter:blur(6px); }
+.opt3-content { position:absolute; inset:0; z-index:4; padding:4rem 3rem; display:flex; flex-direction:column; justify-content:flex-end; pointer-events:none; }
+.opt3-content .case-tag { color:var(--accent-soft); }
+.opt3-content h1 { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(1.8rem,3.5vw,2.8rem); line-height:1.05; max-width:14ch; margin-bottom:1rem; font-weight:400; }
+.opt3-content .lead { color:rgba(255,255,255,0.9); font-size:0.95rem; max-width:36ch; line-height:1.55; }
+
+/* Slot the content over the LEFT side */
+.opt3-side.left .opt3-content { display:flex; }
+.opt3-side.right .opt3-content { display:none; }
+
+@media (max-width:900px) {
+ .opt3 { grid-template-columns:1fr; }
+ .opt3-side { min-height:50vh; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-hd">
+ <h1>Milton Hero — comparação Opção 2 vs Opção 3</h1>
+ <p>Mesmo tópico (Hurricane Milton case study), duas abordagens visuais. Role para baixo, decida qual prefere e me diga o número.</p>
+</header>
+
+<!-- OPTION 2 — CARROSSEL -->
+<div class="opt-tag"><strong>Opção 2 · Carrossel</strong><span>Slideshow auto das 4 fotos da Capa, hero full-bleed</span></div>
+<section class="case-hero" id="opt2">
+ <div class="opt2-media">
+  <div class="opt2-slide active"><img src="assets/img/milton/capa/hero-aerial.webp" alt="Aerial wide of collapsed crane"></div>
+  <div class="opt2-slide"><img src="assets/img/milton/capa/aerial-topdown.webp" alt="Top-down aerial of building damage"></div>
+  <div class="opt2-slide"><img src="assets/img/milton/capa/street-impact.webp" alt="Street view of crane impact"></div>
+  <div class="opt2-slide"><img src="assets/img/milton/capa/street-people.webp" alt="People near crane wreckage"></div>
+ </div>
+ <div class="opt2-dots">
+  <div class="opt2-dot active"></div>
+  <div class="opt2-dot"></div>
+  <div class="opt2-dot"></div>
+  <div class="opt2-dot"></div>
+ </div>
+ <div class="case-hero-content">
+  <span class="case-tag">Hurricane Milton · Tampa, Oct 2024</span>
+  <h1>The crane fell.<br>The building reopened.</h1>
+  <p class="lead">When Milton's wind brought a construction crane down across a commercial building, BlueSky mobilized a 30-plus-person recovery operation within 24 hours.</p>
+ </div>
+</section>
+
+<!-- OPTION 3 — SPLIT -->
+<div class="opt-tag"><strong>Opção 3 · Split</strong><span>Capa (esquerda, guindaste) + Recovery (direita, equipe BlueSky)</span></div>
+<section class="opt3">
+ <div class="opt3-side left">
+  <img src="assets/img/milton/capa/hero-aerial.webp" alt="Crane fallen — the scene">
+  <div class="opt3-label">The scene</div>
+  <div class="opt3-content">
+   <span class="case-tag">Hurricane Milton · Tampa</span>
+   <h1>The crane fell.<br>The building reopened.</h1>
+   <p class="lead">BlueSky mobilized a 30-plus-person recovery operation within 24 hours of Milton's landfall.</p>
+  </div>
+ </div>
+ <div class="opt3-side right">
+  <img src="assets/img/milton-team-lobby.jpg" alt="BlueSky recovery team — the response">
+  <div class="opt3-label">The response</div>
+ </div>
+</section>
+
+<script>
+// Carousel for Option 2
+(function(){
+ const slides = document.querySelectorAll('#opt2 .opt2-slide');
+ const dots = document.querySelectorAll('#opt2 .opt2-dot');
+ if (!slides.length) return;
+ let i = 0;
+ setInterval(() => {
+  slides[i].classList.remove('active');
+  dots[i].classList.remove('active');
+  i = (i + 1) % slides.length;
+  slides[i].classList.add('active');
+  dots[i].classList.add('active');
+ }, 4500);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sustainability | BlueSky General Services</title>
+<meta name="description" content="Green-certified product options, documented water and waste discipline, and measurable environmental practice, not sustainability marketing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --black:#1c1917; --charcoal:#292524; --stone-500:#78716c; --stone-400:#a8a29e; --stone-300:#d6d3d1; --stone-200:#e7e5e4; --stone-100:#f5f5f4; --stone-50:#fafaf9; --white:#fff; --accent:#1e3a8a; --accent-hover:#1e40af; --accent-soft:#dbeafe; }
+html { scroll-behavior: smooth; }
+body { font-family:'DM Sans',sans-serif; color:var(--black); background:var(--white); font-size:16px; line-height:1.7; font-weight:300; -webkit-font-smoothing:antialiased; }
+h1,h2,h3,h4 { font-family:'Playfair Display',serif; font-weight:400; line-height:1.15; letter-spacing:-0.01em; }
+a { color:inherit; text-decoration:none; }
+img { display:block; max-width:100%; height:auto; object-fit:cover; }
+.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-400); font-weight:400; }
+.btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.9rem 1.8rem; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:500; border:1px solid transparent; border-radius:2px; cursor:pointer; transition:all 0.3s ease; font-family:inherit; }
+.btn-primary { background:var(--accent); color:var(--white); }
+.btn-primary:hover { background:var(--accent-hover); transform:translateY(-1px); }
+.btn-outline { background:transparent; color:var(--white); border-color:rgba(255,255,255,0.45); }
+.btn-outline:hover { background:rgba(255,255,255,0.08); border-color:var(--white); }
+.btn .arrow { transition:transform 0.3s ease; }
+.btn:hover .arrow { transform:translateX(4px); }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.9s ease, transform 0.9s ease; }
+.reveal.in { opacity:1; transform:translateY(0); }
+.reveal[data-delay="1"] { transition-delay:0.1s; } .reveal[data-delay="2"] { transition-delay:0.2s; } .reveal[data-delay="3"] { transition-delay:0.3s; }
+
+.topbar { display:flex; justify-content:space-between; align-items:center; gap:2rem; padding:0.55rem 4vw; font-size:0.72rem; letter-spacing:0.06em; background:var(--black); color:var(--stone-300); }
+.topbar-left, .topbar-right { display:flex; gap:1.5rem; align-items:center; }
+.topbar a { color:var(--stone-300); transition:color 0.3s; }
+.topbar a:hover { color:var(--white); }
+.topbar-sep { color:var(--stone-500); }
+
+.navbar { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 4vw; border-bottom:1px solid var(--stone-200); position:sticky; top:0; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); z-index:100; }
+.navbar-logo { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:500; letter-spacing:0.02em; display:inline-flex; align-items:baseline; gap:0.45rem; }
+.navbar-logo em { font-style:italic; color:var(--accent); }
+.navbar-logo .tag { font-family:'DM Sans',sans-serif; font-size:0.68rem; color:var(--stone-500); letter-spacing:0.12em; text-transform:uppercase; font-weight:400; }
+.navbar-links { display:flex; align-items:center; gap:2.2rem; list-style:none; font-size:0.82rem; letter-spacing:0.05em; }
+.navbar-links > li { position:relative; }
+.navbar-links a { color:var(--stone-500); transition:color 0.3s; padding:0.4rem 0; display:inline-flex; align-items:center; gap:0.3rem; }
+.navbar-links a:hover, .navbar-links a.active { color:var(--black); }
+.navbar-links .caret { font-size:0.65rem; opacity:0.6; }
+.btn-nav { background:var(--accent); color:var(--white) !important; padding:0.65rem 1.3rem !important; border-radius:2px; font-weight:500; transition:background 0.3s; }
+.btn-nav:hover { background:var(--accent-hover); }
+.megamenu { position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(-8px); margin-top:1.2rem; background:var(--white); border:1px solid var(--stone-200); box-shadow:0 20px 50px rgba(0,0,0,0.08); padding:2.2rem 2.5rem; min-width:520px; display:grid; grid-template-columns:repeat(2,1fr); gap:1.2rem 2.5rem; opacity:0; pointer-events:none; transition:opacity 0.25s, transform 0.25s; z-index:101; }
+.navbar-links > li:hover .megamenu, .navbar-links > li:focus-within .megamenu { opacity:1; pointer-events:auto; transform:translateX(-50%) translateY(0); }
+.megamenu-item { display:block; padding:0.4rem 0; }
+.megamenu-item strong { display:block; font-family:'Playfair Display',serif; font-size:1rem; font-weight:500; font-style:italic; color:var(--black); margin-bottom:0.15rem; }
+.megamenu-item span { font-size:0.78rem; color:var(--stone-500); letter-spacing:0; text-transform:none; }
+.megamenu-item:hover strong { color:var(--accent); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:0.5rem; }
+.hamburger span { width:22px; height:1.5px; background:var(--black); }
+
+.page-hero { background:var(--stone-50); padding:6rem 4vw 5rem; border-bottom:1px solid var(--stone-200); }
+.page-hero-inner { max-width:820px; }
+.page-hero h1 { font-size:clamp(2.4rem, 4.5vw, 3.8rem); font-style:italic; font-weight:400; margin:1rem 0 1.5rem; line-height:1.1; }
+.page-hero p { color:var(--stone-500); font-size:1.1rem; line-height:1.7; max-width:62ch; }
+.breadcrumb { font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone-400); margin-bottom:0.5rem; }
+.breadcrumb a { color:var(--stone-400); }
+.breadcrumb a:hover { color:var(--black); }
+.breadcrumb-sep { margin:0 0.5rem; }
+
+section { padding:7rem 4vw; }
+
+.principles { background:var(--white); }
+.principles-head { max-width:820px; margin-bottom:4rem; }
+.principles-head h2 { font-size:clamp(1.9rem,2.8vw,2.4rem); font-style:italic; margin:0.8rem 0 1rem; }
+.principles-head p { color:var(--stone-500); max-width:58ch; }
+.principle-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0; border-top:1px solid var(--stone-200); border-left:1px solid var(--stone-200); max-width:1300px; }
+.principle { padding:2.5rem 2.5rem; border-right:1px solid var(--stone-200); border-bottom:1px solid var(--stone-200); }
+.principle .num { font-family:'Playfair Display',serif; font-size:0.95rem; font-style:italic; color:var(--accent); letter-spacing:0.1em; }
+.principle h3 { font-size:1.3rem; font-style:italic; font-weight:500; margin:0.6rem 0 0.8rem; }
+.principle p { color:var(--stone-500); font-size:0.95rem; line-height:1.75; }
+
+.practice { background:var(--stone-50); border-top:1px solid var(--stone-200); display:grid; grid-template-columns:1fr 1.1fr; gap:0; align-items:stretch; }
+.practice-media { overflow:hidden; }
+.practice-media img { width:100%; height:100%; object-fit:cover; min-height:500px; }
+.practice-body { padding:6rem 5rem; }
+.practice-body h2 { font-size:clamp(1.9rem,2.8vw,2.4rem); font-style:italic; margin:0.8rem 0 1.2rem; line-height:1.15; }
+.practice-body p { color:var(--stone-500); margin-bottom:1.2rem; max-width:52ch; }
+.practice-list { list-style:none; display:flex; flex-direction:column; gap:0.6rem; margin-top:1rem; }
+.practice-list li { padding-left:1.6rem; position:relative; font-size:0.95rem; color:var(--charcoal); }
+.practice-list li::before { content:""; position:absolute; left:0; top:0.65rem; width:8px; height:8px; border:1.5px solid var(--accent); border-radius:50%; }
+
+.transparency { background:var(--white); padding:7rem 4vw; border-top:1px solid var(--stone-200); }
+.transparency-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1.6fr; gap:5rem; align-items:start; }
+.transparency-inner h2 { font-size:clamp(1.8rem,2.5vw,2.1rem); font-style:italic; margin:0.8rem 0 1rem; }
+.transparency-inner > div > p { color:var(--stone-500); }
+.metrics-list { display:grid; grid-template-columns:1fr 1fr; gap:0; border-top:1px solid var(--stone-200); border-left:1px solid var(--stone-200); }
+.metric-item { padding:1.5rem; border-right:1px solid var(--stone-200); border-bottom:1px solid var(--stone-200); }
+.metric-item strong { display:block; font-family:'Playfair Display',serif; font-style:italic; font-size:1.1rem; margin-bottom:0.25rem; }
+.metric-item span { font-size:0.8rem; color:var(--stone-500); letter-spacing:0.03em; }
+
+.cta-banner { background:var(--black); color:var(--white); text-align:center; padding:7rem 4vw; }
+.cta-banner h2 { font-size:clamp(2rem,4vw,3rem); font-style:italic; font-weight:400; max-width:22ch; margin:0 auto 1.2rem; line-height:1.15; }
+.cta-banner p { color:rgba(255,255,255,0.7); font-size:1rem; max-width:52ch; margin:0 auto 2.5rem; line-height:1.7; }
+.cta-actions { display:inline-flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
+.cta-banner .btn-primary { background:var(--white); color:var(--black); }
+.cta-banner .btn-primary:hover { background:var(--accent); color:var(--white); }
+
+footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem; border-top:1px solid rgba(255,255,255,0.08); }
+.footer-grid { display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr 1fr; gap:3rem; margin-bottom:4rem; }
+.footer-brand strong { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:500; color:var(--white); display:block; margin-bottom:1rem; }
+.footer-brand em { font-style:italic; color:var(--accent-soft); }
+.footer-brand p { font-size:0.88rem; line-height:1.7; max-width:34ch; }
+.footer-col h4 { font-family:'DM Sans',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--white); font-weight:500; margin-bottom:1.2rem; }
+.footer-col ul { list-style:none; display:flex; flex-direction:column; gap:0.6rem; }
+.footer-col a { font-size:0.85rem; color:var(--stone-400); transition:color 0.3s; }
+.footer-col a:hover { color:var(--white); }
+.footer-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.08); font-size:0.78rem; color:var(--stone-500); flex-wrap:wrap; gap:1rem; }
+.footer-badges { display:flex; gap:1.5rem; }
+.footer-badges span { letter-spacing:0.12em; text-transform:uppercase; font-size:0.7rem; }
+
+.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
+.mobile-drawer.open { transform:translateX(0); }
+.mobile-drawer ul { list-style:none; display:flex; flex-direction:column; gap:1.4rem; }
+.mobile-drawer a { font-family:'Playfair Display',serif; font-size:1.3rem; font-style:italic; color:var(--black); }
+.mobile-close { position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; font-size:1.5rem; cursor:pointer; }
+.mobile-backdrop { position:fixed; inset:0; background:rgba(28,25,23,0.5); z-index:199; opacity:0; pointer-events:none; transition:opacity 0.35s; }
+.mobile-backdrop.open { opacity:1; pointer-events:auto; }
+
+@media (max-width:1100px) { .footer-grid { grid-template-columns:1.4fr 1fr 1fr; } }
+@media (max-width:900px) {
+ .navbar-links { display:none; } .hamburger { display:flex; } .topbar-left { display:none; }
+ .principle-grid { grid-template-columns:1fr; }
+ .practice { grid-template-columns:1fr; }
+ .practice-body { padding:3.5rem 4vw; }
+ .practice-media img { min-height:300px; }
+ .transparency-inner { grid-template-columns:1fr; gap:2.5rem; }
+ .metrics-list { grid-template-columns:1fr; }
+ .footer-grid { grid-template-columns:1fr 1fr; }
+ section, .transparency { padding:5rem 4vw; }
+ .page-hero { padding:4rem 4vw 3rem; }
+}
+@media (max-width:600px) {
+ .topbar { padding:0.5rem 4vw; font-size:0.68rem; } .topbar-right { gap:0.8rem; }
+ .footer-grid { grid-template-columns:1fr; gap:2.5rem; }
+ .footer-bottom { flex-direction:column; text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+ <div class="topbar-left"><span>Commercial facility services · Licensed · Insured · Bonded</span></div>
+ <div class="topbar-right">
+  <a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a>
+  <span class="topbar-sep">·</span>
+  <a href="tel:+17815583458">(781) 558-3458</a>
+  <span class="topbar-sep">·</span>
+  <a href="https://instagram.com/bluesky_clean_service" target="_blank" rel="noopener">Instagram</a>
+ </div>
+</div>
+
+<nav class="navbar">
+ <a href="index.html" class="navbar-logo">Blue<em>Sky</em><span class="tag">General Services</span></a>
+ <ul class="navbar-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="services.html">Services <span class="caret">▾</span></a><div class="megamenu">
+   <a href="services/janitorial.html" class="megamenu-item"><strong>Janitorial</strong><span>Recurring commercial cleaning programs</span></a>
+   <a href="services/pressure-washing.html" class="megamenu-item"><strong>Pressure Washing</strong><span>Exterior high-pressure cleaning</span></a>
+   <a href="services/window-cleaning.html" class="megamenu-item"><strong>Window Cleaning</strong><span>Interior &amp; high-rise glass care</span></a>
+   <a href="services/carpet-cleaning.html" class="megamenu-item"><strong>Carpet Cleaning</strong><span>Extraction &amp; restoration</span></a>
+   <a href="services/floor-care.html" class="megamenu-item"><strong>Floor Stripping &amp; Waxing</strong><span>Hard-surface restoration</span></a>
+   <a href="services/post-construction.html" class="megamenu-item"><strong>Post-Construction</strong><span>Disaster recovery &amp; turnover cleanup</span></a>
+    <a href="services/property-decommission.html" class="megamenu-item"><strong>Property Decommission</strong><span>Decommission &amp; fog disinfect</span></a>
+  </div></li>
+  <li><a href="industries.html">Industries <span class="caret">▾</span></a><div class="megamenu">
+   <a href="industries.html#corporate" class="megamenu-item"><strong>Corporate Offices</strong><span>Class A / Class B environments</span></a>
+   <a href="industries.html#medical" class="megamenu-item"><strong>Medical &amp; Healthcare</strong><span>Clinics, medical offices, labs</span></a>
+   <a href="industries.html#retail" class="megamenu-item"><strong>Retail &amp; Commercial</strong><span>Shopping centers &amp; storefronts</span></a>
+   <a href="industries.html#education" class="megamenu-item"><strong>Education</strong><span>Schools, colleges, training centers</span></a>
+   <a href="industries.html#construction" class="megamenu-item"><strong>Construction</strong><span>Developer &amp; contractor partnerships</span></a>
+   <a href="industries.html#property" class="megamenu-item"><strong>Property Management</strong><span>Multi-tenant &amp; HOA portfolios</span></a>
+  </div></li>
+  <li><a href="projects.html">Case Studies</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="careers.html">Careers</a></li>
+  <li><a href="contact.html" class="btn-nav">Request a Proposal</a></li>
+ </ul>
+ <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-backdrop" id="mobileBackdrop"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+ <button class="mobile-close" id="mobileClose" aria-label="Close menu">×</button>
+ <ul>
+  <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="industries.html">Industries</a></li><li><a href="projects.html">Case Studies</a></li><li><a href="about.html">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="sustainability.html">Sustainability</a></li><li><a href="contact.html" class="btn-nav">Request a Proposal</a></li>
+ </ul>
+</div>
+
+<header class="page-hero">
+ <div class="page-hero-inner reveal">
+  <div class="breadcrumb"><a href="index.html">Home</a> <span class="breadcrumb-sep">/</span> Sustainability</div>
+  <span class="label">Green Practice</span>
+  <h1>Sustainability that measures its own impact.</h1>
+  <p>Green-certified product options, documented water discipline, and waste-stream segregation, available on request, measured like everything else we report. Not sustainability marketing.</p>
+ </div>
+</header>
+
+<section class="principles">
+ <div class="principles-head reveal">
+  <span class="label">Our Practice</span>
+  <h2>Four operating principles, written, not aspirational.</h2>
+  <p>Each principle maps to a product list, a process step, or a monthly metric we report on. If it is not measurable, it is not on this page.</p>
+ </div>
+ <div class="principle-grid">
+  <div class="principle reveal" data-delay="1">
+   <span class="num">01</span>
+   <h3>Green Seal-aligned products on request.</h3>
+   <p>Where the client requires it, we run Green Seal-certified or equivalent reduced-impact chemistry end-to-end. Product list, SDS, and EPA registrations provided before contract signing.</p>
+  </div>
+  <div class="principle reveal" data-delay="2">
+   <span class="num">02</span>
+   <h3>Dilution control, not product waste.</h3>
+   <p>Chemical dilution is metered, not eyeballed, reducing both product use and water use. Staff are trained on dilution ratios and audited during supervisor walks.</p>
+  </div>
+  <div class="principle reveal" data-delay="1">
+   <span class="num">03</span>
+   <h3>Waste-stream segregation.</h3>
+   <p>Trash consolidation respects the client's recycling program when present. Regulated waste in medical environments is handled per OSHA bloodborne pathogen protocols.</p>
+  </div>
+  <div class="principle reveal" data-delay="2">
+   <span class="num">04</span>
+   <h3>Equipment, not consumables.</h3>
+   <p>Microfiber, reusable pads, and machine-washable cloths replace single-use wherever possible. Equipment is maintained, not replaced, service records are logged.</p>
+  </div>
+ </div>
+</section>
+
+<section class="practice">
+ <div class="practice-media reveal"><img src="assets/img/milton-dehumidifiers.jpg" alt="Industrial dehumidification equipment at a recovery site"></div>
+ <div class="practice-body reveal" data-delay="1">
+  <span class="label">Equipment &amp; Method</span>
+  <h2>Sustainable practice is disciplined practice.</h2>
+  <p>Most of what makes cleaning &ldquo;green&rdquo; is not a product swap, it is method: controlled dilution, right-sized equipment, reusable materials, and a team that follows the method because the method is written.</p>
+  <p>Our disaster recovery operations illustrate the point: industrial dehumidification and controlled extraction reduce the material volume that ends up as waste. Every truckload is measured. Every chemical application is logged.</p>
+  <ul class="practice-list">
+   <li>Color-coded microfiber by zone (cross-contamination control)</li>
+   <li>Dilution-controlled chemistry (product &amp; water discipline)</li>
+   <li>HEPA vacuums as standard equipment</li>
+   <li>Reusable PPE where regulation permits</li>
+   <li>Waste logs for material-volume-dependent engagements</li>
+  </ul>
+ </div>
+</section>
+
+<section class="transparency">
+ <div class="transparency-inner">
+  <div class="reveal">
+   <span class="label">Transparency</span>
+   <h2>What we are willing to measure.</h2>
+   <p>Clients who want sustainability reporting as part of their program receive it, tied to the same monthly performance brief we already produce. Metrics available on request include:</p>
+  </div>
+  <div class="metrics-list reveal" data-delay="1">
+   <div class="metric-item"><strong>Product-use volume</strong><span>Per facility per month</span></div>
+   <div class="metric-item"><strong>Green-certified product ratio</strong><span>% of total product use</span></div>
+   <div class="metric-item"><strong>Dilution compliance</strong><span>Sampled during supervisor walks</span></div>
+   <div class="metric-item"><strong>Waste-stream segregation</strong><span>Recycling adherence rate</span></div>
+   <div class="metric-item"><strong>Reusable-material tracking</strong><span>Microfiber &amp; pad inventory lifecycle</span></div>
+   <div class="metric-item"><strong>Equipment service life</strong><span>Machine-hour and maintenance logs</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="cta-banner">
+ <div class="reveal">
+  <h2>Want green-certified programs in your proposal?</h2>
+  <p>Request a proposal and note sustainability as a requirement, we will include product lists, certifications, and measurable commitments in the scope.</p>
+  <div class="cta-actions">
+   <a href="contact.html" class="btn btn-primary">Request a Proposal <span class="arrow">→</span></a>
+   <a href="about.html" class="btn btn-outline">About BlueSky</a>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="footer-grid">
+  <div class="footer-brand">
+   <strong>Blue<em>Sky</em></strong>
+   <p>A commercial facility services partner, cleaning, maintenance, and recovery programs delivered under measurable standards across the Southeast United States.</p>
+  </div>
+  <div class="footer-col"><h4>Company</h4><ul>
+   <li><a href="about.html">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="sustainability.html">Sustainability</a></li><li><a href="projects.html">Case Studies</a></li><li><a href="contact.html">Contact</a></li>
+  </ul></div>
+  <div class="footer-col"><h4>Services</h4><ul>
+   <li><a href="services/janitorial.html">Janitorial</a></li><li><a href="services/pressure-washing.html">Pressure Washing</a></li><li><a href="services/window-cleaning.html">Window Cleaning</a></li><li><a href="services/carpet-cleaning.html">Carpet Cleaning</a></li><li><a href="services/floor-care.html">Floor Stripping &amp; Waxing</a></li><li><a href="services/post-construction.html">Post-Construction</a></li><li><a href="services/property-decommission.html">Property Decommission</a></li>
+  </ul></div>
+  <div class="footer-col"><h4>Industries</h4><ul>
+   <li><a href="industries.html#corporate">Corporate</a></li><li><a href="industries.html#medical">Medical</a></li><li><a href="industries.html#retail">Retail</a></li><li><a href="industries.html#education">Education</a></li><li><a href="industries.html#construction">Construction</a></li><li><a href="industries.html#property">Property Mgmt</a></li>
+  </ul></div>
+  <div class="footer-col"><h4>Connect</h4><ul>
+   <li><a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a></li><li><a href="tel:+17815583458">(781) 558-3458</a></li><li><a href="https://instagram.com/bluesky_clean_service" target="_blank" rel="noopener">@bluesky_clean_service</a></li><li><a href="contact.html">Request a Proposal</a></li>
+  </ul></div>
+ </div>
+ <div class="footer-bottom">
+  <span>© 2026 BlueSky General Services. All rights reserved.</span>
+  <div class="footer-badges"><span>Licensed</span><span>Insured</span><span>Bonded</span></div>
+ </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const hamburger = document.getElementById('hamburger');
+const drawer = document.getElementById('mobileDrawer');
+const backdrop = document.getElementById('mobileBackdrop');
+const closeBtn = document.getElementById('mobileClose');
+function openD() { drawer.classList.add('open'); backdrop.classList.add('open'); document.body.style.overflow='hidden'; }
+function closeD() { drawer.classList.remove('open'); backdrop.classList.remove('open'); document.body.style.overflow=''; }
+hamburger.addEventListener('click', openD);
+closeBtn.addEventListener('click', closeD);
+backdrop.addEventListener('click', closeD);
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeD));
+</script>
+</body>
+</html>

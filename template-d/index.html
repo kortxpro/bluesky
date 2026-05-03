@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlueSky General Services | Enterprise Facility Services Partner</title>
+<meta name="description" content="Commercial cleaning and facility services executed at enterprise standard. Licensed, insured, bonded. Serving corporate, medical, retail, education, construction, and property management across the Southeast United States.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+ --black: #1c1917;
+ --charcoal: #292524;
+ --stone-500: #78716c;
+ --stone-400: #a8a29e;
+ --stone-300: #d6d3d1;
+ --stone-200: #e7e5e4;
+ --stone-100: #f5f5f4;
+ --stone-50: #fafaf9;
+ --white: #ffffff;
+ --accent: #1e3a8a;
+ --accent-hover: #1e40af;
+ --accent-soft: #dbeafe;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+ font-family: 'DM Sans', sans-serif;
+ color: var(--black);
+ background: var(--white);
+ font-size: 16px;
+ line-height: 1.7;
+ font-weight: 300;
+ -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+ font-family: 'Playfair Display', serif;
+ font-weight: 400;
+ line-height: 1.15;
+ letter-spacing: -0.01em;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; object-fit: cover; }
+
+/* ── Utilities ── */
+.container { padding: 0 4vw; }
+.label {
+ display: inline-block;
+ font-size: 0.72rem;
+ letter-spacing: 0.2em;
+ text-transform: uppercase;
+ color: var(--stone-400);
+ font-weight: 400;
+}
+.btn {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.5rem;
+ padding: 0.9rem 1.8rem;
+ font-size: 0.85rem;
+ letter-spacing: 0.05em;
+ text-transform: uppercase;
+ font-weight: 500;
+ border: 1px solid transparent;
+ border-radius: 2px;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ font-family: inherit;
+}
+.btn-primary { background: var(--accent); color: var(--white); }
+.btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.45); }
+.btn-outline:hover { background: rgba(255,255,255,0.08); border-color: var(--white); }
+.btn-ghost { background: transparent; color: var(--black); border-color: var(--stone-300); }
+.btn-ghost:hover { border-color: var(--black); }
+.btn .arrow { transition: transform 0.3s ease; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal[data-delay="1"] { transition-delay: 0.1s; }
+.reveal[data-delay="2"] { transition-delay: 0.2s; }
+.reveal[data-delay="3"] { transition-delay: 0.3s; }
+.reveal[data-delay="4"] { transition-delay: 0.4s; }
+.reveal[data-delay="5"] { transition-delay: 0.5s; }
+
+/* ── Topbar ── */
+.topbar {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 2rem;
+ padding: 0.55rem 4vw;
+ font-size: 0.72rem;
+ letter-spacing: 0.06em;
+ background: var(--black);
+ color: var(--stone-300);
+}
+.topbar-left, .topbar-right { display: flex; gap: 1.5rem; align-items: center; }
+.topbar a { color: var(--stone-300); transition: color 0.3s; }
+.topbar a:hover { color: var(--white); }
+.topbar-sep { color: var(--stone-500); }
+
+/* ── Navbar ── */
+.navbar {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 1.2rem 4vw;
+ border-bottom: 1px solid var(--stone-200);
+ position: sticky;
+ top: 0;
+ background: rgba(255,255,255,0.97);
+ backdrop-filter: blur(10px);
+ -webkit-backdrop-filter: blur(10px);
+ z-index: 100;
+}
+.navbar-logo {
+ font-family: 'Playfair Display', serif;
+ font-size: 1.2rem;
+ font-weight: 500;
+ letter-spacing: 0.02em;
+ display: inline-flex;
+ align-items: baseline;
+ gap: 0.45rem;
+}
+.navbar-logo em { font-style: italic; color: var(--accent); }
+.navbar-logo .tag {
+ font-family: 'DM Sans', sans-serif;
+ font-size: 0.68rem;
+ color: var(--stone-500);
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ font-weight: 400;
+}
+.navbar-links {
+ display: flex;
+ align-items: center;
+ gap: 2.2rem;
+ list-style: none;
+ font-size: 0.82rem;
+ letter-spacing: 0.05em;
+}
+.navbar-links > li { position: relative; }
+.navbar-links a {
+ color: var(--stone-500);
+ transition: color 0.3s;
+ padding: 0.4rem 0;
+ display: inline-flex;
+ align-items: center;
+ gap: 0.3rem;
+}
+.navbar-links a:hover,
+.navbar-links a.active { color: var(--black); }
+.navbar-links .caret { font-size: 0.65rem; opacity: 0.6; }
+.btn-nav {
+ background: var(--accent);
+ color: var(--white) !important;
+ padding: 0.65rem 1.3rem !important;
+ border-radius: 2px;
+ font-weight: 500;
+ transition: background 0.3s;
+}
+.btn-nav:hover { background: var(--accent-hover); }
+
+/* ── Mega menu ── */
+.megamenu {
+ position: absolute;
+ top: 100%;
+ left: 50%;
+ transform: translateX(-50%) translateY(-8px);
+ margin-top: 1.2rem;
+ background: var(--white);
+ border: 1px solid var(--stone-200);
+ box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+ padding: 2.2rem 2.5rem;
+ min-width: 520px;
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 1.2rem 2.5rem;
+ opacity: 0;
+ pointer-events: none;
+ transition: opacity 0.25s, transform 0.25s;
+ z-index: 101;
+}
+.navbar-links > li:hover .megamenu,
+.navbar-links > li:focus-within .megamenu {
+ opacity: 1;
+ pointer-events: auto;
+ transform: translateX(-50%) translateY(0);
+}
+.megamenu-item { display: block; padding: 0.4rem 0; }
+.megamenu-item strong {
+ display: block;
+ font-family: 'Playfair Display', serif;
+ font-size: 1rem;
+ font-weight: 500;
+ font-style: italic;
+ color: var(--black);
+ margin-bottom: 0.15rem;
+}
+.megamenu-item span {
+ font-size: 0.78rem;
+ color: var(--stone-500);
+ letter-spacing: 0;
+ text-transform: none;
+}
+.megamenu-item:hover strong { color: var(--accent); }
+
+.hamburger {
+ display: none;
+ flex-direction: column;
+ gap: 5px;
+ background: none;
+ border: none;
+ cursor: pointer;
+ padding: 0.5rem;
+}
+.hamburger span {
+ width: 22px;
+ height: 1.5px;
+ background: var(--black);
+ transition: transform 0.3s, opacity 0.3s;
+}
+
+/* ── Hero ── */
+.hero {
+ position: relative;
+ min-height: 92vh;
+ display: flex;
+ align-items: flex-end;
+ overflow: hidden;
+ color: var(--white);
+ background: var(--black);
+}
+.hero-media {
+ position: absolute;
+ inset: 0;
+ width: 100%;
+ height: 100%;
+ overflow: hidden;
+ z-index: 1;
+}
+.hero-media img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ object-position: center 55%;
+ animation: heroZoom 22s ease-in-out infinite alternate;
+}
+@keyframes heroZoom {
+ 0%   { transform: scale(1.0); }
+ 100% { transform: scale(1.08); }
+}
+.hero-overlay {
+ position: absolute;
+ inset: 0;
+ background: linear-gradient(180deg, rgba(28,25,23,0.35) 0%, rgba(28,25,23,0.55) 55%, rgba(28,25,23,0.88) 100%);
+ z-index: 2;
+}
+.hero-content {
+ position: relative;
+ z-index: 3;
+ padding: 6rem 4vw 5rem;
+ max-width: 1200px;
+ width: 100%;
+}
+.hero-label {
+ color: rgba(255,255,255,0.75);
+ margin-bottom: 2rem;
+ display: inline-flex;
+ align-items: center;
+ gap: 0.75rem;
+ font-size: 0.72rem;
+ letter-spacing: 0.2em;
+ text-transform: uppercase;
+}
+.hero-label::before {
+ content: '';
+ width: 32px;
+ height: 1px;
+ background: rgba(255,255,255,0.5);
+}
+.hero h1 {
+ font-size: clamp(2.6rem, 5.6vw, 4.8rem);
+ font-style: italic;
+ font-weight: 400;
+ line-height: 1.05;
+ max-width: 20ch;
+ margin-bottom: 1.5rem;
+}
+.hero h1 .accent-word {
+ color: var(--white);
+ border-bottom: 2px solid var(--accent);
+ padding-bottom: 0.1rem;
+}
+.rotate-host {
+ display: inline-block;
+ vertical-align: baseline;
+ border-bottom: 2px solid var(--accent);
+ padding-bottom: 0.08em;
+ margin-right: 0.18em;
+ transition: width 0.55s cubic-bezier(.6,.2,.2,1);
+ white-space: nowrap;
+}
+.rotate-word {
+ display: inline-block;
+ color: var(--white);
+ white-space: nowrap;
+ vertical-align: baseline;
+ transition: transform 0.4s cubic-bezier(.6,.2,.2,1), opacity 0.4s ease;
+}
+.rotate-word.out {
+ opacity: 0;
+ transform: translateY(-0.3em);
+}
+.rotate-word.pre {
+ opacity: 0;
+ transform: translateY(0.3em);
+ transition: none;
+}
+.hero-sub {
+ font-size: clamp(1rem, 1.4vw, 1.15rem);
+ color: rgba(255,255,255,0.85);
+ max-width: 52ch;
+ line-height: 1.6;
+ margin-bottom: 2.8rem;
+ font-weight: 300;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ── Metrics strip ── */
+.metrics {
+ background: var(--black);
+ color: var(--stone-300);
+ padding: 3.5rem 4vw;
+}
+.metrics-grid {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 2rem;
+ max-width: 1400px;
+ margin: 0 auto;
+}
+.metric {
+ border-left: 1px solid rgba(255,255,255,0.12);
+ padding-left: 1.5rem;
+}
+.metric-value {
+ font-family: 'Playfair Display', serif;
+ font-size: clamp(2.2rem, 3.5vw, 3rem);
+ font-weight: 400;
+ color: var(--white);
+ line-height: 1;
+ margin-bottom: 0.5rem;
+}
+.metric-value em { font-style: italic; color: var(--accent-soft); }
+.metric-label {
+ font-size: 0.75rem;
+ letter-spacing: 0.15em;
+ text-transform: uppercase;
+ color: var(--stone-400);
+}
+
+/* ── Section base ── */
+section { padding: 7rem 4vw; }
+.section-head { max-width: 720px; margin-bottom: 4rem; }
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.section-title {
+ font-size: clamp(2rem, 3.5vw, 2.8rem);
+ font-style: italic;
+ margin: 0.8rem 0 1rem;
+ line-height: 1.1;
+}
+.section-intro {
+ color: var(--stone-500);
+ font-size: 1rem;
+ line-height: 1.7;
+ max-width: 60ch;
+}
+
+/* ── Services grid ── */
+.services { background: var(--stone-50); }
+.services-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 1.5rem;
+}
+.service-card {
+ background: var(--white);
+ border: 1px solid var(--stone-200);
+ overflow: hidden;
+ transition: border-color 0.3s, transform 0.35s, box-shadow 0.35s;
+ display: flex;
+ flex-direction: column;
+}
+.service-card:hover {
+ border-color: var(--stone-400);
+ transform: translateY(-4px);
+ box-shadow: 0 14px 40px rgba(28,25,23,0.08);
+}
+.service-card-img { aspect-ratio: 4/3; overflow: hidden; background: var(--stone-200); }
+.service-card-img img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ transition: transform 0.7s ease;
+}
+.service-card:hover .service-card-img img { transform: scale(1.06); }
+.service-card-body {
+ padding: 2rem 1.8rem 1.8rem;
+ display: flex;
+ flex-direction: column;
+ gap: 0.8rem;
+ flex-grow: 1;
+}
+.service-num {
+ font-family: 'Playfair Display', serif;
+ font-size: 0.85rem;
+ font-style: italic;
+ color: var(--accent);
+}
+.service-card h3 { font-size: 1.35rem; font-weight: 500; line-height: 1.2; }
+.service-card p {
+ font-size: 0.92rem;
+ color: var(--stone-500);
+ line-height: 1.6;
+ flex-grow: 1;
+}
+.service-link {
+ font-size: 0.78rem;
+ letter-spacing: 0.1em;
+ text-transform: uppercase;
+ color: var(--black);
+ font-weight: 500;
+ display: inline-flex;
+ align-items: center;
+ gap: 0.5rem;
+ transition: gap 0.3s, color 0.3s;
+ margin-top: 0.3rem;
+}
+.service-card:hover .service-link { gap: 0.85rem; color: var(--accent); }
+
+/* ── Industries ── */
+.industries-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 0;
+ border-top: 1px solid var(--stone-200);
+ border-left: 1px solid var(--stone-200);
+}
+.industry-card {
+ position: relative;
+ padding: 2.5rem 2rem 2.2rem;
+ border-right: 1px solid var(--stone-200);
+ border-bottom: 1px solid var(--stone-200);
+ display: flex;
+ flex-direction: column;
+ gap: 0.9rem;
+ min-height: 260px;
+ transition: background 0.3s;
+}
+.industry-card:hover { background: var(--stone-50); }
+.industry-icon { width: 36px; height: 36px; color: var(--accent); }
+.industry-card h3 { font-size: 1.3rem; font-weight: 500; font-style: italic; }
+.industry-card p { font-size: 0.88rem; color: var(--stone-500); flex-grow: 1; }
+.industry-link {
+ font-size: 0.72rem;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ color: var(--stone-500);
+ display: inline-flex;
+ align-items: center;
+ gap: 0.4rem;
+ transition: color 0.3s, gap 0.3s;
+}
+.industry-card:hover .industry-link { color: var(--accent); gap: 0.7rem; }
+
+/* ── Why Us ── */
+.why { background: var(--white); border-top: 1px solid var(--stone-200); }
+.why-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 5rem;
+ align-items: start;
+}
+.why-pillars { display: flex; flex-direction: column; gap: 3rem; }
+.pillar {
+ padding-left: 1.8rem;
+ border-left: 1px solid var(--stone-300);
+ position: relative;
+}
+.pillar::before {
+ content: '';
+ position: absolute;
+ left: -1px;
+ top: 0;
+ width: 2px;
+ height: 42px;
+ background: var(--accent);
+}
+.pillar h3 {
+ font-size: 1.5rem;
+ font-weight: 500;
+ font-style: italic;
+ margin-bottom: 0.5rem;
+}
+.pillar p { color: var(--stone-500); font-size: 0.95rem; line-height: 1.7; }
+
+/* ── Featured case ── */
+.featured-case {
+ position: relative;
+ background: var(--black);
+ color: var(--white);
+ padding: 0;
+ overflow: hidden;
+ min-height: 75vh;
+ display: grid;
+ grid-template-columns: 1.1fr 1fr;
+}
+.featured-case-media { position: relative; min-height: 500px; overflow: hidden; }
+.featured-case-media img { width: 100%; height: 100%; object-fit: cover; }
+.featured-case-media::after {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background: linear-gradient(90deg, transparent 55%, var(--black) 100%);
+}
+.featured-case-body {
+ padding: 5rem 5rem 5rem 3rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ gap: 1.5rem;
+}
+.featured-case-tag {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.75rem;
+ font-size: 0.72rem;
+ letter-spacing: 0.2em;
+ text-transform: uppercase;
+ color: var(--accent-soft);
+ font-weight: 500;
+}
+.featured-case-tag::before {
+ content: '';
+ width: 28px;
+ height: 1px;
+ background: var(--accent);
+}
+.featured-case h2 {
+ font-size: clamp(1.9rem, 3vw, 2.6rem);
+ font-style: italic;
+ font-weight: 400;
+ line-height: 1.15;
+ max-width: 18ch;
+}
+.featured-case p {
+ color: rgba(255,255,255,0.75);
+ font-size: 1rem;
+ line-height: 1.7;
+ max-width: 50ch;
+}
+.featured-stats {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 1rem;
+ border-top: 1px solid rgba(255,255,255,0.15);
+ padding-top: 1.8rem;
+ margin-top: 0.5rem;
+}
+.stat-val {
+ font-family: 'Playfair Display', serif;
+ font-size: 1.8rem;
+ font-weight: 400;
+ color: var(--accent-soft);
+ font-style: italic;
+}
+.stat-lbl {
+ font-size: 0.7rem;
+ letter-spacing: 0.1em;
+ text-transform: uppercase;
+ color: var(--stone-400);
+ margin-top: 0.25rem;
+}
+.featured-case .btn { align-self: flex-start; margin-top: 0.5rem; }
+
+/* ── Certifications ── */
+.certifications {
+ background: var(--white);
+ padding: 4.5rem 4vw;
+ border-top: 1px solid var(--stone-200);
+ border-bottom: 1px solid var(--stone-200);
+}
+.cert-head { text-align: center; margin-bottom: 2.5rem; }
+.cert-head .label { margin-bottom: 0.5rem; }
+.cert-head h3 {
+ font-size: 1.3rem;
+ font-weight: 400;
+ font-style: italic;
+ color: var(--stone-500);
+}
+.cert-row {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
+ gap: 2.5rem 3.5rem;
+}
+.cert-badge {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 0.5rem;
+ color: var(--stone-500);
+ font-size: 0.7rem;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ transition: color 0.3s;
+}
+.cert-badge:hover { color: var(--black); }
+.cert-icon {
+ width: 44px;
+ height: 44px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border: 1px solid var(--stone-300);
+ border-radius: 50%;
+ color: var(--stone-500);
+ transition: border-color 0.3s, color 0.3s;
+}
+.cert-badge:hover .cert-icon { border-color: var(--accent); color: var(--accent); }
+
+/* ── Testimonial ── */
+.testimonial {
+ background: var(--stone-50);
+ text-align: center;
+ padding: 8rem 4vw;
+}
+.testimonial blockquote {
+ font-family: 'Playfair Display', serif;
+ font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+ font-style: italic;
+ font-weight: 400;
+ line-height: 1.4;
+ max-width: 28ch;
+ margin: 0 auto 2rem;
+ color: var(--black);
+}
+.testimonial blockquote::before,
+.testimonial blockquote::after { content: '"'; color: var(--accent); font-size: 1em; }
+.testimonial-attr {
+ font-size: 0.78rem;
+ letter-spacing: 0.15em;
+ text-transform: uppercase;
+ color: var(--stone-500);
+}
+.testimonial-attr strong { color: var(--black); font-weight: 500; }
+
+/* ── Careers teaser ── */
+.careers-teaser {
+ background: var(--white);
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ align-items: center;
+ gap: 5rem;
+ padding: 7rem 4vw;
+ border-top: 1px solid var(--stone-200);
+}
+.careers-teaser-img { aspect-ratio: 5/4; overflow: hidden; }
+.careers-teaser-img img { width: 100%; height: 100%; object-fit: cover; }
+.careers-teaser h2 {
+ font-size: clamp(1.8rem, 3vw, 2.4rem);
+ font-style: italic;
+ font-weight: 400;
+ line-height: 1.15;
+ margin: 0.8rem 0 1rem;
+}
+.careers-teaser p {
+ color: var(--stone-500);
+ font-size: 1rem;
+ line-height: 1.7;
+ margin-bottom: 2rem;
+ max-width: 50ch;
+}
+
+/* ── Final CTA ── */
+.cta-banner {
+ background: var(--black);
+ color: var(--white);
+ text-align: center;
+ padding: 7rem 4vw;
+}
+.cta-banner h2 {
+ font-size: clamp(2rem, 4vw, 3rem);
+ font-style: italic;
+ font-weight: 400;
+ max-width: 22ch;
+ margin: 0 auto 1.2rem;
+ line-height: 1.15;
+}
+.cta-banner p {
+ color: rgba(255,255,255,0.7);
+ font-size: 1rem;
+ max-width: 52ch;
+ margin: 0 auto 2.5rem;
+ line-height: 1.7;
+}
+.cta-actions { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+.cta-banner .btn-primary { background: var(--white); color: var(--black); }
+.cta-banner .btn-primary:hover { background: var(--accent); color: var(--white); }
+
+/* ── Footer ── */
+footer {
+ background: var(--black);
+ color: var(--stone-400);
+ padding: 5rem 4vw 2rem;
+ border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-grid {
+ display: grid;
+ grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+ gap: 3rem;
+ margin-bottom: 4rem;
+}
+.footer-brand strong {
+ font-family: 'Playfair Display', serif;
+ font-size: 1.3rem;
+ font-weight: 500;
+ color: var(--white);
+ display: block;
+ margin-bottom: 1rem;
+}
+.footer-brand em { font-style: italic; color: var(--accent-soft); }
+.footer-brand p { font-size: 0.88rem; line-height: 1.7; max-width: 34ch; }
+.footer-col h4 {
+ font-family: 'DM Sans', sans-serif;
+ font-size: 0.72rem;
+ letter-spacing: 0.15em;
+ text-transform: uppercase;
+ color: var(--white);
+ font-weight: 500;
+ margin-bottom: 1.2rem;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-col a { font-size: 0.85rem; color: var(--stone-400); transition: color 0.3s; }
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding-top: 2rem;
+ border-top: 1px solid rgba(255,255,255,0.08);
+ font-size: 0.78rem;
+ color: var(--stone-500);
+ flex-wrap: wrap;
+ gap: 1rem;
+}
+.footer-badges { display: flex; gap: 1.5rem; }
+.footer-badges span { letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.7rem; }
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+ .services-grid { grid-template-columns: repeat(2, 1fr); }
+ .industries-grid { grid-template-columns: repeat(2, 1fr); }
+ .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+ .navbar-links { display: none; }
+ .hamburger { display: flex; }
+ .topbar-left { display: none; }
+ .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem 1.5rem; }
+ .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+ .featured-case { grid-template-columns: 1fr; }
+ .featured-case-media { min-height: 340px; }
+ .featured-case-body { padding: 3.5rem 4vw; }
+ .featured-case-media::after { background: linear-gradient(180deg, transparent 40%, var(--black) 100%); }
+ .careers-teaser { grid-template-columns: 1fr; gap: 2.5rem; padding: 5rem 4vw; }
+ .footer-grid { grid-template-columns: 1fr 1fr; }
+ section { padding: 5.5rem 4vw; }
+ .hero { min-height: 85vh; }
+}
+
+@media (max-width: 600px) {
+ .topbar { padding: 0.5rem 4vw; font-size: 0.68rem; }
+ .topbar-right { gap: 0.8rem; }
+ .hero-content { padding: 5rem 4vw 3.5rem; }
+ .hero-actions { flex-direction: column; }
+ .hero-actions .btn { width: 100%; justify-content: center; }
+ .services-grid { grid-template-columns: 1fr; }
+ .industries-grid { grid-template-columns: 1fr; }
+ .featured-stats { grid-template-columns: 1fr 1fr; }
+ .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+ .footer-bottom { flex-direction: column; text-align: center; }
+ section { padding: 4.5rem 4vw; }
+}
+
+/* ── Mobile menu drawer ── */
+.mobile-drawer {
+ position: fixed;
+ top: 0;
+ right: 0;
+ width: 82%;
+ max-width: 360px;
+ height: 100vh;
+ background: var(--white);
+ z-index: 200;
+ transform: translateX(100%);
+ transition: transform 0.35s ease;
+ padding: 6rem 2rem 2rem;
+ overflow-y: auto;
+ border-left: 1px solid var(--stone-200);
+}
+.mobile-drawer.open { transform: translateX(0); }
+.mobile-drawer ul { list-style: none; display: flex; flex-direction: column; gap: 1.4rem; }
+.mobile-drawer a {
+ font-family: 'Playfair Display', serif;
+ font-size: 1.3rem;
+ font-style: italic;
+ color: var(--black);
+}
+.mobile-drawer .btn-nav { display: inline-block; margin-top: 1rem; }
+.mobile-close {
+ position: absolute;
+ top: 1.5rem;
+ right: 1.5rem;
+ background: none;
+ border: none;
+ font-size: 1.5rem;
+ cursor: pointer;
+}
+.mobile-backdrop {
+ position: fixed;
+ inset: 0;
+ background: rgba(28,25,23,0.5);
+ z-index: 199;
+ opacity: 0;
+ pointer-events: none;
+ transition: opacity 0.35s;
+}
+.mobile-backdrop.open { opacity: 1; pointer-events: auto; }
+</style>
+</head>
+<body>
+
+<!-- ═══ TOPBAR ═══ -->
+<div class="topbar">
+ <div class="topbar-left">
+  <span>Commercial facility services · Licensed · Insured · Bonded</span>
+ </div>
+ <div class="topbar-right">
+  <a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a>
+  <span class="topbar-sep">·</span>
+  <a href="tel:+17815583458">(781) 558-3458</a>
+  <span class="topbar-sep">·</span>
+  <a href="https://instagram.com/bluesky_clean_service" target="_blank" rel="noopener">Instagram</a>
+ </div>
+</div>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar">
+ <a href="index.html" class="navbar-logo">Blue<em>Sky</em><span class="tag">General Services</span></a>
+
+ <ul class="navbar-links">
+  <li><a href="index.html" class="active">Home</a></li>
+  <li>
+   <a href="services.html">Services <span class="caret">▾</span></a>
+   <div class="megamenu">
+    <a href="services/janitorial.html" class="megamenu-item"><strong>Janitorial</strong><span>Recurring commercial cleaning programs</span></a>
+    <a href="services/pressure-washing.html" class="megamenu-item"><strong>Pressure Washing</strong><span>Exterior high-pressure cleaning</span></a>
+    <a href="services/window-cleaning.html" class="megamenu-item"><strong>Window Cleaning</strong><span>Interior &amp; high-rise glass care</span></a>
+    <a href="services/carpet-cleaning.html" class="megamenu-item"><strong>Carpet Cleaning</strong><span>Extraction &amp; restoration</span></a>
+    <a href="services/floor-care.html" class="megamenu-item"><strong>Floor Stripping &amp; Waxing</strong><span>Hard-surface restoration</span></a>
+    <a href="services/post-construction.html" class="megamenu-item"><strong>Post-Construction</strong><span>Disaster recovery &amp; turnover cleanup</span></a>
+    <a href="services/property-decommission.html" class="megamenu-item"><strong>Property Decommission</strong><span>Decommission &amp; fog disinfect</span></a>
+   </div>
+  </li>
+  <li>
+   <a href="industries.html">Industries <span class="caret">▾</span></a>
+   <div class="megamenu">
+    <a href="industries.html#corporate" class="megamenu-item"><strong>Corporate Offices</strong><span>Class A / Class B environments</span></a>
+    <a href="industries.html#medical" class="megamenu-item"><strong>Medical &amp; Healthcare</strong><span>Clinics, medical offices, labs</span></a>
+    <a href="industries.html#retail" class="megamenu-item"><strong>Retail &amp; Commercial</strong><span>Shopping centers &amp; storefronts</span></a>
+    <a href="industries.html#education" class="megamenu-item"><strong>Education</strong><span>Schools, colleges, training centers</span></a>
+    <a href="industries.html#construction" class="megamenu-item"><strong>Construction</strong><span>Developer &amp; contractor partnerships</span></a>
+    <a href="industries.html#property" class="megamenu-item"><strong>Property Management</strong><span>Multi-tenant &amp; HOA portfolios</span></a>
+   </div>
+  </li>
+  <li><a href="projects.html">Case Studies</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="careers.html">Careers</a></li>
+  <li><a href="contact.html" class="btn-nav">Request a Proposal</a></li>
+ </ul>
+
+ <button class="hamburger" aria-label="Open menu" id="hamburger">
+  <span></span><span></span><span></span>
+ </button>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="mobile-backdrop" id="mobileBackdrop"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+ <button class="mobile-close" id="mobileClose" aria-label="Close menu">×</button>
+ <ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="services.html">Services</a></li>
+  <li><a href="industries.html">Industries</a></li>
+  <li><a href="projects.html">Case Studies</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="careers.html">Careers</a></li>
+  <li><a href="sustainability.html">Sustainability</a></li>
+  <li><a href="contact.html" class="btn-nav">Request a Proposal</a></li>
+ </ul>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<header class="hero">
+ <div class="hero-media">
+  <img src="https://images.unsplash.com/photo-1482449609509-eae2a7ea42b7?w=2400&amp;q=90" alt="Window cleaners on a scissor lift servicing a tall commercial glass atrium">
+ </div>
+ <div class="hero-overlay"></div>
+ <div class="hero-content">
+  <span class="hero-label">BlueSky General Services</span>
+  <h1><span id="rotateHost" class="rotate-host"><span id="rotateWord" class="rotate-word">Commercial</span></span> cleaning,<br>executed at enterprise standard.</h1>
+  <p class="hero-sub">A facility services partner for buildings that cannot fail: Class A offices, medical facilities, post-construction turnover, disaster recovery. Licensed, insured, bonded. Measured every shift.</p>
+  <div class="hero-actions">
+   <a href="contact.html" class="btn btn-primary">Request a Proposal <span class="arrow">→</span></a>
+   <a href="services.html" class="btn btn-outline">Explore Services</a>
+  </div>
+ </div>
+</header>
+
+<!-- ═══ METRICS STRIP ═══ -->
+<section class="metrics" style="padding: 3.5rem 4vw;">
+ <div class="metrics-grid">
+  <div class="metric reveal">
+   <div class="metric-value">500<em>+</em></div>
+   <div class="metric-label">Commercial Clients</div>
+  </div>
+  <div class="metric reveal" data-delay="1">
+   <div class="metric-value">10<em>+ yrs</em></div>
+   <div class="metric-label">Industry Experience</div>
+  </div>
+  <div class="metric reveal" data-delay="2">
+   <div class="metric-value"><em>24/7</em></div>
+   <div class="metric-label">Emergency Response</div>
+  </div>
+  <div class="metric reveal" data-delay="3">
+   <div class="metric-value"><em>SE USA</em></div>
+   <div class="metric-label">Multi-State Coverage</div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ SERVICES GRID ═══ -->
+<section class="services" id="services">
+ <div class="section-head reveal">
+  <span class="label">What We Do</span>
+  <h2 class="section-title">Services built for buildings that cannot fail.</h2>
+  <p class="section-intro">Seven specialized programs, delivered by trained teams under measurable service-level standards. Choose one, or let us integrate them into a single facility contract.</p>
+ </div>
+
+ <div class="services-grid">
+  <a href="services/janitorial.html" class="service-card reveal" data-delay="1">
+   <div class="service-card-img"><img src="assets/img/services/janitorial/bathroom-after-4.png" alt="Commercial bathroom restored through BlueSky janitorial service"></div>
+   <div class="service-card-body">
+    <span class="service-num">01</span>
+    <h3>Janitorial Services</h3>
+    <p>Recurring commercial programs (nightly, weekly, or custom frequency) calibrated to occupancy, traffic, and compliance.</p>
+    <span class="service-link">Learn more <span>→</span></span>
+   </div>
+  </a>
+  <a href="services/pressure-washing.html" class="service-card reveal" data-delay="2">
+   <div class="service-card-img"><img src="assets/img/services/pressure/action-1.jpeg" alt="BlueSky technician performing pressure washing on a commercial facade"></div>
+   <div class="service-card-body">
+    <span class="service-num">02</span>
+    <h3>Pressure Washing</h3>
+    <p>Exterior surfaces, parking structures, sidewalks and building envelopes restored with calibrated high-pressure systems.</p>
+    <span class="service-link">Learn more <span>→</span></span>
+   </div>
+  </a>
+  <a href="services/window-cleaning.html" class="service-card reveal" data-delay="3">
+   <div class="service-card-img"><img src="assets/img/services/windows/windows-1.png" alt="BlueSky window cleaner working on a commercial facade"></div>
+   <div class="service-card-body">
+    <span class="service-num">03</span>
+    <h3>Window Cleaning</h3>
+    <p>Interior and high-rise glass: waterfed poles, rope access, full-height facades, delivered under safety program.</p>
+    <span class="service-link">Learn more <span>→</span></span>
+   </div>
+  </a>
+  <a href="services/carpet-cleaning.html" class="service-card reveal" data-delay="1">
+   <div class="service-card-img"><img src="assets/img/services/carpet/carpet-1.png" alt="BlueSky team performing commercial carpet cleaning"></div>
+   <div class="service-card-body">
+    <span class="service-num">04</span>
+    <h3>Carpet Cleaning</h3>
+    <p>Hot-water extraction, spot treatment, and full restoration, including water-damage recovery for carpeted environments.</p>
+    <span class="service-link">Learn more <span>→</span></span>
+   </div>
+  </a>
+  <a href="services/floor-care.html" class="service-card reveal" data-delay="2">
+   <div class="service-card-img"><img src="assets/img/services/floor/case3-after-1.png" alt="High-gloss commercial floor restored by BlueSky's floor stripping &amp; waxing program"></div>
+   <div class="service-card-body">
+    <span class="service-num">05</span>
+    <h3>Floor Stripping &amp; Waxing</h3>
+    <p>VCT, terrazzo, and concrete restoration (strip, scrub, seal, finish) on schedules that respect occupancy.</p>
+    <span class="service-link">Learn more <span>→</span></span>
+   </div>
+  </a>
+  <a href="services/post-construction.html" class="service-card reveal" data-delay="3">
+   <div class="service-card-img"><img src="assets/img/services/post-construction/after-5.png" alt="Commercial corridor delivered clean after post-construction turnover"></div>
+   <div class="service-card-body">
+    <span class="service-num">06</span>
+    <h3>Post-Construction</h3>
+    <p>Rough, final, and turnover cleaning for active construction projects, with recovery response capabilities available when damage events escalate beyond normal closeout.</p>
+    <span class="service-link">Learn more <span>→</span></span>
+   </div>
+  </a>
+  <a href="services/property-decommission.html" class="service-card reveal" data-delay="1">
+   <div class="service-card-img"><img src="assets/img/services/property-decommission/fog-disinfect-1.png" alt="BlueSky technician applying electrostatic fog disinfection"></div>
+   <div class="service-card-body">
+    <span class="service-num">07</span>
+    <h3>Property Decommission</h3>
+    <p>Turnover-ready decommissioning for vacated, transitioning, or post-event commercial spaces, including final cleaning, removal coordination, and specialty treatment where required.</p>
+    <span class="service-link">Learn more <span>→</span></span>
+   </div>
+  </a>
+ </div>
+</section>
+
+<!-- ═══ INDUSTRIES ═══ -->
+<section class="industries">
+ <div class="section-head reveal">
+  <span class="label">Who We Serve</span>
+  <h2 class="section-title">Six industries. One standard of care.</h2>
+  <p class="section-intro">The compliance demands of a medical lab are not the compliance demands of a retail floor. Our programs are tuned to each environment, with the same measurable discipline.</p>
+ </div>
+
+ <div class="industries-grid">
+  <a href="industries.html#corporate" class="industry-card reveal" data-delay="1">
+   <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 21V7l8-5 8 5v14M9 21V12h6v9M4 21h16"/></svg>
+   <h3>Corporate Offices</h3>
+   <p>Class A and Class B environments (lobbies, executive floors, conference and amenity spaces), cleaned to the standards occupants notice.</p>
+   <span class="industry-link">See programs <span>→</span></span>
+  </a>
+  <a href="industries.html#medical" class="industry-card reveal" data-delay="2">
+   <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 4v16M4 12h16"/></svg>
+   <h3>Medical &amp; Healthcare</h3>
+   <p>Medical offices, clinics, dental and veterinary facilities with disinfection protocols that respect HIPAA-adjacent expectations.</p>
+   <span class="industry-link">See programs <span>→</span></span>
+  </a>
+  <a href="industries.html#retail" class="industry-card reveal" data-delay="3">
+   <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 9l1.5-5h15L21 9M3 9v12h18V9M9 14h6"/></svg>
+   <h3>Retail &amp; Commercial</h3>
+   <p>Shopping centers, storefronts, restaurants, and service commerce, scheduled around customer traffic, never through it.</p>
+   <span class="industry-link">See programs <span>→</span></span>
+  </a>
+  <a href="industries.html#education" class="industry-card reveal" data-delay="1">
+   <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3L2 8l10 5 10-5-10-5zM5 10v6c0 2 3 4 7 4s7-2 7-4v-6"/></svg>
+   <h3>Education</h3>
+   <p>Schools, colleges, and training centers with standards-driven cleaning that protects student and staff environments.</p>
+   <span class="industry-link">See programs <span>→</span></span>
+  </a>
+  <a href="industries.html#construction" class="industry-card reveal" data-delay="2">
+   <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6M9 15h6"/></svg>
+   <h3>Construction</h3>
+   <p>General contractors and developers get rough, final, and turnover cleans that get certificates of occupancy signed on time.</p>
+   <span class="industry-link">See programs <span>→</span></span>
+  </a>
+  <a href="industries.html#property" class="industry-card reveal" data-delay="3">
+   <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></svg>
+   <h3>Property Management</h3>
+   <p>Multi-tenant buildings, HOAs, and mixed-use portfolios: one partner, multiple properties, consolidated reporting.</p>
+   <span class="industry-link">See programs <span>→</span></span>
+  </a>
+ </div>
+</section>
+
+<!-- ═══ WHY US ═══ -->
+<section class="why">
+ <div class="why-grid">
+  <div class="reveal">
+   <span class="label">Why BlueSky</span>
+   <h2 class="section-title">Three commitments. Measured every shift.</h2>
+   <p class="section-intro">The facility services market is not short on vendors. What it lacks, and what we exist to deliver, is the discipline large operations expect: people trained to the standard, results reported against the standard, and technology that keeps the standard visible.</p>
+  </div>
+  <div class="why-pillars">
+   <div class="pillar reveal" data-delay="1">
+    <h3>People first.</h3>
+    <p>Every team member is background-checked, insured, and trained on written service-level standards, not verbal instructions. Supervisors walk every shift. Turnover is measured and reported to the client.</p>
+   </div>
+   <div class="pillar reveal" data-delay="2">
+    <h3>Standards, not slogans.</h3>
+    <p>Scopes are written. Frequencies are written. Inspections are scored. When something falls out of standard, it is documented, escalated, and corrected within the same operating cycle, not the next contract review.</p>
+   </div>
+   <div class="pillar reveal" data-delay="3">
+    <h3>Reporting that reports.</h3>
+    <p>Every facility receives a monthly performance brief: scope coverage, inspection scores, incidents, response times, and completed extras. Your finance team knows what they paid for. Your operations team knows what they received.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ FEATURED CASE: HURRICANE MILTON ═══ -->
+<section class="featured-case">
+ <div class="featured-case-media">
+  <img src="assets/img/milton-lobby-caution.jpg" alt="Flood-damaged commercial lobby with caution tape and industrial dehumidifiers during BlueSky recovery">
+ </div>
+ <div class="featured-case-body reveal">
+  <span class="featured-case-tag">Featured Case Study · Disaster Recovery</span>
+  <h2>Hurricane Milton.<br>Thirty-plus team. Full restoration.</h2>
+  <p>When Milton made landfall, we mobilized a multi-floor commercial recovery operation within 24 hours: debris removal, water extraction, industrial dehumidification, carpet and hard-surface restoration, and full reopening inside the owner's insurance window.</p>
+  <div class="featured-stats">
+   <div>
+    <div class="stat-val">30<em>+</em></div>
+    <div class="stat-lbl">Team on site</div>
+   </div>
+   <div>
+    <div class="stat-val"><em>24/7</em></div>
+    <div class="stat-lbl">Response cycle</div>
+   </div>
+   <div>
+    <div class="stat-val"><em>Multi</em></div>
+    <div class="stat-lbl">Floor restoration</div>
+   </div>
+  </div>
+  <a href="projects/hurricane-milton.html" class="btn btn-outline">Read the case study <span class="arrow">→</span></a>
+ </div>
+</section>
+
+<!-- ═══ CERTIFICATIONS ROW ═══ -->
+<section class="certifications">
+ <div class="cert-head reveal">
+  <span class="label">Credentials</span>
+  <h3>Licensed. Insured. Bonded. Certified to standards that large contracts require.</h3>
+ </div>
+ <div class="cert-row reveal" data-delay="1">
+  <div class="cert-badge"><div class="cert-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6 6 .8-4.5 4.5L18 20l-6-3-6 3 1.5-6.7L3 8.8 9 8l3-6z"/></svg></div><span>Licensed</span></div>
+  <div class="cert-badge"><div class="cert-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6l-9-4z"/></svg></div><span>Insured</span></div>
+  <div class="cert-badge"><div class="cert-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div><span>Bonded</span></div>
+  <div class="cert-badge"><div class="cert-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v6H4zM4 14h16v6H4zM8 8h2M8 18h2"/></svg></div><span>OSHA Compliant</span></div>
+  <div class="cert-badge"><div class="cert-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M3 12h18"/></svg></div><span>ISSA Aligned</span></div>
+  <div class="cert-badge"><div class="cert-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c-5 0-9 4-9 9 0 4 3 7 6 8l3-4 3 4c3-1 6-4 6-8 0-5-4-9-9-9z"/></svg></div><span>Green Seal Practice</span></div>
+  <div class="cert-badge"><div class="cert-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><span>24/7 Response</span></div>
+ </div>
+</section>
+
+<!-- ═══ TESTIMONIAL ═══ -->
+<section class="testimonial">
+ <div class="reveal">
+  <blockquote>Every result measured. Every shift reported. They cleaned what our previous vendor kept telling us they were cleaning.</blockquote>
+  <div class="testimonial-attr"><strong>Facility Operations Director</strong> · Multi-property corporate campus</div>
+ </div>
+</section>
+
+<!-- ═══ CAREERS TEASER ═══ -->
+<section class="careers-teaser">
+ <div class="careers-teaser-img reveal">
+  <img src="assets/img/milton-tv-interview-group.jpg" alt="BlueSky field team on a recovery project">
+ </div>
+ <div class="reveal" data-delay="1">
+  <span class="label">Careers</span>
+  <h2>Work where the standard is the product.</h2>
+  <p>We hire people who want to measure their work: supervisors, technicians, account managers, and recovery specialists. Training is paid. Expectations are written. Performance is reviewed, not assumed.</p>
+  <a href="careers.html" class="btn btn-ghost">See how we work <span class="arrow">→</span></a>
+ </div>
+</section>
+
+<!-- ═══ CTA BANNER ═══ -->
+<section class="cta-banner">
+ <div class="reveal">
+  <h2>Ready to upgrade your facility services?</h2>
+  <p>Tell us about your building. We will send a scoped proposal (pricing, schedule, and service-level standard) within three business days.</p>
+  <div class="cta-actions">
+   <a href="contact.html" class="btn btn-primary">Request a Proposal <span class="arrow">→</span></a>
+   <a href="services.html" class="btn btn-outline">Review Services</a>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+ <div class="footer-grid">
+  <div class="footer-brand">
+   <strong>Blue<em>Sky</em></strong>
+   <p>A commercial facility services partner. Cleaning, maintenance, and recovery programs delivered under measurable standards across the Southeast United States.</p>
+  </div>
+  <div class="footer-col">
+   <h4>Company</h4>
+   <ul>
+    <li><a href="about.html">About</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="sustainability.html">Sustainability</a></li>
+    <li><a href="projects.html">Case Studies</a></li>
+    <li><a href="contact.html">Contact</a></li>
+   </ul>
+  </div>
+  <div class="footer-col">
+   <h4>Services</h4>
+   <ul>
+    <li><a href="services/janitorial.html">Janitorial</a></li>
+    <li><a href="services/pressure-washing.html">Pressure Washing</a></li>
+    <li><a href="services/window-cleaning.html">Window Cleaning</a></li>
+    <li><a href="services/carpet-cleaning.html">Carpet Cleaning</a></li>
+    <li><a href="services/floor-care.html">Floor Stripping &amp; Waxing</a></li>
+    <li><a href="services/post-construction.html">Post-Construction</a></li><li><a href="services/property-decommission.html">Property Decommission</a></li>
+   </ul>
+  </div>
+  <div class="footer-col">
+   <h4>Industries</h4>
+   <ul>
+    <li><a href="industries.html#corporate">Corporate</a></li>
+    <li><a href="industries.html#medical">Medical</a></li>
+    <li><a href="industries.html#retail">Retail</a></li>
+    <li><a href="industries.html#education">Education</a></li>
+    <li><a href="industries.html#construction">Construction</a></li>
+    <li><a href="industries.html#property">Property Mgmt</a></li>
+   </ul>
+  </div>
+  <div class="footer-col">
+   <h4>Connect</h4>
+   <ul>
+    <li><a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a></li>
+    <li><a href="tel:+17815583458">(781) 558-3458</a></li>
+    <li><a href="https://instagram.com/bluesky_clean_service" target="_blank" rel="noopener">@bluesky_clean_service</a></li>
+    <li><a href="contact.html">Request a Proposal</a></li>
+   </ul>
+  </div>
+ </div>
+ <div class="footer-bottom">
+  <span>© 2026 BlueSky General Services. All rights reserved.</span>
+  <div class="footer-badges">
+   <span>Licensed</span><span>Insured</span><span>Bonded</span>
+  </div>
+ </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+ entries.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+ });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const hamburger = document.getElementById('hamburger');
+const drawer = document.getElementById('mobileDrawer');
+const backdrop = document.getElementById('mobileBackdrop');
+const closeBtn = document.getElementById('mobileClose');
+function openDrawer() { drawer.classList.add('open'); backdrop.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeDrawer() { drawer.classList.remove('open'); backdrop.classList.remove('open'); document.body.style.overflow = ''; }
+hamburger.addEventListener('click', openDrawer);
+closeBtn.addEventListener('click', closeDrawer);
+backdrop.addEventListener('click', closeDrawer);
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+// Hero headline — slide-up word rotator with animated width
+const rotateWords = ['Commercial', 'Residential', 'Medical', 'Retail', 'Industrial'];
+const rotateEl = document.getElementById('rotateWord');
+const rotateHost = document.getElementById('rotateHost');
+let rotateIdx = 0;
+if (rotateEl && rotateHost) {
+ function measureWidths() {
+  const orig = rotateEl.textContent;
+  const origHostW = rotateHost.style.width;
+  rotateHost.style.width = 'auto';
+  const ws = rotateWords.map(w => {
+   rotateEl.textContent = w;
+   return Math.ceil(rotateEl.getBoundingClientRect().width);
+  });
+  rotateEl.textContent = orig;
+  rotateHost.style.width = origHostW || '';
+  return ws;
+ }
+ let widths = measureWidths();
+ rotateHost.style.width = widths[rotateIdx] + 'px';
+ window.addEventListener('resize', () => {
+  widths = measureWidths();
+  rotateHost.style.width = widths[rotateIdx] + 'px';
+ });
+ setInterval(() => {
+  rotateEl.classList.add('out');
+  setTimeout(() => {
+   rotateEl.classList.add('pre');
+   rotateEl.classList.remove('out');
+   rotateIdx = (rotateIdx + 1) % rotateWords.length;
+   rotateEl.textContent = rotateWords[rotateIdx];
+   rotateHost.style.width = widths[rotateIdx] + 'px';
+   requestAnimationFrame(() => { rotateEl.classList.remove('pre'); });
+  }, 420);
+ }, 3500);
+}
+</script>
+
+</body>
+</html>

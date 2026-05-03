@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | BlueSky General Services</title>
+<meta name="description" content="Request a facility services proposal. Scoped document, pricing, schedule, service-level standard, delivered within three business days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --black:#1c1917; --charcoal:#292524; --stone-500:#78716c; --stone-400:#a8a29e; --stone-300:#d6d3d1; --stone-200:#e7e5e4; --stone-100:#f5f5f4; --stone-50:#fafaf9; --white:#fff; --accent:#1e3a8a; --accent-hover:#1e40af; --accent-soft:#dbeafe; }
+html { scroll-behavior: smooth; }
+body { font-family:'DM Sans',sans-serif; color:var(--black); background:var(--white); font-size:16px; line-height:1.7; font-weight:300; -webkit-font-smoothing:antialiased; }
+h1,h2,h3,h4 { font-family:'Playfair Display',serif; font-weight:400; line-height:1.15; letter-spacing:-0.01em; }
+a { color:inherit; text-decoration:none; }
+img { display:block; max-width:100%; height:auto; object-fit:cover; }
+.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-400); font-weight:400; }
+.btn { display:inline-flex; align-items:center; gap:0.5rem; padding:1rem 2rem; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:500; border:1px solid transparent; border-radius:2px; cursor:pointer; transition:all 0.3s ease; font-family:inherit; }
+.btn-primary { background:var(--accent); color:var(--white); }
+.btn-primary:hover { background:var(--accent-hover); transform:translateY(-1px); }
+.btn-outline { background:transparent; color:var(--white); border-color:rgba(255,255,255,0.45); }
+.btn-outline:hover { background:rgba(255,255,255,0.08); border-color:var(--white); }
+.btn .arrow { transition:transform 0.3s ease; }
+.btn:hover .arrow { transform:translateX(4px); }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.9s ease, transform 0.9s ease; }
+.reveal.in { opacity:1; transform:translateY(0); }
+
+.topbar { display:flex; justify-content:space-between; align-items:center; gap:2rem; padding:0.55rem 4vw; font-size:0.72rem; letter-spacing:0.06em; background:var(--black); color:var(--stone-300); }
+.topbar-left, .topbar-right { display:flex; gap:1.5rem; align-items:center; }
+.topbar a { color:var(--stone-300); transition:color 0.3s; }
+.topbar a:hover { color:var(--white); }
+.topbar-sep { color:var(--stone-500); }
+
+.navbar { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 4vw; border-bottom:1px solid var(--stone-200); position:sticky; top:0; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); z-index:100; }
+.navbar-logo { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:500; letter-spacing:0.02em; display:inline-flex; align-items:baseline; gap:0.45rem; }
+.navbar-logo em { font-style:italic; color:var(--accent); }
+.navbar-logo .tag { font-family:'DM Sans',sans-serif; font-size:0.68rem; color:var(--stone-500); letter-spacing:0.12em; text-transform:uppercase; font-weight:400; }
+.navbar-links { display:flex; align-items:center; gap:2.2rem; list-style:none; font-size:0.82rem; letter-spacing:0.05em; }
+.navbar-links > li { position:relative; }
+.navbar-links a { color:var(--stone-500); transition:color 0.3s; padding:0.4rem 0; display:inline-flex; align-items:center; gap:0.3rem; }
+.navbar-links a:hover, .navbar-links a.active { color:var(--black); }
+.navbar-links .caret { font-size:0.65rem; opacity:0.6; }
+.btn-nav { background:var(--accent); color:var(--white) !important; padding:0.65rem 1.3rem !important; border-radius:2px; font-weight:500; transition:background 0.3s; }
+.btn-nav:hover { background:var(--accent-hover); }
+.megamenu { position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(-8px); margin-top:1.2rem; background:var(--white); border:1px solid var(--stone-200); box-shadow:0 20px 50px rgba(0,0,0,0.08); padding:2.2rem 2.5rem; min-width:520px; display:grid; grid-template-columns:repeat(2,1fr); gap:1.2rem 2.5rem; opacity:0; pointer-events:none; transition:opacity 0.25s, transform 0.25s; z-index:101; }
+.navbar-links > li:hover .megamenu, .navbar-links > li:focus-within .megamenu { opacity:1; pointer-events:auto; transform:translateX(-50%) translateY(0); }
+.megamenu-item { display:block; padding:0.4rem 0; }
+.megamenu-item strong { display:block; font-family:'Playfair Display',serif; font-size:1rem; font-weight:500; font-style:italic; color:var(--black); margin-bottom:0.15rem; }
+.megamenu-item span { font-size:0.78rem; color:var(--stone-500); letter-spacing:0; text-transform:none; }
+.megamenu-item:hover strong { color:var(--accent); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:0.5rem; }
+.hamburger span { width:22px; height:1.5px; background:var(--black); }
+
+.page-hero { background:var(--stone-50); padding:6rem 4vw 5rem; border-bottom:1px solid var(--stone-200); }
+.page-hero-inner { max-width:820px; }
+.page-hero h1 { font-size:clamp(2.4rem, 4.5vw, 3.8rem); font-style:italic; font-weight:400; margin:1rem 0 1.5rem; line-height:1.1; }
+.page-hero p { color:var(--stone-500); font-size:1.1rem; line-height:1.7; max-width:62ch; }
+.breadcrumb { font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone-400); margin-bottom:0.5rem; }
+.breadcrumb a { color:var(--stone-400); }
+.breadcrumb a:hover { color:var(--black); }
+.breadcrumb-sep { margin:0 0.5rem; }
+
+.contact-grid { display:grid; grid-template-columns:0.95fr 1.25fr; gap:5rem; padding:6rem 4vw; max-width:1400px; margin:0 auto; }
+
+.channels { padding-right:2rem; border-right:1px solid var(--stone-200); }
+.channel { padding:1.8rem 0; border-bottom:1px solid var(--stone-200); }
+.channel:last-child { border-bottom:none; }
+.channel h4 { font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--stone-500); font-family:'DM Sans',sans-serif; font-weight:500; margin-bottom:0.6rem; }
+.channel .value { font-family:'Playfair Display',serif; font-size:1.25rem; font-style:italic; color:var(--black); transition:color 0.3s; }
+.channel a.value:hover { color:var(--accent); }
+.channel .sub { font-size:0.85rem; color:var(--stone-500); margin-top:0.4rem; }
+
+.form-block h2 { font-size:clamp(1.8rem,2.6vw,2.2rem); font-style:italic; margin-bottom:0.8rem; }
+.form-block .intro { color:var(--stone-500); margin-bottom:2.5rem; max-width:52ch; }
+form.contact-form { display:grid; grid-template-columns:1fr 1fr; gap:1.8rem 1.5rem; }
+.form-field { position:relative; }
+.form-field.full { grid-column:1/-1; }
+.form-field label { display:block; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--stone-500); margin-bottom:0.4rem; font-weight:500; }
+.form-field input, .form-field select, .form-field textarea {
+ width:100%;
+ padding:0.7rem 0;
+ background:transparent;
+ border:none;
+ border-bottom:1px solid var(--stone-300);
+ font-family:inherit;
+ font-size:0.95rem;
+ color:var(--black);
+ transition:border-color 0.3s;
+}
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline:none; border-bottom-color:var(--accent); }
+.form-field textarea { resize:vertical; min-height:120px; }
+.form-field select { appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2378716c' stroke-width='2'><polyline points='6 9 12 15 18 9'/></svg>"); background-repeat:no-repeat; background-position:right 4px center; padding-right:1.4rem; cursor:pointer; }
+.form-submit { grid-column:1/-1; margin-top:1rem; display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; }
+.form-note { font-size:0.78rem; color:var(--stone-500); }
+
+.success-msg { display:none; padding:1.5rem; background:var(--accent-soft); border:1px solid var(--accent); color:var(--accent); font-size:0.9rem; margin-top:1rem; }
+.success-msg.show { display:block; }
+
+.coverage { padding:5rem 4vw 7rem; text-align:center; background:var(--stone-50); border-top:1px solid var(--stone-200); }
+.coverage span.label { margin-bottom:0.5rem; }
+.coverage p.area { font-family:'Playfair Display',serif; font-size:clamp(1.5rem,2.6vw,2rem); font-style:italic; max-width:34ch; margin:0 auto 1rem; line-height:1.4; }
+.coverage p.sub { color:var(--stone-500); max-width:50ch; margin:0 auto; font-size:0.95rem; }
+
+footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem; border-top:1px solid rgba(255,255,255,0.08); }
+.footer-grid { display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr 1fr; gap:3rem; margin-bottom:4rem; }
+.footer-brand strong { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:500; color:var(--white); display:block; margin-bottom:1rem; }
+.footer-brand em { font-style:italic; color:var(--accent-soft); }
+.footer-brand p { font-size:0.88rem; line-height:1.7; max-width:34ch; }
+.footer-col h4 { font-family:'DM Sans',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--white); font-weight:500; margin-bottom:1.2rem; }
+.footer-col ul { list-style:none; display:flex; flex-direction:column; gap:0.6rem; }
+.footer-col a { font-size:0.85rem; color:var(--stone-400); transition:color 0.3s; }
+.footer-col a:hover { color:var(--white); }
+.footer-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.08); font-size:0.78rem; color:var(--stone-500); flex-wrap:wrap; gap:1rem; }
+.footer-badges { display:flex; gap:1.5rem; }
+.footer-badges span { letter-spacing:0.12em; text-transform:uppercase; font-size:0.7rem; }
+
+.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
+.mobile-drawer.open { transform:translateX(0); }
+.mobile-drawer ul { list-style:none; display:flex; flex-direction:column; gap:1.4rem; }
+.mobile-drawer a { font-family:'Playfair Display',serif; font-size:1.3rem; font-style:italic; color:var(--black); }
+.mobile-close { position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; font-size:1.5rem; cursor:pointer; }
+.mobile-backdrop { position:fixed; inset:0; background:rgba(28,25,23,0.5); z-index:199; opacity:0; pointer-events:none; transition:opacity 0.35s; }
+.mobile-backdrop.open { opacity:1; pointer-events:auto; }
+
+@media (max-width:1100px) { .footer-grid { grid-template-columns:1.4fr 1fr 1fr; } }
+@media (max-width:900px) {
+ .navbar-links { display:none; } .hamburger { display:flex; } .topbar-left { display:none; }
+ .contact-grid { grid-template-columns:1fr; gap:3rem; padding:4rem 4vw; }
+ .channels { border-right:none; padding-right:0; border-bottom:1px solid var(--stone-200); padding-bottom:2rem; }
+ form.contact-form { grid-template-columns:1fr; }
+ .footer-grid { grid-template-columns:1fr 1fr; }
+ .page-hero { padding:4rem 4vw 3rem; }
+}
+@media (max-width:600px) {
+ .topbar { padding:0.5rem 4vw; font-size:0.68rem; } .topbar-right { gap:0.8rem; }
+ .footer-grid { grid-template-columns:1fr; gap:2.5rem; }
+ .footer-bottom { flex-direction:column; text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+ <div class="topbar-left"><span>Commercial facility services · Licensed · Insured · Bonded</span></div>
+ <div class="topbar-right">
+  <a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a>
+  <span class="topbar-sep">·</span>
+  <a href="tel:+17815583458">(781) 558-3458</a>
+  <span class="topbar-sep">·</span>
+  <a href="https://instagram.com/bluesky_clean_service" target="_blank" rel="noopener">Instagram</a>
+ </div>
+</div>
+
+<nav class="navbar">
+ <a href="index.html" class="navbar-logo">Blue<em>Sky</em><span class="tag">General Services</span></a>
+ <ul class="navbar-links">
+  <li><a href="index.html">Home</a></li>
+  <li>
+   <a href="services.html">Services <span class="caret">▾</span></a>
+   <div class="megamenu">
+    <a href="services/janitorial.html" class="megamenu-item"><strong>Janitorial</strong><span>Recurring commercial cleaning programs</span></a>
+    <a href="services/pressure-washing.html" class="megamenu-item"><strong>Pressure Washing</strong><span>Exterior high-pressure cleaning</span></a>
+    <a href="services/window-cleaning.html" class="megamenu-item"><strong>Window Cleaning</strong><span>Interior &amp; high-rise glass care</span></a>
+    <a href="services/carpet-cleaning.html" class="megamenu-item"><strong>Carpet Cleaning</strong><span>Extraction &amp; restoration</span></a>
+    <a href="services/floor-care.html" class="megamenu-item"><strong>Floor Stripping &amp; Waxing</strong><span>Hard-surface restoration</span></a>
+    <a href="services/post-construction.html" class="megamenu-item"><strong>Post-Construction</strong><span>Disaster recovery &amp; turnover cleanup</span></a>
+    <a href="services/property-decommission.html" class="megamenu-item"><strong>Property Decommission</strong><span>Decommission &amp; fog disinfect</span></a>
+   </div>
+  </li>
+  <li>
+   <a href="industries.html">Industries <span class="caret">▾</span></a>
+   <div class="megamenu">
+    <a href="industries.html#corporate" class="megamenu-item"><strong>Corporate Offices</strong><span>Class A / Class B environments</span></a>
+    <a href="industries.html#medical" class="megamenu-item"><strong>Medical &amp; Healthcare</strong><span>Clinics, medical offices, labs</span></a>
+    <a href="industries.html#retail" class="megamenu-item"><strong>Retail &amp; Commercial</strong><span>Shopping centers &amp; storefronts</span></a>
+    <a href="industries.html#education" class="megamenu-item"><strong>Education</strong><span>Schools, colleges, training centers</span></a>
+    <a href="industries.html#construction" class="megamenu-item"><strong>Construction</strong><span>Developer &amp; contractor partnerships</span></a>
+    <a href="industries.html#property" class="megamenu-item"><strong>Property Management</strong><span>Multi-tenant &amp; HOA portfolios</span></a>
+   </div>
+  </li>
+  <li><a href="projects.html">Case Studies</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="careers.html">Careers</a></li>
+  <li><a href="contact.html" class="btn-nav">Request a Proposal</a></li>
+ </ul>
+ <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-backdrop" id="mobileBackdrop"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+ <button class="mobile-close" id="mobileClose" aria-label="Close menu">×</button>
+ <ul>
+  <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="industries.html">Industries</a></li><li><a href="projects.html">Case Studies</a></li><li><a href="about.html">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="sustainability.html">Sustainability</a></li><li><a href="contact.html" class="btn-nav">Request a Proposal</a></li>
+ </ul>
+</div>
+
+<header class="page-hero">
+ <div class="page-hero-inner reveal">
+  <div class="breadcrumb"><a href="index.html">Home</a> <span class="breadcrumb-sep">/</span> Contact</div>
+  <span class="label">Request a Proposal</span>
+  <h1>Tell us about your building.</h1>
+  <p>We respond within one business day. Scoped proposals, pricing, schedule, inspection framework, reporting cadence, delivered within three business days of our initial call.</p>
+ </div>
+</header>
+
+<div class="contact-grid">
+ <aside class="channels reveal">
+  <div class="channel">
+   <h4>Email</h4>
+   <a class="value" href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a>
+   <div class="sub">Preferred for proposals, RFPs, and capability decks.</div>
+  </div>
+  <div class="channel">
+   <h4>Phone</h4>
+   <a class="value" href="tel:+17815583458">(781) 558-3458</a>
+   <div class="sub">Business hours for scoping; 24/7 for emergency response.</div>
+  </div>
+  <div class="channel">
+   <h4>Emergency Response</h4>
+   <span class="value">24/7 dispatch</span>
+   <div class="sub">Water events, post-storm recovery, and acute facility failures.</div>
+  </div>
+  <div class="channel">
+   <h4>Instagram</h4>
+   <a class="value" href="https://instagram.com/bluesky_clean_service" target="_blank" rel="noopener">@bluesky_clean_service</a>
+   <div class="sub">Active projects and field documentation.</div>
+  </div>
+  <div class="channel">
+   <h4>Service Area</h4>
+   <span class="value">Southeast United States</span>
+   <div class="sub">Multi-state coverage. Specific service area confirmed during scoping.</div>
+  </div>
+ </aside>
+
+ <div class="form-block reveal" data-delay="1">
+  <span class="label">Proposal Request</span>
+  <h2>Send us the scope.</h2>
+  <p class="intro">The more specific you can be, building size, occupancy hours, services needed, current vendor issues, the faster we can return a proposal that reflects your actual conditions.</p>
+
+  <form class="contact-form" id="proposalForm" onsubmit="event.preventDefault(); document.getElementById('successMsg').classList.add('show'); this.reset();">
+   <div class="form-field">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+   </div>
+   <div class="form-field">
+    <label for="company">Company</label>
+    <input type="text" id="company" name="company">
+   </div>
+   <div class="form-field">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+   </div>
+   <div class="form-field">
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" name="phone">
+   </div>
+   <div class="form-field full">
+    <label for="service">Service interest</label>
+    <select id="service" name="service">
+     <option value="">Select a service…</option>
+     <option>Janitorial</option>
+     <option>Pressure Washing</option>
+     <option>Window Cleaning</option>
+     <option>Carpet Cleaning</option>
+     <option>Floor Stripping &amp; Waxing</option>
+     <option>Post-Construction / Disaster Recovery</option>
+     <option>Integrated / Multi-Service Contract</option>
+     <option>Not sure, advise us</option>
+    </select>
+   </div>
+   <div class="form-field full">
+    <label for="industry">Industry / building type</label>
+    <select id="industry" name="industry">
+     <option value="">Select an industry…</option>
+     <option>Corporate Offices</option>
+     <option>Medical &amp; Healthcare</option>
+     <option>Retail &amp; Commercial</option>
+     <option>Education</option>
+     <option>Construction / Contractor</option>
+     <option>Property Management / Multi-tenant</option>
+     <option>Other</option>
+    </select>
+   </div>
+   <div class="form-field full">
+    <label for="message">Scope, square footage, current conditions</label>
+    <textarea id="message" name="message" rows="5" placeholder="Tell us about the building and what is not working today."></textarea>
+   </div>
+   <div class="form-submit">
+    <button type="submit" class="btn btn-primary">Send Request <span class="arrow">→</span></button>
+    <span class="form-note">We reply within one business day. No sales pressure, no shared contact lists.</span>
+   </div>
+   <div class="success-msg full" id="successMsg" style="grid-column:1/-1;">
+    <strong>Request received.</strong> We will reply from <em>contact@blueskygeneralserv.com</em> within one business day.
+   </div>
+  </form>
+ </div>
+</div>
+
+<section class="coverage">
+ <div class="reveal">
+  <span class="label">Coverage</span>
+  <p class="area">Multi-state service coverage across the Southeast United States.</p>
+  <p class="sub">Specific service area, mobilization timing, and emergency response capacity confirmed during proposal scoping. Out-of-area work considered for major engagements.</p>
+ </div>
+</section>
+
+<footer>
+ <div class="footer-grid">
+  <div class="footer-brand">
+   <strong>Blue<em>Sky</em></strong>
+   <p>A commercial facility services partner, cleaning, maintenance, and recovery programs delivered under measurable standards across the Southeast United States.</p>
+  </div>
+  <div class="footer-col"><h4>Company</h4><ul>
+   <li><a href="about.html">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="sustainability.html">Sustainability</a></li><li><a href="projects.html">Case Studies</a></li><li><a href="contact.html">Contact</a></li>
+  </ul></div>
+  <div class="footer-col"><h4>Services</h4><ul>
+   <li><a href="services/janitorial.html">Janitorial</a></li><li><a href="services/pressure-washing.html">Pressure Washing</a></li><li><a href="services/window-cleaning.html">Window Cleaning</a></li><li><a href="services/carpet-cleaning.html">Carpet Cleaning</a></li><li><a href="services/floor-care.html">Floor Stripping &amp; Waxing</a></li><li><a href="services/post-construction.html">Post-Construction</a></li><li><a href="services/property-decommission.html">Property Decommission</a></li>
+  </ul></div>
+  <div class="footer-col"><h4>Industries</h4><ul>
+   <li><a href="industries.html#corporate">Corporate</a></li><li><a href="industries.html#medical">Medical</a></li><li><a href="industries.html#retail">Retail</a></li><li><a href="industries.html#education">Education</a></li><li><a href="industries.html#construction">Construction</a></li><li><a href="industries.html#property">Property Mgmt</a></li>
+  </ul></div>
+  <div class="footer-col"><h4>Connect</h4><ul>
+   <li><a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a></li><li><a href="tel:+17815583458">(781) 558-3458</a></li><li><a href="https://instagram.com/bluesky_clean_service" target="_blank" rel="noopener">@bluesky_clean_service</a></li><li><a href="contact.html">Request a Proposal</a></li>
+  </ul></div>
+ </div>
+ <div class="footer-bottom">
+  <span>© 2026 BlueSky General Services. All rights reserved.</span>
+  <div class="footer-badges"><span>Licensed</span><span>Insured</span><span>Bonded</span></div>
+ </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const hamburger = document.getElementById('hamburger');
+const drawer = document.getElementById('mobileDrawer');
+const backdrop = document.getElementById('mobileBackdrop');
+const closeBtn = document.getElementById('mobileClose');
+function openD() { drawer.classList.add('open'); backdrop.classList.add('open'); document.body.style.overflow='hidden'; }
+function closeD() { drawer.classList.remove('open'); backdrop.classList.remove('open'); document.body.style.overflow=''; }
+hamburger.addEventListener('click', openD);
+closeBtn.addEventListener('click', closeD);
+backdrop.addEventListener('click', closeD);
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeD));
+</script>
+</body>
+</html>

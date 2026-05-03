@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accent — Azul vs Dourado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+/* Common base — same as template-d */
+:root {
+ --black:#1c1917;
+ --charcoal:#292524;
+ --stone-500:#78716c;
+ --stone-400:#a8a29e;
+ --stone-300:#d6d3d1;
+ --stone-200:#e7e5e4;
+ --stone-100:#f5f5f4;
+ --stone-50:#fafaf9;
+ --white:#fff;
+}
+
+body { font-family:'DM Sans',sans-serif; background:var(--stone-200); color:var(--black); padding-bottom:5rem; }
+img { display:block; max-width:100%; height:auto; object-fit:cover; }
+
+.page-hd { padding:2.5rem 4vw 2rem; background:var(--white); border-bottom:1px solid var(--stone-200); }
+.page-hd h1 { font-family:'Playfair Display',serif; font-style:italic; font-size:1.8rem; margin-bottom:0.5rem; }
+.page-hd p { color:var(--stone-500); max-width:62ch; font-size:0.92rem; line-height:1.5; }
+.page-hd .legend { margin-top:1rem; display:flex; gap:1.5rem; font-size:0.78rem; }
+.page-hd .legend span { display:inline-flex; align-items:center; gap:0.5rem; }
+.page-hd .legend i { width:14px; height:14px; display:inline-block; }
+.cur-green { background:#1e3a8a; }
+.cur-blue { background:#1e3a8a; }
+.cur-gold { background:#c9a557; }
+
+/* Theme container — overrides --accent locally */
+.theme { padding:0; margin-top:2rem; }
+.theme-tag { padding:1.2rem 4vw; background:var(--white); border-bottom:1px solid var(--stone-200); display:flex; gap:0.8rem; align-items:baseline; }
+.theme-tag strong { font-family:'Playfair Display',serif; font-style:italic; font-size:1.3rem; }
+.theme-tag .hex { font-family:monospace; color:var(--stone-500); font-size:0.78rem; }
+.theme-tag .desc { color:var(--stone-500); font-size:0.82rem; margin-left:auto; }
+
+.theme-blue { --accent:#1e3a8a; --accent-hover:#1e40af; --accent-soft:#dbeafe; }
+.theme-gold { --accent:#c9a557; --accent-hover:#a78844; --accent-soft:#fef3c7; }
+
+/* Navbar mock */
+.navbar { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 4vw; background:rgba(255,255,255,0.97); border-bottom:1px solid var(--stone-200); }
+.navbar-logo { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:500; display:inline-flex; align-items:baseline; gap:0.45rem; }
+.navbar-logo em { font-style:italic; color:var(--accent); }
+.navbar-logo .tag { font-family:'DM Sans',sans-serif; font-size:0.68rem; color:var(--stone-500); letter-spacing:0.12em; text-transform:uppercase; }
+.nav-links { display:flex; gap:2rem; font-size:0.82rem; color:var(--stone-500); align-items:center; }
+.nav-links a:hover { color:var(--black); }
+.btn-nav { background:var(--accent); color:var(--white); padding:0.55rem 1.2rem; font-size:0.78rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:500; }
+
+/* Hero mock */
+.hero { position:relative; min-height:60vh; background:var(--black); color:var(--white); overflow:hidden; display:flex; align-items:flex-end; }
+.hero-bg { position:absolute; inset:0; }
+.hero-bg img { width:100%; height:100%; object-fit:cover; }
+.hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(28,25,23,0.35) 0%, rgba(28,25,23,0.85) 100%); z-index:1; }
+.hero-content { position:relative; z-index:2; padding:5rem 4vw 4rem; max-width:1100px; }
+.hero-label { display:inline-flex; align-items:center; gap:0.7rem; font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.75); margin-bottom:1.2rem; }
+.hero-label::before { content:""; width:32px; height:1px; background:rgba(255,255,255,0.5); }
+.hero h1 { font-family:'Playfair Display',serif; font-style:italic; font-weight:400; font-size:clamp(2rem,4.5vw,3.6rem); line-height:1.05; margin-bottom:1.2rem; max-width:18ch; }
+.hero h1 .accent-word { color:var(--white); border-bottom:2px solid var(--accent); padding-bottom:0.08em; }
+.hero p { font-size:1rem; max-width:54ch; color:rgba(255,255,255,0.85); margin-bottom:2rem; line-height:1.6; }
+.hero-cta { display:flex; gap:1rem; }
+.btn-primary { background:var(--accent); color:var(--white); padding:0.85rem 1.7rem; font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; }
+.btn-outline { background:transparent; color:var(--white); border:1px solid rgba(255,255,255,0.45); padding:0.85rem 1.7rem; font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; }
+
+/* Service card mock */
+.service-section { padding:4rem 4vw; background:var(--stone-50); }
+.service-section h2 { font-family:'Playfair Display',serif; font-style:italic; font-size:1.8rem; margin-bottom:0.4rem; }
+.service-section .label { font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--stone-500); }
+.service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin-top:2rem; max-width:1100px; }
+.s-card { background:var(--white); border:1px solid var(--stone-200); padding:0; overflow:hidden; }
+.s-card-img { aspect-ratio:4/3; background:var(--stone-200); }
+.s-card-img img { width:100%; height:100%; object-fit:cover; }
+.s-card-body { padding:1.5rem 1.4rem; }
+.s-card-body .num { font-family:'Playfair Display',serif; font-size:0.85rem; font-style:italic; color:var(--accent); }
+.s-card-body h3 { font-family:'Playfair Display',serif; font-style:italic; font-weight:500; font-size:1.2rem; margin:0.4rem 0 0.6rem; }
+.s-card-body p { font-size:0.86rem; color:var(--stone-500); }
+.s-card-body .link { font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--black); font-weight:500; margin-top:0.8rem; display:inline-block; }
+.s-card:hover .num, .s-card:hover .link { color:var(--accent); }
+
+/* Stats mock */
+.stats { background:var(--black); color:var(--white); padding:3rem 4vw; }
+.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; max-width:1200px; }
+.stat { border-left:1px solid rgba(255,255,255,0.12); padding-left:1.2rem; }
+.stat .v { font-family:'Playfair Display',serif; font-style:italic; font-size:2rem; color:var(--accent-soft); }
+.stat .l { font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone-400); margin-top:0.4rem; }
+
+/* Footer mock */
+.footer { background:var(--black); color:var(--stone-400); padding:2.5rem 4vw; }
+.footer strong { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--white); }
+.footer strong em { font-style:italic; color:var(--accent-soft); }
+.footer-badges { display:flex; gap:1.2rem; margin-top:1rem; font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone-500); }
+
+@media (max-width:900px) {
+ .service-grid { grid-template-columns:1fr; }
+ .stats-grid { grid-template-columns:repeat(2,1fr); }
+ .nav-links { display:none; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-hd">
+ <h1>Accent — comparação Azul Navy vs Dourado</h1>
+ <p>Ambas variações renderizam exatamente o mesmo bloco do site (navbar + hero + cards + stats + footer). Só muda a cor de accent. Compara o feeling de cada uma e me diz qual aplico.</p>
+ <div class="legend">
+  <span><i class="cur-green"></i> Atual: <code>#1e3a8a</code></span>
+  <span><i class="cur-blue"></i> Opção Azul: <code>#1e3a8a</code></span>
+  <span><i class="cur-gold"></i> Opção Dourada: <code>#c9a557</code></span>
+ </div>
+</header>
+
+<!-- ═══ THEME BLUE ═══ -->
+<section class="theme theme-blue">
+ <div class="theme-tag">
+  <strong>Opção 1 · Azul Navy</strong>
+  <span class="hex">#1e3a8a</span>
+  <span class="desc">B2B enterprise · LinkedIn / Salesforce / IBM vibe · bate com o navy do logo</span>
+ </div>
+ <nav class="navbar">
+  <span class="navbar-logo">Blue<em>Sky</em> <span class="tag">General Services</span></span>
+  <div class="nav-links"><a>Home</a><a>Services</a><a>Industries</a><a>About</a><a class="btn-nav">Request a Proposal</a></div>
+ </nav>
+ <div class="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1482449609509-eae2a7ea42b7?w=2400&amp;q=85" alt=""></div>
+  <div class="hero-content">
+   <span class="hero-label">BlueSky General Services</span>
+   <h1><span class="accent-word">Commercial</span> cleaning, executed at enterprise standard.</h1>
+   <p>A facility services partner for buildings that cannot fail. Licensed, insured, bonded.</p>
+   <div class="hero-cta"><a class="btn-primary">Request a Proposal →</a><a class="btn-outline">Explore Services</a></div>
+  </div>
+ </div>
+ <div class="service-section">
+  <span class="label">What we do</span>
+  <h2>Six programs. One discipline.</h2>
+  <div class="service-grid">
+   <div class="s-card"><div class="s-card-img"><img src="assets/img/services/floor/apple-after-2.png" alt=""></div><div class="s-card-body"><span class="num">— 05</span><h3>Floor Stripping &amp; Waxing</h3><p>VCT, terrazzo, concrete, LVT restoration.</p><span class="link">Learn more →</span></div></div>
+   <div class="s-card"><div class="s-card-img"><img src="assets/img/hero-options/pressure-field.jpg" alt=""></div><div class="s-card-body"><span class="num">— 02</span><h3>Pressure Washing</h3><p>Exterior surfaces restored on schedule.</p><span class="link">Learn more →</span></div></div>
+   <div class="s-card"><div class="s-card-img"><img src="assets/img/services/janitorial/airport-1.png" alt=""></div><div class="s-card-body"><span class="num">— 01</span><h3>Janitorial Services</h3><p>Recurring commercial programs.</p><span class="link">Learn more →</span></div></div>
+  </div>
+ </div>
+ <div class="stats">
+  <div class="stats-grid">
+   <div class="stat"><div class="v">500+</div><div class="l">Commercial Clients</div></div>
+   <div class="stat"><div class="v">10+ yrs</div><div class="l">Industry Experience</div></div>
+   <div class="stat"><div class="v">24/7</div><div class="l">Emergency Response</div></div>
+   <div class="stat"><div class="v">SE USA</div><div class="l">Multi-State Coverage</div></div>
+  </div>
+ </div>
+ <div class="footer">
+  <strong>Blue<em>Sky</em></strong>
+  <div class="footer-badges"><span>Licensed</span><span>Insured</span><span>Bonded</span></div>
+ </div>
+</section>
+
+<!-- ═══ THEME GOLD ═══ -->
+<section class="theme theme-gold">
+ <div class="theme-tag">
+  <strong>Opção 2 · Dourado</strong>
+  <span class="hex">#c9a557</span>
+  <span class="desc">Premium / luxo · Rolex / Tiffany vibe · bate com o gold do logo</span>
+ </div>
+ <nav class="navbar">
+  <span class="navbar-logo">Blue<em>Sky</em> <span class="tag">General Services</span></span>
+  <div class="nav-links"><a>Home</a><a>Services</a><a>Industries</a><a>About</a><a class="btn-nav">Request a Proposal</a></div>
+ </nav>
+ <div class="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1482449609509-eae2a7ea42b7?w=2400&amp;q=85" alt=""></div>
+  <div class="hero-content">
+   <span class="hero-label">BlueSky General Services</span>
+   <h1><span class="accent-word">Commercial</span> cleaning, executed at enterprise standard.</h1>
+   <p>A facility services partner for buildings that cannot fail. Licensed, insured, bonded.</p>
+   <div class="hero-cta"><a class="btn-primary">Request a Proposal →</a><a class="btn-outline">Explore Services</a></div>
+  </div>
+ </div>
+ <div class="service-section">
+  <span class="label">What we do</span>
+  <h2>Six programs. One discipline.</h2>
+  <div class="service-grid">
+   <div class="s-card"><div class="s-card-img"><img src="assets/img/services/floor/apple-after-2.png" alt=""></div><div class="s-card-body"><span class="num">— 05</span><h3>Floor Stripping &amp; Waxing</h3><p>VCT, terrazzo, concrete, LVT restoration.</p><span class="link">Learn more →</span></div></div>
+   <div class="s-card"><div class="s-card-img"><img src="assets/img/hero-options/pressure-field.jpg" alt=""></div><div class="s-card-body"><span class="num">— 02</span><h3>Pressure Washing</h3><p>Exterior surfaces restored on schedule.</p><span class="link">Learn more →</span></div></div>
+   <div class="s-card"><div class="s-card-img"><img src="assets/img/services/janitorial/airport-1.png" alt=""></div><div class="s-card-body"><span class="num">— 01</span><h3>Janitorial Services</h3><p>Recurring commercial programs.</p><span class="link">Learn more →</span></div></div>
+  </div>
+ </div>
+ <div class="stats">
+  <div class="stats-grid">
+   <div class="stat"><div class="v">500+</div><div class="l">Commercial Clients</div></div>
+   <div class="stat"><div class="v">10+ yrs</div><div class="l">Industry Experience</div></div>
+   <div class="stat"><div class="v">24/7</div><div class="l">Emergency Response</div></div>
+   <div class="stat"><div class="v">SE USA</div><div class="l">Multi-State Coverage</div></div>
+  </div>
+ </div>
+ <div class="footer">
+  <strong>Blue<em>Sky</em></strong>
+  <div class="footer-badges"><span>Licensed</span><span>Insured</span><span>Bonded</span></div>
+ </div>
+</section>
+
+</body>
+</html>

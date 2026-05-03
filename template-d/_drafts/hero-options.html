@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Options — BlueSky (comparação)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root { --black:#1c1917; --stone-200:#e7e5e4; --stone-300:#d6d3d1; --stone-400:#a8a29e; --stone-500:#78716c; --white:#fff; --accent:#166534; --accent-soft:#dcfce7; }
+body { font-family:'DM Sans',sans-serif; color:var(--black); background:var(--black); }
+h1,h2,h3 { font-family:'Playfair Display',serif; font-weight:400; }
+a { color:inherit; text-decoration:none; }
+img { display:block; width:100%; height:100%; object-fit:cover; }
+
+/* Page header */
+.page-hd { padding:3rem 4vw 2rem; background:var(--white); border-bottom:1px solid var(--stone-200); }
+.page-hd h1 { font-size:2rem; font-style:italic; margin-bottom:0.5rem; }
+.page-hd p { color:var(--stone-500); max-width:62ch; font-size:0.95rem; }
+.page-hd .note { margin-top:1rem; font-size:0.82rem; color:var(--stone-500); background:var(--stone-200); padding:0.8rem 1rem; display:inline-block; }
+
+/* Option wrapper */
+.opt { position:relative; background:var(--black); }
+.opt-label { position:absolute; top:1rem; left:1rem; z-index:10; background:rgba(255,255,255,0.96); padding:0.8rem 1.2rem; font-size:0.75rem; letter-spacing:0.1em; display:flex; flex-direction:column; gap:0.2rem; backdrop-filter:blur(6px); max-width:360px; }
+.opt-label strong { font-family:'Playfair Display',serif; font-style:italic; font-size:1rem; color:var(--accent); letter-spacing:0; text-transform:none; font-weight:600; }
+.opt-label .src { text-transform:uppercase; color:var(--stone-500); font-size:0.68rem; letter-spacing:0.15em; }
+.opt-label .desc { color:var(--stone-500); font-size:0.78rem; letter-spacing:0; text-transform:none; margin-top:0.2rem; }
+
+/* Hero block (mimics real site hero) */
+.hero { position:relative; min-height:85vh; display:flex; align-items:flex-end; overflow:hidden; color:var(--white); }
+.hero-media { position:absolute; inset:0; z-index:1; }
+.hero-media img { object-position:center 50%; }
+.hero-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(28,25,23,0.3) 0%, rgba(28,25,23,0.6) 55%, rgba(28,25,23,0.9) 100%); z-index:2; }
+.hero-content { position:relative; z-index:3; padding:6rem 4vw 5rem; max-width:1200px; width:100%; }
+.hero-label { color:rgba(255,255,255,0.75); margin-bottom:1.5rem; display:inline-flex; align-items:center; gap:0.75rem; font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; }
+.hero-label::before { content:""; width:32px; height:1px; background:rgba(255,255,255,0.5); }
+.hero h1 { font-size:clamp(2.2rem, 4.8vw, 4.2rem); font-style:italic; line-height:1.08; max-width:20ch; margin-bottom:1.2rem; }
+.hero h1 .accent-word { border-bottom:2px solid var(--accent); padding-bottom:0.1rem; }
+.hero p.sub { font-size:clamp(0.95rem,1.3vw,1.1rem); color:rgba(255,255,255,0.82); max-width:56ch; line-height:1.6; margin-bottom:2rem; }
+.hero-cta { display:flex; gap:1rem; flex-wrap:wrap; }
+.btn { padding:0.85rem 1.7rem; font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; border:1px solid transparent; display:inline-flex; align-items:center; gap:0.5rem; }
+.btn-primary { background:var(--accent); color:var(--white); }
+.btn-outline { background:transparent; color:var(--white); border-color:rgba(255,255,255,0.5); }
+
+/* Separator between options */
+.opt-sep { height:2rem; background:var(--stone-200); display:flex; align-items:center; justify-content:center; font-size:0.7rem; letter-spacing:0.2em; color:var(--stone-500); text-transform:uppercase; }
+
+@media (max-width:900px) {
+ .hero { min-height:70vh; }
+ .opt-label { max-width:calc(100vw - 2rem); }
+}
+</style>
+</head>
+<body>
+
+<header class="page-hd">
+ <h1>Hero — 8 opções para escolher</h1>
+ <p>Cada bloco abaixo simula exatamente como a foto ficaria no hero da home (incluindo overlay escuro + texto sobreposto). A headline é fictícia só para você ver o contraste/legibilidade. Role a página de cima pra baixo e escolha pelo número.</p>
+ <p class="note">Legenda: <strong>OWN ACERVO</strong> = foto do cliente (mais autêntico). <strong>STOCK</strong> = Unsplash (genérico mas cinematográfico).</p>
+</header>
+
+<!-- OPTION 1 — OWN: Pressure Field (NEW) -->
+<section class="opt">
+ <div class="opt-label">
+  <span class="src">Option 1 · OWN ACERVO · NEW</span>
+  <strong>Pressure Washing — facade in action</strong>
+  <span class="desc">Dois trabalhadores em boom lift United Rentals, jato de água ativo, linha de limpeza visível na fachada. <b>Mais dramática das novas</b>.</span>
+ </div>
+ <div class="hero">
+  <div class="hero-media"><img src="assets/img/hero-options/pressure-field.jpg" alt="Option 1"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+   <span class="hero-label">BlueSky General Services</span>
+   <h1>Commercial exteriors, restored at <span class="accent-word">enterprise standard</span>.</h1>
+   <p class="sub">A facility services partner for buildings that cannot fail. Licensed, insured, bonded. Measured every shift.</p>
+   <div class="hero-cta"><a class="btn btn-primary">Request a Proposal →</a><a class="btn btn-outline">Explore Services</a></div>
+  </div>
+ </div>
+</section>
+
+<!-- OPTION 2 — OWN: Apple Floor -->
+<section class="opt">
+ <div class="opt-label">
+  <span class="src">Option 2 · OWN ACERVO · Apple</span>
+  <strong>Apple Store — high-gloss retail floor</strong>
+  <span class="desc">Piso espelhado pós-restauração na Apple Store. Vende "cliente premium + qualidade de acabamento".</span>
+ </div>
+ <div class="hero">
+  <div class="hero-media"><img src="assets/img/services/floor/apple-after-2.png" alt="Option 2"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+   <span class="hero-label">BlueSky General Services</span>
+   <h1>Flagship floors, restored to <span class="accent-word">mirror finish</span>.</h1>
+   <p class="sub">VCT strip and multi-coat wax for retail clients who can't close. Overnight turnaround. Zero disruption.</p>
+   <div class="hero-cta"><a class="btn btn-primary">Request a Proposal →</a><a class="btn btn-outline">Explore Services</a></div>
+  </div>
+ </div>
+</section>
+
+<!-- OPTION 3 — OWN: Boom Lift Action (NEW) -->
+<section class="opt">
+ <div class="opt-label">
+  <span class="src">Option 3 · OWN ACERVO · NEW</span>
+  <strong>Window Cleaning — boom lift close shot</strong>
+  <span class="desc">Cesto laranja do boom lift contra fachada de vidro escuro. Vende "altura + segurança + especialidade".</span>
+ </div>
+ <div class="hero">
+  <div class="hero-media"><img src="assets/img/hero-options/boom-lift-action.jpg" alt="Option 3"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+   <span class="hero-label">BlueSky General Services</span>
+   <h1>Glass at altitude, under <span class="accent-word">safety program</span>.</h1>
+   <p class="sub">Rope access, boom lift, and waterfed pole. Method chosen by the building, not the vendor.</p>
+   <div class="hero-cta"><a class="btn btn-primary">Request a Proposal →</a><a class="btn btn-outline">Explore Services</a></div>
+  </div>
+ </div>
+</section>
+
+<!-- OPTION 4 — OWN: Boom Lift Wide (NEW) -->
+<section class="opt">
+ <div class="opt-label">
+  <span class="src">Option 4 · OWN ACERVO · NEW</span>
+  <strong>Boom Lift — wide street view</strong>
+  <span class="desc">Vista ampla do prédio com boom lift posicionado. Mostra escala do serviço + edifício corporativo.</span>
+ </div>
+ <div class="hero">
+  <div class="hero-media"><img src="assets/img/hero-options/boom-lift.jpg" alt="Option 4"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+   <span class="hero-label">BlueSky General Services</span>
+   <h1>Commercial buildings. One operational <span class="accent-word">standard</span>.</h1>
+   <p class="sub">Ground-up facility services for owners, managers, and contractors. Proposed in writing. Reported monthly.</p>
+   <div class="hero-cta"><a class="btn btn-primary">Request a Proposal →</a><a class="btn btn-outline">Explore Services</a></div>
+  </div>
+ </div>
+</section>
+
+<!-- OPTION 5 — OWN: Milton Team Lobby -->
+<section class="opt">
+ <div class="opt-label">
+  <span class="src">Option 5 · OWN ACERVO · Milton</span>
+  <strong>Hurricane Milton — team aerial</strong>
+  <span class="desc">Aérea de 30+ pessoas em coletes amarelos no lobby. Vende "escala humana + resposta em desastre".</span>
+ </div>
+ <div class="hero">
+  <div class="hero-media"><img src="assets/img/milton-team-lobby.jpg" alt="Option 5"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+   <span class="hero-label">BlueSky General Services</span>
+   <h1>Thirty-plus team. Buildings that <span class="accent-word">cannot fail</span>.</h1>
+   <p class="sub">From nightly janitorial to 24-hour disaster mobilization. Hurricane Milton, proven.</p>
+   <div class="hero-cta"><a class="btn btn-primary">Request a Proposal →</a><a class="btn btn-outline">Explore Services</a></div>
+  </div>
+ </div>
+</section>
+
+<!-- OPTION 6 — OWN: Milton Lobby Caution -->
+<section class="opt">
+ <div class="opt-label">
+  <span class="src">Option 6 · OWN ACERVO · Milton</span>
+  <strong>Milton — lobby with caution tape</strong>
+  <span class="desc">Lobby grande com fita amarela + água no chão + dehumidifiers. Vende "disaster recovery real".</span>
+ </div>
+ <div class="hero">
+  <div class="hero-media"><img src="assets/img/milton-lobby-caution.jpg" alt="Option 6"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+   <span class="hero-label">BlueSky General Services</span>
+   <h1>When buildings flood, we <span class="accent-word">mobilize</span>.</h1>
+   <p class="sub">24/7 disaster response. Water extraction, industrial dehumidification, full restoration — inside the insurance window.</p>
+   <div class="hero-cta"><a class="btn btn-primary">Request a Proposal →</a><a class="btn btn-outline">Explore Services</a></div>
+  </div>
+ </div>
+</section>
+
+<!-- OPTION 7 — STOCK: Scissor Lift Window Cleaners -->
+<section class="opt">
+ <div class="opt-label">
+  <span class="src">Option 7 · STOCK · Unsplash</span>
+  <strong>Cinematic window cleaners (silhouette)</strong>
+  <span class="desc">Dois limpadores em scissor lift vistos contra átrio de vidro. Estético/minimalista.</span>
+ </div>
+ <div class="hero">
+  <div class="hero-media"><img src="https://images.unsplash.com/photo-1482449609509-eae2a7ea42b7?w=2400&amp;q=90" alt="Option 7"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+   <span class="hero-label">BlueSky General Services</span>
+   <h1>Commercial cleaning, executed at <span class="accent-word">enterprise standard</span>.</h1>
+   <p class="sub">A facility services partner for buildings that cannot fail. Licensed, insured, bonded.</p>
+   <div class="hero-cta"><a class="btn btn-primary">Request a Proposal →</a><a class="btn btn-outline">Explore Services</a></div>
+  </div>
+ </div>
+</section>
+
+<!-- OPTION 8 — STOCK: Floor Scrubber Atrium -->
+<section class="opt">
+ <div class="opt-label">
+  <span class="src">Option 8 · STOCK · Unsplash</span>
+  <strong>Epic floor scrubber in colorful atrium</strong>
+  <span class="desc">Ride-on scrubber em átrio moderno com teto colorido. Visual muito forte, mas lembra menos o serviço que realmente vende.</span>
+ </div>
+ <div class="hero">
+  <div class="hero-media"><img src="https://images.unsplash.com/photo-1744681984533-ce43dce4cc70?w=2400&amp;q=90" alt="Option 8"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+   <span class="hero-label">BlueSky General Services</span>
+   <h1>Commercial floor care, at <span class="accent-word">scale</span>.</h1>
+   <p class="sub">VCT, terrazzo, concrete, LVT. Restored on schedules that respect occupancy.</p>
+   <div class="hero-cta"><a class="btn btn-primary">Request a Proposal →</a><a class="btn btn-outline">Explore Services</a></div>
+  </div>
+ </div>
+</section>
+
+<div class="opt-sep">· fim das opções ·</div>
+
+</body>
+</html>
