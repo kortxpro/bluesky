@@ -108,7 +108,14 @@ section { padding:7rem 4vw; }
 .case-video { background:var(--black); padding:0; }
 .case-video-inner { display:grid; grid-template-columns:1fr 1fr; align-items:stretch; min-height:560px; }
 .case-video-media { position:relative; overflow:hidden; background:var(--charcoal); }
-.case-video-media video { width:100%; height:100%; object-fit:cover; display:block; }
+.case-video-slide { position:absolute; inset:0; opacity:0; transition:opacity 0.5s ease; pointer-events:none; }
+.case-video-slide.active { opacity:1; pointer-events:auto; }
+.case-video-slide video { width:100%; height:100%; object-fit:cover; display:block; }
+.case-video-nav { position:absolute; bottom:1.2rem; right:1.2rem; z-index:5; display:flex; gap:0.5rem; }
+.case-video-arrow { width:42px; height:42px; border-radius:50%; border:1px solid rgba(255,255,255,0.4); background:rgba(0,0,0,0.45); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); color:var(--white); font-size:1.05rem; line-height:1; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; transition:background 0.25s, border-color 0.25s; padding:0; }
+.case-video-arrow:hover { background:rgba(0,0,0,0.7); border-color:var(--white); }
+.case-video-counter { position:absolute; bottom:1.4rem; left:1.4rem; z-index:5; font-family:'Playfair Display',serif; font-style:italic; font-size:0.95rem; color:rgba(255,255,255,0.85); letter-spacing:0.08em; }
+.case-video-counter em { color:var(--accent-soft); font-style:italic; }
 .case-video-body { padding:5rem 4vw; display:flex; flex-direction:column; justify-content:center; gap:1.2rem; color:var(--white); }
 .case-video-body .label { color:var(--accent-soft); }
 .case-video-body h2 { font-size:clamp(1.8rem,2.6vw,2.2rem); font-style:italic; max-width:22ch; line-height:1.15; }
@@ -320,15 +327,32 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 
 <section class="case-video">
  <div class="case-video-inner">
-  <div class="case-video-media reveal">
-   <video autoplay loop muted playsinline poster="../assets/img/services/windows/orange-county-courts-rope-3.jpeg">
-    <source src="../assets/video/orange-county-courts-rope.mp4" type="video/mp4">
-   </video>
+  <div class="case-video-media reveal" id="videoCarousel">
+   <div class="case-video-slide active" data-i="0">
+    <video loop muted playsinline preload="metadata" poster="../assets/img/services/windows/orange-county-courts-rope-3.jpeg">
+     <source src="../assets/video/orange-county-courts-rope-1.mp4" type="video/mp4">
+    </video>
+   </div>
+   <div class="case-video-slide" data-i="1">
+    <video loop muted playsinline preload="none" poster="../assets/img/services/windows/orange-county-courts-rope-4.jpeg">
+     <source src="../assets/video/orange-county-courts-rope-2.mp4" type="video/mp4">
+    </video>
+   </div>
+   <div class="case-video-slide" data-i="2">
+    <video loop muted playsinline preload="none" poster="../assets/img/services/windows/orange-county-courts-rope-5.jpeg">
+     <source src="../assets/video/orange-county-courts-rope-3.mp4" type="video/mp4">
+    </video>
+   </div>
+   <div class="case-video-counter"><em id="videoIdx">01</em> / 03</div>
+   <div class="case-video-nav">
+    <button class="case-video-arrow" id="videoPrev" aria-label="Previous clip">‹</button>
+    <button class="case-video-arrow" id="videoNext" aria-label="Next clip">›</button>
+   </div>
   </div>
   <div class="case-video-body reveal" data-delay="1">
    <span class="case-video-tag">Field Footage · Rope Access</span>
    <h2>What the work actually looks like, mid-shift.</h2>
-   <p>Documented rope-access window cleaning in motion. Certified technician on a verified anchor system, working a vertical run of glass on a multi-story public courthouse. No boom lift, no scaffold, no interruption to the building's day.</p>
+   <p>Three short clips from the courthouse program. Certified technicians on verified anchor systems, working vertical runs of glass on a multi-story public building. No boom lift, no scaffold, no interruption to the building's day.</p>
    <a href="../services/window-cleaning.html" class="btn btn-outline">Explore Window Cleaning <span class="arrow">→</span></a>
   </div>
  </div>
@@ -441,6 +465,40 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
  }
  setInterval(() => go(i + 1), 4500);
  dots.forEach((d, idx) => d.addEventListener('click', () => go(idx)));
+})();
+
+(function(){
+ const slides = document.querySelectorAll('.case-video-slide');
+ const idxEl = document.getElementById('videoIdx');
+ const prev = document.getElementById('videoPrev');
+ const next = document.getElementById('videoNext');
+ if (!slides.length) return;
+ let i = 0;
+ const pad = (n) => String(n + 1).padStart(2, '0');
+ function play(slide) {
+  const v = slide.querySelector('video');
+  if (!v) return;
+  if (v.preload !== 'metadata' && v.preload !== 'auto') v.preload = 'auto';
+  v.currentTime = 0;
+  const p = v.play();
+  if (p && p.catch) p.catch(() => {});
+ }
+ function pause(slide) {
+  const v = slide.querySelector('video');
+  if (v) v.pause();
+ }
+ function go(n) {
+  pause(slides[i]);
+  slides[i].classList.remove('active');
+  i = ((n % slides.length) + slides.length) % slides.length;
+  slides[i].classList.add('active');
+  if (idxEl) idxEl.textContent = pad(i);
+  play(slides[i]);
+ }
+ // Initial play of first
+ play(slides[0]);
+ prev.addEventListener('click', () => go(i - 1));
+ next.addEventListener('click', () => go(i + 1));
 })();
 
 const hamburger = document.getElementById('hamburger');
