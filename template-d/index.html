@@ -1268,12 +1268,13 @@ const rotateEl = document.getElementById('rotateWord');
 const rotateHost = document.getElementById('rotateHost');
 let rotateIdx = 0;
 if (rotateEl && rotateHost) {
+ const localize = (w) => (window.bskI18n ? window.bskI18n.translate(w) : w);
  function measureWidths() {
   const orig = rotateEl.textContent;
   const origHostW = rotateHost.style.width;
   rotateHost.style.width = 'auto';
   const ws = rotateWords.map(w => {
-   rotateEl.textContent = w;
+   rotateEl.textContent = localize(w);
    return Math.ceil(rotateEl.getBoundingClientRect().width);
   });
   rotateEl.textContent = orig;
@@ -1286,13 +1287,18 @@ if (rotateEl && rotateHost) {
   widths = measureWidths();
   rotateHost.style.width = widths[rotateIdx] + 'px';
  });
+ document.addEventListener('bsk:lang-changed', () => {
+  widths = measureWidths();
+  rotateEl.textContent = localize(rotateWords[rotateIdx]);
+  rotateHost.style.width = widths[rotateIdx] + 'px';
+ });
  setInterval(() => {
   rotateEl.classList.add('out');
   setTimeout(() => {
    rotateEl.classList.add('pre');
    rotateEl.classList.remove('out');
    rotateIdx = (rotateIdx + 1) % rotateWords.length;
-   rotateEl.textContent = rotateWords[rotateIdx];
+   rotateEl.textContent = localize(rotateWords[rotateIdx]);
    rotateHost.style.width = widths[rotateIdx] + 'px';
    requestAnimationFrame(() => { rotateEl.classList.remove('pre'); });
   }, 420);
@@ -1300,5 +1306,6 @@ if (rotateEl && rotateHost) {
 }
 </script>
 
+<script src="assets/js/i18n.js"></script>
 </body>
 </html>
