@@ -183,6 +183,11 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 .case-shot::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(28,25,23,0.08) 0%, rgba(28,25,23,0.34) 100%); opacity:0.85; transition:opacity 0.35s ease; }
 .case-shot:hover img { transform:scale(1.08); }
 .case-shot:hover::after { opacity:0.55; }
+.case-pair--composite .case-pair-grid { grid-template-columns:1fr; }
+.case-pair--composite .case-shot { border-right:none; background:var(--white); }
+.case-pair--composite .case-shot img { aspect-ratio:auto; height:auto; max-height:620px; object-fit:contain; background:var(--white); }
+.case-pair--composite .case-shot::after { display:none; }
+.case-pair--composite .case-shot:hover img { transform:none; }
 .case-shot-label { position:absolute; left:1rem; top:1rem; z-index:2; padding:0.42rem 0.62rem; font-size:0.62rem; letter-spacing:0.16em; text-transform:uppercase; background:rgba(28,25,23,0.76); color:var(--white); }
 .case-shot-meta { position:absolute; left:1rem; right:1rem; bottom:1rem; z-index:2; display:flex; justify-content:space-between; align-items:end; gap:1rem; color:var(--white); }
 .case-shot-meta strong { display:block; font-family:'Playfair Display',serif; font-size:1.15rem; font-style:italic; font-weight:500; line-height:1.1; }
@@ -340,75 +345,36 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
      </figure>
     </div>
    </article>
-   <article class="case-pair reveal" data-delay="1">
+   <article class="case-pair case-pair--composite reveal" data-delay="1">
     <div class="case-pair-head">
      <h4>Comparison 02</h4>
-     <span>Before 2 / After 2</span>
+     <span>Sink edge · Before / After</span>
     </div>
     <div class="case-pair-grid">
      <figure class="case-shot">
-      <span class="case-shot-label">Before</span>
-      <img src="../assets/img/services/janitorial/airport-before-2.png" alt="Airport mini-case before image 2">
-      <figcaption class="case-shot-meta">
-       <strong>Original condition</strong>
-       <span>Before 2</span>
-      </figcaption>
-     </figure>
-     <figure class="case-shot">
-      <span class="case-shot-label">After</span>
-      <img src="../assets/img/services/janitorial/airport-after-2.png" alt="Airport mini-case after image 2">
-      <figcaption class="case-shot-meta">
-       <strong>Recovered condition</strong>
-       <span>After 2</span>
-      </figcaption>
+      <img src="../assets/img/services/janitorial/airport-after-detail-1.png" alt="Side-by-side before/after of airport restroom sink edge: dirty buildup restored to clean finish">
      </figure>
     </div>
    </article>
-   <article class="case-pair reveal" data-delay="2">
+   <article class="case-pair case-pair--composite reveal" data-delay="2">
     <div class="case-pair-head">
      <h4>Comparison 03</h4>
-     <span>Before 3 / After 3</span>
+     <span>Chrome faucet · Before / After</span>
     </div>
     <div class="case-pair-grid">
      <figure class="case-shot">
-      <span class="case-shot-label">Before</span>
-      <img src="../assets/img/services/janitorial/airport-before-3.png" alt="Airport mini-case before image 3">
-      <figcaption class="case-shot-meta">
-       <strong>Original condition</strong>
-       <span>Before 3</span>
-      </figcaption>
-     </figure>
-     <figure class="case-shot">
-      <span class="case-shot-label">After</span>
-      <img src="../assets/img/services/janitorial/airport-after-3.png" alt="Airport mini-case after image 3">
-      <figcaption class="case-shot-meta">
-       <strong>Recovered condition</strong>
-       <span>After 3</span>
-      </figcaption>
+      <img src="../assets/img/services/janitorial/airport-after-detail-2.png" alt="Side-by-side before/after of airport restroom faucet: limescale and grime removed to restore chrome finish">
      </figure>
     </div>
    </article>
-   <article class="case-pair reveal" data-delay="3">
+   <article class="case-pair case-pair--composite reveal" data-delay="3">
     <div class="case-pair-head">
      <h4>Comparison 04</h4>
-     <span>Before 4 / After 4</span>
+     <span>Toilet bowl · Before / After</span>
     </div>
     <div class="case-pair-grid">
      <figure class="case-shot">
-      <span class="case-shot-label">Before</span>
-      <img src="../assets/img/services/janitorial/airport-before-4.png" alt="Airport mini-case before image 4">
-      <figcaption class="case-shot-meta">
-       <strong>Original condition</strong>
-       <span>Before 4</span>
-      </figcaption>
-     </figure>
-     <figure class="case-shot">
-      <span class="case-shot-label">After</span>
-      <img src="../assets/img/services/janitorial/airport-after-4.png" alt="Airport mini-case after image 4">
-      <figcaption class="case-shot-meta">
-       <strong>Recovered condition</strong>
-       <span>After 4</span>
-      </figcaption>
+      <img src="../assets/img/services/janitorial/airport-after-detail-3.png" alt="Side-by-side before/after of airport restroom toilet bowl: scaling and stains restored to clean porcelain">
      </figure>
     </div>
    </article>
