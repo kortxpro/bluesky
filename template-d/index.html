@@ -295,7 +295,6 @@ img { display: block; max-width: 100%; height: auto; object-fit: cover; }
  max-width: 20ch;
  margin-bottom: 1.5rem;
 }
-html[lang="pt"] .hero h1 { max-width: 26ch; }
 .hero h1 .accent-word {
  color: var(--white);
  border-bottom: 2px solid var(--accent);
@@ -931,7 +930,7 @@ footer {
  <div class="hero-overlay"></div>
  <div class="hero-content">
   <span class="hero-label">BlueSky General Services</span>
-  <h1><span id="heroPrefix"></span><span id="rotateHost" class="rotate-host"><span id="rotateWord" class="rotate-word">Commercial</span></span><span id="heroSuffix"> cleaning,</span><br><span id="heroTail">executed at enterprise standard.</span></h1>
+  <h1><span id="rotateHost" class="rotate-host"><span id="rotateWord" class="rotate-word">Commercial</span></span> cleaning,<br>executed at enterprise standard.</h1>
   <p class="hero-sub">A facility services partner for buildings that cannot fail: Class A offices, medical facilities, post-construction turnover, disaster recovery. Licensed, insured, bonded. Measured every shift.</p>
   <div class="hero-actions">
    <a href="contact.html" class="btn btn-primary">Request a Proposal <span class="arrow">→</span></a>
@@ -1263,34 +1262,17 @@ closeBtn.addEventListener('click', closeDrawer);
 backdrop.addEventListener('click', closeDrawer);
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
-// Hero headline — slide-up word rotator with animated width + bilingual reorder
-const rotateWordsByLang = {
- en: ['Commercial', 'Residential', 'Medical', 'Retail', 'Industrial'],
- pt: ['Escritórios', 'Residências', 'Hospitais', 'Lojas', 'Indústrias']
-};
-const heroParts = {
- en: { prefix: '', suffix: ' cleaning,' },
- pt: { prefix: 'Limpeza para ', suffix: ',' }
-};
+// Hero headline — slide-up word rotator with animated width
+const rotateWords = ['Commercial', 'Residential', 'Medical', 'Retail', 'Industrial'];
 const rotateEl = document.getElementById('rotateWord');
 const rotateHost = document.getElementById('rotateHost');
-const heroPrefix = document.getElementById('heroPrefix');
-const heroSuffix = document.getElementById('heroSuffix');
 let rotateIdx = 0;
-const getLang = () => (window.bskI18n ? window.bskI18n.getLang() : 'en');
-const wordsFor = (lang) => rotateWordsByLang[lang] || rotateWordsByLang.en;
-function applyHeroLang(lang) {
- if (heroPrefix) heroPrefix.textContent = heroParts[lang].prefix;
- if (heroSuffix) heroSuffix.textContent = heroParts[lang].suffix;
-}
-applyHeroLang(getLang());
 if (rotateEl && rotateHost) {
  function measureWidths() {
-  const lang = getLang();
   const orig = rotateEl.textContent;
   const origHostW = rotateHost.style.width;
   rotateHost.style.width = 'auto';
-  const ws = wordsFor(lang).map(w => {
+  const ws = rotateWords.map(w => {
    rotateEl.textContent = w;
    return Math.ceil(rotateEl.getBoundingClientRect().width);
   });
@@ -1299,26 +1281,18 @@ if (rotateEl && rotateHost) {
   return ws;
  }
  let widths = measureWidths();
- rotateEl.textContent = wordsFor(getLang())[rotateIdx];
  rotateHost.style.width = widths[rotateIdx] + 'px';
  window.addEventListener('resize', () => {
   widths = measureWidths();
   rotateHost.style.width = widths[rotateIdx] + 'px';
  });
- document.addEventListener('bsk:lang-changed', (e) => {
-  applyHeroLang(e.detail.lang);
-  widths = measureWidths();
-  rotateEl.textContent = wordsFor(e.detail.lang)[rotateIdx];
-  rotateHost.style.width = widths[rotateIdx] + 'px';
- });
  setInterval(() => {
   rotateEl.classList.add('out');
   setTimeout(() => {
-   const lang = getLang();
    rotateEl.classList.add('pre');
    rotateEl.classList.remove('out');
-   rotateIdx = (rotateIdx + 1) % wordsFor(lang).length;
-   rotateEl.textContent = wordsFor(lang)[rotateIdx];
+   rotateIdx = (rotateIdx + 1) % rotateWords.length;
+   rotateEl.textContent = rotateWords[rotateIdx];
    rotateHost.style.width = widths[rotateIdx] + 'px';
    requestAnimationFrame(() => { rotateEl.classList.remove('pre'); });
   }, 420);
@@ -1326,6 +1300,5 @@ if (rotateEl && rotateHost) {
 }
 </script>
 
-<script src="assets/js/i18n.js"></script>
 </body>
 </html>
