@@ -286,6 +286,138 @@ curl -sIL -o /dev/null -w "%{http_code}\n" "https://bluesky-rev1.vercel.app/"
 
 ---
 
+## 6A. Refinamento de serviços — fase atual (late April / early May 2026)
+
+Nesta fase o foco saiu de experimentos paralelos e ficou concentrado no `template-d` como base oficial. A linha adotada foi:
+
+- refino sem mudar pesado a estrutura
+- mais prova visual e menos “layout conceitual”
+- uso de mídia real sempre que possível
+- completar com imagens externas apenas onde o acervo real ainda não sustenta a página
+
+### Estrutura final de serviços adotada
+1. Janitorial Services
+2. Pressure Washing
+3. Window Cleaning
+4. Carpet Cleaning
+5. Floor Stripping & Waxing
+6. Post-Construction
+7. Property Decommission
+
+### Regras que passaram a guiar o projeto
+- `Property Decommission` é o serviço principal; `Fog Disinfect` fica dentro dele como capability
+- `Post-Construction` é o serviço principal; `Disaster Recovery` aparece dentro dele como capability
+- `Window Cleaning` continua principal; `Rope Access` e `Boom Lift` entram como formas de acesso/capability
+- `Before/After` só entra quando o pareamento realmente faz sentido
+- Quando não há `before/after` forte, a página deve usar mini-case de execução/processo
+- O padrão forte de ordem passou a ser:
+  - `What's Included`
+  - mini-case ou prova principal
+  - `Our Process`
+  - library / prova complementar
+
+### Janitorial (`services/janitorial.html`)
+- Hero passou a usar imagem explicativa externa mais clara
+- Mini-case do aeroporto foi refeito com pares reais por numeração:
+  - `before 1 / after 1`
+  - `before 2 / after 2`
+  - `before 3 / after 3`
+  - `before 4 / after 4`
+- Foi testado slider igual ao de pressure washing, mas a direção final voltou para `before` e `after` lado a lado
+- A `Janitorial Library` virou apoio visual institucional e não mais uma mistura confusa de imagens antigas
+
+### Pressure Washing (`services/pressure-washing.html`)
+- Mini-case principal usa 4 pares
+- Ordem reestruturada:
+  - `What's Included`
+  - `Pressure Washing Mini-Case`
+  - `Our Process`
+  - `Pressure Washing Library`
+- Library foi refinada várias vezes para evitar repetição do mini-case
+- Hero passou por várias trocas; em um momento usou imagem enviada pelo cliente
+- Página chegou a ficar em branco por script de slider quebrado no final e foi corrigida
+
+### Window Cleaning (`services/window-cleaning.html`)
+- Hero atualizado com foco em rope access
+- A página foi redirecionada para mini-case de execução, não `before/after`
+- Mini-case final:
+  - `Retail Glass Program / Mixed Access`
+  - destaca `Rope Access / Boom Lift`
+- `Window Cleaning Library` foi adicionada com mistura de:
+  - imagens externas fortes de rope access
+  - imagens reais de boom lift
+- `Four Steps` foi reescrito para altura, acesso e método
+
+### Carpet Cleaning (`services/carpet-cleaning.html`)
+- Página reconstruída de forma mais enxuta
+- Hero passou a usar imagem externa mais legível de carpet
+- Mini-case ficou propositalmente curto com 2 imagens reais
+- Foi adicionada uma library curta, complementar, sem inflar artificialmente a prova
+- A lógica adotada foi tratar carpet como recovery/presentation service, não forçar um `before/after` fraco
+
+### Floor Care (`services/floor-care.html`)
+- Apple virou o mini-case principal da página
+- Estrutura reordenada para:
+  - `What's Included`
+  - mini-case da Apple
+  - `Our Process`
+  - `Before/After` com os outros casos
+- O slider geral deixou de competir com o mini-case principal
+- `Lobby restoration` não se aplica aqui; a força desta página é o caso Apple
+- Hero virou ponto sensível: várias trocas foram testadas entre stock e mídia local; esse hero ainda pode precisar de nova curadoria
+- A página chegou a ficar em branco por script de slider quebrado no final e foi corrigida
+
+### Post-Construction (`services/post-construction.html`)
+- `Post-Construction` consolidado como serviço principal
+- `Disaster Recovery` foi mantido como capability interna, ancorado no case Hurricane Milton
+- Hero foi reposicionado para vender closeout / turnover / entrega, não desastre como headline principal
+- `Lobby restoration` foi movido para a última posição do bloco `Before/After`
+- A página chegou a ficar em branco por script de slider quebrado no final e foi corrigida
+
+### Property Decommission (`services/property-decommission.html`)
+- Nome principal corrigido no conteúdo para `Property Decommission`
+- `Fog Disinfect` saiu do headline principal da página e passou a ser capability/subescopo
+- Foi criada `Property Decommission Library`
+- A library segue lógica híbrida:
+  - 1 imagem real de fogging
+  - imagens externas de vacancy / turnover / handoff
+- Esta página ainda depende de mais acervo real para subir o nível da prova
+
+### Problemas técnicos corrigidos nesta fase
+- `services/pressure-washing.html` — branco por script quebrado no final
+- `services/floor-care.html` — branco por script quebrado no final
+- `services/post-construction.html` — branco por script quebrado no final
+
+### Estado editorial/estrutural que ainda exige revisão
+- `services.html` ainda precisa de limpeza completa de nomenclatura:
+  - ainda sobrou `Post-Construction & Disaster Recovery`
+  - ainda sobrou `Property Decommission & Fog Disinfect`
+- alguns megamenus ainda usam subtítulos antigos:
+  - `Disaster recovery & turnover cleanup`
+  - `Decommission & fog disinfect`
+- `projects.html` ainda mistura case study real com páginas de serviço
+- `floor-care` hero ainda não está fechado
+- `property-decommission` ainda precisa de mais prova real
+
+### Decisões que a equipe da BlueSky ainda precisa tomar
+- logo final
+- fluxo de contato:
+  - só `Request a Proposal`
+  - formulário
+  - telefone/e-mail
+  - ou botão flutuante de WhatsApp
+- nome da seção `Industries`
+- manter ou não a página `Careers`
+- logos de clientes / governos / empresas atendidas para uma futura seção `Trusted By`
+- envio de documentações:
+  - licenses
+  - certifications
+  - insured / bonded
+  - capability statement
+  - material institucional/comercial
+
+---
+
 ## 7. Convenções de código
 
 - HTML estático (sem framework, sem build step)
@@ -308,6 +440,7 @@ curl -sIL -o /dev/null -w "%{http_code}\n" "https://bluesky-rev1.vercel.app/"
 - Email: contact@blueskygeneralserv.com
 - Tel: (781) 558-3458
 - Instagram: @bluesky_clean_service
+- Documento complementar de continuidade local: `/Users/ildodaniel/Desktop/bluesky/README-STATUS.md`
 
 ---
 
