@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+
+# Screenshots / imagens de trabalho (reunião, testes)
+Screenshot_*.png
+erro*.png
+test_*.jpg
+test-imgs/
+test-imgs2/
+
+# Scripts utilitários locais (rodados no Windows)
+fix_*.py
+update_assets.py
+
+# Mídia bruta e backups (fora do controle de versão)
+MIDIA/
+Sugestos de logo 2026/
+backups/
+logo.pdf
+
+# Template experimental abandonado (~91MB de binários) — preservado só em disco
+planos-opcionais/template-codex/

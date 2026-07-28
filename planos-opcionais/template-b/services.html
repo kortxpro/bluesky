@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Services | BlueSky General Services</title>
+<meta name="description" content="Commercial janitorial, pressure washing, window cleaning, carpet cleaning, floor stripping and waxing, and post-construction cleanup from BlueSky General Services.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0c1929;--navy2:#0f2035;--navy3:#162d4a;--gold:#38bdf8;--gold-soft:rgba(56,189,248,0.12);--white:#e8ecf2;--txt:#94a3b8;--txt-dim:#64748b;--radius:6px;--transition:0.3s ease}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:var(--navy);color:var(--txt);line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none;transition:color var(--transition)}
+img{max-width:100%;display:block}
+h1,h2,h3,h4,h5,h6{color:var(--white);font-weight:700;line-height:1.25}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:var(--radius);font-family:inherit;font-weight:600;font-size:.9rem;cursor:pointer;transition:all var(--transition);border:none;letter-spacing:.3px}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:#0ea5e9;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--gold);border:1.5px solid var(--gold)}
+.btn-outline:hover{background:var(--gold);color:var(--navy)}
+
+/* ── Topbar ── */
+.topbar{background:var(--navy2);border-bottom:1px solid rgba(255,255,255,.04);padding:10px 0;font-size:.78rem;color:var(--txt-dim)}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.topbar a{color:var(--txt-dim)}
+.topbar a:hover{color:var(--gold)}
+.topbar-left{display:flex;align-items:center;gap:18px}
+.topbar-right{display:flex;align-items:center;gap:18px}
+
+/* ── Navbar ── */
+.navbar{background:var(--navy);border-bottom:1px solid rgba(255,255,255,.05);position:sticky;top:0;z-index:1000;transition:box-shadow var(--transition)}
+.navbar.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.4)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem;color:var(--white)}
+.logo svg{flex-shrink:0}
+.nav-links{display:flex;align-items:center;gap:6px;list-style:none}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:10px 16px;font-size:.88rem;font-weight:500;color:var(--txt);border-radius:var(--radius);transition:all var(--transition)}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:var(--white);background:rgba(255,255,255,.04)}
+.nav-links>li>a.active{color:var(--gold)}
+.nav-cta .btn{padding:10px 24px;font-size:.85rem}
+
+/* ── Mega menu ── */
+.mega-trigger{position:relative}
+.mega-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(10px);opacity:0;visibility:hidden;pointer-events:none;transition:all .25s ease;background:var(--navy2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:28px 32px;width:640px;display:grid;grid-template-columns:1fr 1fr;gap:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);z-index:100}
+.mega-trigger:hover .mega-menu,.mega-menu:hover{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.mega-item{display:flex;gap:12px;padding:12px 14px;border-radius:var(--radius);transition:background var(--transition)}
+.mega-item:hover{background:var(--gold-soft)}
+.mega-icon{width:38px;height:38px;background:var(--gold-soft);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-size:1rem}
+.mega-item h4{font-size:.85rem;font-weight:600;margin-bottom:2px}
+.mega-item p{font-size:.75rem;color:var(--txt-dim);line-height:1.4}
+
+/* ── Hamburger ── */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:all var(--transition)}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--navy);z-index:999;padding:80px 24px 40px;overflow-y:auto}
+.mobile-menu.open{display:flex;flex-direction:column}
+.mobile-menu .mobile-close{position:absolute;top:20px;right:24px;background:none;border:none;color:var(--white);font-size:1.6rem;cursor:pointer}
+.mobile-menu a{display:block;padding:14px 0;font-size:1.1rem;font-weight:500;color:var(--txt);border-bottom:1px solid rgba(255,255,255,.05)}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-menu .mobile-sub{padding-left:20px}
+.mobile-menu .mobile-sub a{font-size:.92rem;color:var(--txt-dim)}
+
+/* ── Page Hero ── */
+.page-hero{position:relative;padding:120px 0 80px;overflow:hidden}
+.page-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(8,14,26,.78) 40%,rgba(8,14,26,.50) 100%)}
+.page-hero .container{position:relative;z-index:2}
+.page-hero .section-label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:2.5px;color:var(--gold);margin-bottom:14px;display:block}
+.page-hero h1{font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:800;margin-bottom:18px}
+.page-hero p{font-size:1.05rem;color:var(--txt);max-width:600px;font-weight:300;line-height:1.8}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--txt-dim);margin-bottom:24px}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb span{color:var(--gold)}
+
+/* ── Service sections ── */
+.section{padding:100px 0}
+.section-label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:2.5px;color:var(--gold);margin-bottom:12px}
+.service-section{padding:80px 0}
+.service-section:nth-child(even){background:var(--navy2)}
+.service-block{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.service-block.reverse .service-img{order:-1}
+.service-img{border-radius:12px;overflow:hidden;position:relative;aspect-ratio:4/3}
+.service-img img{width:100%;height:100%;object-fit:cover}
+.service-img::after{content:'';position:absolute;inset:0;border:1px solid rgba(255,255,255,.06);border-radius:12px;pointer-events:none}
+.service-text .section-label{margin-bottom:10px}
+.service-text h2{font-size:clamp(1.6rem,2.5vw,2.2rem);margin-bottom:18px}
+.service-text>p{font-size:.95rem;color:var(--txt);margin-bottom:16px;line-height:1.85;font-weight:300}
+.service-text .btn{margin-top:12px}
+.included-title{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--white);margin:28px 0 14px}
+.included-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 24px}
+.included-list li{padding:6px 0;font-size:.88rem;color:var(--txt);display:flex;align-items:flex-start;gap:10px}
+.included-list li::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:9px}
+
+/* ── Service nav (jump links) ── */
+.service-nav{background:var(--navy2);border-bottom:1px solid rgba(255,255,255,.04);padding:0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.service-nav-inner{display:flex;gap:0;min-width:max-content}
+.service-nav a{display:block;padding:16px 24px;font-size:.82rem;font-weight:500;color:var(--txt-dim);white-space:nowrap;border-bottom:2px solid transparent;transition:all var(--transition)}
+.service-nav a:hover{color:var(--white);background:rgba(255,255,255,.02)}
+
+/* ── CTA banner ── */
+.cta-banner{background:linear-gradient(135deg,var(--navy3) 0%,var(--navy2) 100%);border-top:1px solid rgba(56,189,248,.1);padding:80px 0}
+.cta-inner{text-align:center;max-width:640px;margin:0 auto}
+.cta-inner h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:16px}
+.cta-inner p{color:var(--txt);margin-bottom:32px;font-weight:300;font-size:1.05rem;line-height:1.7}
+
+/* ── Footer ── */
+.footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.04);padding:72px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:56px}
+.footer-col h4{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--white);margin-bottom:20px}
+.footer-col p{font-size:.85rem;color:var(--txt-dim);line-height:1.8}
+.footer-col a{display:block;font-size:.85rem;color:var(--txt-dim);padding:4px 0;transition:color var(--transition)}
+.footer-col a:hover{color:var(--gold)}
+.footer-about{display:flex;align-items:center;gap:10px;margin-bottom:16px;font-weight:700;color:var(--white);font-size:1rem}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.04);padding:24px 0;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--txt-dim);flex-wrap:wrap;gap:12px}
+.footer-bottom a{color:var(--txt-dim)}
+.footer-bottom a:hover{color:var(--gold)}
+
+/* ── Scroll reveal ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── Responsive ── */
+@media(max-width:1024px){
+.nav-links,.nav-cta{display:none}
+.hamburger{display:flex}
+.mega-menu{display:none}
+.service-block{grid-template-columns:1fr;gap:40px}
+.service-block.reverse .service-img{order:0}
+.footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:768px){
+.topbar{display:none}
+.page-hero{padding:90px 0 60px}
+.included-list{grid-template-columns:1fr}
+.service-section{padding:60px 0}
+}
+@media(max-width:480px){
+.footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+<div class="container">
+<div class="topbar-left">
+<span>Trusted by 500+ Commercial Clients</span>
+</div>
+<div class="topbar-right">
+<a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a>
+<a href="tel:+17815583458">(781) 558-3458</a>
+</div>
+</div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+<div class="container nav-inner">
+<a href="index.html" class="logo">
+<img src="https://blueskygeneralserv.com/wp-content/uploads/2021/07/cropped-bluesky.png" alt="BlueSky General Services" style="height:60px;width:auto">
+</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li class="mega-trigger">
+<a href="services.html" class="active">Services</a>
+<div class="mega-menu">
+<a href="services.html#janitorial" class="mega-item">
+<div class="mega-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/></svg></div>
+<div><h4>Janitorial Services</h4><p>Daily, weekly, and monthly cleaning programs for commercial facilities</p></div>
+</a>
+<a href="services.html#pressure" class="mega-item">
+<div class="mega-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2v6m0 0l-3-3m3 3l3-3M5 12h14M7 20h10a2 2 0 002-2v-4H5v4a2 2 0 002 2z"/></svg></div>
+<div><h4>Pressure Washing</h4><p>Exterior cleaning for storefronts, walkways, and parking structures</p></div>
+</a>
+<a href="services.html#windows" class="mega-item">
+<div class="mega-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/></svg></div>
+<div><h4>Window Cleaning</h4><p>Interior and exterior window care for multi-story buildings</p></div>
+</a>
+<a href="services.html#carpet" class="mega-item">
+<div class="mega-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 6v12M10 6v12M14 6v12M18 6v12"/></svg></div>
+<div><h4>Carpet Cleaning</h4><p>Hot water extraction and encapsulation for high-traffic floors</p></div>
+</a>
+<a href="services.html#floors" class="mega-item">
+<div class="mega-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 20h16M4 20l4-16h8l4 16"/><line x1="8" y1="10" x2="16" y2="10"/></svg></div>
+<div><h4>Floor Stripping &amp; Waxing</h4><p>VCT, LVT, and hard surface restoration to factory finish</p></div>
+</a>
+<a href="services.html#postconstruction" class="mega-item">
+<div class="mega-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 20h20M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/></svg></div>
+<div><h4>Post-Construction Cleanup</h4><p>Multi-phase cleanup from rough clean to final punch list</p></div>
+</a>
+</div>
+</li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<div class="nav-cta">
+<a href="contact.html" class="btn btn-gold">Get a Quote</a>
+</div>
+<button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+<button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<div class="mobile-sub">
+<a href="services.html#janitorial">Janitorial Services</a>
+<a href="services.html#pressure">Pressure Washing</a>
+<a href="services.html#windows">Window Cleaning</a>
+<a href="services.html#carpet">Carpet Cleaning</a>
+<a href="services.html#floors">Floor Stripping &amp; Waxing</a>
+<a href="services.html#postconstruction">Post-Construction Cleanup</a>
+</div>
+<a href="contact.html">Contact</a>
+<div style="margin-top:24px">
+<a href="contact.html" class="btn btn-gold" style="width:100%;justify-content:center">Get a Quote</a>
+</div>
+</div>
+
+<!-- Page Hero -->
+<section class="page-hero">
+<div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1579141132886-e86d831034ac?w=1600&q=80')"></div>
+<div class="container">
+<div class="breadcrumb">
+<a href="index.html">Home</a>
+<span>/</span>
+<span>Services</span>
+</div>
+<span class="section-label">What We Do</span>
+<h1>Our Services</h1>
+<p>Six service lines covering every surface, every floor, and every phase of building maintenance. Each one scoped to your facility and executed by trained, dedicated crews.</p>
+</div>
+</section>
+
+<!-- Service Jump Nav -->
+<div class="service-nav">
+<div class="container">
+<div class="service-nav-inner">
+<a href="#janitorial">Janitorial</a>
+<a href="#pressure">Pressure Washing</a>
+<a href="#windows">Window Cleaning</a>
+<a href="#carpet">Carpet Cleaning</a>
+<a href="#floors">Floor Stripping &amp; Waxing</a>
+<a href="#postconstruction">Post-Construction</a>
+</div>
+</div>
+</div>
+
+<!-- Service 1: Janitorial -->
+<section class="service-section" id="janitorial">
+<div class="container">
+<div class="service-block reveal">
+<div class="service-text">
+<p class="section-label">Core Service</p>
+<h2>Janitorial Services</h2>
+<p>Your lobby, your restrooms, your break rooms, your offices. These spaces get used hard every day, and they need a crew that treats them with the same attention at 11 PM that you would expect at 9 AM.</p>
+<p>We build custom janitorial programs around your facility's layout, traffic patterns, and schedule. Daily, weekly, and monthly tasks are mapped to specific crew members and tracked through our QA platform so nothing falls through the cracks.</p>
+<h5 class="included-title">What's Included</h5>
+<ul class="included-list">
+<li>Nightly trash removal and liner replacement</li>
+<li>Restroom sanitation and supply restocking</li>
+<li>Lobby and common area dusting and mopping</li>
+<li>Break room and kitchen deep cleaning</li>
+<li>Elevator and stairwell maintenance</li>
+<li>Conference room reset and sanitization</li>
+<li>Periodic deep cleaning of high-touch surfaces</li>
+<li>Custom task scheduling by zone</li>
+</ul>
+<a href="contact.html" class="btn btn-outline">Request Janitorial Quote</a>
+</div>
+<div class="service-img">
+<img src="https://images.unsplash.com/photo-1718220268527-4477fd170775?w=900&q=80" alt="Commercial office interior maintained by BlueSky" loading="lazy">
+</div>
+</div>
+</div>
+</section>
+
+<!-- Service 2: Pressure Washing -->
+<section class="service-section" id="pressure">
+<div class="container">
+<div class="service-block reverse reveal">
+<div class="service-text">
+<p class="section-label">Exterior Care</p>
+<h2>Pressure Washing</h2>
+<p>First impressions start at the curb. Walkways, storefronts, parking garages, dumpster pads, and building exteriors collect grime faster than most people realize. Our pressure washing crews use commercial-grade equipment calibrated to the surface -- because the PSI that cleans concrete will damage stucco.</p>
+<p>We handle one-time jobs and recurring schedules. Most commercial properties benefit from quarterly exterior washing, and we build that into your scope so the work happens without you having to think about it.</p>
+<h5 class="included-title">What's Included</h5>
+<ul class="included-list">
+<li>Storefront and entrance cleaning</li>
+<li>Sidewalk and walkway degreasing</li>
+<li>Parking garage and structure washing</li>
+<li>Dumpster pad and loading dock cleaning</li>
+<li>Building exterior surface washing</li>
+<li>Graffiti and stain removal</li>
+<li>Drive-through lane cleaning</li>
+<li>Surface-specific PSI calibration</li>
+</ul>
+<a href="contact.html" class="btn btn-outline">Request Pressure Washing Quote</a>
+</div>
+<div class="service-img">
+<img src="https://myshyft.blob.core.windows.net/media/uploads/2025/02/How-To-Start-A-Pressure-Washing-Business-1.jpg" alt="Professional pressure washing service" loading="lazy">
+</div>
+</div>
+</div>
+</section>
+
+<!-- Service 3: Window Cleaning -->
+<section class="service-section" id="windows">
+<div class="container">
+<div class="service-block reveal">
+<div class="service-text">
+<p class="section-label">Glass Care</p>
+<h2>Window Cleaning</h2>
+<p>Clean windows are one of those things nobody notices until they are dirty. Interior glass, exterior panes, entrance doors, partitions -- all of it affects how a building looks and feels. Our crews handle single-story retail and multi-story commercial buildings using a combination of traditional squeegee work and water-fed pole systems.</p>
+<p>We schedule window cleaning around your building's needs, typically monthly for interior glass and quarterly for exterior, but we adjust based on your environment and preferences.</p>
+<h5 class="included-title">What's Included</h5>
+<ul class="included-list">
+<li>Interior window and glass cleaning</li>
+<li>Exterior window cleaning up to 4 stories</li>
+<li>Entrance door and sidelight glass</li>
+<li>Interior glass partitions and dividers</li>
+<li>Frame and sill wipe-down</li>
+<li>Hard water stain removal</li>
+<li>Skylight and atrium glass (by request)</li>
+<li>Post-construction window detail</li>
+</ul>
+<a href="contact.html" class="btn btn-outline">Request Window Cleaning Quote</a>
+</div>
+<div class="service-img">
+<img src="https://images.unsplash.com/photo-1733271751327-140114dbdb4c?w=900&q=80" alt="Commercial building window cleaning" loading="lazy">
+</div>
+</div>
+</div>
+</section>
+
+<!-- Service 4: Carpet Cleaning -->
+<section class="service-section" id="carpet">
+<div class="container">
+<div class="service-block reverse reveal">
+<div class="service-text">
+<p class="section-label">Soft Floors</p>
+<h2>Carpet Cleaning</h2>
+<p>Commercial carpet takes a beating. Foot traffic, spills, and daily wear break down fibers and trap dirt that vacuuming alone cannot remove. Our carpet cleaning uses hot water extraction -- the method recommended by every major carpet manufacturer -- to pull soil from deep in the pile and restore texture and appearance.</p>
+<p>For facilities that cannot handle wet carpet downtime, we also offer low-moisture encapsulation cleaning. The carpet is walkable within an hour, making it ideal for offices, retail spaces, and medical facilities that operate during normal business hours.</p>
+<h5 class="included-title">What's Included</h5>
+<ul class="included-list">
+<li>Hot water extraction (steam cleaning)</li>
+<li>Low-moisture encapsulation</li>
+<li>Pre-treatment of high-traffic lanes</li>
+<li>Spot and stain removal</li>
+<li>Carpet protectant application</li>
+<li>Furniture moving and replacement</li>
+<li>Deodorizing treatment</li>
+<li>Color-safe cleaning solutions</li>
+</ul>
+<a href="contact.html" class="btn btn-outline">Request Carpet Cleaning Quote</a>
+</div>
+<div class="service-img">
+<img src="https://images.unsplash.com/photo-1742483359033-13315b247c74?w=900&q=80" alt="Professional carpet cleaning service" loading="lazy">
+</div>
+</div>
+</div>
+</section>
+
+<!-- Service 5: Floor Stripping & Waxing -->
+<section class="service-section" id="floors">
+<div class="container">
+<div class="service-block reveal">
+<div class="service-text">
+<p class="section-label">Hard Floors</p>
+<h2>Floor Stripping &amp; Waxing</h2>
+<p>VCT, LVT, terrazzo, concrete, and natural stone all have different maintenance needs, but they share one thing: a quality floor finish makes the entire space look sharper. Our floor crews strip old wax down to bare tile, repair any damage, and apply multiple coats of commercial-grade finish that protects the surface and delivers a consistent gloss.</p>
+<p>We also handle ongoing maintenance -- burnishing, scrub-and-recoat, and auto-scrubbing -- to extend the life of each wax application and keep your floors looking right between full strip cycles.</p>
+<h5 class="included-title">What's Included</h5>
+<ul class="included-list">
+<li>Chemical stripping of old finish</li>
+<li>Tile repair and baseboard cleaning</li>
+<li>Multi-coat wax application</li>
+<li>High-speed burnishing</li>
+<li>Scrub-and-recoat maintenance</li>
+<li>Terrazzo and stone polishing</li>
+<li>Non-slip treatment options</li>
+<li>Custom finish gloss levels</li>
+</ul>
+<a href="contact.html" class="btn btn-outline">Request Floor Care Quote</a>
+</div>
+<div class="service-img">
+<img src="https://images.unsplash.com/photo-1642505172378-a6f5e5b15580?w=900&q=80" alt="Polished commercial floor surface" loading="lazy">
+</div>
+</div>
+</div>
+</section>
+
+<!-- Service 6: Post-Construction Cleanup -->
+<section class="service-section" id="postconstruction">
+<div class="container">
+<div class="service-block reverse reveal">
+<div class="service-text">
+<p class="section-label">Construction</p>
+<h2>Post-Construction Cleanup</h2>
+<p>Construction crews build. We clean up after them. Post-construction cleanup is a specialized service that requires a team who understands the phases of a build and what "clean" means when a certificate of occupancy is on the line.</p>
+<p>We work in three phases: rough clean during active construction to keep the site manageable, final clean after trades are finished but before punch list, and touch-up clean before the owner or tenant takes possession. Each phase has a different scope, different tools, and different standards.</p>
+<h5 class="included-title">What's Included</h5>
+<ul class="included-list">
+<li>Phase 1: Rough clean (debris, dust, bulk removal)</li>
+<li>Phase 2: Final clean (surfaces, fixtures, glass)</li>
+<li>Phase 3: Touch-up and punch list clean</li>
+<li>Construction dust and drywall compound removal</li>
+<li>Window label and sticker removal</li>
+<li>Fixture and hardware polishing</li>
+<li>HVAC vent and register cleaning</li>
+<li>Final inspection preparation</li>
+</ul>
+<a href="contact.html" class="btn btn-outline">Request Post-Construction Quote</a>
+</div>
+<div class="service-img">
+<img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&q=80" alt="Post-construction site ready for cleanup" loading="lazy">
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner">
+<div class="container">
+<div class="cta-inner reveal">
+<h2>Not sure which services your facility needs?</h2>
+<p>Walk us through your building, your pain points, and your budget. We will put together a proposal that covers exactly what you need -- nothing more, nothing less.</p>
+<a href="contact.html" class="btn btn-gold">Talk to Our Team</a>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<div class="footer-about">
+<img src="https://blueskygeneralserv.com/wp-content/uploads/2021/07/cropped-bluesky.png" alt="BlueSky General Services" style="height:44px;width:auto">
+</div>
+<p>Commercial cleaning and facility services. Built on accountability, operated with pride.</p>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<a href="services.html#janitorial">Janitorial Services</a>
+<a href="services.html#pressure">Pressure Washing</a>
+<a href="services.html#windows">Window Cleaning</a>
+<a href="services.html#carpet">Carpet Cleaning</a>
+<a href="services.html#floors">Floor Stripping &amp; Waxing</a>
+<a href="services.html#postconstruction">Post-Construction</a>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<a href="about.html">About Us</a>
+<a href="about.html#approach">Our Approach</a>
+<a href="about.html#sustainability">Sustainability</a>
+<a href="contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Our Services</h4>
+<a href="services.html#janitorial">Janitorial</a>
+<a href="services.html#pressure">Pressure Washing</a>
+<a href="services.html#windows">Window Cleaning</a>
+<a href="services.html#carpet">Carpet &amp; Floors</a>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a>
+<a href="tel:+17815583458">(781) 558-3458</a>
+<a href="https://instagram.com/bluesky_clean_service" target="_blank" rel="noopener">@bluesky_clean_service</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>2026 BlueSky General Services. All rights reserved.</span>
+<span><a href="contact.html">Privacy Policy</a> &middot; <a href="contact.html">Terms of Service</a></span>
+</div>
+</div>
+</footer>
+
+<script>
+/* ── Sticky navbar shadow ── */
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>40)});
+
+/* ── Mobile menu ── */
+const hamburgerBtn=document.getElementById('hamburgerBtn');
+const mobileMenu=document.getElementById('mobileMenu');
+const mobileClose=document.getElementById('mobileClose');
+hamburgerBtn.addEventListener('click',()=>mobileMenu.classList.add('open'));
+mobileClose.addEventListener('click',()=>mobileMenu.classList.remove('open'));
+
+/* ── Scroll reveal ── */
+const revealEls=document.querySelectorAll('.reveal');
+const revealObserver=new IntersectionObserver((entries)=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}});
+},{threshold:0.12});
+revealEls.forEach(el=>revealObserver.observe(el));
+</script>
+</body>
+</html>

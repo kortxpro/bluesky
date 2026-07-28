@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About &mdash; BlueSky General Services</title>
+<title>Our Work — BlueSky General Services</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -78,9 +78,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
  font-family: 'Playfair Display', serif;
  font-size: 1.05rem;
  font-weight: 500;
- letter-spacing: -0.01em;
 }
-.navbar-logo svg { flex-shrink: 0; }
 .navbar-links {
  display: flex;
  align-items: center;
@@ -105,6 +103,8 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
  transition: background 0.3s;
 }
 .navbar-links .btn-contact:hover { background: #14532d; color: var(--white); }
+
+/* Services dropdown */
 .nav-dropdown { position: relative; }
 .nav-dropdown-menu {
  position: absolute;
@@ -126,6 +126,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 }
 .nav-dropdown-menu a:hover { color: var(--black); }
 
+/* Hamburger */
 .hamburger {
  display: none;
  flex-direction: column;
@@ -142,6 +143,8 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
  background: var(--black);
  transition: 0.3s;
 }
+
+/* Mobile menu */
 .mobile-menu {
  display: none;
  flex-direction: column;
@@ -157,168 +160,159 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
  transition: color 0.3s;
 }
 .mobile-menu a:last-child { border-bottom: none; }
-.mobile-menu a:hover,
-.mobile-menu a.active { color: var(--black); }
+.mobile-menu a:hover { color: var(--black); }
 .mobile-menu.open { display: flex; }
 
-/* ── Hero Image ── */
-.hero-full {
- position: relative;
- height: 55vh;
- min-height: 360px;
- overflow: hidden;
-}
-.hero-full img {
- position: absolute;
- inset: 0;
-}
-.hero-full-overlay {
- position: absolute;
- bottom: 0;
- left: 0;
- right: 0;
- padding: 2.5rem 4vw;
- background: linear-gradient(transparent, rgba(28,25,23,0.7));
-}
-.hero-full-overlay h1 {
- font-size: 0.8rem;
- font-family: 'DM Sans', sans-serif;
- font-weight: 400;
- letter-spacing: 0.2em;
- text-transform: uppercase;
- color: var(--white);
-}
-
-/* ── Opening Statement ── */
-.opening-statement {
- padding: 7rem 4vw 6rem;
- max-width: 900px;
-}
-.opening-statement p {
- font-family: 'Playfair Display', serif;
- font-size: clamp(1.6rem, 3vw, 2.4rem);
- line-height: 1.45;
- color: var(--charcoal);
-}
-
-/* ── Story Two-Column ── */
-.story-section {
- display: grid;
- grid-template-columns: 1.2fr 0.8fr;
- gap: 4rem;
- padding: 0 4vw 7rem;
+/* ── Page Hero ── */
+.page-hero {
+ padding: 5rem 4vw 4rem;
  border-bottom: 1px solid var(--stone-200);
 }
-.story-text p {
- font-size: 0.92rem;
- color: var(--stone-400);
- margin-bottom: 1.5rem;
- line-height: 1.85;
-}
-.story-image {
- height: 520px;
- overflow: hidden;
-}
-
-/* ── Approach ── */
-.approach-section {
- padding: 7rem 4vw;
- border-bottom: 1px solid var(--stone-200);
-}
-.approach-section h2 {
- font-size: clamp(1.8rem, 3vw, 2.4rem);
- margin-bottom: 4rem;
-}
-.approach-items {
- max-width: 700px;
-}
-.approach-item {
- display: grid;
- grid-template-columns: 60px 1fr;
- gap: 1.5rem;
- padding: 2.5rem 0;
- border-top: 1px solid var(--stone-200);
-}
-.approach-item .num {
- font-family: 'Playfair Display', serif;
- font-size: 2.2rem;
- color: var(--stone-300);
- line-height: 1;
-}
-.approach-item h3 {
- font-size: 1.1rem;
- margin-bottom: 0.6rem;
-}
-.approach-item p {
- font-size: 0.88rem;
- color: var(--stone-400);
- line-height: 1.75;
-}
-
-/* ── Sustainability ── */
-.sustainability-section {
- display: grid;
- grid-template-columns: 1fr 1fr;
- gap: 0;
- border-bottom: 1px solid var(--stone-200);
-}
-.sustainability-image {
- height: 480px;
- overflow: hidden;
-}
-.sustainability-text {
- padding: 5rem 4vw;
- display: flex;
- flex-direction: column;
- justify-content: center;
-}
-.sustainability-text .label {
+.page-hero .label {
  font-size: 0.7rem;
  letter-spacing: 0.15em;
  text-transform: uppercase;
  color: var(--stone-400);
- margin-bottom: 2rem;
-}
-.sustainability-text h2 {
- font-size: clamp(1.4rem, 2.2vw, 1.8rem);
  margin-bottom: 1.5rem;
 }
-.sustainability-text p {
- font-size: 0.9rem;
+.page-hero h1 {
+ font-size: clamp(2.2rem, 4vw, 3.2rem);
+ font-style: italic;
+ margin-bottom: 1rem;
+}
+.page-hero p {
+ font-size: 0.95rem;
  color: var(--stone-400);
- line-height: 1.85;
- max-width: 440px;
+ max-width: 600px;
+ line-height: 1.75;
 }
 
-/* ── CEO ── */
-.ceo-section {
- padding: 7rem 4vw;
- max-width: 700px;
+/* ── Project Section ── */
+.project-section {
+ padding: 5rem 4vw;
  border-bottom: 1px solid var(--stone-200);
 }
-.ceo-section .quote {
- font-family: 'Playfair Display', serif;
- font-size: clamp(1.2rem, 2vw, 1.5rem);
- font-style: italic;
- line-height: 1.55;
- margin-bottom: 2.5rem;
- color: var(--charcoal);
+.project-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: flex-end;
+ margin-bottom: 3rem;
+ flex-wrap: wrap;
+ gap: 1rem;
 }
-.ceo-section .attribution {
- font-size: 0.85rem;
+.project-header h2 {
+ font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+ font-style: italic;
+}
+.project-tag {
+ font-size: 0.7rem;
+ letter-spacing: 0.1em;
+ text-transform: uppercase;
+ color: var(--white);
+ background: var(--accent);
+ padding: 0.4rem 1rem;
+ border-radius: 2px;
+}
+.project-hero-img {
+ width: 100%;
+ height: 500px;
+ overflow: hidden;
+ margin-bottom: 3rem;
+}
+.project-stats {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 2rem;
+ margin-bottom: 3rem;
+ padding: 2rem 0;
+ border-top: 1px solid var(--stone-200);
+ border-bottom: 1px solid var(--stone-200);
+}
+.project-stats .stat { text-align: center; }
+.project-stats .stat-number {
+ display: block;
+ font-family: 'Playfair Display', serif;
+ font-size: clamp(1.6rem, 2.2vw, 2rem);
+ color: var(--black);
+ margin-bottom: 0.25rem;
+}
+.project-stats .stat-label {
+ font-size: 0.72rem;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
  color: var(--stone-400);
 }
-.ceo-section .attribution strong {
+.project-body {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 4rem;
+ margin-bottom: 3rem;
+}
+.project-body p {
+ font-size: 0.92rem;
+ color: var(--stone-400);
+ line-height: 1.85;
+ margin-bottom: 1.5rem;
+}
+.project-body h3 {
+ font-size: 1.1rem;
+ margin-bottom: 1rem;
+ color: var(--black);
+}
+.project-body ul {
+ list-style: none;
+ padding: 0;
+}
+.project-body ul li {
+ font-size: 0.88rem;
+ color: var(--stone-400);
+ padding: 0.4rem 0;
+ border-bottom: 1px solid var(--stone-100);
+}
+.project-body ul li::before {
+ content: '';
+ display: inline-block;
+ width: 6px;
+ height: 6px;
+ background: var(--accent);
+ border-radius: 50%;
+ margin-right: 0.75rem;
+ vertical-align: middle;
+}
+.project-gallery {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 0.5rem;
+}
+.project-gallery img {
+ height: 260px;
+ object-fit: cover;
+ transition: transform 0.4s ease;
+}
+.project-gallery img:hover {
+ transform: scale(1.02);
+}
+.project-media-badge {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.5rem;
+ margin-top: 2rem;
+ padding: 0.8rem 1.4rem;
+ background: var(--stone-50);
+ border: 1px solid var(--stone-200);
+ font-size: 0.82rem;
+ color: var(--stone-400);
+}
+.project-media-badge strong {
  color: var(--black);
  font-weight: 500;
- display: block;
- margin-bottom: 0.15rem;
 }
 
 /* ── Minimal CTA ── */
 .minimal-cta {
- padding: 7rem 4vw;
+ padding: 8rem 4vw;
  text-align: center;
+ border-top: 1px solid var(--stone-200);
 }
 .minimal-cta p {
  font-family: 'Playfair Display', serif;
@@ -400,23 +394,18 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 @media (max-width: 900px) {
  .navbar-links { display: none; }
  .hamburger { display: flex; }
- .story-section { grid-template-columns: 1fr; gap: 2rem; }
- .story-image { height: 300px; }
- .sustainability-section { grid-template-columns: 1fr; }
- .sustainability-image { height: 280px; }
- .sustainability-text { padding: 3rem 6vw; }
- .approach-item { grid-template-columns: 45px 1fr; gap: 1rem; }
+ .project-hero-img { height: 300px; }
+ .project-stats { grid-template-columns: repeat(2, 1fr); }
+ .project-body { grid-template-columns: 1fr; gap: 2rem; }
+ .project-gallery { grid-template-columns: 1fr; }
+ .project-gallery img { height: 220px; }
  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
  .footer-bottom { flex-direction: column; gap: 0.5rem; }
 }
 
 @media (max-width: 600px) {
  .topbar { display: none; }
- .hero-full { height: 40vh; min-height: 260px; }
- .opening-statement { padding: 4rem 6vw 3rem; }
- .opening-statement p { font-size: 1.4rem; }
- .approach-section { padding: 4rem 6vw; }
- .ceo-section { padding: 4rem 6vw; }
+ .project-stats { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -434,7 +423,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   <img src="https://blueskygeneralserv.com/wp-content/uploads/2021/07/cropped-bluesky.png" alt="BlueSky General Services" style="height:60px;width:auto">
  </a>
  <ul class="navbar-links">
-  <li><a href="about.html" class="active">About</a></li>
+  <li><a href="about.html">About</a></li>
   <li class="nav-dropdown">
    <a href="services.html">Services</a>
    <div class="nav-dropdown-menu">
@@ -446,6 +435,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
     <a href="services.html#postconstruction">Post-Construction</a>
    </div>
   </li>
+  <li><a href="projects.html" class="active">Our Work</a></li>
   <li><a href="contact.html" class="btn-contact">Contact Us</a></li>
  </ul>
  <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
@@ -456,95 +446,89 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 <!-- Mobile Menu -->
 <div class="mobile-menu">
  <a href="index.html">Home</a>
- <a href="about.html" class="active">About</a>
+ <a href="about.html">About</a>
  <a href="services.html">Services</a>
+ <a href="projects.html" class="active">Our Work</a>
  <a href="contact.html">Contact</a>
 </div>
 
-<!-- Hero -->
-<section class="hero-full">
- <img src="assets/img/milton-exterior-worker.jpg" alt="BlueSky General Services - Hurricane Milton emergency response at commercial high-rise" style="object-position:center 20%">
- <div class="hero-full-overlay">
-  <h1>About</h1>
- </div>
+<!-- Page Hero -->
+<section class="page-hero">
+ <div class="label">Our Work</div>
+ <h1>Built on results, not promises.</h1>
+ <p>Every project tells a story. Here are some of ours. From emergency disaster recovery to daily facility maintenance, these are the real jobs that built our reputation.</p>
 </section>
 
-<!-- Opening Statement -->
-<section class="opening-statement reveal">
- <p>Built on a simple belief: commercial cleaning companies could do better.</p>
-</section>
-
-<!-- Story -->
-<section class="story-section reveal">
- <div class="story-text">
-  <p>BlueSky General Services was founded with a straightforward idea: commercial cleaning should be consistent, measurable, and honest. No inflated promises. No corners cut. Just reliable work, documented and delivered on schedule.</p>
-  <p>What began as a small operation serving office buildings has grown into a company serving over 500 commercial accounts. Along the way, we added pressure washing, window cleaning, carpet care, floor maintenance, and post-construction cleanup to our services.</p>
-  <p>Our growth came from repeat clients and referrals, not from marketing campaigns. We built our reputation one facility at a time, and we continue to operate that way. Every job gets a quality inspection. Every client gets a direct point of contact. That has not changed since the beginning.</p>
+<!-- ═══════════════════════════════════════ -->
+<!-- PROJECT 1: Hurricane Milton            -->
+<!-- ═══════════════════════════════════════ -->
+<section class="project-section reveal" id="milton">
+ <div class="project-header">
+  <h2>Hurricane Milton Recovery</h2>
+  <span class="project-tag">Disaster Recovery</span>
  </div>
- <div class="story-image">
-  <img src="assets/img/milton-tv-interview-group.jpg" alt="BlueSky General Services team featured in local news coverage after Hurricane Milton" loading="lazy">
- </div>
-</section>
 
-<!-- Approach -->
-<section class="approach-section reveal" id="approach">
- <h2>How we work.</h2>
- <div class="approach-items">
-  <div class="approach-item">
-   <div class="num">01</div>
-   <div>
-    <h3>Assessment first</h3>
-    <p>We walk your facility before quoting. Every space is different, and we build service plans around what you actually need, not a generic package.</p>
-   </div>
+ <div class="project-hero-img">
+  <img src="assets/img/milton-exterior-crane.jpg" alt="Commercial high-rise damaged by Hurricane Milton with collapsed crane" style="object-position:center 25%">
+ </div>
+
+ <div class="project-stats">
+  <div class="stat">
+   <span class="stat-number">30+</span>
+   <span class="stat-label">Team Members</span>
   </div>
-  <div class="approach-item">
-   <div class="num">02</div>
-   <div>
-    <h3>Assigned teams</h3>
-    <p>You get a dedicated crew who knows your building. Consistency matters. The same people, the same standards, every visit.</p>
-   </div>
+  <div class="stat">
+   <span class="stat-number">24/7</span>
+   <span class="stat-label">Emergency Response</span>
   </div>
-  <div class="approach-item">
-   <div class="num">03</div>
-   <div>
-    <h3>Quality inspections</h3>
-    <p>Every job is inspected and documented. If something is missed, we fix it before you have to ask. Our reporting system keeps both sides accountable.</p>
-   </div>
+  <div class="stat">
+   <span class="stat-number">Full</span>
+   <span class="stat-label">Building Restored</span>
   </div>
-  <div class="approach-item">
-   <div class="num">04</div>
-   <div>
-    <h3>Direct communication</h3>
-    <p>No call centers. No ticket systems. You reach the person responsible for your account. Problems get solved in hours, not days.</p>
-   </div>
+  <div class="stat">
+   <span class="stat-number">Multi-Floor</span>
+   <span class="stat-label">Commercial High-Rise</span>
   </div>
  </div>
-</section>
 
-<!-- Sustainability -->
-<section class="sustainability-section reveal" id="sustainability">
- <div class="sustainability-image">
-  <img src="https://images.unsplash.com/photo-1585417238790-f6d290d6490c?w=900&q=80" alt="Eco-friendly cleaning products">
+ <div class="project-body">
+  <div>
+   <p>When Hurricane Milton struck, a crane collapsed into a commercial high-rise, causing catastrophic damage across multiple floors. Water flooded the building, carpets were destroyed, ceilings collapsed, and debris covered every surface.</p>
+   <p>BlueSky General Services deployed a 30-person crew within hours. The team worked around the clock, extracting water, removing thousands of square feet of damaged carpet, deploying industrial dehumidifiers across every floor, and restoring the building's premium lobby and common areas to full operation.</p>
+   <p>The scope of work included complete debris removal, water extraction, floor preparation, industrial drying, and final detailing of all common areas, offices, and corridors.</p>
+  </div>
+  <div>
+   <h3>Scope of work</h3>
+   <ul>
+    <li>Emergency water extraction</li>
+    <li>Damaged carpet and flooring removal</li>
+    <li>Industrial dehumidifier deployment</li>
+    <li>Debris removal and hauling</li>
+    <li>Ceiling and wall debris cleanup</li>
+    <li>Lobby and common area restoration</li>
+    <li>Office and corridor detailing</li>
+    <li>Final inspection and handover</li>
+   </ul>
+  </div>
  </div>
- <div class="sustainability-text">
-  <div class="label">Sustainability</div>
-  <h2>Cleaner buildings, lighter footprint.</h2>
-  <p>We use EPA-certified cleaning products, microfiber systems that reduce water and chemical waste, and HEPA-filtered equipment across all our operations. Our teams are trained in green cleaning protocols, and we actively track our chemical and water usage to reduce environmental impact year over year. It is not a marketing line. It is how we operate.</p>
- </div>
-</section>
 
-<!-- CEO -->
-<section class="ceo-section reveal">
- <p class="quote">"We do not sell promises. We show up, do the work, and report the results. Everything else is just noise."</p>
- <div class="attribution">
-  <strong>BlueSky Leadership</strong>
-  Founder &amp; CEO, BlueSky General Services
+ <div class="project-gallery">
+  <img src="assets/img/milton-team-lobby.jpg" alt="30+ person BlueSky team assembled in building lobby" loading="lazy">
+  <img src="assets/img/milton-lobby-caution.jpg" alt="Building lobby during active restoration" loading="lazy">
+  <img src="assets/img/milton-dehumidifiers.jpg" alt="Industrial dehumidifiers deployed in corridors" loading="lazy">
+  <img src="assets/img/milton-lobby-restoration.jpg" alt="Premium lobby floor being restored" loading="lazy">
+  <img src="assets/img/milton-corridor-carpet.jpg" alt="Corridor after carpet removal and preparation" loading="lazy">
+  <img src="assets/img/milton-debris-removal.jpg" alt="Crew removing debris from building exterior" loading="lazy">
+ </div>
+
+ <div class="project-media-badge">
+  <strong>Featured in local news</strong> &mdash; BlueSky's Hurricane Milton response was covered by local television media.
  </div>
 </section>
 
 <!-- Minimal CTA -->
 <section class="minimal-cta reveal">
- <p>Let's work together.</p>
+ <p>Have a project in mind?</p>
  <div class="contact-info">
   <a href="mailto:contact@blueskygeneralserv.com">contact@blueskygeneralserv.com</a><br>
   <a href="tel:7815583458">(781) 558-3458</a>
@@ -562,8 +546,8 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
    <h4>Company</h4>
    <a href="about.html">About Us</a>
    <a href="services.html">Services</a>
+   <a href="projects.html">Our Work</a>
    <a href="contact.html">Contact Us</a>
-   <a href="contact.html">Request a Quote</a>
   </div>
   <div class="footer-col">
    <h4>Our Services</h4>
