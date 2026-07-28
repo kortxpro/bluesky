@@ -131,6 +131,7 @@ img { display: block; max-width: 100%; height: auto; object-fit: cover; }
  gap: 0.45rem;
 }
 .navbar-logo em { font-style: italic; color: var(--accent); }
+.navbar-logo img { height: 38px; width: auto; display: block; }
 .navbar-logo .tag {
  font-family: 'DM Sans', sans-serif;
  font-size: 0.68rem;
@@ -868,7 +869,7 @@ footer {
 
 <!-- ═══ NAVBAR ═══ -->
 <nav class="navbar">
- <a href="index.html" class="navbar-logo">Blue<em>Sky</em><span class="tag">General Services</span></a>
+ <a href="index.html" class="navbar-logo"><img src="assets/img/logo-bluesky.png" alt="BlueSky General Services"></a>
 
  <ul class="navbar-links">
   <li><a href="index.html" class="active">Home</a></li>
@@ -1190,7 +1191,7 @@ footer {
 <footer>
  <div class="footer-grid">
   <div class="footer-brand">
-   <strong>Blue<em>Sky</em></strong>
+   <strong>BlueSky</strong>
    <p>A commercial facility services partner. Cleaning, maintenance, and recovery programs delivered under measurable standards across the Southeast United States.</p>
   </div>
   <div class="footer-col">
@@ -1263,7 +1264,7 @@ backdrop.addEventListener('click', closeDrawer);
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
 // Hero headline — slide-up word rotator with animated width
-const rotateWords = ['Commercial', 'Residential', 'Medical', 'Retail', 'Industrial'];
+const rotateWords = ['Commercial', 'Medical', 'Retail', 'Industrial'];
 const rotateEl = document.getElementById('rotateWord');
 const rotateHost = document.getElementById('rotateHost');
 let rotateIdx = 0;

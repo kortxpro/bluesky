@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hurricane Milton Restoration | BlueSky General Services</title>
-<meta name="description" content="Case study: Hurricane Milton multi-floor commercial restoration. 30+ team mobilized in 24 hours. Debris removal, water extraction, industrial dehumidification, full interior restoration inside the owner's insurance window.">
+<meta name="description" content="Case study: Hurricane Milton multi-floor commercial restoration. 60+ team mobilized in 24 hours. Debris removal, water extraction, industrial dehumidification, full interior restoration inside the owner's insurance window.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -39,6 +39,7 @@ img { display:block; max-width:100%; height:auto; object-fit:cover; }
 .navbar { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 4vw; border-bottom:1px solid var(--stone-200); position:sticky; top:0; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); z-index:100; }
 .navbar-logo { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:500; letter-spacing:0.02em; display:inline-flex; align-items:baseline; gap:0.45rem; }
 .navbar-logo em { font-style:italic; color:var(--accent); }
+.navbar-logo img { height:38px; width:auto; display:block; }
 .navbar-logo .tag { font-family:'DM Sans',sans-serif; font-size:0.68rem; color:var(--stone-500); letter-spacing:0.12em; text-transform:uppercase; font-weight:400; }
 .navbar-links { display:flex; align-items:center; gap:2.2rem; list-style:none; font-size:0.82rem; letter-spacing:0.05em; }
 .navbar-links > li { position:relative; }
@@ -121,6 +122,13 @@ section { padding:7rem 4vw; }
 .gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform 0.7s ease; }
 .gallery-item:hover img { transform:scale(1.04); }
 .gallery-hint { padding:0 4vw; font-size:0.78rem; color:var(--stone-400); letter-spacing:0.05em; }
+.gallery-wrap { position:relative; }
+.gallery-nav { position:absolute; top:50%; transform:translateY(-50%); z-index:3; width:48px; height:48px; border-radius:50%; border:1px solid var(--stone-300); background:rgba(255,255,255,0.92); color:var(--black); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:background 0.25s, border-color 0.25s; -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px); }
+.gallery-nav:hover { background:var(--white); border-color:var(--stone-400); }
+.gallery-nav svg { width:20px; height:20px; }
+.gallery-nav.prev { left:1rem; }
+.gallery-nav.next { right:1rem; }
+@media (max-width:700px){ .gallery-nav { display:none; } }
 
 /* Quote */
 .pull-quote { background:var(--black); color:var(--white); padding:8rem 4vw; text-align:center; }
@@ -208,7 +216,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 </div>
 
 <nav class="navbar">
- <a href="../index.html" class="navbar-logo">Blue<em>Sky</em><span class="tag">General Services</span></a>
+ <a href="../index.html" class="navbar-logo"><img src="../assets/img/logo-bluesky.png" alt="BlueSky General Services"></a>
  <ul class="navbar-links">
   <li><a href="../index.html">Home</a></li>
   <li><a href="../services.html">Services <span class="caret">▾</span></a><div class="megamenu">
@@ -261,7 +269,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <div class="breadcrumb"><a href="../index.html">Home</a> <span class="breadcrumb-sep">/</span> <a href="../projects.html">Case Studies</a> <span class="breadcrumb-sep">/</span> Hurricane Milton</div>
   <span class="case-tag">Hurricane Milton · SE Florida, Oct 2024</span>
   <h1>Built for Florida's<br>hardest days.</h1>
-  <p class="lead">When Milton's wind brought a construction crane down across a commercial building, the owner had hours to act before the insurance window closed. BlueSky mobilized a 30-plus-person recovery operation within 24 hours. This is what we did.</p>
+  <p class="lead">When Milton's wind brought a construction crane down across a commercial building, the owner had hours to act before the insurance window closed. BlueSky mobilized a 60-plus-person recovery operation within 24 hours. This is what we did.</p>
  </div>
 </header>
 
@@ -284,7 +292,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  <div class="narrative-col reveal" data-delay="1">
   <span class="label">The Scope</span>
   <h3>Full-scale commercial recovery, delivered as a single program.</h3>
-  <p>BlueSky mobilized a 30-plus-person team and pre-staged equipment within the first operating cycle. The scope was written as a living document, revised daily, and tracked against the insurance timeline.</p>
+  <p>BlueSky mobilized a 60-plus-person team and pre-staged equipment within the first operating cycle. The scope was written as a living document, revised daily, and tracked against the insurance timeline.</p>
   <ul>
    <li>24-hour mobilization with pre-staged water-extraction equipment</li>
    <li>Multi-floor debris removal and haul-off</li>
@@ -305,7 +313,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <p>Every case study we publish leads with numbers the client has approved. These are ours for this engagement.</p>
  </div>
  <div class="results-grid">
-  <div class="result reveal"><div class="result-val">30<em>+</em></div><div class="result-lbl">Team mobilized</div><div class="result-sub">Cross-trained across debris, water, and finishes.</div></div>
+  <div class="result reveal"><div class="result-val">60<em>+</em></div><div class="result-lbl">Team mobilized</div><div class="result-sub">Cross-trained across debris, water, and finishes.</div></div>
   <div class="result reveal" data-delay="1"><div class="result-val"><em>24</em>h</div><div class="result-lbl">Response cycle</div><div class="result-sub">From call to first equipment on site.</div></div>
   <div class="result reveal" data-delay="2"><div class="result-val"><em>Multi</em></div><div class="result-lbl">Floor restoration</div><div class="result-sub">Lobbies, corridors, and tenant floors restored.</div></div>
   <div class="result reveal" data-delay="3"><div class="result-val"><em>On</em></div><div class="result-lbl">Insurance timeline</div><div class="result-sub">Reopened inside the owner's recovery window.</div></div>
@@ -318,7 +326,9 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <h2>What the operation looked like.</h2>
   <p>Photos taken during the recovery operation, team, equipment, damage, and progress back to occupancy.</p>
  </div>
- <div class="gallery-track">
+ <div class="gallery-wrap">
+  <button class="gallery-nav prev" aria-label="Previous photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <div class="gallery-track" id="galleryTrack">
   <div class="gallery-item"><img src="../assets/img/milton-team-lobby.jpg" alt="BlueSky recovery team in lobby"></div>
   <div class="gallery-item"><img src="../assets/img/milton-lobby-restoration.jpg" alt="Lobby being restored"></div>
   <div class="gallery-item"><img src="../assets/img/milton-debris-removal.jpg" alt="Debris removal on site"></div>
@@ -329,8 +339,10 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <div class="gallery-item"><img src="../assets/img/milton-exterior-worker.jpg" alt="Worker inspecting exterior"></div>
   <div class="gallery-item"><img src="../assets/img/milton-tv-interview.jpg" alt="Team interviewed on-site"></div>
   <div class="gallery-item"><img src="../assets/img/milton-tv-interview-group.jpg" alt="Team group interview"></div>
+  </div>
+  <button class="gallery-nav next" aria-label="Next photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
  </div>
- <p class="gallery-hint">Scroll horizontally to see the full sequence.</p>
+ <p class="gallery-hint">Use the arrows or swipe to see the full sequence.</p>
 </section>
 
 <section class="pull-quote">
@@ -382,7 +394,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 <footer>
  <div class="footer-grid">
   <div class="footer-brand">
-   <strong>Blue<em>Sky</em></strong>
+   <strong>BlueSky</strong>
    <p>A commercial facility services partner, cleaning, maintenance, and recovery programs delivered under measurable standards across the Southeast United States.</p>
   </div>
   <div class="footer-col"><h4>Company</h4><ul>
@@ -423,6 +435,15 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
  }
  setInterval(() => go(i + 1), 4500);
  dots.forEach((d, idx) => d.addEventListener('click', () => go(idx)));
+})();
+
+// Galeria: setas prev/next
+(function(){
+ const track = document.getElementById('galleryTrack');
+ if (!track) return;
+ const step = () => { const item = track.querySelector('.gallery-item'); return item ? item.getBoundingClientRect().width + 16 : track.clientWidth * 0.8; };
+ document.querySelectorAll('.gallery-nav.prev').forEach(b => b.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' })));
+ document.querySelectorAll('.gallery-nav.next').forEach(b => b.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' })));
 })();
 
 const hamburger = document.getElementById('hamburger');

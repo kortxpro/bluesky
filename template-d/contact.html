@@ -36,6 +36,7 @@ img { display:block; max-width:100%; height:auto; object-fit:cover; }
 .navbar { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 4vw; border-bottom:1px solid var(--stone-200); position:sticky; top:0; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); z-index:100; }
 .navbar-logo { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:500; letter-spacing:0.02em; display:inline-flex; align-items:baseline; gap:0.45rem; }
 .navbar-logo em { font-style:italic; color:var(--accent); }
+.navbar-logo img { height:38px; width:auto; display:block; }
 .navbar-logo .tag { font-family:'DM Sans',sans-serif; font-size:0.68rem; color:var(--stone-500); letter-spacing:0.12em; text-transform:uppercase; font-weight:400; }
 .navbar-links { display:flex; align-items:center; gap:2.2rem; list-style:none; font-size:0.82rem; letter-spacing:0.05em; }
 .navbar-links > li { position:relative; }
@@ -154,7 +155,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 </div>
 
 <nav class="navbar">
- <a href="index.html" class="navbar-logo">Blue<em>Sky</em><span class="tag">General Services</span></a>
+ <a href="index.html" class="navbar-logo"><img src="assets/img/logo-bluesky.png" alt="BlueSky General Services"></a>
  <ul class="navbar-links">
   <li><a href="index.html">Home</a></li>
   <li>
@@ -239,7 +240,12 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <h2>Send us the scope.</h2>
   <p class="intro">The more specific you can be, building size, occupancy hours, services needed, current vendor issues, the faster we can return a proposal that reflects your actual conditions.</p>
 
-  <form class="contact-form" id="proposalForm" onsubmit="event.preventDefault(); document.getElementById('successMsg').classList.add('show'); this.reset();">
+  <form class="contact-form" id="proposalForm" action="https://api.web3forms.com/submit" method="POST">
+   <!-- Web3Forms: gere a access key gratuita em https://web3forms.com usando contact@blueskygeneralserv.com e cole no value abaixo. As mensagens chegam nesse email. -->
+   <input type="hidden" name="access_key" value="COLE_AQUI_A_ACCESS_KEY_DO_WEB3FORMS">
+   <input type="hidden" name="subject" value="Nova solicitação — site BlueSky General Services">
+   <input type="hidden" name="from_name" value="BlueSky Website">
+   <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
    <div class="form-field">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" required>
@@ -294,6 +300,9 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
    <div class="success-msg full" id="successMsg" style="grid-column:1/-1;">
     <strong>Request received.</strong> We will reply from <em>contact@blueskygeneralserv.com</em> within one business day.
    </div>
+   <div class="success-msg full" id="errorMsg" style="grid-column:1/-1; background:#fef2f2; border-color:#dc2626; color:#b91c1c;">
+    <strong>Something went wrong.</strong> Please try again, or email <em>contact@blueskygeneralserv.com</em> directly.
+   </div>
   </form>
  </div>
 </div>
@@ -309,7 +318,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 <footer>
  <div class="footer-grid">
   <div class="footer-brand">
-   <strong>Blue<em>Sky</em></strong>
+   <strong>BlueSky</strong>
    <p>A commercial facility services partner, cleaning, maintenance, and recovery programs delivered under measurable standards across the Southeast United States.</p>
   </div>
   <div class="footer-col"><h4>Company</h4><ul>
@@ -344,6 +353,38 @@ hamburger.addEventListener('click', openD);
 closeBtn.addEventListener('click', closeD);
 backdrop.addEventListener('click', closeD);
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeD));
+
+// Envio do formulário via Web3Forms (mostra a mensagem de sucesso sem sair da página)
+(function(){
+ const form = document.getElementById('proposalForm');
+ if (!form) return;
+ const ok = document.getElementById('successMsg');
+ const err = document.getElementById('errorMsg');
+ form.addEventListener('submit', async function(e){
+  e.preventDefault();
+  const btn = form.querySelector('button[type="submit"]');
+  if (err) err.classList.remove('show');
+  if (btn) btn.disabled = true;
+  try {
+   const res = await fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: new FormData(form)
+   });
+   const json = await res.json();
+   if (json.success) {
+    if (ok) ok.classList.add('show');
+    form.reset();
+   } else {
+    if (err) err.classList.add('show');
+   }
+  } catch (_) {
+   if (err) err.classList.add('show');
+  } finally {
+   if (btn) btn.disabled = false;
+  }
+ });
+})();
 </script>
 </body>
 </html>

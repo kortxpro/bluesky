@@ -39,6 +39,7 @@ img { display:block; max-width:100%; height:auto; object-fit:cover; }
 .navbar { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 4vw; border-bottom:1px solid var(--stone-200); position:sticky; top:0; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); z-index:100; }
 .navbar-logo { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:500; letter-spacing:0.02em; display:inline-flex; align-items:baseline; gap:0.45rem; }
 .navbar-logo em { font-style:italic; color:var(--accent); }
+.navbar-logo img { height:38px; width:auto; display:block; }
 .navbar-logo .tag { font-family:'DM Sans',sans-serif; font-size:0.68rem; color:var(--stone-500); letter-spacing:0.12em; text-transform:uppercase; font-weight:400; }
 .navbar-links { display:flex; align-items:center; gap:2.2rem; list-style:none; font-size:0.82rem; letter-spacing:0.05em; }
 .navbar-links > li { position:relative; }
@@ -97,7 +98,7 @@ section { padding:7rem 4vw; }
 .leadership-head { max-width:820px; margin-bottom:3rem; }
 .leadership-head h2 { font-size:clamp(1.9rem,2.8vw,2.4rem); font-style:italic; margin:0.8rem 0 1rem; }
 .leadership-head p { color:var(--stone-500); max-width:58ch; }
-.leaders { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+.leaders { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; }
 .leader { background:var(--white); border:1px solid var(--stone-200); padding:2.5rem 2rem; transition:border-color 0.3s; }
 .leader:hover { border-color:var(--stone-400); }
 .leader .avatar { width:68px; height:68px; border-radius:50%; background:linear-gradient(135deg, var(--stone-300), var(--stone-200)); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-style:italic; font-size:1.4rem; color:var(--stone-500); margin-bottom:1.2rem; }
@@ -183,7 +184,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 </div>
 
 <nav class="navbar">
- <a href="index.html" class="navbar-logo">Blue<em>Sky</em><span class="tag">General Services</span></a>
+ <a href="index.html" class="navbar-logo"><img src="assets/img/logo-bluesky.png" alt="BlueSky General Services"></a>
  <ul class="navbar-links">
   <li><a href="index.html">Home</a></li>
   <li>
@@ -298,22 +299,28 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  </div>
  <div class="leaders">
   <div class="leader reveal" data-delay="1">
-   <div class="avatar">M</div>
-   <h4>Marcus</h4>
-   <div class="role">Founder · Principal</div>
-   <p>Founded BlueSky to raise the operational standard of commercial facility services. Accountable for overall strategy, major account relationships, and disaster-recovery mobilization.</p>
+   <div class="avatar">MR</div>
+   <h4>Marcus Rebello</h4>
+   <div class="role">Founder / CEO</div>
+   <p>Founded BlueSky to raise the operational standard of commercial facility services. Accountable for company strategy, major account relationships, and disaster-recovery mobilization.</p>
   </div>
   <div class="leader reveal" data-delay="2">
-   <div class="avatar">O</div>
-   <h4>Operations Lead</h4>
-   <div class="role">Operations · Quality</div>
-   <p>Owns scope execution, supervisor training, and inspection program. Walks sites, reviews monthly briefs, and escalates issues into the operating cycle they occurred in.</p>
+   <div class="avatar">OD</div>
+   <h4>Operations Director</h4>
+   <div class="role">Operations · Field</div>
+   <p>Owns scope execution across every account — supervisor training, crew scheduling, and the inspection program. Walks sites and escalates issues inside the operating cycle they occur in.</p>
   </div>
   <div class="leader reveal" data-delay="3">
-   <div class="avatar">A</div>
-   <h4>Account Manager</h4>
-   <div class="role">Client · Reporting</div>
-   <p>Single point of contact for account relationships. Delivers monthly performance briefs, scope revisions, and coordinates cross-service programs.</p>
+   <div class="avatar">OM</div>
+   <h4>Office Manager</h4>
+   <div class="role">Administration · Client Support</div>
+   <p>Runs day-to-day administration: scheduling, contracts, invoicing, and supply logistics. First point of contact for account coordination and documentation.</p>
+  </div>
+  <div class="leader reveal" data-delay="4">
+   <div class="avatar">QA</div>
+   <h4>Quality Assurance</h4>
+   <div class="role">Quality · Reporting</div>
+   <p>Owns the quality program — audits, checklists, and corrective action. Compiles the monthly performance reports each account receives.</p>
   </div>
  </div>
 </section>
@@ -364,7 +371,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 <footer>
  <div class="footer-grid">
   <div class="footer-brand">
-   <strong>Blue<em>Sky</em></strong>
+   <strong>BlueSky</strong>
    <p>A commercial facility services partner. Cleaning, maintenance, and recovery programs delivered under measurable standards across the Southeast United States.</p>
   </div>
   <div class="footer-col"><h4>Company</h4><ul>
