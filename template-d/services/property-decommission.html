@@ -173,6 +173,11 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 .property-library-card-body span { display:block; color:var(--stone-500); font-size:0.88rem; line-height:1.6; }
 @media (max-width:900px) { .property-library-head { grid-template-columns:1fr; gap:1.4rem; } .property-library { padding:0 4vw 5rem; } }
 @media (max-width:600px) { .property-library-scroll { grid-auto-columns:82%; } }
+
+/* Credito da agencia */
+.footer-credit { margin-left: 0.6rem; white-space: nowrap; }
+.footer-credit a { color: var(--stone-400); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
+.footer-credit a:hover { color: var(--white); border-bottom-color: rgba(255,255,255,0.4); }
 </style>
 </head>
 <body>
@@ -283,7 +288,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
     <span class="label">Property Decommission Library</span>
     <h3>Decommission, vacancy reset, and fog disinfect as a specialty layer.</h3>
    </div>
-   <p>This library supports the page with the kind of visuals that matter here: empty-space turnover, final reset, technical disinfect treatment, and the feeling of a site being prepared for handoff instead of day-to-day operation.</p>
+   <p>What a decommission actually looks like: cleared floors, a final reset, and disinfect treatment on a site being prepared for handoff rather than another day of operation.</p>
   </div>
   <div class="property-library-scroll">
    <article class="property-library-card reveal" data-delay="1">
@@ -379,7 +384,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   </ul></div>
  </div>
  <div class="footer-bottom">
-  <span>© 2026 BlueSky General Services. All rights reserved.</span>
+  <span>© 2026 BlueSky General Services. All rights reserved. <span class="footer-credit">Site by <a href="https://kortx.pro" target="_blank" rel="noopener">KORTX</a></span></span>
   <div class="footer-badges"><span>Licensed</span><span>Insured</span><span>Bonded</span></div>
  </div>
 </footer>

@@ -140,6 +140,11 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  .footer-grid { grid-template-columns:1fr; gap:2.5rem; }
  .footer-bottom { flex-direction:column; text-align:center; }
 }
+
+/* Credito da agencia */
+.footer-credit { margin-left: 0.6rem; white-space: nowrap; }
+.footer-credit a { color: var(--stone-400); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
+.footer-credit a:hover { color: var(--white); border-bottom-color: rgba(255,255,255,0.4); }
 </style>
 </head>
 <body>
@@ -329,7 +334,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   </ul></div>
  </div>
  <div class="footer-bottom">
-  <span>© 2026 BlueSky General Services. All rights reserved.</span>
+  <span>© 2026 BlueSky General Services. All rights reserved. <span class="footer-credit">Site by <a href="https://kortx.pro" target="_blank" rel="noopener">KORTX</a></span></span>
   <div class="footer-badges"><span>Licensed</span><span>Insured</span><span>Bonded</span></div>
  </div>
 </footer>

@@ -186,6 +186,11 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 .carpet-library-card-body span { display:block; color:var(--stone-500); font-size:0.88rem; line-height:1.6; }
 @media (max-width:900px) { .carpet-library-head { grid-template-columns:1fr; gap:1.4rem; } .carpet-library { padding:0 4vw 5rem; } }
 @media (max-width:600px) { .carpet-library-scroll { grid-auto-columns:82%; } }
+
+/* Credito da agencia */
+.footer-credit { margin-left: 0.6rem; white-space: nowrap; }
+.footer-credit a { color: var(--stone-400); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
+.footer-credit a:hover { color: var(--white); border-bottom-color: rgba(255,255,255,0.4); }
 </style>
 </head>
 <body>
@@ -276,13 +281,13 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 <section class="mini-case">
  <div class="mini-case-inner">
   <div class="mini-case-media reveal">
-   <img src="../assets/img/services/carpet/carpet-case-1.png" alt="Commercial carpet cleaning case study image">
-   <img src="../assets/img/services/carpet/carpet-case-2.png" alt="Commercial carpet cleaning process image">
+   <img src="../assets/img/services/carpet/carpet-case-1.png" alt="Two BlueSky cleaners mopping an office corridor with dual yellow wringer buckets">
+   <img src="../assets/img/services/carpet/carpet-case-2.png" alt="BlueSky technician hot-water extracting showroom carpet, leaving a visibly lighter clean pass">
   </div>
   <div class="reveal" data-delay="1">
    <span class="client-tag">Mini-Case · Carpet Recovery</span>
-   <h3>Carpet cleaning works best here as a recovery and presentation case, not a dramatic before-and-after gimmick.</h3>
-   <p>The material you separated reads more like a service mini-case: visible extraction work, equipment in use, and the kind of cleaned, reset carpet condition clients expect in active commercial spaces where turnaround and presentation both matter.</p>
+   <h3>Carpet recovery in occupied commercial space, where turnaround matters as much as the result.</h3>
+   <p>Commercial carpet is judged on two things: how much soil actually comes out, and how fast the space can be used again. These images show extraction in progress, the equipment we run, and the condition a tenant walks back into the next morning.</p>
    <div class="mini-case-stats">
     <div class="mini-case-stat"><strong>Extraction</strong><span>Deep-clean method</span></div>
     <div class="mini-case-stat"><strong>Turnover-aware</strong><span>Commercial schedule</span></div>
@@ -316,7 +321,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
     <span class="label">Carpet Cleaning Library</span>
     <h3>Equipment, interior reset, and the kind of spaces this service supports.</h3>
    </div>
-   <p>The library stays lighter here on purpose. Carpet cleaning is better shown through equipment, occupied interiors, and turnover-ready finishes than by forcing weak repeated images into the page.</p>
+   <p>Carpet work shows best in context: the machines we run, the interiors we run them in, and the condition the space is left in for the next business day.</p>
   </div>
   <div class="carpet-library-scroll">
    <article class="carpet-library-card reveal" data-delay="1">
@@ -405,7 +410,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   </ul></div>
  </div>
  <div class="footer-bottom">
-  <span>© 2026 BlueSky General Services. All rights reserved.</span>
+  <span>© 2026 BlueSky General Services. All rights reserved. <span class="footer-credit">Site by <a href="https://kortx.pro" target="_blank" rel="noopener">KORTX</a></span></span>
   <div class="footer-badges"><span>Licensed</span><span>Insured</span><span>Bonded</span></div>
  </div>
 </footer>

@@ -168,6 +168,11 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  .footer-grid { grid-template-columns:1fr; gap:2.5rem; }
  .footer-bottom { flex-direction:column; text-align:center; }
 }
+
+/* Credito da agencia */
+.footer-credit { margin-left: 0.6rem; white-space: nowrap; }
+.footer-credit a { color: var(--stone-400); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
+.footer-credit a:hover { color: var(--white); border-bottom-color: rgba(255,255,255,0.4); }
 </style>
 </head>
 <body>
@@ -308,7 +313,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
    <div class="avatar">OD</div>
    <h4>Operations Director</h4>
    <div class="role">Operations · Field</div>
-   <p>Owns scope execution across every account — supervisor training, crew scheduling, and the inspection program. Walks sites and escalates issues inside the operating cycle they occur in.</p>
+   <p>Owns scope execution on every account, including supervisor training, crew scheduling, and the inspection program. Walks sites and escalates issues inside the operating cycle they occur in.</p>
   </div>
   <div class="leader reveal" data-delay="3">
    <div class="avatar">OM</div>
@@ -320,7 +325,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
    <div class="avatar">QA</div>
    <h4>Quality Assurance</h4>
    <div class="role">Quality · Reporting</div>
-   <p>Owns the quality program — audits, checklists, and corrective action. Compiles the monthly performance reports each account receives.</p>
+   <p>Builds and enforces the quality program: audits, checklists, and corrective action. Compiles the monthly performance reports each account receives.</p>
   </div>
  </div>
 </section>
@@ -388,7 +393,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   </ul></div>
  </div>
  <div class="footer-bottom">
-  <span>© 2026 BlueSky General Services. All rights reserved.</span>
+  <span>© 2026 BlueSky General Services. All rights reserved. <span class="footer-credit">Site by <a href="https://kortx.pro" target="_blank" rel="noopener">KORTX</a></span></span>
   <div class="footer-badges"><span>Licensed</span><span>Insured</span><span>Bonded</span></div>
  </div>
 </footer>

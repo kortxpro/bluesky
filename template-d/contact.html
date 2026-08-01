@@ -139,6 +139,11 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  .footer-grid { grid-template-columns:1fr; gap:2.5rem; }
  .footer-bottom { flex-direction:column; text-align:center; }
 }
+
+/* Credito da agencia */
+.footer-credit { margin-left: 0.6rem; white-space: nowrap; }
+.footer-credit a { color: var(--stone-400); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
+.footer-credit a:hover { color: var(--white); border-bottom-color: rgba(255,255,255,0.4); }
 </style>
 </head>
 <body>
@@ -241,9 +246,11 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <p class="intro">The more specific you can be, building size, occupancy hours, services needed, current vendor issues, the faster we can return a proposal that reflects your actual conditions.</p>
 
   <form class="contact-form" id="proposalForm" action="https://api.web3forms.com/submit" method="POST">
-   <!-- Web3Forms: gere a access key gratuita em https://web3forms.com usando contact@blueskygeneralserv.com e cole no value abaixo. As mensagens chegam nesse email. -->
-   <input type="hidden" name="access_key" value="COLE_AQUI_A_ACCESS_KEY_DO_WEB3FORMS">
-   <input type="hidden" name="subject" value="Nova solicitação — site BlueSky General Services">
+   <!-- ACTION REQUIRED: this form cannot deliver until a real Web3Forms access key is pasted below.
+        Get a free key at https://web3forms.com using contact@blueskygeneralserv.com; submissions arrive at that inbox.
+        Until then every proposal request fails and the visitor sees the error box. -->
+   <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY">
+   <input type="hidden" name="subject" value="New proposal request from blueskygeneralserv.com">
    <input type="hidden" name="from_name" value="BlueSky Website">
    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
    <div class="form-field">
@@ -297,10 +304,10 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
     <button type="submit" class="btn btn-primary">Send Request <span class="arrow">→</span></button>
     <span class="form-note">We reply within one business day. No sales pressure, no shared contact lists.</span>
    </div>
-   <div class="success-msg full" id="successMsg" style="grid-column:1/-1;">
+   <div class="success-msg full" id="successMsg" role="status" aria-live="polite" style="grid-column:1/-1;">
     <strong>Request received.</strong> We will reply from <em>contact@blueskygeneralserv.com</em> within one business day.
    </div>
-   <div class="success-msg full" id="errorMsg" style="grid-column:1/-1; background:#fef2f2; border-color:#dc2626; color:#b91c1c;">
+   <div class="success-msg full" id="errorMsg" role="alert" aria-live="assertive" style="grid-column:1/-1; background:#fef2f2; border-color:#dc2626; color:#b91c1c;">
     <strong>Something went wrong.</strong> Please try again, or email <em>contact@blueskygeneralserv.com</em> directly.
    </div>
   </form>
@@ -335,7 +342,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   </ul></div>
  </div>
  <div class="footer-bottom">
-  <span>© 2026 BlueSky General Services. All rights reserved.</span>
+  <span>© 2026 BlueSky General Services. All rights reserved. <span class="footer-credit">Site by <a href="https://kortx.pro" target="_blank" rel="noopener">KORTX</a></span></span>
   <div class="footer-badges"><span>Licensed</span><span>Insured</span><span>Bonded</span></div>
  </div>
 </footer>
@@ -354,7 +361,7 @@ closeBtn.addEventListener('click', closeD);
 backdrop.addEventListener('click', closeD);
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeD));
 
-// Envio do formulário via Web3Forms (mostra a mensagem de sucesso sem sair da página)
+// Web3Forms submission handled inline so the visitor never leaves the page
 (function(){
  const form = document.getElementById('proposalForm');
  if (!form) return;

@@ -640,6 +640,41 @@ section { padding: 7rem 4vw; }
 }
 .cert-badge:hover .cert-icon { border-color: var(--accent); color: var(--accent); }
 
+/* ── Trusted By ── */
+.trustbar {
+ background: var(--stone-50);
+ padding: 3.5rem 4vw;
+ border-bottom: 1px solid var(--stone-200);
+}
+.trust-head { text-align: center; margin-bottom: 2.25rem; }
+.trust-head .label { margin-bottom: 0.5rem; }
+.trust-head h3 {
+ font-size: 1.15rem;
+ font-weight: 400;
+ font-style: italic;
+ color: var(--stone-500);
+}
+.trust-row {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
+ gap: 2.25rem 3.5rem;
+}
+/* Cada logo é contido numa caixa comum: os horizontais batem na largura,
+   os quadrados/verticais batem na altura — assim nenhum domina a faixa. */
+.trust-logo {
+ max-height: 46px;
+ max-width: 165px;
+ width: auto;
+ height: auto;
+ object-fit: contain;
+ filter: grayscale(1);
+ opacity: 0.55;
+ transition: opacity 0.3s, filter 0.3s;
+}
+.trust-logo:hover { filter: grayscale(0); opacity: 1; }
+
 /* ── Testimonial ── */
 .testimonial {
  background: var(--stone-50);
@@ -802,6 +837,8 @@ footer {
  .featured-stats { grid-template-columns: 1fr 1fr; }
  .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
  .footer-bottom { flex-direction: column; text-align: center; }
+ .trust-row { gap: 1.75rem 2.25rem; }
+ .trust-logo { max-height: 34px; max-width: 120px; }
  section { padding: 4.5rem 4vw; }
 }
 
@@ -849,6 +886,11 @@ footer {
  transition: opacity 0.35s;
 }
 .mobile-backdrop.open { opacity: 1; pointer-events: auto; }
+
+/* Credito da agencia */
+.footer-credit { margin-left: 0.6rem; white-space: nowrap; }
+.footer-credit a { color: var(--stone-400); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
+.footer-credit a:hover { color: var(--white); border-bottom-color: rgba(255,255,255,0.4); }
 </style>
 </head>
 <body>
@@ -962,6 +1004,25 @@ footer {
  </div>
 </section>
 
+<!-- ═══ TRUSTED BY ═══ -->
+<section class="trustbar">
+ <div class="trust-head reveal">
+  <span class="label">Trusted By</span>
+  <h3>Organizations that rely on BlueSky to keep their facilities running.</h3>
+ </div>
+ <div class="trust-row reveal" data-delay="1">
+  <img class="trust-logo" src="assets/img/clients/apple.png" alt="Apple" loading="lazy">
+  <img class="trust-logo" src="assets/img/clients/tesla.png" alt="Tesla" loading="lazy">
+  <img class="trust-logo" src="assets/img/clients/sephora.png" alt="Sephora" loading="lazy">
+  <img class="trust-logo" src="assets/img/clients/st-pete-clearwater-airport.png" alt="St. Pete-Clearwater International Airport" loading="lazy">
+  <img class="trust-logo" src="assets/img/clients/orange-county-government.png" alt="Orange County Government, Florida" loading="lazy">
+  <img class="trust-logo" src="assets/img/clients/pinellas-county.png" alt="Pinellas County" loading="lazy">
+  <img class="trust-logo" src="assets/img/clients/florida-technical-college.png" alt="Florida Technical College" loading="lazy">
+  <img class="trust-logo" src="assets/img/clients/pritchard-industries.png" alt="Pritchard Industries" loading="lazy">
+  <img class="trust-logo" src="assets/img/clients/w-services-group.png" alt="W Services Group" loading="lazy">
+ </div>
+</section>
+
 <!-- ═══ SERVICES GRID ═══ -->
 <section class="services" id="services">
  <div class="section-head reveal">
@@ -972,7 +1033,7 @@ footer {
 
  <div class="services-grid">
   <a href="services/janitorial.html" class="service-card reveal" data-delay="1">
-   <div class="service-card-img"><img src="assets/img/services/janitorial/bathroom-after-4.png" alt="Commercial bathroom restored through BlueSky janitorial service"></div>
+   <div class="service-card-img"><img src="assets/img/services/janitorial/janitorial-restroom-stall.jpeg" alt="Clean commercial restroom stall maintained by BlueSky janitorial service" loading="lazy"></div>
    <div class="service-card-body">
     <span class="service-num">01</span>
     <h3>Janitorial Services</h3>
@@ -981,7 +1042,7 @@ footer {
    </div>
   </a>
   <a href="services/pressure-washing.html" class="service-card reveal" data-delay="2">
-   <div class="service-card-img"><img src="assets/img/services/pressure/action-1.jpeg" alt="BlueSky technician performing pressure washing on a commercial facade"></div>
+   <div class="service-card-img"><img src="assets/img/services/pressure/action-1.jpeg" alt="BlueSky technician performing pressure washing on a commercial facade" loading="lazy"></div>
    <div class="service-card-body">
     <span class="service-num">02</span>
     <h3>Pressure Washing</h3>
@@ -990,7 +1051,7 @@ footer {
    </div>
   </a>
   <a href="services/window-cleaning.html" class="service-card reveal" data-delay="3">
-   <div class="service-card-img"><img src="assets/img/services/windows/windows-1.png" alt="BlueSky window cleaner working on a commercial facade"></div>
+   <div class="service-card-img"><img src="assets/img/services/windows/orange-county-courts-rope-main.jpeg" alt="BlueSky rope access technicians rappelling down a high-rise glass facade" style="object-position: center top;" loading="lazy"></div>
    <div class="service-card-body">
     <span class="service-num">03</span>
     <h3>Window Cleaning</h3>
@@ -999,7 +1060,7 @@ footer {
    </div>
   </a>
   <a href="services/carpet-cleaning.html" class="service-card reveal" data-delay="1">
-   <div class="service-card-img"><img src="assets/img/services/carpet/carpet-1.png" alt="BlueSky team performing commercial carpet cleaning"></div>
+   <div class="service-card-img"><img src="assets/img/services/carpet/carpet-1.png" alt="BlueSky team performing commercial carpet cleaning" loading="lazy"></div>
    <div class="service-card-body">
     <span class="service-num">04</span>
     <h3>Carpet Cleaning</h3>
@@ -1008,7 +1069,7 @@ footer {
    </div>
   </a>
   <a href="services/floor-care.html" class="service-card reveal" data-delay="2">
-   <div class="service-card-img"><img src="assets/img/services/floor/case3-after-1.png" alt="High-gloss commercial floor restored by BlueSky's floor stripping &amp; waxing program"></div>
+   <div class="service-card-img"><img src="assets/img/services/floor/case3-after-1.png" alt="High-gloss commercial floor restored by BlueSky's floor stripping &amp; waxing program" loading="lazy"></div>
    <div class="service-card-body">
     <span class="service-num">05</span>
     <h3>Floor Stripping &amp; Waxing</h3>
@@ -1017,7 +1078,7 @@ footer {
    </div>
   </a>
   <a href="services/post-construction.html" class="service-card reveal" data-delay="3">
-   <div class="service-card-img"><img src="assets/img/services/post-construction/after-5.png" alt="Commercial corridor delivered clean after post-construction turnover"></div>
+   <div class="service-card-img"><img src="assets/img/services/post-construction/after-5.png" alt="Commercial corridor delivered clean after post-construction turnover" loading="lazy"></div>
    <div class="service-card-body">
     <span class="service-num">06</span>
     <h3>Post-Construction</h3>
@@ -1026,7 +1087,7 @@ footer {
    </div>
   </a>
   <a href="services/property-decommission.html" class="service-card reveal" data-delay="1">
-   <div class="service-card-img"><img src="assets/img/services/property-decommission/fog-disinfect-1.png" alt="BlueSky technician applying electrostatic fog disinfection"></div>
+   <div class="service-card-img"><img src="assets/img/services/property-decommission/fog-disinfect-1.png" alt="BlueSky technician applying electrostatic fog disinfection" loading="lazy"></div>
    <div class="service-card-body">
     <span class="service-num">07</span>
     <h3>Property Decommission</h3>
@@ -1113,7 +1174,7 @@ footer {
 <!-- ═══ FEATURED CASE: HURRICANE MILTON ═══ -->
 <section class="featured-case">
  <div class="featured-case-media">
-  <img src="assets/img/milton-lobby-caution.jpg" alt="Flood-damaged commercial lobby with caution tape and industrial dehumidifiers during BlueSky recovery">
+  <img src="assets/img/milton/capa/hero-aerial.webp" alt="Aerial view of a construction crane collapsed across the street into a commercial building during Hurricane Milton" loading="lazy">
  </div>
  <div class="featured-case-body reveal">
   <span class="featured-case-tag">Featured Case Study · Disaster Recovery</span>
@@ -1141,7 +1202,7 @@ footer {
 <section class="certifications">
  <div class="cert-head reveal">
   <span class="label">Credentials</span>
-  <h3>Licensed. Insured. Bonded. Certified to standards that large contracts require.</h3>
+  <h3>Certified to the standards large contracts require.</h3>
  </div>
  <div class="cert-row reveal" data-delay="1">
   <div class="cert-badge"><div class="cert-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6 6 .8-4.5 4.5L18 20l-6-3-6 3 1.5-6.7L3 8.8 9 8l3-6z"/></svg></div><span>Licensed</span></div>
@@ -1165,7 +1226,7 @@ footer {
 <!-- ═══ CAREERS TEASER ═══ -->
 <section class="careers-teaser">
  <div class="careers-teaser-img reveal">
-  <img src="assets/img/services/post-construction/milton-team-photo.jpeg" alt="The full BlueSky field team assembled together in a commercial lobby">
+  <img src="assets/img/services/post-construction/milton-team-photo.jpeg" alt="The full BlueSky field team assembled together in a commercial lobby" loading="lazy">
  </div>
  <div class="reveal" data-delay="1">
   <span class="label">Careers</span>
@@ -1237,7 +1298,7 @@ footer {
   </div>
  </div>
  <div class="footer-bottom">
-  <span>© 2026 BlueSky General Services. All rights reserved.</span>
+  <span>© 2026 BlueSky General Services. All rights reserved. <span class="footer-credit">Site by <a href="https://kortx.pro" target="_blank" rel="noopener">KORTX</a></span></span>
   <div class="footer-badges">
    <span>Licensed</span><span>Insured</span><span>Bonded</span>
   </div>
