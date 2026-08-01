@@ -61,12 +61,11 @@ img { display:block; max-width:100%; height:auto; object-fit:cover; }
 .navbar-links .caret { font-size:0.65rem; opacity:0.6; }
 .btn-nav { background:var(--accent); color:var(--white) !important; padding:0.65rem 1.3rem !important; border-radius:2px; font-weight:500; transition:background 0.3s; }
 .btn-nav:hover { background:var(--accent-hover); }
-.megamenu { position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(-8px); margin-top:1.2rem; background:var(--white); border:1px solid var(--stone-200); box-shadow:0 20px 50px rgba(0,0,0,0.08); padding:2.2rem 2.5rem; min-width:520px; display:grid; grid-template-columns:repeat(2,1fr); gap:1.2rem 2.5rem; opacity:0; pointer-events:none; transition:opacity 0.25s, transform 0.25s; z-index:101; }
+.megamenu { position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(-8px); margin-top:1.2rem; background:var(--white); border:1px solid var(--stone-200); box-shadow:0 20px 50px rgba(0,0,0,0.08); padding:1.6rem 2rem; min-width:220px; display:grid; grid-template-columns: 1fr; gap: 0; opacity:0; pointer-events:none; transition:opacity 0.25s, transform 0.25s; z-index:101; }
 .navbar-links > li:hover .megamenu, .navbar-links > li:focus-within .megamenu { opacity:1; pointer-events:auto; transform:translateX(-50%) translateY(0); }
-.megamenu-item { display:block; padding:0.4rem 0; }
-.megamenu-item strong { display:block; font-family:'Playfair Display',serif; font-size:1rem; font-weight:500; font-style:italic; color:var(--black); margin-bottom:0.15rem; }
-.megamenu-item span { font-size:0.78rem; color:var(--stone-500); letter-spacing:0; text-transform:none; }
-.megamenu-item:hover strong { color:var(--accent); }
+.megamenu-item { display: block; padding: 0.55rem 0; }
+.megamenu-item strong { display: block; white-space: nowrap; font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 500; font-style: italic; color: var(--black); margin: 0; }
+.megamenu-item:hover strong { color: var(--accent); }
 .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:0.5rem; }
 .hamburger span { width:22px; height:1.5px; background:var(--black); }
 
@@ -151,6 +150,10 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 /* Skip link (WCAG 2.4.1) */
 .skip-link { position:absolute; left:-9999px; top:0; z-index:9999; background:var(--accent); color:var(--white); padding:0.8rem 1.4rem; font-size:0.85rem; letter-spacing:0.05em; }
 .skip-link:focus { left:0; outline:2px solid var(--white); outline-offset:-4px; }
+
+/* Bridges the dead gap between the nav item and the dropdown, so the menu
+   stays open while the pointer travels down into it. */
+.megamenu::before { content:""; position:absolute; left:0; right:0; top:-1.3rem; height:1.3rem; }
 </style>
 </head>
 <body>
@@ -174,24 +177,24 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <li>
    <a href="services.html">Services <span class="caret">▾</span></a>
    <div class="megamenu">
-    <a href="services/janitorial.html" class="megamenu-item"><strong>Janitorial</strong><span>Recurring commercial cleaning programs</span></a>
-    <a href="services/pressure-washing.html" class="megamenu-item"><strong>Pressure Washing</strong><span>Exterior high-pressure cleaning</span></a>
-    <a href="services/window-cleaning.html" class="megamenu-item"><strong>Window Cleaning</strong><span>Interior &amp; high-rise glass care</span></a>
-    <a href="services/carpet-cleaning.html" class="megamenu-item"><strong>Carpet Cleaning</strong><span>Extraction &amp; restoration</span></a>
-    <a href="services/floor-care.html" class="megamenu-item"><strong>Floor Stripping &amp; Waxing</strong><span>Hard-surface restoration</span></a>
-    <a href="services/post-construction.html" class="megamenu-item"><strong>Post-Construction</strong><span>Disaster recovery &amp; turnover cleanup</span></a>
-    <a href="services/property-decommission.html" class="megamenu-item"><strong>Property Decommission</strong><span>Decommission &amp; fog disinfect</span></a>
+    <a href="services/janitorial.html" class="megamenu-item"><strong>Janitorial</strong></a>
+    <a href="services/pressure-washing.html" class="megamenu-item"><strong>Pressure Washing</strong></a>
+    <a href="services/window-cleaning.html" class="megamenu-item"><strong>Window Cleaning</strong></a>
+    <a href="services/carpet-cleaning.html" class="megamenu-item"><strong>Carpet Cleaning</strong></a>
+    <a href="services/floor-care.html" class="megamenu-item"><strong>Floor Stripping &amp; Waxing</strong></a>
+    <a href="services/post-construction.html" class="megamenu-item"><strong>Post-Construction</strong></a>
+    <a href="services/property-decommission.html" class="megamenu-item"><strong>Property Decommission</strong></a>
    </div>
   </li>
   <li>
    <a href="industries.html" class="active">Industries <span class="caret">▾</span></a>
    <div class="megamenu">
-    <a href="industries.html#corporate" class="megamenu-item"><strong>Corporate Offices</strong><span>Class A / Class B environments</span></a>
-    <a href="industries.html#medical" class="megamenu-item"><strong>Medical &amp; Healthcare</strong><span>Clinics, medical offices, labs</span></a>
-    <a href="industries.html#retail" class="megamenu-item"><strong>Retail &amp; Commercial</strong><span>Shopping centers &amp; storefronts</span></a>
-    <a href="industries.html#education" class="megamenu-item"><strong>Education</strong><span>Schools, colleges, training centers</span></a>
-    <a href="industries.html#construction" class="megamenu-item"><strong>Construction</strong><span>Developer &amp; contractor partnerships</span></a>
-    <a href="industries.html#property" class="megamenu-item"><strong>Property Management</strong><span>Multi-tenant &amp; HOA portfolios</span></a>
+    <a href="industries.html#corporate" class="megamenu-item"><strong>Corporate Offices</strong></a>
+    <a href="industries.html#medical" class="megamenu-item"><strong>Medical &amp; Healthcare</strong></a>
+    <a href="industries.html#retail" class="megamenu-item"><strong>Retail &amp; Commercial</strong></a>
+    <a href="industries.html#education" class="megamenu-item"><strong>Education</strong></a>
+    <a href="industries.html#construction" class="megamenu-item"><strong>Construction</strong></a>
+    <a href="industries.html#property" class="megamenu-item"><strong>Property Management</strong></a>
    </div>
   </li>
   <li><a href="projects.html">Case Studies</a></li>
