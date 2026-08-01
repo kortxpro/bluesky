@@ -3,8 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pressure Washing | BlueSky General Services</title>
-<meta name="description" content="Commercial pressure washing, building envelopes, parking structures, sidewalks, and drive-throughs. Calibrated PSI, degreasers, and documented technique.">
+<title>Commercial Pressure Washing in Florida | BlueSky</title>
+<meta name="description" content="Exterior pressure washing for commercial facades, walkways and parking structures. Surface-appropriate pressure, documented before and after results.">
+<link rel="canonical" href="https://blueskygeneralserv.com/services/pressure-washing">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BlueSky General Services">
+<meta property="og:url" content="https://blueskygeneralserv.com/services/pressure-washing">
+<meta property="og:title" content="Commercial Pressure Washing in Florida | BlueSky">
+<meta property="og:description" content="Exterior pressure washing for commercial facades, walkways and parking structures. Surface-appropriate pressure, documented before and after results.">
+<meta property="og:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Commercial Pressure Washing in Florida | BlueSky">
+<meta name="twitter:description" content="Exterior pressure washing for commercial facades, walkways and parking structures. Surface-appropriate pressure, documented before and after results.">
+<meta name="twitter:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -16,7 +31,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--black); background:var(--wh
 h1,h2,h3,h4 { font-family:'Playfair Display',serif; font-weight:400; line-height:1.15; letter-spacing:-0.01em; }
 a { color:inherit; text-decoration:none; }
 img { display:block; max-width:100%; height:auto; object-fit:cover; }
-.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-400); font-weight:400; }
+.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-500); font-weight:400; }
 .btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.9rem 1.8rem; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:500; border:1px solid transparent; border-radius:2px; cursor:pointer; transition:all 0.3s ease; font-family:inherit; }
 .btn-primary { background:var(--accent); color:var(--white); }
 .btn-primary:hover { background:var(--accent-hover); transform:translateY(-1px); }
@@ -70,6 +85,7 @@ img { display:block; max-width:100%; height:auto; object-fit:cover; }
 .svc-hero .svc-num { font-family:'Playfair Display',serif; font-size:0.95rem; font-style:italic; color:var(--accent-soft); letter-spacing:0.1em; }
 .svc-hero h1 { font-size:clamp(2.4rem,4.5vw,3.8rem); font-style:italic; font-weight:400; line-height:1.05; max-width:18ch; margin:0.8rem 0 1.2rem; }
 .svc-hero .lead { color:rgba(255,255,255,0.85); font-size:1.1rem; max-width:56ch; line-height:1.6; }
+.svc-hero-actions { display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem; }
 
 section { padding:7rem 4vw; }
 
@@ -133,8 +149,8 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 .footer-badges { display:flex; gap:1.5rem; }
 .footer-badges span { letter-spacing:0.12em; text-transform:uppercase; font-size:0.7rem; }
 
-.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
-.mobile-drawer.open { transform:translateX(0); }
+.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); visibility:hidden; transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
+.mobile-drawer.open { transform:translateX(0); visibility:visible; }
 .mobile-drawer ul { list-style:none; display:flex; flex-direction:column; gap:1.4rem; }
 .mobile-drawer a { font-family:'Playfair Display',serif; font-size:1.3rem; font-style:italic; color:var(--black); }
 .mobile-close { position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; font-size:1.5rem; cursor:pointer; }
@@ -195,9 +211,19 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 @media (max-width:900px) { .pressure-library-head { grid-template-columns:1fr; gap:1.4rem; } .pressure-library { padding:0 4vw 5rem; } }
 @media (max-width:600px) { .pressure-library-scroll { grid-auto-columns:82%; } }
 
+
+/* Agency credit */
+.footer-credit { margin-left: 0.6rem; white-space: nowrap; }
+.footer-credit a { color: var(--stone-400); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
+.footer-credit a:hover { color: var(--white); border-bottom-color: rgba(255,255,255,0.4); }
+
+/* Skip link (WCAG 2.4.1) */
+.skip-link { position:absolute; left:-9999px; top:0; z-index:9999; background:var(--accent); color:var(--white); padding:0.8rem 1.4rem; font-size:0.85rem; letter-spacing:0.05em; }
+.skip-link:focus { left:0; outline:2px solid var(--white); outline-offset:-4px; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="topbar">
  <div class="topbar-left"><span>Commercial facility services · Licensed · Insured · Bonded</span></div>
@@ -211,7 +237,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 </div>
 
 <nav class="navbar">
- <a href="../index.html" class="navbar-logo"><img src="../assets/img/logo-bluesky.png" alt="BlueSky General Services"></a>
+ <a href="../index.html" class="navbar-logo"><img src="../assets/img/logo-bluesky.png" alt="BlueSky General Services" width="189" height="80"></a>
  <ul class="navbar-links">
   <li><a href="../index.html">Home</a></li>
   <li><a href="../services.html" class="active">Services <span class="caret">▾</span></a><div class="megamenu">
@@ -236,8 +262,9 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <li><a href="../careers.html">Careers</a></li>
   <li><a href="../contact.html" class="btn-nav">Request a Proposal</a></li>
  </ul>
- <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+ <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer" id="hamburger"><span></span><span></span><span></span></button>
 </nav>
+<main id="main">
 
 <div class="mobile-backdrop" id="mobileBackdrop"></div>
 <div class="mobile-drawer" id="mobileDrawer">
@@ -255,6 +282,10 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <span class="svc-num">Service 02</span>
   <h1>Pressure Washing</h1>
   <p class="lead">Exterior surfaces restored on schedule, facades, parking structures, sidewalks, dumpster pads, and drive-throughs. Surface-appropriate PSI, proper degreasers, and water recovery where required. Documented technique. Safety program per OSHA.</p>
+  <div class="svc-hero-actions">
+   <a href="../contact.html" class="btn btn-primary">Request a Proposal <span class="arrow">→</span></a>
+   <a href="../contact.html" class="btn btn-outline">Get a Site Walk</a>
+  </div>
  </div>
 </header>
 <!-- ═══ SVC-HERO END ═══ -->
@@ -286,48 +317,48 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  <div class="ba-head reveal">
   <span class="label">Pressure Washing Mini-Case</span>
   <h2>Before and after, paired by surface.</h2>
-  <p>These comparisons use the matched pressure-washing sets you organized, so each before image pairs directly with its corresponding after result.</p>
+  <p>Each pair below is the same surface, photographed before our crew started and after they finished. Drag the handle to compare.</p>
  </div>
  <div class="ba-grid">
   <div class="ba-item reveal">
    <div class="ba-slider">
-    <img class="ba-after" src="../assets/img/services/pressure/after-1.png" alt="Pressure-washed commercial surface, after">
-    <img class="ba-before" src="../assets/img/services/pressure/before-1.png" alt="Stained commercial surface, before">
+    <img class="ba-after" src="../assets/img/services/pressure/after-1.jpg" alt="Same facade washed back to clean tan stucco and bright split-face block" loading="lazy">
+    <img class="ba-before" src="../assets/img/services/pressure/before-1.jpg" alt="Tan stucco facade streaked with black mold runoff above a grime-darkened block base" loading="lazy">
     <span class="ba-label ba-label-before">Before</span>
     <span class="ba-label ba-label-after">After</span>
     <div class="ba-handle"><div class="ba-handle-knob">⇆</div></div>
    </div>
-   <div class="ba-caption"><strong>Comparison 01</strong><span>Before 1 matched to After 1</span></div>
+   <div class="ba-caption"><strong>Retail exterior facade</strong><span>Black mold runoff and grime lifted from stucco and block</span></div>
   </div>
   <div class="ba-item reveal" data-delay="1">
    <div class="ba-slider">
-    <img class="ba-after" src="../assets/img/services/pressure/after-2.png" alt="Pressure-washed commercial surface, after">
-    <img class="ba-before" src="../assets/img/services/pressure/before-2.png" alt="Stained commercial surface, before">
+    <img class="ba-after" src="../assets/img/services/pressure/after-2.jpg" alt="Same boardwalk stripped back to warm honey-toned wood grain leading to the lake pier" loading="lazy">
+    <img class="ba-before" src="../assets/img/services/pressure/before-2.jpg" alt="Weathered boardwalk decking greyed by algae and littered with leaf debris" loading="lazy">
     <span class="ba-label ba-label-before">Before</span>
     <span class="ba-label ba-label-after">After</span>
     <div class="ba-handle"><div class="ba-handle-knob">⇆</div></div>
    </div>
-   <div class="ba-caption"><strong>Comparison 02</strong><span>Before 2 matched to After 2</span></div>
+   <div class="ba-caption"><strong>Public park boardwalk</strong><span>Algae and leaf staining stripped from pressure-treated decking</span></div>
   </div>
   <div class="ba-item reveal" data-delay="2">
    <div class="ba-slider">
-    <img class="ba-after" src="../assets/img/services/pressure/after-3.png" alt="Pressure-washed commercial surface, after">
-    <img class="ba-before" src="../assets/img/services/pressure/before-3.png" alt="Stained commercial surface, before">
+    <img class="ba-after" src="../assets/img/services/pressure/after-3.jpg" alt="Same walkway washed to even bright concrete with the ADA pad reading vivid yellow" loading="lazy">
+    <img class="ba-before" src="../assets/img/services/pressure/before-3.jpg" alt="Retail entry sidewalk darkened with grime, its yellow ADA warning pad faded and dull" loading="lazy">
     <span class="ba-label ba-label-before">Before</span>
     <span class="ba-label ba-label-after">After</span>
     <div class="ba-handle"><div class="ba-handle-knob">⇆</div></div>
    </div>
-   <div class="ba-caption"><strong>Comparison 03</strong><span>Before 3 matched to After 3</span></div>
+   <div class="ba-caption"><strong>Storefront entry walkway</strong><span>Concrete and ADA warning pad returned to full contrast</span></div>
   </div>
   <div class="ba-item reveal" data-delay="3">
    <div class="ba-slider">
-    <img class="ba-after" src="../assets/img/services/pressure/after-4.jpeg" alt="Pressure-washed commercial surface, after">
-    <img class="ba-before" src="../assets/img/services/pressure/before-4.jpeg" alt="Stained commercial surface, before">
+    <img class="ba-after" src="../assets/img/services/pressure/after-4.jpeg" alt="Same tower elevation cleaned to bright white precast with glass reflecting open sky" loading="lazy">
+    <img class="ba-before" src="../assets/img/services/pressure/before-4.jpeg" alt="Precast office tower soffit and fins streaked green with algae above the entrance" loading="lazy">
     <span class="ba-label ba-label-before">Before</span>
     <span class="ba-label ba-label-after">After</span>
     <div class="ba-handle"><div class="ba-handle-knob">⇆</div></div>
    </div>
-   <div class="ba-caption"><strong>Comparison 04</strong><span>Pressure wash before 1 matched to pressure washer after 1</span></div>
+   <div class="ba-caption"><strong>Office tower entrance elevation</strong><span>Algae streaking removed from precast fins and entry soffit</span></div>
   </div>
  </div>
 </section>
@@ -341,7 +372,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <p>Every engagement follows the same documented process, so you know what we are doing, and when.</p>
  </div>
  <div class="process-grid">
-  <div class="step reveal" data-delay="1"><h3>Site walk &amp; scope.</h3><p>We walk the facility, measure what drives cost (square footage, traffic, fixtures, occupancy hours), and draft a written scope.</p></div>
+  <div class="step reveal" data-delay="1"><h3>Site walk &amp; scope.</h3><p>We walk the exterior, measure what drives cost (surface area, substrate, staining, runoff and access constraints), and draft a written scope.</p></div>
   <div class="step reveal" data-delay="2"><h3>Scoped proposal.</h3><p>Delivered within three business days, pricing, schedule, inspection framework, reporting cadence, and escalation paths.</p></div>
   <div class="step reveal" data-delay="3"><h3>Mobilization.</h3><p>Teams are vetted, trained on your specific scope, and onboarded with supervisor oversight for the first full cycle.</p></div>
   <div class="step reveal" data-delay="1"><h3>Active reporting.</h3><p>Monthly performance brief, inspection scores, completed extras, incidents, response times. You see what we see.</p></div>
@@ -356,35 +387,35 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
     <span class="label">Pressure Washing Library</span>
     <h3>Execution, coverage, and exterior presentation.</h3>
    </div>
-   <p>The gallery below supports the paired comparisons above with additional visuals focused on active washing, restored surfaces, and the kind of exterior conditions this service is built to correct.</p>
+   <p>More of the same work in progress: crews washing facades, restored surfaces, and the exterior conditions this program is built to correct.</p>
   </div>
   <div class="pressure-library-scroll">
    <article class="pressure-library-card reveal" data-delay="1">
-    <img src="https://images.pexels.com/photos/8811392/pexels-photo-8811392.jpeg?cs=srgb&amp;dl=pexels-tima-miroshnichenko-8811392.jpg&amp;fm=jpg" alt="Crew cleaning the exterior of a commercial building">
+    <img src="https://images.pexels.com/photos/8811392/pexels-photo-8811392.jpeg?cs=srgb&amp;dl=pexels-tima-miroshnichenko-8811392.jpg&amp;fm=jpg" alt="Crew cleaning the exterior of a commercial building" loading="lazy">
     <div class="pressure-library-card-body">
      <strong>Facade cleaning</strong>
-     <span>Exterior service in progress on a commercial facade, showing access, coverage, and visible field execution.</span>
+     <span>Rope-access technicians cleaning glass and panel bands on a tower elevation that ground equipment cannot reach.</span>
     </div>
    </article>
    <article class="pressure-library-card reveal" data-delay="2">
-    <img src="https://images.pexels.com/photos/8974059/pexels-photo-8974059.jpeg?cs=srgb&amp;dl=pexels-tima-miroshnichenko-8974059.jpg&amp;fm=jpg" alt="Workers cleaning the outside of a building">
+    <img src="https://images.pexels.com/photos/8974059/pexels-photo-8974059.jpeg?cs=srgb&amp;dl=pexels-tima-miroshnichenko-8974059.jpg&amp;fm=jpg" alt="Workers cleaning the outside of a building" loading="lazy">
     <div class="pressure-library-card-body">
-     <strong>Exterior maintenance</strong>
-     <span>Support image focused on multi-point execution across the building envelope, not just the final cleaned surface.</span>
+     <strong>Full-elevation coverage</strong>
+     <span>A full crew works the same elevation together so the face is finished in one pass, with no banding left between drops.</span>
     </div>
    </article>
    <article class="pressure-library-card reveal" data-delay="3">
-    <img src="https://images.pexels.com/photos/20878790/pexels-photo-20878790.jpeg?cs=srgb&amp;dl=pexels-rdne-20878790.jpg&amp;fm=jpg" alt="Worker cleaning an exterior wall with pressure equipment">
+    <img src="https://images.pexels.com/photos/20878790/pexels-photo-20878790.jpeg?cs=srgb&amp;dl=pexels-rdne-20878790.jpg&amp;fm=jpg" alt="Technician cleaning a building entrance wall with an extension pole" loading="lazy">
     <div class="pressure-library-card-body">
-     <strong>Operator in process</strong>
-     <span>Closer execution view that makes the service type legible immediately and reinforces the operational side of the work.</span>
+     <strong>Entrance detail work</strong>
+     <span>Extension-pole cleaning at a building entry, where panel faces and recessed reveals are worked at close range.</span>
     </div>
    </article>
    <article class="pressure-library-card reveal" data-delay="1">
-    <img src="../assets/img/services/pressure/action-1.jpeg" alt="Pressure washing being performed on an exterior surface">
+    <img src="../assets/img/services/pressure/action-1.jpeg" alt="BlueSky crew pressure washing precast concrete from a boom lift" loading="lazy">
     <div class="pressure-library-card-body">
-     <strong>Field execution</strong>
-     <span>Real on-site image from the project library to keep the page grounded in BlueSky material, not only external reference images.</span>
+     <strong>Precast washed from the lift</strong>
+     <span>Our crew washing streaked precast from a boom lift, working top down so runoff never re-soils a finished section.</span>
     </div>
    </article>
   </div>
@@ -411,7 +442,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 
 <!-- ═══ RELATED-CASE START ═══ -->
 <section class="related-case">
- <div class="related-case-media"><img src="../assets/img/milton-debris-removal.jpg" alt="BlueSky crew handling debris after a recovery event"></div>
+ <div class="related-case-media"><img src="../assets/img/milton-debris-removal.jpg" alt="BlueSky crew handling debris after a recovery event" loading="lazy"></div>
  <div class="related-case-body reveal">
   <span class="sec-label">Related Work</span>
   <h2>Standards that carry into harder environments.</h2>
@@ -432,6 +463,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  </div>
 </section>
 
+</main>
 <footer>
  <div class="footer-grid">
   <div class="footer-brand">
@@ -452,7 +484,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   </ul></div>
  </div>
  <div class="footer-bottom">
-  <span>© 2026 BlueSky General Services. All rights reserved.</span>
+  <span>© 2026 BlueSky General Services. All rights reserved. <span class="footer-credit">Site by <a href="https://kortx.pro" target="_blank" rel="noopener">KORTX</a></span></span>
   <div class="footer-badges"><span>Licensed</span><span>Insured</span><span>Bonded</span></div>
  </div>
 </footer>

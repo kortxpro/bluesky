@@ -3,8 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Post-Construction | BlueSky General Services</title>
-<meta name="description" content="Post-construction cleaning for commercial projects, rough clean, final clean, turnover support, punch-list response, and specialty recovery coordination when needed.">
+<title>Post-Construction Cleaning in Florida | BlueSky</title>
+<meta name="description" content="Post-construction turnover and disaster recovery cleaning for commercial buildings. Mobilization within 24 hours and documented scope throughout.">
+<link rel="canonical" href="https://blueskygeneralserv.com/services/post-construction">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BlueSky General Services">
+<meta property="og:url" content="https://blueskygeneralserv.com/services/post-construction">
+<meta property="og:title" content="Post-Construction Cleaning in Florida | BlueSky">
+<meta property="og:description" content="Post-construction turnover and disaster recovery cleaning for commercial buildings. Mobilization within 24 hours and documented scope throughout.">
+<meta property="og:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Post-Construction Cleaning in Florida | BlueSky">
+<meta name="twitter:description" content="Post-construction turnover and disaster recovery cleaning for commercial buildings. Mobilization within 24 hours and documented scope throughout.">
+<meta name="twitter:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -16,7 +31,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--black); background:var(--wh
 h1,h2,h3,h4 { font-family:'Playfair Display',serif; font-weight:400; line-height:1.15; letter-spacing:-0.01em; }
 a { color:inherit; text-decoration:none; }
 img { display:block; max-width:100%; height:auto; object-fit:cover; }
-.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-400); font-weight:400; }
+.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-500); font-weight:400; }
 .btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.9rem 1.8rem; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:500; border:1px solid transparent; border-radius:2px; cursor:pointer; transition:all 0.3s ease; font-family:inherit; }
 .btn-primary { background:var(--accent); color:var(--white); }
 .btn-primary:hover { background:var(--accent-hover); transform:translateY(-1px); }
@@ -70,6 +85,7 @@ img { display:block; max-width:100%; height:auto; object-fit:cover; }
 .svc-hero .svc-num { font-family:'Playfair Display',serif; font-size:0.95rem; font-style:italic; color:var(--accent-soft); letter-spacing:0.1em; }
 .svc-hero h1 { font-size:clamp(2.4rem,4.5vw,3.8rem); font-style:italic; font-weight:400; line-height:1.05; max-width:18ch; margin:0.8rem 0 1.2rem; }
 .svc-hero .lead { color:rgba(255,255,255,0.85); font-size:1.1rem; max-width:56ch; line-height:1.6; }
+.svc-hero-actions { display:flex; gap:1rem; flex-wrap:wrap; margin-top:2.2rem; }
 
 section { padding:7rem 4vw; }
 
@@ -155,8 +171,8 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 .footer-badges { display:flex; gap:1.5rem; }
 .footer-badges span { letter-spacing:0.12em; text-transform:uppercase; font-size:0.7rem; }
 
-.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
-.mobile-drawer.open { transform:translateX(0); }
+.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); visibility:hidden; transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
+.mobile-drawer.open { transform:translateX(0); visibility:visible; }
 .mobile-drawer ul { list-style:none; display:flex; flex-direction:column; gap:1.4rem; }
 .mobile-drawer a { font-family:'Playfair Display',serif; font-size:1.3rem; font-style:italic; color:var(--black); }
 .mobile-close { position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; font-size:1.5rem; cursor:pointer; }
@@ -193,6 +209,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 .ba-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2.5rem; max-width:1400px; }
 .ba-item { display:flex; flex-direction:column; gap:1rem; }
 .ba-slider { position:relative; width:100%; aspect-ratio:16/10; overflow:hidden; cursor:ew-resize; user-select:none; background:var(--stone-200); border:1px solid var(--stone-200); }
+.ba-slider:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
 .ba-slider img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; pointer-events:none; }
 .ba-before { clip-path:inset(0 50% 0 0); transition:clip-path 0.05s ease-out; }
 .ba-handle { position:absolute; top:0; bottom:0; left:50%; width:2px; background:white; transform:translateX(-50%); pointer-events:none; box-shadow:0 0 12px rgba(0,0,0,0.45); }
@@ -205,9 +222,19 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 .ba-caption span { font-size:0.85rem; color:var(--stone-500); }
 @media (max-width:900px) { .ba-grid { grid-template-columns:1fr; } .before-after { padding:5rem 4vw; } }
 
+
+/* Agency credit */
+.footer-credit { margin-left: 0.6rem; white-space: nowrap; }
+.footer-credit a { color: var(--stone-400); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
+.footer-credit a:hover { color: var(--white); border-bottom-color: rgba(255,255,255,0.4); }
+
+/* Skip link (WCAG 2.4.1) */
+.skip-link { position:absolute; left:-9999px; top:0; z-index:9999; background:var(--accent); color:var(--white); padding:0.8rem 1.4rem; font-size:0.85rem; letter-spacing:0.05em; }
+.skip-link:focus { left:0; outline:2px solid var(--white); outline-offset:-4px; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="topbar">
  <div class="topbar-left"><span>Commercial facility services · Licensed · Insured · Bonded</span></div>
@@ -221,7 +248,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 </div>
 
 <nav class="navbar">
- <a href="../index.html" class="navbar-logo"><img src="../assets/img/logo-bluesky.png" alt="BlueSky General Services"></a>
+ <a href="../index.html" class="navbar-logo"><img src="../assets/img/logo-bluesky.png" alt="BlueSky General Services" width="189" height="80"></a>
  <ul class="navbar-links">
   <li><a href="../index.html">Home</a></li>
   <li><a href="../services.html" class="active">Services <span class="caret">▾</span></a><div class="megamenu">
@@ -246,8 +273,9 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <li><a href="../careers.html">Careers</a></li>
   <li><a href="../contact.html" class="btn-nav">Request a Proposal</a></li>
  </ul>
- <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+ <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer" id="hamburger"><span></span><span></span><span></span></button>
 </nav>
+<main id="main">
 
 <div class="mobile-backdrop" id="mobileBackdrop"></div>
 <div class="mobile-drawer" id="mobileDrawer">
@@ -265,6 +293,10 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <span class="svc-num">Service 06</span>
   <h1>Post-Construction</h1>
   <p class="lead">Rough clean, final clean, punch-list support, and turnover-ready detailing for commercial projects. When a site shifts from normal closeout into emergency response, our disaster recovery capability extends the same operational discipline into a much harder environment.</p>
+  <div class="svc-hero-actions">
+   <a href="../contact.html" class="btn btn-primary">Request a Proposal <span class="arrow">→</span></a>
+   <a href="../projects/hurricane-milton.html" class="btn btn-outline">See the Milton Recovery</a>
+  </div>
  </div>
 </header>
 <!-- ═══ SVC-HERO END ═══ -->
@@ -311,48 +343,48 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  <div class="ba-head reveal">
   <span class="label">Before &amp; After</span>
   <h2>Restored back to occupancy. Drag to compare.</h2>
-  <p>Four commercial recoveries, photographed before and after BlueSky restoration. Drag the handle to see the transformation.</p>
+  <p>Four commercial recoveries, shown before and after BlueSky restoration. Drag the handle or use the arrow keys to compare.</p>
  </div>
  <div class="ba-grid">
   <div class="ba-item reveal">
-   <div class="ba-slider">
-    <img class="ba-after" src="../assets/img/services/post-construction/after-2.png" alt="Restored commercial space, after">
-    <img class="ba-before" src="../assets/img/services/post-construction/before-2.png" alt="Damaged commercial space, before">
+   <div class="ba-slider" role="slider" tabindex="0" aria-label="Office turnover clean, before and after comparison" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+    <img class="ba-after" src="../assets/img/services/post-construction/after-2.jpg" alt="Same corridor turned over with clean carpet, finished trim and lit fixtures" loading="lazy">
+    <img class="ba-before" src="../assets/img/services/post-construction/before-2.jpg" alt="Unfinished corridor on a bare slab with taped ceiling fixtures and construction dust" loading="lazy">
     <span class="ba-label ba-label-before">Before</span>
     <span class="ba-label ba-label-after">After</span>
-    <div class="ba-handle"><div class="ba-handle-knob">⇆</div></div>
+    <div class="ba-handle"><div class="ba-handle-knob" aria-hidden="true">⇆</div></div>
    </div>
    <div class="ba-caption"><strong>Office turnover clean</strong><span>Post-construction final clean · certificate of occupancy</span></div>
   </div>
   <div class="ba-item reveal" data-delay="1">
-   <div class="ba-slider">
-    <img class="ba-after" src="../assets/img/services/post-construction/after-3.png" alt="Restored commercial space, after">
-    <img class="ba-before" src="../assets/img/services/post-construction/before-3.png" alt="Damaged commercial space, before">
+   <div class="ba-slider" role="slider" tabindex="0" aria-label="Common area recovery, before and after comparison" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+    <img class="ba-after" src="../assets/img/services/post-construction/after-3.jpg" alt="Same corridor handed over with fresh carpet, charcoal ceiling and clear daylit windows" loading="lazy">
+    <img class="ba-before" src="../assets/img/services/post-construction/before-3.jpg" alt="Corridor floor under red rosin paper, windows masked and door hardware taped for finishing" loading="lazy">
     <span class="ba-label ba-label-before">Before</span>
     <span class="ba-label ba-label-after">After</span>
-    <div class="ba-handle"><div class="ba-handle-knob">⇆</div></div>
+    <div class="ba-handle"><div class="ba-handle-knob" aria-hidden="true">⇆</div></div>
    </div>
    <div class="ba-caption"><strong>Common area recovery</strong><span>Debris removal &amp; surface restoration</span></div>
   </div>
   <div class="ba-item reveal" data-delay="2">
-   <div class="ba-slider">
-    <img class="ba-after" src="../assets/img/services/post-construction/after-4.png" alt="Restored commercial space, after">
-    <img class="ba-before" src="../assets/img/services/post-construction/before-4.png" alt="Damaged commercial space, before">
+   <div class="ba-slider" role="slider" tabindex="0" aria-label="Washroom turnover, before and after comparison" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+    <img class="ba-after" src="../assets/img/services/post-construction/after-4.jpg" alt="Same washroom turned over spotless with clean tile, shower pan and quartz vanity" loading="lazy">
+    <img class="ba-before" src="../assets/img/services/post-construction/before-4.jpg" alt="Washroom left with drywall dust, debris and drop cloths across the tile floor" loading="lazy">
     <span class="ba-label ba-label-before">Before</span>
     <span class="ba-label ba-label-after">After</span>
-    <div class="ba-handle"><div class="ba-handle-knob">⇆</div></div>
+    <div class="ba-handle"><div class="ba-handle-knob" aria-hidden="true">⇆</div></div>
    </div>
-   <div class="ba-caption"><strong>Commercial reopening</strong><span>Full interior recovery · insurance-grade documentation</span></div>
+   <div class="ba-caption"><strong>Washroom turnover</strong><span>Construction dust and debris cleared for occupancy</span></div>
   </div>
   <div class="ba-item reveal" data-delay="3">
-   <div class="ba-slider">
-    <img class="ba-after" src="../assets/img/services/post-construction/after-1.png" alt="Restored commercial space, after">
-    <img class="ba-before" src="../assets/img/services/post-construction/before-1.png" alt="Damaged commercial space, before">
+   <div class="ba-slider" role="slider" tabindex="0" aria-label="Fixture detail clean, before and after comparison" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+    <img class="ba-after" src="../assets/img/services/post-construction/after-1.jpg" alt="Same tub detailed back to a spotless gloss-white basin and clean chrome drain" loading="lazy">
+    <img class="ba-before" src="../assets/img/services/post-construction/before-1.jpg" alt="Bathtub caked with dried grout haze, plaster splatter and construction dust" loading="lazy">
     <span class="ba-label ba-label-before">Before</span>
     <span class="ba-label ba-label-after">After</span>
-    <div class="ba-handle"><div class="ba-handle-knob">⇆</div></div>
+    <div class="ba-handle"><div class="ba-handle-knob" aria-hidden="true">⇆</div></div>
    </div>
-   <div class="ba-caption"><strong>Lobby restoration</strong><span>Water damage recovery · multi-floor reopening</span></div>
+   <div class="ba-caption"><strong>Fixture detail clean</strong><span>Grout haze and plaster residue removed from tubs and basins</span></div>
   </div>
  </div>
 </section>
@@ -383,17 +415,17 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
    <h2>Disaster Recovery, anchored by Hurricane Milton.</h2>
   </div>
   <div>
-   <p>Disaster recovery is not a separate headline service on the site, but it is a real extension of this team’s capability. Hurricane Milton is the clearest proof: large-scale damage, demolition support, extraction, drying, restoration sequencing, and reopening pressure inside one live commercial response.</p>
+   <p>Disaster recovery runs inside this service line rather than as a separate program. Hurricane Milton is the clearest proof: large-scale damage, demolition support, extraction, drying, restoration sequencing, and reopening pressure handled inside one live commercial response.</p>
    <div class="dr-stats">
     <div class="dr-stat"><strong>24h</strong><span>Mobilization window</span></div>
-    <div class="dr-stat"><strong>30+</strong><span>Field crew</span></div>
+    <div class="dr-stat"><strong>60+</strong><span>Field crew</span></div>
     <div class="dr-stat"><strong>Multi-floor</strong><span>Commercial scope</span></div>
    </div>
   </div>
  </div>
  <div class="dr-feature">
   <div class="dr-feature-media reveal">
-   <img src="../assets/img/services/post-construction/milton-exterior-damage.jpeg" alt="Exterior building damage documented during Hurricane Milton recovery">
+   <img src="../assets/img/services/post-construction/milton-exterior-damage.jpeg" alt="Exterior building damage documented during Hurricane Milton recovery" loading="lazy">
   </div>
   <div class="dr-feature-body reveal" data-delay="1">
    <strong>Hurricane Milton Case</strong>
@@ -404,23 +436,23 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  </div>
  <div class="dr-gallery">
   <article class="dr-gallery-item reveal" data-delay="1">
-   <img src="../assets/img/services/post-construction/milton-debris-floor.jpeg" alt="Debris and removed flooring staged during Milton recovery">
+   <img src="../assets/img/services/post-construction/milton-debris-floor.jpeg" alt="Debris and removed flooring staged during Milton recovery" loading="lazy">
    <span>Damaged flooring and debris removal at the start of the recovery sequence.</span>
   </article>
   <article class="dr-gallery-item reveal" data-delay="2">
-   <img src="../assets/img/services/post-construction/milton-reception-floor.jpeg" alt="Reception area under active floor removal and restoration">
+   <img src="../assets/img/services/post-construction/milton-reception-floor.jpeg" alt="Reception area under active floor removal and restoration" loading="lazy">
    <span>Interior recovery in progress, with floor systems stripped back for restoration.</span>
   </article>
   <article class="dr-gallery-item reveal" data-delay="3">
-   <img src="../assets/img/services/post-construction/milton-night-floor.jpeg" alt="Commercial interior under after-hours restoration work">
+   <img src="../assets/img/services/post-construction/milton-night-floor.jpeg" alt="Commercial interior under after-hours restoration work" loading="lazy">
    <span>After-hours execution to keep the response moving without losing the site window.</span>
   </article>
   <article class="dr-gallery-item reveal" data-delay="1">
-   <img src="../assets/img/services/post-construction/milton-team-photo.jpeg" alt="BlueSky team assembled during Hurricane Milton recovery">
+   <img src="../assets/img/services/post-construction/milton-team-photo.jpeg" alt="BlueSky team assembled during Hurricane Milton recovery" loading="lazy">
    <span>Crew scale matters when recovery turns into a multi-floor operational push.</span>
   </article>
   <article class="dr-gallery-item reveal" data-delay="2">
-   <img src="../assets/img/services/post-construction/milton-media.jpeg" alt="BlueSky representative during media coverage of Hurricane Milton response">
+   <img src="../assets/img/services/post-construction/milton-media.jpeg" alt="BlueSky representative during media coverage of Hurricane Milton response" loading="lazy">
    <span>The Milton response became public proof of the team’s recovery capability in the field.</span>
   </article>
  </div>
@@ -437,6 +469,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  </div>
 </section>
 
+</main>
 <footer>
  <div class="footer-grid">
   <div class="footer-brand">
@@ -457,7 +490,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   </ul></div>
  </div>
  <div class="footer-bottom">
-  <span>© 2026 BlueSky General Services. All rights reserved.</span>
+  <span>© 2026 BlueSky General Services. All rights reserved. <span class="footer-credit">Site by <a href="https://kortx.pro" target="_blank" rel="noopener">KORTX</a></span></span>
   <div class="footer-badges"><span>Licensed</span><span>Insured</span><span>Bonded</span></div>
  </div>
 </footer>
@@ -480,12 +513,17 @@ document.querySelectorAll('.ba-slider').forEach(function(s) {
  const handle = s.querySelector('.ba-handle');
  let dragging = false;
 
+ function setPercent(p) {
+  const v = Math.max(0, Math.min(100, p));
+  before.style.clipPath = 'inset(0 ' + (100 - v) + '% 0 0)';
+  handle.style.left = v + '%';
+  s.setAttribute('aria-valuenow', Math.round(v));
+ }
+
  function setPos(cx) {
   const r = s.getBoundingClientRect();
   const x = Math.max(0, Math.min(r.width, cx - r.left));
-  const p = (x / r.width) * 100;
-  before.style.clipPath = 'inset(0 ' + (100 - p) + '% 0 0)';
-  handle.style.left = p + '%';
+  setPercent((x / r.width) * 100);
  }
 
  s.addEventListener('mousedown', function(e) { dragging = true; setPos(e.clientX); });
@@ -494,6 +532,19 @@ document.querySelectorAll('.ba-slider').forEach(function(s) {
  s.addEventListener('touchstart', function(e) { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
  s.addEventListener('touchmove', function(e) { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
  s.addEventListener('touchend', function() { dragging = false; });
+
+ s.addEventListener('keydown', function(e) {
+  const cur = parseFloat(s.getAttribute('aria-valuenow')) || 50;
+  const step = e.shiftKey ? 10 : 2;
+  let next = null;
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') next = cur - step;
+  else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') next = cur + step;
+  else if (e.key === 'Home') next = 0;
+  else if (e.key === 'End') next = 100;
+  if (next === null) return;
+  e.preventDefault();
+  setPercent(next);
+ });
 });
 
 </script>

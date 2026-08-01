@@ -3,8 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hurricane Milton Restoration | BlueSky General Services</title>
-<meta name="description" content="Case study: Hurricane Milton multi-floor commercial restoration. 60+ team mobilized in 24 hours. Debris removal, water extraction, industrial dehumidification, full interior restoration inside the owner's insurance window.">
+<title>Hurricane Milton Commercial Restoration | BlueSky Case Study</title>
+<meta name="description" content="Multi-floor commercial restoration after Hurricane Milton. A 60-plus-person team mobilized in 24 hours and reopened inside the insurance window.">
+<link rel="canonical" href="https://blueskygeneralserv.com/projects/hurricane-milton">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BlueSky General Services">
+<meta property="og:url" content="https://blueskygeneralserv.com/projects/hurricane-milton">
+<meta property="og:title" content="Hurricane Milton Commercial Restoration | BlueSky Case Study">
+<meta property="og:description" content="Multi-floor commercial restoration after Hurricane Milton. A 60-plus-person team mobilized in 24 hours and reopened inside the insurance window.">
+<meta property="og:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hurricane Milton Commercial Restoration | BlueSky Case Study">
+<meta name="twitter:description" content="Multi-floor commercial restoration after Hurricane Milton. A 60-plus-person team mobilized in 24 hours and reopened inside the insurance window.">
+<meta name="twitter:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -16,7 +31,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--black); background:var(--wh
 h1,h2,h3,h4 { font-family:'Playfair Display',serif; font-weight:400; line-height:1.15; letter-spacing:-0.01em; }
 a { color:inherit; text-decoration:none; }
 img { display:block; max-width:100%; height:auto; object-fit:cover; }
-.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-400); font-weight:400; }
+.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-500); font-weight:400; }
 .btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.9rem 1.8rem; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:500; border:1px solid transparent; border-radius:2px; cursor:pointer; transition:all 0.3s ease; font-family:inherit; }
 .btn-primary { background:var(--accent); color:var(--white); }
 .btn-primary:hover { background:var(--accent-hover); transform:translateY(-1px); }
@@ -63,9 +78,16 @@ img { display:block; max-width:100%; height:auto; object-fit:cover; }
 .case-hero-slide { position:absolute; inset:0; opacity:0; transition:opacity 1.2s ease; }
 .case-hero-slide.active { opacity:1; }
 .case-hero-slide img { width:100%; height:100%; object-fit:cover; }
-.case-hero-dots { position:absolute; bottom:1.8rem; right:2rem; z-index:5; display:flex; gap:0.5rem; }
-.case-hero-dot { width:30px; height:2px; background:rgba(255,255,255,0.35); transition:background 0.3s; cursor:pointer; }
+.case-hero-dots { position:absolute; bottom:1.8rem; right:2rem; z-index:5; display:flex; align-items:center; gap:0.5rem; }
+.case-hero-dot { -webkit-appearance:none; appearance:none; position:relative; display:block; width:30px; height:2px; padding:0; margin:0; border:0; border-radius:0; font:inherit; color:inherit; background:rgba(255,255,255,0.35); transition:background 0.3s; cursor:pointer; }
+.case-hero-dot::before { content:""; position:absolute; left:0; right:0; top:-11px; bottom:-11px; }
 .case-hero-dot.active { background:var(--white); }
+.case-hero-dot:hover { background:rgba(255,255,255,0.7); }
+.case-hero-dot:focus-visible { outline:2px solid var(--white); outline-offset:6px; }
+.case-hero-play { -webkit-appearance:none; appearance:none; margin-left:0.6rem; padding:0; border:0; background:none; color:rgba(255,255,255,0.6); cursor:pointer; display:inline-flex; align-items:center; justify-content:center; width:16px; height:16px; transition:color 0.3s; }
+.case-hero-play:hover { color:var(--white); }
+.case-hero-play:focus-visible { outline:2px solid var(--white); outline-offset:4px; }
+.case-hero-play svg { width:13px; height:13px; display:block; }
 .case-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(28,25,23,0.2) 0%, rgba(28,25,23,0.9) 100%); z-index:2; }
 .case-hero-content { position:relative; z-index:3; padding:5rem 4vw 5rem; max-width:1200px; width:100%; }
 .breadcrumb { font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:1rem; }
@@ -170,8 +192,8 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 .footer-badges { display:flex; gap:1.5rem; }
 .footer-badges span { letter-spacing:0.12em; text-transform:uppercase; font-size:0.7rem; }
 
-.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
-.mobile-drawer.open { transform:translateX(0); }
+.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); visibility:hidden; transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
+.mobile-drawer.open { transform:translateX(0); visibility:visible; }
 .mobile-drawer ul { list-style:none; display:flex; flex-direction:column; gap:1.4rem; }
 .mobile-drawer a { font-family:'Playfair Display',serif; font-size:1.3rem; font-style:italic; color:var(--black); }
 .mobile-close { position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; font-size:1.5rem; cursor:pointer; }
@@ -200,9 +222,19 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  .footer-grid { grid-template-columns:1fr; gap:2.5rem; }
  .footer-bottom { flex-direction:column; text-align:center; }
 }
+
+/* Agency credit */
+.footer-credit { margin-left: 0.6rem; white-space: nowrap; }
+.footer-credit a { color: var(--stone-400); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
+.footer-credit a:hover { color: var(--white); border-bottom-color: rgba(255,255,255,0.4); }
+
+/* Skip link (WCAG 2.4.1) */
+.skip-link { position:absolute; left:-9999px; top:0; z-index:9999; background:var(--accent); color:var(--white); padding:0.8rem 1.4rem; font-size:0.85rem; letter-spacing:0.05em; }
+.skip-link:focus { left:0; outline:2px solid var(--white); outline-offset:-4px; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="topbar">
  <div class="topbar-left"><span>Commercial facility services · Licensed · Insured · Bonded</span></div>
@@ -216,7 +248,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 </div>
 
 <nav class="navbar">
- <a href="../index.html" class="navbar-logo"><img src="../assets/img/logo-bluesky.png" alt="BlueSky General Services"></a>
+ <a href="../index.html" class="navbar-logo"><img src="../assets/img/logo-bluesky.png" alt="BlueSky General Services" width="189" height="80"></a>
  <ul class="navbar-links">
   <li><a href="../index.html">Home</a></li>
   <li><a href="../services.html">Services <span class="caret">▾</span></a><div class="megamenu">
@@ -241,8 +273,9 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <li><a href="../careers.html">Careers</a></li>
   <li><a href="../contact.html" class="btn-nav">Request a Proposal</a></li>
  </ul>
- <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+ <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer" id="hamburger"><span></span><span></span><span></span></button>
 </nav>
+<main id="main">
 
 <div class="mobile-backdrop" id="mobileBackdrop"></div>
 <div class="mobile-drawer" id="mobileDrawer">
@@ -255,19 +288,20 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 <header class="case-hero">
  <div class="case-hero-media">
   <div class="case-hero-slide active"><img src="../assets/img/milton/capa/hero-aerial.webp" alt="Aerial view of construction crane collapsed across the street next to a commercial building during Hurricane Milton"></div>
-  <div class="case-hero-slide"><img src="../assets/img/milton/capa/aerial-topdown.webp" alt="Top-down aerial of building with crane debris on the side"></div>
-  <div class="case-hero-slide"><img src="../assets/img/milton/capa/street-impact.webp" alt="Street-level view of crane impact on building facade"></div>
-  <div class="case-hero-slide"><img src="../assets/img/milton/capa/street-people.webp" alt="People on the ground near collapsed crane wreckage"></div>
+  <div class="case-hero-slide"><img src="../assets/img/milton/capa/aerial-topdown.webp" alt="Top-down aerial of building with crane debris on the side" loading="lazy"></div>
+  <div class="case-hero-slide"><img src="../assets/img/milton/capa/street-impact.webp" alt="Street-level view of crane impact on building facade" loading="lazy"></div>
+  <div class="case-hero-slide"><img src="../assets/img/milton/capa/street-people.webp" alt="People on the ground near collapsed crane wreckage" loading="lazy"></div>
  </div>
  <div class="case-hero-dots" id="heroDots">
-  <div class="case-hero-dot active" data-i="0"></div>
-  <div class="case-hero-dot" data-i="1"></div>
-  <div class="case-hero-dot" data-i="2"></div>
-  <div class="case-hero-dot" data-i="3"></div>
+  <button type="button" class="case-hero-dot active" data-i="0" aria-label="Show slide 1 of 4" aria-current="true"></button>
+  <button type="button" class="case-hero-dot" data-i="1" aria-label="Show slide 2 of 4" aria-current="false"></button>
+  <button type="button" class="case-hero-dot" data-i="2" aria-label="Show slide 3 of 4" aria-current="false"></button>
+  <button type="button" class="case-hero-dot" data-i="3" aria-label="Show slide 4 of 4" aria-current="false"></button>
+  <button type="button" class="case-hero-play" id="heroPlay" aria-label="Pause slideshow"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14"></rect><rect x="14" y="5" width="4" height="14"></rect></svg></button>
  </div>
  <div class="case-hero-content reveal">
   <div class="breadcrumb"><a href="../index.html">Home</a> <span class="breadcrumb-sep">/</span> <a href="../projects.html">Case Studies</a> <span class="breadcrumb-sep">/</span> Hurricane Milton</div>
-  <span class="case-tag">Hurricane Milton · SE Florida, Oct 2024</span>
+  <span class="case-tag">Hurricane Milton · Florida Gulf Coast, Oct 2024</span>
   <h1>Built for Florida's<br>hardest days.</h1>
   <p class="lead">When Milton's wind brought a construction crane down across a commercial building, the owner had hours to act before the insurance window closed. BlueSky mobilized a 60-plus-person recovery operation within 24 hours. This is what we did.</p>
  </div>
@@ -278,7 +312,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <div class="case-meta-item"><strong>Oct 2024</strong><span>Mobilization</span></div>
   <div class="case-meta-item"><strong>&lt;24h</strong><span>Response time</span></div>
   <div class="case-meta-item"><strong>Multi-floor</strong><span>Commercial building</span></div>
-  <div class="case-meta-item"><strong>SE Florida</strong><span>Impact zone</span></div>
+  <div class="case-meta-item"><strong>Gulf Coast</strong><span>Impact zone</span></div>
  </div>
 </section>
 
@@ -329,16 +363,16 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  <div class="gallery-wrap">
   <button class="gallery-nav prev" aria-label="Previous photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
   <div class="gallery-track" id="galleryTrack">
-  <div class="gallery-item"><img src="../assets/img/milton-team-lobby.jpg" alt="BlueSky recovery team in lobby"></div>
-  <div class="gallery-item"><img src="../assets/img/milton-lobby-restoration.jpg" alt="Lobby being restored"></div>
-  <div class="gallery-item"><img src="../assets/img/milton-debris-removal.jpg" alt="Debris removal on site"></div>
-  <div class="gallery-item"><img src="../assets/img/milton-corridor-carpet.jpg" alt="Corridor carpet restoration"></div>
-  <div class="gallery-item"><img src="../assets/img/milton-dehumidifiers.jpg" alt="Industrial dehumidifiers staged"></div>
-  <div class="gallery-item"><img src="../assets/img/milton-lobby-caution.jpg" alt="Lobby with caution tape during restoration"></div>
-  <div class="gallery-item"><img src="../assets/img/milton-exterior-crane.jpg" alt="Exterior with crane"></div>
-  <div class="gallery-item"><img src="../assets/img/milton-exterior-worker.jpg" alt="Worker inspecting exterior"></div>
-  <div class="gallery-item"><img src="../assets/img/milton-tv-interview.jpg" alt="Team interviewed on-site"></div>
-  <div class="gallery-item"><img src="../assets/img/milton-tv-interview-group.jpg" alt="Team group interview"></div>
+  <div class="gallery-item"><img src="../assets/img/milton-team-lobby.jpg" alt="BlueSky recovery team in lobby" loading="lazy"></div>
+  <div class="gallery-item"><img src="../assets/img/milton-lobby-restoration.jpg" alt="Law firm lobby with carpet peeled back and the slab being scraped by the crew" loading="lazy"></div>
+  <div class="gallery-item"><img src="../assets/img/milton-debris-removal.jpg" alt="Crew in hi-vis staging torn carpet and stripped roofing outside a storm-hit building" loading="lazy"></div>
+  <div class="gallery-item"><img src="../assets/img/milton-corridor-carpet.jpg" alt="Corridor carpet restoration" loading="lazy"></div>
+  <div class="gallery-item"><img src="../assets/img/milton-dehumidifiers.jpg" alt="Industrial dehumidifiers staged" loading="lazy"></div>
+  <div class="gallery-item"><img src="../assets/img/milton-lobby-caution.jpg" alt="Lobby with caution tape during restoration" loading="lazy"></div>
+  <div class="gallery-item"><img src="../assets/img/milton-exterior-crane.jpg" alt="Collapsed tower crane speared into the upper floors of a blue-glass office tower" loading="lazy"></div>
+  <div class="gallery-item"><img src="../assets/img/milton-exterior-worker.jpg" alt="Worker inspecting exterior" loading="lazy"></div>
+  <div class="gallery-item"><img src="../assets/img/milton-tv-interview.jpg" alt="Team interviewed on-site" loading="lazy"></div>
+  <div class="gallery-item"><img src="../assets/img/milton-tv-interview-group.jpg" alt="Team group interview" loading="lazy"></div>
   </div>
   <button class="gallery-nav next" aria-label="Next photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
  </div>
@@ -348,7 +382,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 <section class="pull-quote">
  <div class="reveal">
   <blockquote>Mobilized in twenty-four hours. Reopened on the insurance deadline. The scope was written, the reports were written, the result was measurable.</blockquote>
-  <div class="attr"><strong>Owner representative</strong> · Multi-floor commercial building, SE Florida</div>
+  <div class="attr"><strong>Owner representative</strong> · Multi-floor commercial building, Florida Gulf Coast</div>
  </div>
 </section>
 
@@ -391,6 +425,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  </div>
 </section>
 
+</main>
 <footer>
  <div class="footer-grid">
   <div class="footer-brand">
@@ -411,7 +446,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   </ul></div>
  </div>
  <div class="footer-bottom">
-  <span>© 2026 BlueSky General Services. All rights reserved.</span>
+  <span>© 2026 BlueSky General Services. All rights reserved. <span class="footer-credit">Site by <a href="https://kortx.pro" target="_blank" rel="noopener">KORTX</a></span></span>
   <div class="footer-badges"><span>Licensed</span><span>Insured</span><span>Bonded</span></div>
  </div>
 </footer>
@@ -425,16 +460,38 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
  const slides = document.querySelectorAll('.case-hero-slide');
  const dots = document.querySelectorAll('.case-hero-dot');
  if (!slides.length) return;
- let i = 0;
+ const hero = document.querySelector('.case-hero');
+ const playBtn = document.getElementById('heroPlay');
+ const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+ const PAUSE_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14"></rect><rect x="14" y="5" width="4" height="14"></rect></svg>';
+ const PLAY_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"></path></svg>';
+ let i = 0, timer = null, userPaused = reduce.matches, hovering = false, focusInside = false;
  function go(n) {
   slides[i].classList.remove('active');
-  dots[i].classList.remove('active');
+  if (dots[i]) { dots[i].classList.remove('active'); dots[i].setAttribute('aria-current', 'false'); }
   i = ((n % slides.length) + slides.length) % slides.length;
   slides[i].classList.add('active');
-  dots[i].classList.add('active');
+  if (dots[i]) { dots[i].classList.add('active'); dots[i].setAttribute('aria-current', 'true'); }
  }
- setInterval(() => go(i + 1), 4500);
- dots.forEach((d, idx) => d.addEventListener('click', () => go(idx)));
+ function canAuto() { return !userPaused && !hovering && !focusInside && !reduce.matches && !document.hidden; }
+ function stop() { if (timer) { clearInterval(timer); timer = null; } }
+ function start() { stop(); if (canAuto()) timer = setInterval(() => go(i + 1), 4500); }
+ function syncBtn() {
+  if (!playBtn) return;
+  playBtn.innerHTML = userPaused ? PLAY_ICON : PAUSE_ICON;
+  playBtn.setAttribute('aria-label', userPaused ? 'Play slideshow' : 'Pause slideshow');
+ }
+ dots.forEach((d, idx) => d.addEventListener('click', () => { go(idx); userPaused = true; stop(); syncBtn(); }));
+ if (playBtn) playBtn.addEventListener('click', () => { userPaused = !userPaused; syncBtn(); start(); });
+ if (hero) {
+  hero.addEventListener('mouseenter', () => { hovering = true; stop(); });
+  hero.addEventListener('mouseleave', () => { hovering = false; start(); });
+  hero.addEventListener('focusin', () => { focusInside = true; stop(); });
+  hero.addEventListener('focusout', () => { focusInside = false; start(); });
+ }
+ document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else start(); });
+ syncBtn();
+ start();
 })();
 
 // Galeria: setas prev/next

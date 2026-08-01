@@ -3,8 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | BlueSky General Services</title>
-<meta name="description" content="A commercial facility services company built for buildings that cannot fail. Founded to raise the operational standard of commercial cleaning across the Southeast United States.">
+<title>About BlueSky | Commercial Facility Services in Florida</title>
+<meta name="description" content="A commercial facility services company built on written standards, trained crews and measured results. Over ten years and 500-plus commercial clients.">
+<link rel="canonical" href="https://blueskygeneralserv.com/about">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BlueSky General Services">
+<meta property="og:url" content="https://blueskygeneralserv.com/about">
+<meta property="og:title" content="About BlueSky | Commercial Facility Services in Florida">
+<meta property="og:description" content="A commercial facility services company built on written standards, trained crews and measured results. Over ten years and 500-plus commercial clients.">
+<meta property="og:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About BlueSky | Commercial Facility Services in Florida">
+<meta name="twitter:description" content="A commercial facility services company built on written standards, trained crews and measured results. Over ten years and 500-plus commercial clients.">
+<meta name="twitter:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -16,7 +31,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--black); background:var(--wh
 h1,h2,h3,h4 { font-family:'Playfair Display',serif; font-weight:400; line-height:1.15; letter-spacing:-0.01em; }
 a { color:inherit; text-decoration:none; }
 img { display:block; max-width:100%; height:auto; object-fit:cover; }
-.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-400); font-weight:400; }
+.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-500); font-weight:400; }
 .btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.9rem 1.8rem; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:500; border:1px solid transparent; border-radius:2px; cursor:pointer; transition:all 0.3s ease; font-family:inherit; }
 .btn-primary { background:var(--accent); color:var(--white); }
 .btn-primary:hover { background:var(--accent-hover); transform:translateY(-1px); }
@@ -142,8 +157,8 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 .footer-badges { display:flex; gap:1.5rem; }
 .footer-badges span { letter-spacing:0.12em; text-transform:uppercase; font-size:0.7rem; }
 
-.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
-.mobile-drawer.open { transform:translateX(0); }
+.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); visibility:hidden; transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
+.mobile-drawer.open { transform:translateX(0); visibility:visible; }
 .mobile-drawer ul { list-style:none; display:flex; flex-direction:column; gap:1.4rem; }
 .mobile-drawer a { font-family:'Playfair Display',serif; font-size:1.3rem; font-style:italic; color:var(--black); }
 .mobile-close { position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; font-size:1.5rem; cursor:pointer; }
@@ -168,9 +183,19 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  .footer-grid { grid-template-columns:1fr; gap:2.5rem; }
  .footer-bottom { flex-direction:column; text-align:center; }
 }
+
+/* Agency credit */
+.footer-credit { margin-left: 0.6rem; white-space: nowrap; }
+.footer-credit a { color: var(--stone-400); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
+.footer-credit a:hover { color: var(--white); border-bottom-color: rgba(255,255,255,0.4); }
+
+/* Skip link (WCAG 2.4.1) */
+.skip-link { position:absolute; left:-9999px; top:0; z-index:9999; background:var(--accent); color:var(--white); padding:0.8rem 1.4rem; font-size:0.85rem; letter-spacing:0.05em; }
+.skip-link:focus { left:0; outline:2px solid var(--white); outline-offset:-4px; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="topbar">
  <div class="topbar-left"><span>Commercial facility services · Licensed · Insured · Bonded</span></div>
@@ -184,7 +209,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 </div>
 
 <nav class="navbar">
- <a href="index.html" class="navbar-logo"><img src="assets/img/logo-bluesky.png" alt="BlueSky General Services"></a>
+ <a href="index.html" class="navbar-logo"><img src="assets/img/logo-bluesky.png" alt="BlueSky General Services" width="189" height="80"></a>
  <ul class="navbar-links">
   <li><a href="index.html">Home</a></li>
   <li>
@@ -215,8 +240,9 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <li><a href="careers.html">Careers</a></li>
   <li><a href="contact.html" class="btn-nav">Request a Proposal</a></li>
  </ul>
- <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+ <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer" id="hamburger"><span></span><span></span><span></span></button>
 </nav>
+<main id="main">
 
 <div class="mobile-backdrop" id="mobileBackdrop"></div>
 <div class="mobile-drawer" id="mobileDrawer">
@@ -241,20 +267,20 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 </section>
 
 <section class="story">
- <div class="story-media reveal"><img src="assets/img/milton-team-lobby.jpg" alt="BlueSky 30-plus-person recovery team mobilized on the Hurricane Milton operation"></div>
+ <div class="story-media reveal"><img src="assets/img/milton-team-lobby.jpg" alt="BlueSky 60-plus-person recovery team mobilized on the Hurricane Milton operation" loading="lazy"></div>
  <div class="reveal" data-delay="1">
   <span class="label">Our Story</span>
   <h2>Ten years of operational standards, applied, not promised.</h2>
   <p>BlueSky was founded because commercial cleaning had become a commodity sold on price, and it shouldn't be. <strong>Buildings that run hospitals, schools, offices, and retail environments cannot afford vendors who arrive without a written scope, leave without a written report, and disappear between contract renewals.</strong></p>
   <p>We started with one facility, one written service-level standard, and one inspection log. Ten years later, we operate across the Southeast United States with the same framework: written scopes, documented processes, and reporting that lets the client verify what they paid for, every month.</p>
-  <p>Hurricane Milton in October 2024 was the stress test. Within 24 hours we had a 30-plus-person recovery team on site, multi-floor debris removal underway, industrial dehumidification staged, and a documented path back to occupancy inside the insurance window. That operation proved the model: written standards scale, and measured discipline carries into the hardest environments.</p>
+  <p>Hurricane Milton in October 2024 was the stress test. Within 24 hours we had a 60-plus-person recovery team on site, multi-floor debris removal underway, industrial dehumidification staged, and a documented path back to occupancy inside the insurance window. That operation proved the model: written standards scale, and measured discipline carries into the hardest environments.</p>
  </div>
 </section>
 
 <section class="values">
  <div class="values-head reveal">
   <span class="label">What We Value</span>
-  <h2>Four commitments we publish because we are willing to be measured against them.</h2>
+  <h2>Six commitments we publish because we are willing to be measured against them.</h2>
   <p>Not aspirations. Not slogans. Commitments, with written standards behind each one.</p>
  </div>
  <div class="values-grid">
@@ -295,7 +321,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  <div class="leadership-head reveal">
   <span class="label">Leadership</span>
   <h2>The people accountable for the standard.</h2>
-  <p>Team bios are published with full contact paths. When something matters to your facility, the right person is reachable.</p>
+  <p>Every account has a named owner in the field, in administration, and in quality assurance. When something matters to your facility, the right person is reachable.</p>
  </div>
  <div class="leaders">
   <div class="leader reveal" data-delay="1">
@@ -308,7 +334,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
    <div class="avatar">OD</div>
    <h4>Operations Director</h4>
    <div class="role">Operations · Field</div>
-   <p>Owns scope execution across every account — supervisor training, crew scheduling, and the inspection program. Walks sites and escalates issues inside the operating cycle they occur in.</p>
+   <p>Owns scope execution on every account, including supervisor training, crew scheduling, and the inspection program. Walks sites and escalates issues inside the operating cycle they occur in.</p>
   </div>
   <div class="leader reveal" data-delay="3">
    <div class="avatar">OM</div>
@@ -320,7 +346,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
    <div class="avatar">QA</div>
    <h4>Quality Assurance</h4>
    <div class="role">Quality · Reporting</div>
-   <p>Owns the quality program — audits, checklists, and corrective action. Compiles the monthly performance reports each account receives.</p>
+   <p>Builds and enforces the quality program: audits, checklists, and corrective action. Compiles the monthly performance reports each account receives.</p>
   </div>
  </div>
 </section>
@@ -348,10 +374,10 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 </section>
 
 <section class="sustain-teaser">
- <div class="sustain-teaser-img"><img src="assets/img/services/floor/case3-after-1.png" alt="Polished commercial floor delivered by BlueSky's documented service standard"></div>
+ <div class="sustain-teaser-img"><img src="assets/img/services/floor/case3-after-1.jpg" alt="Polished commercial floor delivered by BlueSky's documented service standard" loading="lazy"></div>
  <div class="sustain-teaser-body reveal">
   <span class="label" style="color:rgba(255,255,255,0.55);">Sustainability</span>
-  <h2>Green-certified product options. Documented practice.</h2>
+  <h2>Green Seal-aligned product options. Documented practice.</h2>
   <p>Green Seal-aligned product programs available on request. Reduced-impact chemistry, water-use discipline, and waste-stream segregation, measured and reported like everything else we do.</p>
   <a href="sustainability.html" class="btn btn-outline">See our practice <span class="arrow">→</span></a>
  </div>
@@ -368,6 +394,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  </div>
 </section>
 
+</main>
 <footer>
  <div class="footer-grid">
   <div class="footer-brand">
@@ -388,7 +415,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   </ul></div>
  </div>
  <div class="footer-bottom">
-  <span>© 2026 BlueSky General Services. All rights reserved.</span>
+  <span>© 2026 BlueSky General Services. All rights reserved. <span class="footer-credit">Site by <a href="https://kortx.pro" target="_blank" rel="noopener">KORTX</a></span></span>
   <div class="footer-badges"><span>Licensed</span><span>Insured</span><span>Bonded</span></div>
  </div>
 </footer>
