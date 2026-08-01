@@ -3,8 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BlueSky General Services | Enterprise Facility Services Partner</title>
-<meta name="description" content="Commercial cleaning and facility services executed at enterprise standard. Licensed, insured, bonded. Serving corporate, medical, retail, education, construction, and property management across the Southeast United States.">
+<title>Commercial Cleaning &amp; Facility Services in Florida | BlueSky</title>
+<meta name="description" content="Commercial janitorial, floor care, window cleaning and post-construction programs across Florida and the Southeast. Licensed, insured, bonded.">
+<link rel="canonical" href="https://blueskygeneralserv.com/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BlueSky General Services">
+<meta property="og:url" content="https://blueskygeneralserv.com/">
+<meta property="og:title" content="Commercial Cleaning &amp; Facility Services in Florida | BlueSky">
+<meta property="og:description" content="Commercial janitorial, floor care, window cleaning and post-construction programs across Florida and the Southeast. Licensed, insured, bonded.">
+<meta property="og:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Commercial Cleaning &amp; Facility Services in Florida | BlueSky">
+<meta name="twitter:description" content="Commercial janitorial, floor care, window cleaning and post-construction programs across Florida and the Southeast. Licensed, insured, bonded.">
+<meta name="twitter:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ProfessionalService",
+ "name": "BlueSky General Services",
+ "description": "Commercial cleaning and facility services for corporate, medical, retail, education, construction and property management clients.",
+ "url": "https://blueskygeneralserv.com/",
+ "logo": "https://blueskygeneralserv.com/assets/img/logo-bluesky.png",
+ "image": "https://blueskygeneralserv.com/assets/img/og-default.jpg",
+ "telephone": "+1-781-558-3458",
+ "email": "contact@blueskygeneralserv.com",
+ "areaServed": [
+  {
+   "@type": "State",
+   "name": "Florida"
+  },
+  {
+   "@type": "Place",
+   "name": "Southeast United States"
+  }
+ ],
+ "sameAs": [
+  "https://instagram.com/bluesky_clean_service"
+ ],
+ "hasOfferCatalog": {
+  "@type": "OfferCatalog",
+  "name": "Commercial Facility Services",
+  "itemListElement": [
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Janitorial Services",
+     "url": "https://blueskygeneralserv.com/services/janitorial"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Pressure Washing",
+     "url": "https://blueskygeneralserv.com/services/pressure-washing"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Window Cleaning",
+     "url": "https://blueskygeneralserv.com/services/window-cleaning"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Carpet Cleaning",
+     "url": "https://blueskygeneralserv.com/services/carpet-cleaning"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Floor Stripping and Waxing",
+     "url": "https://blueskygeneralserv.com/services/floor-care"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Post-Construction Cleaning",
+     "url": "https://blueskygeneralserv.com/services/post-construction"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Property Decommission",
+     "url": "https://blueskygeneralserv.com/services/property-decommission"
+    }
+   }
+  ]
+ }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -55,7 +158,7 @@ img { display: block; max-width: 100%; height: auto; object-fit: cover; }
  font-size: 0.72rem;
  letter-spacing: 0.2em;
  text-transform: uppercase;
- color: var(--stone-400);
+ color: var(--stone-500);
  font-weight: 400;
 }
 .btn {
@@ -661,8 +764,8 @@ section { padding: 7rem 4vw; }
  align-items: center;
  gap: 2.25rem 3.5rem;
 }
-/* Cada logo é contido numa caixa comum: os horizontais batem na largura,
-   os quadrados/verticais batem na altura — assim nenhum domina a faixa. */
+/* Each logo is contained in a shared box: wide marks hit the width limit,
+   square or tall marks hit the height limit, so none dominates the row. */
 .trust-logo {
  max-height: 46px;
  max-width: 165px;
@@ -853,12 +956,13 @@ footer {
  background: var(--white);
  z-index: 200;
  transform: translateX(100%);
- transition: transform 0.35s ease;
+ visibility: hidden;
+ transition: transform 0.35s ease, visibility 0.35s;
  padding: 6rem 2rem 2rem;
  overflow-y: auto;
  border-left: 1px solid var(--stone-200);
 }
-.mobile-drawer.open { transform: translateX(0); }
+.mobile-drawer.open { transform: translateX(0); visibility: visible; }
 .mobile-drawer ul { list-style: none; display: flex; flex-direction: column; gap: 1.4rem; }
 .mobile-drawer a {
  font-family: 'Playfair Display', serif;
@@ -887,13 +991,18 @@ footer {
 }
 .mobile-backdrop.open { opacity: 1; pointer-events: auto; }
 
-/* Credito da agencia */
+/* Agency credit */
 .footer-credit { margin-left: 0.6rem; white-space: nowrap; }
 .footer-credit a { color: var(--stone-400); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
 .footer-credit a:hover { color: var(--white); border-bottom-color: rgba(255,255,255,0.4); }
+
+/* Skip link (WCAG 2.4.1) */
+.skip-link { position:absolute; left:-9999px; top:0; z-index:9999; background:var(--accent); color:var(--white); padding:0.8rem 1.4rem; font-size:0.85rem; letter-spacing:0.05em; }
+.skip-link:focus { left:0; outline:2px solid var(--white); outline-offset:-4px; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- ═══ TOPBAR ═══ -->
 <div class="topbar">
@@ -911,7 +1020,7 @@ footer {
 
 <!-- ═══ NAVBAR ═══ -->
 <nav class="navbar">
- <a href="index.html" class="navbar-logo"><img src="assets/img/logo-bluesky.png" alt="BlueSky General Services"></a>
+ <a href="index.html" class="navbar-logo"><img src="assets/img/logo-bluesky.png" alt="BlueSky General Services" width="189" height="80"></a>
 
  <ul class="navbar-links">
   <li><a href="index.html" class="active">Home</a></li>
@@ -944,10 +1053,11 @@ footer {
   <li><a href="contact.html" class="btn-nav">Request a Proposal</a></li>
  </ul>
 
- <button class="hamburger" aria-label="Open menu" id="hamburger">
+ <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer" id="hamburger">
   <span></span><span></span><span></span>
  </button>
 </nav>
+<main id="main">
 
 <!-- Mobile drawer -->
 <div class="mobile-backdrop" id="mobileBackdrop"></div>
@@ -1060,7 +1170,7 @@ footer {
    </div>
   </a>
   <a href="services/carpet-cleaning.html" class="service-card reveal" data-delay="1">
-   <div class="service-card-img"><img src="assets/img/services/carpet/carpet-1.png" alt="BlueSky team performing commercial carpet cleaning" loading="lazy"></div>
+   <div class="service-card-img"><img src="assets/img/services/carpet/carpet-1.jpg" alt="BlueSky team performing commercial carpet cleaning" loading="lazy"></div>
    <div class="service-card-body">
     <span class="service-num">04</span>
     <h3>Carpet Cleaning</h3>
@@ -1069,7 +1179,7 @@ footer {
    </div>
   </a>
   <a href="services/floor-care.html" class="service-card reveal" data-delay="2">
-   <div class="service-card-img"><img src="assets/img/services/floor/case3-after-1.png" alt="High-gloss commercial floor restored by BlueSky's floor stripping &amp; waxing program" loading="lazy"></div>
+   <div class="service-card-img"><img src="assets/img/services/floor/case3-after-1.jpg" alt="High-gloss commercial floor restored by BlueSky's floor stripping &amp; waxing program" loading="lazy"></div>
    <div class="service-card-body">
     <span class="service-num">05</span>
     <h3>Floor Stripping &amp; Waxing</h3>
@@ -1078,7 +1188,7 @@ footer {
    </div>
   </a>
   <a href="services/post-construction.html" class="service-card reveal" data-delay="3">
-   <div class="service-card-img"><img src="assets/img/services/post-construction/after-5.png" alt="Commercial corridor delivered clean after post-construction turnover" loading="lazy"></div>
+   <div class="service-card-img"><img src="assets/img/services/post-construction/after-5.jpg" alt="Commercial corridor delivered clean after post-construction turnover" loading="lazy"></div>
    <div class="service-card-body">
     <span class="service-num">06</span>
     <h3>Post-Construction</h3>
@@ -1087,7 +1197,7 @@ footer {
    </div>
   </a>
   <a href="services/property-decommission.html" class="service-card reveal" data-delay="1">
-   <div class="service-card-img"><img src="assets/img/services/property-decommission/fog-disinfect-1.png" alt="BlueSky technician applying electrostatic fog disinfection" loading="lazy"></div>
+   <div class="service-card-img"><img src="assets/img/services/property-decommission/fog-disinfect-1.jpg" alt="BlueSky technician applying electrostatic fog disinfection" loading="lazy"></div>
    <div class="service-card-body">
     <span class="service-num">07</span>
     <h3>Property Decommission</h3>
@@ -1249,6 +1359,7 @@ footer {
 </section>
 
 <!-- ═══ FOOTER ═══ -->
+</main>
 <footer>
  <div class="footer-grid">
   <div class="footer-brand">
@@ -1317,15 +1428,16 @@ const hamburger = document.getElementById('hamburger');
 const drawer = document.getElementById('mobileDrawer');
 const backdrop = document.getElementById('mobileBackdrop');
 const closeBtn = document.getElementById('mobileClose');
-function openDrawer() { drawer.classList.add('open'); backdrop.classList.add('open'); document.body.style.overflow = 'hidden'; }
-function closeDrawer() { drawer.classList.remove('open'); backdrop.classList.remove('open'); document.body.style.overflow = ''; }
+function openDrawer() { drawer.classList.add('open'); backdrop.classList.add('open'); document.body.style.overflow = 'hidden'; hamburger.setAttribute('aria-expanded','true'); hamburger.setAttribute('aria-label','Close menu'); closeBtn.focus(); }
+function closeDrawer() { drawer.classList.remove('open'); backdrop.classList.remove('open'); document.body.style.overflow = ''; hamburger.setAttribute('aria-expanded','false'); hamburger.setAttribute('aria-label','Open menu'); hamburger.focus(); }
 hamburger.addEventListener('click', openDrawer);
 closeBtn.addEventListener('click', closeDrawer);
 backdrop.addEventListener('click', closeDrawer);
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer(); });
 
 // Hero headline — slide-up word rotator with animated width
-const rotateWords = ['Commercial', 'Medical', 'Retail', 'Industrial'];
+const rotateWords = ['Commercial', 'Medical', 'Retail', 'Education'];
 const rotateEl = document.getElementById('rotateWord');
 const rotateHost = document.getElementById('rotateHost');
 let rotateIdx = 0;

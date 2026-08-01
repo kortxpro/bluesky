@@ -3,8 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Property Decommission &amp; Fog Disinfect | BlueSky General Services</title>
-<meta name="description" content="Property decommission and fog disinfection for vacated commercial spaces, post-event remediation, and turnover. Documented decontamination protocols, EPA-registered disinfectants.">
+<title>Property Decommission Cleaning in Florida | BlueSky</title>
+<meta name="description" content="Commercial property decommission and fog disinfection. Cleared, cleaned and documented handoff condition ready for the next tenant.">
+<link rel="canonical" href="https://blueskygeneralserv.com/services/property-decommission">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BlueSky General Services">
+<meta property="og:url" content="https://blueskygeneralserv.com/services/property-decommission">
+<meta property="og:title" content="Property Decommission Cleaning in Florida | BlueSky">
+<meta property="og:description" content="Commercial property decommission and fog disinfection. Cleared, cleaned and documented handoff condition ready for the next tenant.">
+<meta property="og:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Property Decommission Cleaning in Florida | BlueSky">
+<meta name="twitter:description" content="Commercial property decommission and fog disinfection. Cleared, cleaned and documented handoff condition ready for the next tenant.">
+<meta name="twitter:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -16,7 +31,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--black); background:var(--wh
 h1,h2,h3,h4 { font-family:'Playfair Display',serif; font-weight:400; line-height:1.15; letter-spacing:-0.01em; }
 a { color:inherit; text-decoration:none; }
 img { display:block; max-width:100%; height:auto; object-fit:cover; }
-.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-400); font-weight:400; }
+.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-500); font-weight:400; }
 .btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.9rem 1.8rem; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:500; border:1px solid transparent; border-radius:2px; cursor:pointer; transition:all 0.3s ease; font-family:inherit; }
 .btn-primary { background:var(--accent); color:var(--white); }
 .btn-primary:hover { background:var(--accent-hover); transform:translateY(-1px); }
@@ -133,8 +148,8 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 .footer-badges { display:flex; gap:1.5rem; }
 .footer-badges span { letter-spacing:0.12em; text-transform:uppercase; font-size:0.7rem; }
 
-.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
-.mobile-drawer.open { transform:translateX(0); }
+.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); visibility:hidden; transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
+.mobile-drawer.open { transform:translateX(0); visibility:visible; }
 .mobile-drawer ul { list-style:none; display:flex; flex-direction:column; gap:1.4rem; }
 .mobile-drawer a { font-family:'Playfair Display',serif; font-size:1.3rem; font-style:italic; color:var(--black); }
 .mobile-close { position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; font-size:1.5rem; cursor:pointer; }
@@ -174,13 +189,18 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 @media (max-width:900px) { .property-library-head { grid-template-columns:1fr; gap:1.4rem; } .property-library { padding:0 4vw 5rem; } }
 @media (max-width:600px) { .property-library-scroll { grid-auto-columns:82%; } }
 
-/* Credito da agencia */
+/* Agency credit */
 .footer-credit { margin-left: 0.6rem; white-space: nowrap; }
 .footer-credit a { color: var(--stone-400); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
 .footer-credit a:hover { color: var(--white); border-bottom-color: rgba(255,255,255,0.4); }
+
+/* Skip link (WCAG 2.4.1) */
+.skip-link { position:absolute; left:-9999px; top:0; z-index:9999; background:var(--accent); color:var(--white); padding:0.8rem 1.4rem; font-size:0.85rem; letter-spacing:0.05em; }
+.skip-link:focus { left:0; outline:2px solid var(--white); outline-offset:-4px; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="topbar">
  <div class="topbar-left"><span>Commercial facility services · Licensed · Insured · Bonded</span></div>
@@ -194,7 +214,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 </div>
 
 <nav class="navbar">
- <a href="../index.html" class="navbar-logo"><img src="../assets/img/logo-bluesky.png" alt="BlueSky General Services"></a>
+ <a href="../index.html" class="navbar-logo"><img src="../assets/img/logo-bluesky.png" alt="BlueSky General Services" width="189" height="80"></a>
  <ul class="navbar-links">
   <li><a href="../index.html">Home</a></li>
   <li><a href="../services.html" class="active">Services <span class="caret">▾</span></a><div class="megamenu">
@@ -219,8 +239,9 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <li><a href="../careers.html">Careers</a></li>
   <li><a href="../contact.html" class="btn-nav">Request a Proposal</a></li>
  </ul>
- <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+ <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer" id="hamburger"><span></span><span></span><span></span></button>
 </nav>
+<main id="main">
 
 <div class="mobile-backdrop" id="mobileBackdrop"></div>
 <div class="mobile-drawer" id="mobileDrawer">
@@ -232,13 +253,15 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 
 <!-- ═══ SVC-HERO START ═══ -->
 <header class="svc-hero">
- <!-- TODO: trocar foto de capa — Marcus vai enviar a foto oficial de Property Decommission -->
- <div class="svc-hero-img"><img src="../assets/img/services/property-decommission/fog-disinfect-1.png" alt="BlueSky technician in full PPE applying electrostatic fog disinfection"></div>
+ <div class="svc-hero-img"><img src="../assets/img/services/property-decommission/fog-disinfect-1.jpg" alt="BlueSky technician in full PPE applying electrostatic fog disinfection"></div>
  <div class="svc-hero-content reveal">
   <div class="breadcrumb"><a href="../index.html">Home</a> <span class="breadcrumb-sep">/</span> <a href="../services.html">Services</a> <span class="breadcrumb-sep">/</span> Property Decommission</div>
   <span class="svc-num">Service 07</span>
   <h1>Property Decommission</h1>
   <p class="lead">Vacancy turnover, final decommission cleaning, fixture and contents coordination, and specialty treatment when the space needs more than a standard reset. Fog disinfect sits inside this service as one of the technical options used to close a property out cleanly for the next handoff.</p>
+  <div class="cta-actions" style="margin-top:1.8rem;">
+   <a href="../contact.html" class="btn btn-primary">Request a Proposal <span class="arrow">→</span></a>
+  </div>
  </div>
 </header>
 <!-- ═══ SVC-HERO END ═══ -->
@@ -285,38 +308,38 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  <div class="property-library-inner">
   <div class="property-library-head reveal">
    <div>
-    <span class="label">Property Decommission Library</span>
+    <span class="label">Decommission Work</span>
     <h3>Decommission, vacancy reset, and fog disinfect as a specialty layer.</h3>
    </div>
    <p>What a decommission actually looks like: cleared floors, a final reset, and disinfect treatment on a site being prepared for handoff rather than another day of operation.</p>
   </div>
   <div class="property-library-scroll">
    <article class="property-library-card reveal" data-delay="1">
-    <img src="../assets/img/services/property-decommission/fog-disinfect-case.png" alt="Fog disinfect treatment being applied inside a vacated property">
+    <img src="../assets/img/services/property-decommission/fog-disinfect-case.jpg" alt="Technician in protective gear fogging disinfectant through a vacated office" loading="lazy">
     <div class="property-library-card-body">
      <strong>Fog disinfect</strong>
-     <span>Technical treatment used when the decommission scope needs a deeper sanitation layer before the next handoff.</span>
+     <span>Electrostatic fogging run through the vacated space, an added sanitation layer before the property changes hands.</span>
     </div>
    </article>
    <article class="property-library-card reveal" data-delay="2">
-    <img src="https://images.pexels.com/photos/5506065/pexels-photo-5506065.jpeg" alt="Empty office space ready for vacancy turnover">
+    <img src="https://images.pexels.com/photos/5506065/pexels-photo-5506065.jpeg" alt="Open-plan office with furniture and partitions still in place before decommission" loading="lazy">
     <div class="property-library-card-body">
-     <strong>Vacancy-ready condition</strong>
-     <span>Reference image for the kind of cleared, turnover-ready environment this service is built to deliver.</span>
+     <strong>Contents cleared first</strong>
+     <span>Furniture, partitions, and seating removed or staged out so the deep clean runs on open floor, not around obstacles.</span>
     </div>
    </article>
    <article class="property-library-card reveal" data-delay="3">
-    <img src="https://images.pexels.com/photos/5483236/pexels-photo-5483236.jpeg" alt="Empty office interior during transition between occupants">
+    <img src="https://images.pexels.com/photos/5483236/pexels-photo-5483236.jpeg" alt="Powered-down open-plan office floor with workstations still installed" loading="lazy">
     <div class="property-library-card-body">
-     <strong>Transition state</strong>
-     <span>Supports the idea of a property between occupants, before the final reset has been completed.</span>
+     <strong>Building out of service</strong>
+     <span>With the floor shut down, crews work through remaining desks and fixtures until the space is stripped and ready for final cleaning.</span>
     </div>
    </article>
    <article class="property-library-card reveal" data-delay="1">
-    <img src="https://images.pexels.com/photos/31606535/pexels-photo-31606535.jpeg" alt="Vacant office room ready for next tenant handoff">
+    <img src="https://images.pexels.com/photos/31606535/pexels-photo-31606535.jpeg" alt="Cleared interior with cleaned carpet, ready for handoff" loading="lazy">
     <div class="property-library-card-body">
-     <strong>Handoff-ready space</strong>
-     <span>Shows the final outcome this service is pushing toward: a cleared, readable interior ready for the next tenant or next use.</span>
+     <strong>Handed back clean</strong>
+     <span>Floors cleaned, surfaces and trim wiped, everything hauled off. The condition the space is turned over in, documented at final walk.</span>
     </div>
    </article>
   </div>
@@ -343,7 +366,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 
 <!-- ═══ RELATED-CASE START ═══ -->
 <section class="related-case">
- <div class="related-case-media"><img src="../assets/img/services/property-decommission/fog-disinfect-case.png" alt="Documented fog disinfect treatment inside a commercial decommission scope"></div>
+ <div class="related-case-media"><img src="../assets/img/services/property-decommission/fog-disinfect-case.jpg" alt="Documented fog disinfect treatment inside a commercial decommission scope" loading="lazy"></div>
  <div class="related-case-body reveal">
   <span class="sec-label">Related Work</span>
   <h2>Standards that carry into harder environments.</h2>
@@ -364,6 +387,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  </div>
 </section>
 
+</main>
 <footer>
  <div class="footer-grid">
   <div class="footer-brand">

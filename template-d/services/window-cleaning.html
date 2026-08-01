@@ -3,8 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Window Cleaning | BlueSky General Services</title>
-<meta name="description" content="Commercial window cleaning, interior glass, ground-level storefronts, and high-rise facades. Waterfed poles, rope access, lift methods. Documented safety program.">
+<title>Commercial Window Cleaning in Florida | BlueSky</title>
+<meta name="description" content="High-rise and interior commercial glass care. Rope access, boom lift and waterfed pole, delivered under a documented safety program.">
+<link rel="canonical" href="https://blueskygeneralserv.com/services/window-cleaning">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BlueSky General Services">
+<meta property="og:url" content="https://blueskygeneralserv.com/services/window-cleaning">
+<meta property="og:title" content="Commercial Window Cleaning in Florida | BlueSky">
+<meta property="og:description" content="High-rise and interior commercial glass care. Rope access, boom lift and waterfed pole, delivered under a documented safety program.">
+<meta property="og:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Commercial Window Cleaning in Florida | BlueSky">
+<meta name="twitter:description" content="High-rise and interior commercial glass care. Rope access, boom lift and waterfed pole, delivered under a documented safety program.">
+<meta name="twitter:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -16,7 +31,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--black); background:var(--wh
 h1,h2,h3,h4 { font-family:'Playfair Display',serif; font-weight:400; line-height:1.15; letter-spacing:-0.01em; }
 a { color:inherit; text-decoration:none; }
 img { display:block; max-width:100%; height:auto; object-fit:cover; }
-.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-400); font-weight:400; }
+.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-500); font-weight:400; }
 .btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.9rem 1.8rem; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:500; border:1px solid transparent; border-radius:2px; cursor:pointer; transition:all 0.3s ease; font-family:inherit; }
 .btn-primary { background:var(--accent); color:var(--white); }
 .btn-primary:hover { background:var(--accent-hover); transform:translateY(-1px); }
@@ -133,8 +148,8 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 .footer-badges { display:flex; gap:1.5rem; }
 .footer-badges span { letter-spacing:0.12em; text-transform:uppercase; font-size:0.7rem; }
 
-.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
-.mobile-drawer.open { transform:translateX(0); }
+.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); visibility:hidden; transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
+.mobile-drawer.open { transform:translateX(0); visibility:visible; }
 .mobile-drawer ul { list-style:none; display:flex; flex-direction:column; gap:1.4rem; }
 .mobile-drawer a { font-family:'Playfair Display',serif; font-size:1.3rem; font-style:italic; color:var(--black); }
 .mobile-close { position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; font-size:1.5rem; cursor:pointer; }
@@ -190,13 +205,18 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 @media (max-width:600px) { .window-library-scroll { grid-auto-columns:82%; } }
 
 
-/* Credito da agencia */
+/* Agency credit */
 .footer-credit { margin-left: 0.6rem; white-space: nowrap; }
 .footer-credit a { color: var(--stone-400); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
 .footer-credit a:hover { color: var(--white); border-bottom-color: rgba(255,255,255,0.4); }
+
+/* Skip link (WCAG 2.4.1) */
+.skip-link { position:absolute; left:-9999px; top:0; z-index:9999; background:var(--accent); color:var(--white); padding:0.8rem 1.4rem; font-size:0.85rem; letter-spacing:0.05em; }
+.skip-link:focus { left:0; outline:2px solid var(--white); outline-offset:-4px; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="topbar">
  <div class="topbar-left"><span>Commercial facility services · Licensed · Insured · Bonded</span></div>
@@ -210,7 +230,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 </div>
 
 <nav class="navbar">
- <a href="../index.html" class="navbar-logo"><img src="../assets/img/logo-bluesky.png" alt="BlueSky General Services"></a>
+ <a href="../index.html" class="navbar-logo"><img src="../assets/img/logo-bluesky.png" alt="BlueSky General Services" width="189" height="80"></a>
  <ul class="navbar-links">
   <li><a href="../index.html">Home</a></li>
   <li><a href="../services.html" class="active">Services <span class="caret">▾</span></a><div class="megamenu">
@@ -235,8 +255,9 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <li><a href="../careers.html">Careers</a></li>
   <li><a href="../contact.html" class="btn-nav">Request a Proposal</a></li>
  </ul>
- <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+ <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer" id="hamburger"><span></span><span></span><span></span></button>
 </nav>
+<main id="main">
 
 <div class="mobile-backdrop" id="mobileBackdrop"></div>
 <div class="mobile-drawer" id="mobileDrawer">
@@ -254,6 +275,10 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <span class="svc-num">Service 03</span>
   <h1>Window Cleaning</h1>
   <p class="lead">From ground-level storefronts to full-height curtain walls. Interior partition glass, waterfed-pole exteriors up to six stories, and rope-access high-rise work, method chosen by the building, not the vendor. Documented safety program.</p>
+  <div class="cta-actions" style="margin-top:2rem;">
+   <a href="../contact.html" class="btn btn-primary">Request a Proposal <span class="arrow">→</span></a>
+   <a href="../projects.html" class="btn btn-outline">See Our Work</a>
+  </div>
  </div>
 </header>
 <!-- ═══ SVC-HERO END ═══ -->
@@ -280,14 +305,14 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 </section>
 <!-- ═══ INCLUDED END ═══ -->
 
-<!-- ═══ MINI-CASE START (KENDRA SCOTT) ═══ -->
+<!-- ═══ MINI-CASE START ═══ -->
 <section class="mini-case">
  <div class="mini-case-inner">
   <div class="mini-case-media reveal">
-   <img src="../assets/img/services/windows/windows-1.png" alt="Window cleaning at a retail storefront">
-   <img src="../assets/img/services/windows/windows-2.png" alt="Ladder access on a commercial exterior window">
-   <img src="../assets/img/services/windows/orange-county-courts-rope-3.jpeg" alt="Rope-access window cleaner working a multi-story facade at Orange County Government">
-   <img src="../assets/img/services/windows/boom-lift-hero.jpeg" alt="Boom lift window cleaning in progress at a commercial site">
+   <img src="../assets/img/services/windows/windows-1.jpg" alt="Window cleaning at a retail storefront" loading="lazy">
+   <img src="../assets/img/services/windows/windows-2.jpg" alt="Ladder access on a commercial exterior window" loading="lazy">
+   <img src="../assets/img/services/windows/orange-county-courts-rope-3.jpeg" alt="Rope-access window cleaner working a multi-story facade at Orange County Government" loading="lazy">
+   <img src="../assets/img/services/windows/boom-lift-hero.jpeg" alt="Boom lift window cleaning in progress at a commercial site" loading="lazy">
   </div>
   <div class="reveal" data-delay="1">
    <span class="client-tag">Mini-Case · Mixed Access Glass Program</span>
@@ -323,38 +348,38 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  <div class="window-library-inner">
   <div class="window-library-head reveal">
    <div>
-    <span class="label">Window Cleaning Library</span>
-    <h3>Rope access, lift access, and real execution context.</h3>
+    <span class="label">In The Field</span>
+    <h3>Rope access, lift access, and the buildings behind them.</h3>
    </div>
    <p>High-rise, facade, and suspended-access work from recent programs. This is the part of the service that goes well beyond storefront glass.</p>
   </div>
   <div class="window-library-scroll">
    <article class="window-library-card reveal" data-delay="1">
-    <img src="https://images.pexels.com/photos/11753025/pexels-photo-11753025.jpeg?cs=srgb&amp;dl=pexels-jimmy-liao-11753025.jpg&amp;fm=jpg" alt="Window cleaner suspended on a rope cleaning a building facade">
+    <img src="https://images.pexels.com/photos/11753025/pexels-photo-11753025.jpeg?cs=srgb&amp;dl=pexels-jimmy-liao-11753025.jpg&amp;fm=jpg" alt="Window cleaner suspended on a rope cleaning a building facade" loading="lazy">
     <div class="window-library-card-body">
      <strong>Rope access</strong>
-     <span>High-rise access image that makes the suspended-work capability legible immediately.</span>
+     <span>Descent down a full-height curtain wall, cleaning glass on elevations no ground-based lift can reach.</span>
     </div>
    </article>
    <article class="window-library-card reveal" data-delay="2">
-    <img src="https://images.pexels.com/photos/21388416/pexels-photo-21388416.jpeg?cs=srgb&amp;dl=pexels-justphotof-21388416.jpg&amp;fm=jpg" alt="Worker cleaning building windows with safety gear">
+    <img src="https://images.pexels.com/photos/21388416/pexels-photo-21388416.jpeg?cs=srgb&amp;dl=pexels-justphotof-21388416.jpg&amp;fm=jpg" alt="Worker cleaning building windows with safety gear" loading="lazy">
     <div class="window-library-card-body">
      <strong>Facade execution</strong>
-     <span>Support image focused on the technician, safety gear, and the reality of high-elevation glass work.</span>
+     <span>Suspended work up close: helmet, harness and hand tools, facade glass finished panel by panel.</span>
     </div>
    </article>
    <article class="window-library-card reveal" data-delay="3">
-    <img src="../assets/img/services/windows/boom-lift-4.jpeg" alt="Boom lift window cleaning on a commercial building">
+    <img src="../assets/img/services/windows/boom-lift-4.jpeg" alt="Boom lift window cleaning on a commercial building" loading="lazy">
     <div class="window-library-card-body">
      <strong>Boom lift access</strong>
-     <span>Real BlueSky field image showing another access method used when rope work is not the right fit for the building.</span>
+     <span>Crew working from a boom-lift basket, rinsing tall window bays with a long-reach wand, floor by floor.</span>
     </div>
    </article>
    <article class="window-library-card reveal" data-delay="1">
-    <img src="../assets/img/services/windows/boom-lift-5.jpeg" alt="Commercial window cleaning work completed from a boom lift">
+    <img src="../assets/img/services/windows/boom-lift-5.jpeg" alt="Commercial window cleaning work completed from a boom lift" loading="lazy">
     <div class="window-library-card-body">
      <strong>Site coverage</strong>
-     <span>Additional project image to show reach, glass coverage, and the kind of field conditions the team is working through.</span>
+     <span>Boom reach extended to the upper floors of a mid-rise, covering every window bay on the elevation.</span>
     </div>
    </article>
   </div>
@@ -381,7 +406,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 
 <!-- ═══ RELATED-CASE START ═══ -->
 <section class="related-case">
- <div class="related-case-media"><img src="../assets/img/hero-options/boom-lift.jpg" alt="BlueSky boom-lift team servicing exterior glass at a Pinellas County Utilities facility"></div>
+ <div class="related-case-media"><img src="../assets/img/hero-options/boom-lift.jpg" alt="BlueSky boom-lift team servicing exterior glass at a Pinellas County Utilities facility" loading="lazy"></div>
  <div class="related-case-body reveal">
   <span class="sec-label">Featured Case</span>
   <h2>Pinellas County Utilities. Public-facing exterior glass on scheduled cycles.</h2>
@@ -402,6 +427,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  </div>
 </section>
 
+</main>
 <footer>
  <div class="footer-grid">
   <div class="footer-brand">

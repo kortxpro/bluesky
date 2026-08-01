@@ -3,8 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Orange County Government · Rope Access Window Cleaning | BlueSky General Services</title>
-<meta name="description" content="Case study: high-rise rope-access window cleaning at the Orange County Government building. Multi-story public-facing facade, scheduled around staff and citizen-visit windows, executed under documented safety program.">
+<title>Orange County Government Rope Access | BlueSky Case Study</title>
+<meta name="description" content="High-rise rope-access window cleaning on a multi-story public facade, scheduled around staff and citizen visits under a documented safety program.">
+<link rel="canonical" href="https://blueskygeneralserv.com/projects/orange-county-courts">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BlueSky General Services">
+<meta property="og:url" content="https://blueskygeneralserv.com/projects/orange-county-courts">
+<meta property="og:title" content="Orange County Government Rope Access | BlueSky Case Study">
+<meta property="og:description" content="High-rise rope-access window cleaning on a multi-story public facade, scheduled around staff and citizen visits under a documented safety program.">
+<meta property="og:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Orange County Government Rope Access | BlueSky Case Study">
+<meta name="twitter:description" content="High-rise rope-access window cleaning on a multi-story public facade, scheduled around staff and citizen visits under a documented safety program.">
+<meta name="twitter:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -16,7 +31,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--black); background:var(--wh
 h1,h2,h3,h4 { font-family:'Playfair Display',serif; font-weight:400; line-height:1.15; letter-spacing:-0.01em; }
 a { color:inherit; text-decoration:none; }
 img { display:block; max-width:100%; height:auto; object-fit:cover; }
-.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-400); font-weight:400; }
+.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-500); font-weight:400; }
 .btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.9rem 1.8rem; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:500; border:1px solid transparent; border-radius:2px; cursor:pointer; transition:all 0.3s ease; font-family:inherit; }
 .btn-primary { background:var(--accent); color:var(--white); }
 .btn-primary:hover { background:var(--accent-hover); transform:translateY(-1px); }
@@ -63,8 +78,10 @@ img { display:block; max-width:100%; height:auto; object-fit:cover; }
 .case-hero-slide.active { opacity:1; }
 .case-hero-slide img { width:100%; height:100%; object-fit:cover; }
 .case-hero-dots { position:absolute; bottom:1.8rem; right:2rem; z-index:5; display:flex; gap:0.5rem; }
-.case-hero-dot { width:30px; height:2px; background:rgba(255,255,255,0.35); transition:background 0.3s; cursor:pointer; }
+.case-hero-dot { width:30px; height:2px; padding:0; border:none; border-radius:0; font:inherit; color:inherit; -webkit-appearance:none; appearance:none; position:relative; background:rgba(255,255,255,0.35); transition:background 0.3s; cursor:pointer; }
+.case-hero-dot::before { content:""; position:absolute; top:-14px; bottom:-14px; left:-4px; right:-4px; }
 .case-hero-dot.active { background:var(--white); }
+.case-hero-dot:focus-visible { outline:2px solid var(--white); outline-offset:6px; }
 .case-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(28,25,23,0.2) 0%, rgba(28,25,23,0.9) 100%); z-index:2; }
 .case-hero-content { position:relative; z-index:3; padding:5rem 4vw 5rem; max-width:1200px; width:100%; }
 .breadcrumb { font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:1rem; }
@@ -174,8 +191,8 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 .footer-badges { display:flex; gap:1.5rem; }
 .footer-badges span { letter-spacing:0.12em; text-transform:uppercase; font-size:0.7rem; }
 
-.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
-.mobile-drawer.open { transform:translateX(0); }
+.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); visibility:hidden; transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
+.mobile-drawer.open { transform:translateX(0); visibility:visible; }
 .mobile-drawer ul { list-style:none; display:flex; flex-direction:column; gap:1.4rem; }
 .mobile-drawer a { font-family:'Playfair Display',serif; font-size:1.3rem; font-style:italic; color:var(--black); }
 .mobile-close { position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; font-size:1.5rem; cursor:pointer; }
@@ -208,13 +225,18 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  .footer-bottom { flex-direction:column; text-align:center; }
 }
 
-/* Credito da agencia */
+/* Agency credit */
 .footer-credit { margin-left: 0.6rem; white-space: nowrap; }
 .footer-credit a { color: var(--stone-400); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
 .footer-credit a:hover { color: var(--white); border-bottom-color: rgba(255,255,255,0.4); }
+
+/* Skip link (WCAG 2.4.1) */
+.skip-link { position:absolute; left:-9999px; top:0; z-index:9999; background:var(--accent); color:var(--white); padding:0.8rem 1.4rem; font-size:0.85rem; letter-spacing:0.05em; }
+.skip-link:focus { left:0; outline:2px solid var(--white); outline-offset:-4px; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="topbar">
  <div class="topbar-left"><span>Commercial facility services · Licensed · Insured · Bonded</span></div>
@@ -228,7 +250,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 </div>
 
 <nav class="navbar">
- <a href="../index.html" class="navbar-logo"><img src="../assets/img/logo-bluesky.png" alt="BlueSky General Services"></a>
+ <a href="../index.html" class="navbar-logo"><img src="../assets/img/logo-bluesky.png" alt="BlueSky General Services" width="189" height="80"></a>
  <ul class="navbar-links">
   <li><a href="../index.html">Home</a></li>
   <li><a href="../services.html">Services <span class="caret">▾</span></a><div class="megamenu">
@@ -253,8 +275,9 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <li><a href="../careers.html">Careers</a></li>
   <li><a href="../contact.html" class="btn-nav">Request a Proposal</a></li>
  </ul>
- <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+ <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer" id="hamburger"><span></span><span></span><span></span></button>
 </nav>
+<main id="main">
 
 <div class="mobile-backdrop" id="mobileBackdrop"></div>
 <div class="mobile-drawer" id="mobileDrawer">
@@ -267,15 +290,15 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 <header class="case-hero">
  <div class="case-hero-media">
   <div class="case-hero-slide active"><img src="../assets/img/services/windows/orange-county-courts-facade.jpeg" alt="Full facade of the Orange County Government building with palm tree in foreground"></div>
-  <div class="case-hero-slide"><img src="../assets/img/services/windows/orange-county-courts-rope-3.jpeg" alt="Rope-access window cleaner working on the multi-story facade of the Orange County Government building"></div>
-  <div class="case-hero-slide"><img src="../assets/img/services/windows/orange-county-courts-tower.jpeg" alt="Upward view of the Orange County Government tower elevation"></div>
-  <div class="case-hero-slide"><img src="../assets/img/services/windows/orange-county-courts-rope-4.jpeg" alt="Water-fed pole scrubbing upper-floor courthouse glass above the downtown Orlando skyline"></div>
+  <div class="case-hero-slide"><img src="../assets/img/services/windows/orange-county-courts-rope-3.jpeg" alt="Rope-access window cleaner working on the multi-story facade of the Orange County Government building" loading="lazy"></div>
+  <div class="case-hero-slide"><img src="../assets/img/services/windows/orange-county-courts-tower.jpeg" alt="Upward view of the Orange County Government tower elevation" loading="lazy"></div>
+  <div class="case-hero-slide"><img src="../assets/img/services/windows/orange-county-courts-rope-4.jpeg" alt="Water-fed pole scrubbing upper-floor courthouse glass above the downtown Orlando skyline" loading="lazy"></div>
  </div>
  <div class="case-hero-dots" id="heroDots">
-  <div class="case-hero-dot active" data-i="0"></div>
-  <div class="case-hero-dot" data-i="1"></div>
-  <div class="case-hero-dot" data-i="2"></div>
-  <div class="case-hero-dot" data-i="3"></div>
+  <button type="button" class="case-hero-dot active" data-i="0" aria-label="Show slide 1 of 4" aria-current="true"></button>
+  <button type="button" class="case-hero-dot" data-i="1" aria-label="Show slide 2 of 4"></button>
+  <button type="button" class="case-hero-dot" data-i="2" aria-label="Show slide 3 of 4"></button>
+  <button type="button" class="case-hero-dot" data-i="3" aria-label="Show slide 4 of 4"></button>
  </div>
  <div class="case-hero-content reveal">
   <div class="breadcrumb"><a href="../index.html">Home</a> <span class="breadcrumb-sep">/</span> <a href="../projects.html">Case Studies</a> <span class="breadcrumb-sep">/</span> Orange County Government</div>
@@ -371,13 +394,13 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <p>Photos taken during the courthouse program: building context, technicians on rope, and elevation coverage.</p>
  </div>
  <div class="gallery-track">
-  <div class="gallery-item"><img src="../assets/img/services/windows/orange-county-courts-facade.jpeg" alt="Full glazed facade of the Orange County Government building"></div>
-  <div class="gallery-item"><img src="../assets/img/services/windows/orange-county-courts-tower.jpeg" alt="Tower elevation of the Orange County Government building"></div>
-  <div class="gallery-item"><img src="../assets/img/services/windows/orange-county-courts-rope-1.jpeg" alt="Rope-access work on the upper facade"></div>
-  <div class="gallery-item"><img src="../assets/img/services/windows/orange-county-courts-rope-2.jpeg" alt="Full Orange County Courthouse tower elevation with a technician suspended mid-facade"></div>
-  <div class="gallery-item"><img src="../assets/img/services/windows/orange-county-courts-rope-3.jpeg" alt="Rope-access cleaner working a vertical run of glass"></div>
-  <div class="gallery-item"><img src="../assets/img/services/windows/orange-county-courts-rope-4.jpeg" alt="Water-fed pole scrubbing upper-floor courthouse glass above the downtown Orlando skyline"></div>
-  <div class="gallery-item"><img src="../assets/img/services/windows/orange-county-courts-rope-5.jpeg" alt="Grated service catwalk with guardrails, watch-your-step markings and a coiled air line"></div>
+  <div class="gallery-item"><img src="../assets/img/services/windows/orange-county-courts-facade.jpeg" alt="Full glazed facade of the Orange County Government building" loading="lazy"></div>
+  <div class="gallery-item"><img src="../assets/img/services/windows/orange-county-courts-tower.jpeg" alt="Tower elevation of the Orange County Government building" loading="lazy"></div>
+  <div class="gallery-item"><img src="../assets/img/services/windows/orange-county-courts-rope-1.jpeg" alt="Rope-access work on the upper facade" loading="lazy"></div>
+  <div class="gallery-item"><img src="../assets/img/services/windows/orange-county-courts-rope-2.jpeg" alt="Full Orange County Courthouse tower elevation with a technician suspended mid-facade" loading="lazy"></div>
+  <div class="gallery-item"><img src="../assets/img/services/windows/orange-county-courts-rope-3.jpeg" alt="Rope-access cleaner working a vertical run of glass" loading="lazy"></div>
+  <div class="gallery-item"><img src="../assets/img/services/windows/orange-county-courts-rope-4.jpeg" alt="Water-fed pole scrubbing upper-floor courthouse glass above the downtown Orlando skyline" loading="lazy"></div>
+  <div class="gallery-item"><img src="../assets/img/services/windows/orange-county-courts-rope-5.jpeg" alt="Grated service catwalk with guardrails, watch-your-step markings and a coiled air line" loading="lazy"></div>
  </div>
  <p class="gallery-hint">Scroll horizontally to see the full sequence.</p>
 </section>
@@ -428,6 +451,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  </div>
 </section>
 
+</main>
 <footer>
  <div class="footer-grid">
   <div class="footer-brand">
@@ -458,19 +482,36 @@ const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 (function(){
+ const hero = document.querySelector('.case-hero');
  const slides = document.querySelectorAll('.case-hero-slide');
  const dots = document.querySelectorAll('.case-hero-dot');
  if (!slides.length) return;
- let i = 0;
+ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+ let i = 0, timer = null, stopped = false;
  function go(n) {
   slides[i].classList.remove('active');
   dots[i].classList.remove('active');
+  dots[i].removeAttribute('aria-current');
   i = ((n % slides.length) + slides.length) % slides.length;
   slides[i].classList.add('active');
   dots[i].classList.add('active');
+  dots[i].setAttribute('aria-current', 'true');
  }
- setInterval(() => go(i + 1), 4500);
- dots.forEach((d, idx) => d.addEventListener('click', () => go(idx)));
+ function start() {
+  if (timer || stopped || reduceMotion.matches) return;
+  timer = setInterval(() => go(i + 1), 4500);
+ }
+ function pause() { if (timer) { clearInterval(timer); timer = null; } }
+ function stop() { stopped = true; pause(); }
+ dots.forEach((d, idx) => d.addEventListener('click', () => { stop(); go(idx); }));
+ if (hero) {
+  hero.addEventListener('mouseenter', pause);
+  hero.addEventListener('mouseleave', start);
+  hero.addEventListener('focusin', pause);
+  hero.addEventListener('focusout', start);
+ }
+ reduceMotion.addEventListener('change', () => { reduceMotion.matches ? pause() : start(); });
+ start();
 })();
 
 (function(){

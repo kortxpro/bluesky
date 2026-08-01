@@ -3,8 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carpet Cleaning | BlueSky General Services</title>
-<meta name="description" content="Commercial carpet cleaning, hot-water extraction, low-moisture encapsulation, water-damage recovery. Quarterly maintenance through full restoration.">
+<title>Commercial Carpet Cleaning in Florida | BlueSky</title>
+<meta name="description" content="Hot-water extraction and restorative carpet cleaning for commercial floors, scheduled around occupancy so the space reopens the next morning.">
+<link rel="canonical" href="https://blueskygeneralserv.com/services/carpet-cleaning">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BlueSky General Services">
+<meta property="og:url" content="https://blueskygeneralserv.com/services/carpet-cleaning">
+<meta property="og:title" content="Commercial Carpet Cleaning in Florida | BlueSky">
+<meta property="og:description" content="Hot-water extraction and restorative carpet cleaning for commercial floors, scheduled around occupancy so the space reopens the next morning.">
+<meta property="og:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Commercial Carpet Cleaning in Florida | BlueSky">
+<meta name="twitter:description" content="Hot-water extraction and restorative carpet cleaning for commercial floors, scheduled around occupancy so the space reopens the next morning.">
+<meta name="twitter:image" content="https://blueskygeneralserv.com/assets/img/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -16,7 +31,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--black); background:var(--wh
 h1,h2,h3,h4 { font-family:'Playfair Display',serif; font-weight:400; line-height:1.15; letter-spacing:-0.01em; }
 a { color:inherit; text-decoration:none; }
 img { display:block; max-width:100%; height:auto; object-fit:cover; }
-.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-400); font-weight:400; }
+.label { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-500); font-weight:400; }
 .btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.9rem 1.8rem; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:500; border:1px solid transparent; border-radius:2px; cursor:pointer; transition:all 0.3s ease; font-family:inherit; }
 .btn-primary { background:var(--accent); color:var(--white); }
 .btn-primary:hover { background:var(--accent-hover); transform:translateY(-1px); }
@@ -133,8 +148,8 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 .footer-badges { display:flex; gap:1.5rem; }
 .footer-badges span { letter-spacing:0.12em; text-transform:uppercase; font-size:0.7rem; }
 
-.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
-.mobile-drawer.open { transform:translateX(0); }
+.mobile-drawer { position:fixed; top:0; right:0; width:82%; max-width:360px; height:100vh; background:var(--white); z-index:200; transform:translateX(100%); visibility:hidden; transition:transform 0.35s ease; padding:6rem 2rem 2rem; overflow-y:auto; border-left:1px solid var(--stone-200); }
+.mobile-drawer.open { transform:translateX(0); visibility:visible; }
 .mobile-drawer ul { list-style:none; display:flex; flex-direction:column; gap:1.4rem; }
 .mobile-drawer a { font-family:'Playfair Display',serif; font-size:1.3rem; font-style:italic; color:var(--black); }
 .mobile-close { position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; font-size:1.5rem; cursor:pointer; }
@@ -187,13 +202,18 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 @media (max-width:900px) { .carpet-library-head { grid-template-columns:1fr; gap:1.4rem; } .carpet-library { padding:0 4vw 5rem; } }
 @media (max-width:600px) { .carpet-library-scroll { grid-auto-columns:82%; } }
 
-/* Credito da agencia */
+/* Agency credit */
 .footer-credit { margin-left: 0.6rem; white-space: nowrap; }
 .footer-credit a { color: var(--stone-400); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
 .footer-credit a:hover { color: var(--white); border-bottom-color: rgba(255,255,255,0.4); }
+
+/* Skip link (WCAG 2.4.1) */
+.skip-link { position:absolute; left:-9999px; top:0; z-index:9999; background:var(--accent); color:var(--white); padding:0.8rem 1.4rem; font-size:0.85rem; letter-spacing:0.05em; }
+.skip-link:focus { left:0; outline:2px solid var(--white); outline-offset:-4px; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="topbar">
  <div class="topbar-left"><span>Commercial facility services · Licensed · Insured · Bonded</span></div>
@@ -207,7 +227,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 </div>
 
 <nav class="navbar">
- <a href="../index.html" class="navbar-logo"><img src="../assets/img/logo-bluesky.png" alt="BlueSky General Services"></a>
+ <a href="../index.html" class="navbar-logo"><img src="../assets/img/logo-bluesky.png" alt="BlueSky General Services" width="189" height="80"></a>
  <ul class="navbar-links">
   <li><a href="../index.html">Home</a></li>
   <li><a href="../services.html" class="active">Services <span class="caret">▾</span></a><div class="megamenu">
@@ -232,8 +252,9 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <li><a href="../careers.html">Careers</a></li>
   <li><a href="../contact.html" class="btn-nav">Request a Proposal</a></li>
  </ul>
- <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+ <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer" id="hamburger"><span></span><span></span><span></span></button>
 </nav>
+<main id="main">
 
 <div class="mobile-backdrop" id="mobileBackdrop"></div>
 <div class="mobile-drawer" id="mobileDrawer">
@@ -251,6 +272,10 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <span class="svc-num">Service 04</span>
   <h1>Carpet Cleaning</h1>
   <p class="lead">Hot-water extraction, low-moisture encapsulation, and full water-damage restoration. Quarterly maintenance programs through end-stage recovery, the carpet work Hurricane Milton proved we can deliver at scale.</p>
+  <div class="cta-actions" style="margin-top:1.9rem;">
+   <a href="../contact.html" class="btn btn-primary">Request a Proposal <span class="arrow">→</span></a>
+   <a href="tel:+17815583458" class="btn btn-outline">(781) 558-3458</a>
+  </div>
  </div>
 </header>
 <!-- ═══ SVC-HERO END ═══ -->
@@ -281,13 +306,13 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 <section class="mini-case">
  <div class="mini-case-inner">
   <div class="mini-case-media reveal">
-   <img src="../assets/img/services/carpet/carpet-case-1.png" alt="Two BlueSky cleaners mopping an office corridor with dual yellow wringer buckets">
-   <img src="../assets/img/services/carpet/carpet-case-2.png" alt="BlueSky technician hot-water extracting showroom carpet, leaving a visibly lighter clean pass">
+   <img src="../assets/img/services/carpet/carpet-case-1.jpg" alt="Two BlueSky cleaners mopping an office corridor with dual yellow wringer buckets" loading="lazy">
+   <img src="../assets/img/services/carpet/carpet-case-2.jpg" alt="BlueSky technician hot-water extracting showroom carpet, leaving a visibly lighter clean pass" loading="lazy">
   </div>
   <div class="reveal" data-delay="1">
    <span class="client-tag">Mini-Case · Carpet Recovery</span>
    <h3>Carpet recovery in occupied commercial space, where turnaround matters as much as the result.</h3>
-   <p>Commercial carpet is judged on two things: how much soil actually comes out, and how fast the space can be used again. These images show extraction in progress, the equipment we run, and the condition a tenant walks back into the next morning.</p>
+   <p>Commercial carpet is judged on two things: how much soil actually comes out, and how fast the space can be used again. We schedule the extraction pass into the building's access window, run it with commercial extraction equipment, and manage drying so the area is usable when the doors open the next morning.</p>
    <div class="mini-case-stats">
     <div class="mini-case-stat"><strong>Extraction</strong><span>Deep-clean method</span></div>
     <div class="mini-case-stat"><strong>Turnover-aware</strong><span>Commercial schedule</span></div>
@@ -318,31 +343,31 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  <div class="carpet-library-inner">
   <div class="carpet-library-head reveal">
    <div>
-    <span class="label">Carpet Cleaning Library</span>
+    <span class="label">Carpet Care in Practice</span>
     <h3>Equipment, interior reset, and the kind of spaces this service supports.</h3>
    </div>
-   <p>Carpet work shows best in context: the machines we run, the interiors we run them in, and the condition the space is left in for the next business day.</p>
+   <p>The program runs in three stages: dry soil removal first, service inside the building's access window, then drying and inspection before the space reopens for the next business day.</p>
   </div>
   <div class="carpet-library-scroll">
    <article class="carpet-library-card reveal" data-delay="1">
-    <img src="https://images.pexels.com/photos/9462139/pexels-photo-9462139.jpeg" alt="Commercial carpet cleaning equipment in use on an interior carpet">
+    <img src="https://images.pexels.com/photos/9462139/pexels-photo-9462139.jpeg" alt="Vacuum lifting loose soil from carpet pile before extraction" loading="lazy">
     <div class="carpet-library-card-body">
-     <strong>Machine cleaning</strong>
-     <span>Support image that makes the service readable immediately through equipment and active carpet maintenance.</span>
+     <strong>Soil removal first</strong>
+     <span>Every pass starts dry. Loose grit is vacuumed out of the pile before any water goes down, so extraction pulls embedded soil instead of driving it deeper.</span>
     </div>
    </article>
    <article class="carpet-library-card reveal" data-delay="2">
-    <img src="../assets/img/services/carpet/carpet-1.png" alt="Carpet restoration result in a commercial setting">
+    <img src="../assets/img/services/carpet/carpet-1.jpg" alt="BlueSky crew servicing an occupied office corridor with wringer buckets" loading="lazy">
     <div class="carpet-library-card-body">
-     <strong>Recovered presentation</strong>
-     <span>BlueSky reference image showing the kind of reset clients expect once carpet care is complete.</span>
+     <strong>Occupied buildings</strong>
+     <span>Corridors and common areas are worked inside a set access window, so the floor is back in service before traffic returns to it.</span>
     </div>
    </article>
    <article class="carpet-library-card reveal" data-delay="3">
-    <img src="https://images.pexels.com/photos/31606535/pexels-photo-31606535.jpeg" alt="Clean office space with carpet flooring">
+    <img src="https://images.pexels.com/photos/31606535/pexels-photo-31606535.jpeg" alt="Empty carpeted room cleaned and dried ahead of tenant handover" loading="lazy">
     <div class="carpet-library-card-body">
      <strong>Turnover-ready interiors</strong>
-     <span>Image focused on the outcome: a cleaner, calmer interior where carpet condition supports the overall presentation of the space.</span>
+     <span>Between occupants, carpet is extracted, dried and inspected before handover, so the space shows clean on the walk-through instead of holding the last tenant's traffic lanes.</span>
     </div>
    </article>
   </div>
@@ -369,7 +394,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
 
 <!-- ═══ RELATED-CASE START ═══ -->
 <section class="related-case">
- <div class="related-case-media"><img src="../assets/img/milton-lobby-restoration.jpg" alt="BlueSky crew restoring a commercial lobby after a water event"></div>
+ <div class="related-case-media"><img src="../assets/img/milton-lobby-restoration.jpg" alt="BlueSky crew restoring a commercial lobby after a water event" loading="lazy"></div>
  <div class="related-case-body reveal">
   <span class="sec-label">Related Work</span>
   <h2>Standards that carry into harder environments.</h2>
@@ -390,6 +415,7 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
  </div>
 </section>
 
+</main>
 <footer>
  <div class="footer-grid">
   <div class="footer-brand">
