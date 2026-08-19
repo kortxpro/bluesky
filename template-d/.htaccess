@@ -5,6 +5,10 @@
 Options -Indexes
 DirectoryIndex index.html
 
+# Stops Apache from redirecting /services to /services/ before the rewrite
+# below can serve services.html. Safe because directory listing is disabled.
+DirectorySlash Off
+
 # ---------------------------------------------------------------------------
 # URL routing
 # The canonical tags and sitemap.xml use extensionless URLs
@@ -32,8 +36,10 @@ DirectoryIndex index.html
   RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
   RewriteRule ^ /%1 [R=301,L]
 
-  # Serve /page from page.html without exposing the extension
-  RewriteCond %{REQUEST_FILENAME} !-d
+  # Serve /page from page.html without exposing the extension.
+  # There is deliberately no !-d check here. Both a services/ directory and a
+  # services.html file exist, and the same is true for projects. With a !-d
+  # check Apache would try to list the directory instead and return 403.
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.+?)/?$ $1.html [L]
