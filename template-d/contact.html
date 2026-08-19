@@ -270,10 +270,10 @@ footer { background:var(--black); color:var(--stone-400); padding:5rem 4vw 2rem;
   <p class="intro">The more specific you can be, building size, occupancy hours, services needed, current vendor issues, the faster we can return a proposal that reflects your actual conditions.</p>
 
   <form class="contact-form" id="proposalForm" action="https://api.web3forms.com/submit" method="POST">
-   <!-- ACTION REQUIRED: this form cannot deliver until a real Web3Forms access key is pasted below.
-        Get a free key at https://web3forms.com using contact@blueskygeneralserv.com; submissions arrive at that inbox.
-        Until then every proposal request fails and the visitor sees the error box. -->
-   <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY">
+   <!-- Web3Forms delivers every submission to contact@blueskygeneralserv.com, the address this key
+        is registered to. The key is public by design: it only authorises delivery to that inbox.
+        Replies go to the visitor automatically, because the field named "email" is used as reply-to. -->
+   <input type="hidden" name="access_key" value="0d515e3c-0618-4327-ab84-e24eb72f5e64">
    <input type="hidden" name="subject" value="New proposal request from blueskygeneralserv.com">
    <input type="hidden" name="from_name" value="BlueSky Website">
    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
