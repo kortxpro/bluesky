@@ -78,6 +78,15 @@ DirectorySlash Off
   <FilesMatch "\.(jpg|jpeg|png|webp|svg|mp4|css|js)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
+  # Icones e imagem de compartilhamento mudam mantendo o mesmo nome, entao nao
+  # podem ser immutable: o navegador nunca revalidaria e ficaria preso na versao
+  # antiga por um ano.
+  <FilesMatch "^(favicon.*|apple-touch-icon)\.(png|svg|ico)$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "^og-default\.jpg$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+  </FilesMatch>
 </IfModule>
 
 # ---------------------------------------------------------------------------
