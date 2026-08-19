@@ -1,0 +1,86 @@
+# BlueSky General Services - Apache configuration (HostGator / cPanel)
+# The site is static HTML. This file reproduces what vercel.json did on Vercel
+# (clean URLs) and adds compression and caching, which Vercel did automatically.
+
+Options -Indexes
+DirectoryIndex index.html
+
+# Stops Apache from redirecting /services to /services/ before the rewrite
+# below can serve services.html. Safe because directory listing is disabled.
+DirectorySlash Off
+
+# ---------------------------------------------------------------------------
+# URL routing
+# The canonical tags and sitemap.xml use extensionless URLs
+# (/services/janitorial, not /services/janitorial.html). Without the rules
+# below those URLs return 404 on Apache.
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # Force non-www, matching the canonical tags
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+  # /index.html and /dir/index.html redirect to the directory root
+  RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # /page.html redirects to /page, so each page has one canonical address
+  RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # Serve /page from page.html without exposing the extension.
+  # There is deliberately no !-d check here. Both a services/ directory and a
+  # services.html file exist, and the same is true for projects. With a !-d
+  # check Apache would try to list the directory instead and return 403.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Compression. Text files shrink by roughly 70 percent, which matters most on
+# mobile connections.
+# ---------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Caching. Photos are versioned by filename, so they can be cached hard.
+# HTML is never cached, so edits appear immediately.
+# ---------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg        "access plus 1 year"
+  ExpiresByType image/png         "access plus 1 year"
+  ExpiresByType image/webp        "access plus 1 year"
+  ExpiresByType image/svg+xml     "access plus 1 year"
+  ExpiresByType video/mp4         "access plus 1 year"
+  ExpiresByType text/css          "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/html         "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  <FilesMatch "\.(jpg|jpeg|png|webp|svg|mp4|css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# The contact form posts to the Web3Forms API from the browser, so no PHP,
+# no mail configuration and no SMTP credentials are needed on this server.
+# ---------------------------------------------------------------------------
