@@ -5,6 +5,9 @@
 Options -Indexes
 DirectoryIndex index.html
 
+# Branded 404 instead of the default Apache error page
+ErrorDocument 404 /404.html
+
 # Stops Apache from redirecting /services to /services/ before the rewrite
 # below can serve services.html. Safe because directory listing is disabled.
 DirectorySlash Off
@@ -27,6 +30,26 @@ DirectorySlash Off
   # Force non-www, matching the canonical tags
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+  # ---------------------------------------------------------------------
+  # Redirects from the old WordPress site. Google still has these indexed,
+  # and without these rules every one of them returns 404, throwing away the
+  # traffic and the ranking those pages had earned.
+  # ---------------------------------------------------------------------
+  RewriteRule ^about-us/?$                /about [R=301,L]
+  RewriteRule ^contact-us/?$              /contact [R=301,L]
+  RewriteRule ^our-services/?$            /services [R=301,L]
+  RewriteRule ^services-2/?$              /services [R=301,L]
+  RewriteRule ^home/?$                    / [R=301,L]
+  RewriteRule ^janitorial(-services)?/?$  /services/janitorial [R=301,L]
+  RewriteRule ^commercial-cleaning/?$     /services/janitorial [R=301,L]
+  RewriteRule ^pressure-washing/?$        /services/pressure-washing [R=301,L]
+  RewriteRule ^window-cleaning/?$         /services/window-cleaning [R=301,L]
+  RewriteRule ^carpet-cleaning/?$         /services/carpet-cleaning [R=301,L]
+  RewriteRule ^floor-(care|cleaning|stripping)/?$ /services/floor-care [R=301,L]
+  RewriteRule ^post-construction(-cleaning)?/?$   /services/post-construction [R=301,L]
+  RewriteRule ^(testimonials|gallery|portfolio)/?$ /projects [R=301,L]
+  RewriteRule ^careers-2/?$               /careers [R=301,L]
 
   # /index.html and /dir/index.html redirect to the directory root
   RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
